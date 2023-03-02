@@ -59,6 +59,7 @@
       _1password
       _1password-gui
       alacritty
+      asdf-vm
       awscli2
       emacs-gtk
       fd
