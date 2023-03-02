@@ -14,8 +14,15 @@
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   nixpkgs.config.allowUnfree = true;
 
-  # Use the systemd-boot EFI boot loader.
-  boot.loader.systemd-boot.enable = true;
+  # Boot
+  boot.loader.systemd-boot = {
+    enable = true;
+    consoleMode = "1";
+  };
+  boot.plymouth = {
+    enable = true;
+  };
+
   boot.loader.efi.canTouchEfiVariables = true;
   boot.kernelPackages = pkgs.linuxPackages_6_1;
 
@@ -35,31 +42,10 @@
     keyMap = "uk";
   };
 
+  # Swap
   zramSwap = {
     enable = true;
     algorithm = "zstd";
-  };
-
-  # Enable CUPS to print documents.
-  services.printing.enable = true;
-  services.flatpak.enable = true;
-  
-  services.fprintd = {
-    enable = true;
-#    tod = {
-#      enable = true;
-#      driver = "";
-#    };
-  };
-
-  # Enable sound.
-  sound.enable = true;
-  hardware.pulseaudio.enable = false;
-  services.pipewire = {
-    enable = true;
-    alsa.enable = true;
-    alsa.support32Bit = true;
-    pulse.enable = true;
   };
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
@@ -70,29 +56,32 @@
     shell = pkgs.zsh;
 
     packages = with pkgs; [
-      firefox
-      emacs-gtk
-      git
-      slack
       _1password
       _1password-gui
-      hack-font
-      gnome.gnome-tweaks
       alacritty
-      htop
-      silver-searcher
-      ripgrep
-      fd
-      xstow
-      jq
-      kubectl
       awscli2
-      k9s
-      tmux
-      powertop
+      emacs-gtk
+      fd
+      firefox
+      git
+      gnome.gnome-tweaks
       gnomeExtensions.vitals
+      hack-font
+      htop
+      jq
+      k9s
+      kubectl
+      powertop
+      ripgrep
+      silver-searcher
+      slack
+      tmux
+      xstow
     ];
   };
+
+  # Programs
+  programs.gnupg.agent.enable = true;
 
   programs.zsh = {
     enable = true;
@@ -100,7 +89,7 @@
       enable = true;
       theme = "robbyrussell";
       custom = "\${HOME}/.zsh-custom";
-      plugins = [ "aws" "git" ];
+      plugins = [ "aws" "git" "emacs" ];
     };
   };
 
@@ -112,15 +101,7 @@
      vim
   ];
 
-  # Some programs need SUID wrappers, can be configured further or are
-  # started in user sessions.
-  # programs.mtr.enable = true;
-  # programs.gnupg.agent = {
-  #   enable = true;
-  #   enableSSHSupport = true;
-  # };
-
-  # List services that you want to enable:
+  # Services
   services.xserver = {
     enable = true;
 
@@ -139,9 +120,21 @@
     xkbVariant = "";
   };
 
-  # Enable the OpenSSH daemon.
-  # services.openssh.enable = true;
+  services.flatpak.enable = true;
+  services.fprintd.enable = true;
   services.fwupd.enable = true;
+  services.printing.enable = true;
+
+  # Enable sound.
+  sound.enable = true;
+  services.pipewire = {
+    enable = true;
+    alsa = {
+      enable = true;
+      support32Bit = true;
+    };
+    pulse.enable = true;
+  };
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
