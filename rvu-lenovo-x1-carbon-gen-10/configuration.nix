@@ -65,7 +65,6 @@
       firefox
       git
       gnome.gnome-tweaks
-      gnomeExtensions.vitals
       hack-font
       htop
       jq
@@ -99,6 +98,8 @@
      wget
      curl
      vim
+     gnomeExtensions.appindicator
+     gnomeExtensions.vitals
   ];
 
   # Services
