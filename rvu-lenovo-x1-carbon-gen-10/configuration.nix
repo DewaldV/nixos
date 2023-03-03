@@ -7,7 +7,6 @@
 {
   imports =
     [ # Include the results of the hardware scan.
-      <nixos-hardware/lenovo/thinkpad/x1/10th-gen>
       ./hardware-configuration.nix
     ];
 

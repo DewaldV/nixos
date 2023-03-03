@@ -10,16 +10,21 @@
     # We use the unstable nixpkgs repo for some packages.
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixpkgs-unstable";
 
+    nixos-hardware.url = "github:NixOS/nixos-hardware/master";
+
     home-manager = {
       url = "github:nix-community/home-manager/release-22.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
-  outputs = { self, nixpkgs }: {
+  outputs = { self, nixpkgs, nixpkgs-unstable, nixos-hardware, home-manager }: {
     nixosConfigurations.dv-rvu-x1c10 = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
-      modules = [ ./rvu-lenovo-x1-carbon-gen-10/configuration.nix ];
+      modules = [
+        ./rvu-lenovo-x1-carbon-gen-10/configuration.nix
+        nixos-hardware.nixosModules.lenovo-thinkpad-x1-10th-gen
+      ];
     };
   };
 }
