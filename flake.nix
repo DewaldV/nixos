@@ -22,9 +22,10 @@
       mkHost = import ./lib/mkhost.nix;
     in {
       nixosConfigurations.dv-rvu-x1c10 = mkHost "dv-rvu-x1c10" {
-        inherit nixpkgs home-manager nixos-hardware;
+        inherit nixpkgs home-manager;
         system = "x86_64-linux";
         user = "dewaldv";
+        hardware = nixos-hardware.nixosModules.lenovo-thinkpad-x1-10th-gen;
       };
     };
 }

@@ -1,5 +1,5 @@
 name:
-{ nixpkgs, home-manager, nixos-hardware, system, user }:
+{ nixpkgs, home-manager, hardware, system, user }:
 
 nixpkgs.lib.nixosSystem rec {
   inherit system;
@@ -7,8 +7,7 @@ nixpkgs.lib.nixosSystem rec {
   modules = [
     ../hardware/${name}.nix
     #    ../users/${user}/nixos.nix
-
-    nixos-hardware.nixosModules.lenovo-thinkpad-x1-10th-gen
+    hardware
     ../configuration.nix
   ];
 }
