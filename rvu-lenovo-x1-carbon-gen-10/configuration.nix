@@ -5,10 +5,9 @@
 { config, pkgs, ... }:
 
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-    ];
+  imports = [ # Include the results of the hardware scan.
+    ./hardware-configuration.nix
+  ];
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   nixpkgs.config.allowUnfree = true;
@@ -18,15 +17,13 @@
     enable = true;
     consoleMode = "1";
   };
-  boot.plymouth = {
-    enable = true;
-  };
+  boot.plymouth.enable = true;
 
   boot.loader.efi.canTouchEfiVariables = true;
   boot.kernelPackages = pkgs.linuxPackages_6_1;
 
-  networking.hostName = "dv-rvu-x1c10"; # Define your hostname.
-  networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
+  networking.hostName = "dv-rvu-x1c10";
+  networking.networkmanager.enable = true;
 
   # Set your time zone.
   time.timeZone = "Europe/London";
@@ -115,9 +112,7 @@
       };
     };
 
-    desktopManager = {
-      gnome.enable = true;
-    };
+    desktopManager.gnome.enable = true;
 
     layout = "gb";
     xkbVariant = "";
