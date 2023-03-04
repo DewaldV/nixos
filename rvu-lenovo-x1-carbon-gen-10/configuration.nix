@@ -95,11 +95,12 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-     wget
-     curl
-     vim
-     gnomeExtensions.appindicator
-     gnomeExtensions.vitals
+    gnumake
+    wget
+    curl
+    vim
+    gnomeExtensions.appindicator
+    gnomeExtensions.vitals
   ];
 
   # Services
