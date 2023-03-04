@@ -4,26 +4,26 @@
 { config, lib, pkgs, modulesPath, ... }:
 
 {
-  imports =
-    [ (modulesPath + "/installer/scan/not-detected.nix")
-    ];
+  imports = [ (modulesPath + "/installer/scan/not-detected.nix") ];
 
-  boot.initrd.availableKernelModules = [ "xhci_pci" "thunderbolt" "nvme" "usb_storage" "sd_mod" ];
+  boot.initrd.availableKernelModules =
+    [ "xhci_pci" "thunderbolt" "nvme" "usb_storage" "sd_mod" ];
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-intel" ];
   boot.extraModulePackages = [ ];
 
-  fileSystems."/" =
-    { device = "/dev/disk/by-uuid/1ed945c2-3945-4139-ae12-fdb896188426";
-      fsType = "btrfs";
-    };
+  fileSystems."/" = {
+    device = "/dev/disk/by-uuid/1ed945c2-3945-4139-ae12-fdb896188426";
+    fsType = "btrfs";
+  };
 
-  boot.initrd.luks.devices."nixos-root".device = "/dev/disk/by-uuid/1c3c0827-5464-448c-bbe7-0fcdab3035f3";
+  boot.initrd.luks.devices."nixos-root".device =
+    "/dev/disk/by-uuid/1c3c0827-5464-448c-bbe7-0fcdab3035f3";
 
-  fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/2EE7-6B75";
-      fsType = "vfat";
-    };
+  fileSystems."/boot" = {
+    device = "/dev/disk/by-uuid/2EE7-6B75";
+    fsType = "vfat";
+  };
 
   swapDevices = [ ];
 
@@ -36,5 +36,6 @@
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
   powerManagement.cpuFreqGovernor = lib.mkDefault "powersave";
-  hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
+  hardware.cpu.intel.updateMicrocode =
+    lib.mkDefault config.hardware.enableRedistributableFirmware;
 }

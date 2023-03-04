@@ -16,13 +16,15 @@
     };
   };
 
-  outputs = { self, nixpkgs, nixos-hardware, home-manager }: {
-    nixosConfigurations.dv-rvu-x1c10 = nixpkgs.lib.nixosSystem {
-      system = "x86_64-linux";
-      modules = [
-        ./rvu-lenovo-x1-carbon-gen-10/configuration.nix
-        nixos-hardware.nixosModules.lenovo-thinkpad-x1-10th-gen
-      ];
+  outputs = { self, nixpkgs, nixos-hardware, home-manager, ... }:
+    let
+
+      mkHost = import ./lib/mkhost.nix;
+    in {
+      nixosConfigurations.dv-rvu-x1c10 = mkHost "dv-rvu-x1c10" {
+        inherit nixpkgs home-manager nixos-hardware;
+        system = "x86_64-linux";
+        user = "dewaldv";
+      };
     };
-  };
 }
