@@ -3,7 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-22.11";
-    # nixpkgs-unstable.url = "github:nixos/nixpkgs/nixpkgs-unstable";
+    nixpkgs-unstable.url = "github:nixos/nixpkgs/nixpkgs-unstable";
 
     nixos-hardware.url =
       "github:nixos/nixos-hardware?rev=77de4cd09db4dbee9551ed2853cfcf113d7dc5ce";
@@ -16,7 +16,8 @@
     };
   };
 
-  outputs = { self, nixpkgs, nixos-hardware, home-manager, ... }:
+  outputs =
+    { self, nixpkgs, nixpkgs-unstable, nixos-hardware, home-manager, ... }:
     let
 
       mkHost = import ./lib/mkhost.nix;
@@ -26,6 +27,12 @@
         system = "x86_64-linux";
         user = "dewaldv";
         hardware = nixos-hardware.nixosModules.lenovo-thinkpad-x1-10th-gen;
+        overlays = [
+          (final: prev: {
+            steampipe =
+              nixpkgs-unstable.legacyPackages.${prev.system}.steampipe;
+          })
+        ];
       };
     };
 }
