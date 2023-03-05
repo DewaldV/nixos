@@ -61,6 +61,7 @@
     htop
     jq
     nixfmt
+    podman
     powertop
     ripgrep
     silver-searcher
