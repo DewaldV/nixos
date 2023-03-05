@@ -1,6 +1,16 @@
 { config, pkgs, home-manager, ... }:
 
 {
+  programs.zsh = {
+    enable = true;
+    ohMyZsh = {
+      enable = true;
+      theme = "robbyrussell";
+      custom = "\${HOME}/.zsh-custom";
+      plugins = [ "aws" "git" "emacs" ];
+    };
+  };
+
   users.users.dewaldv = {
     isNormalUser = true;
     description = "Dewald Viljoen";

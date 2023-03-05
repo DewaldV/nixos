@@ -5,32 +5,17 @@
   nixpkgs.config.allowUnfree = true;
 
   # Boot
-  boot.loader.systemd-boot = {
-    enable = true;
-    consoleMode = "1";
-  };
+  boot.kernelPackages = pkgs.linuxPackages_6_1;
+  boot.loader.efi.canTouchEfiVariables = true;
+  boot.loader.systemd-boot.enable = true;
   boot.plymouth.enable = true;
 
-  boot.loader.efi.canTouchEfiVariables = true;
-  boot.kernelPackages = pkgs.linuxPackages_6_1;
-
-  networking.hostName = "dv-rvu-x1c10";
   networking.networkmanager.enable = true;
 
-  # Set your time zone.
+  # Timezone and Locale
+  i18n.defaultLocale = "en_GB.UTF-8";
   time.timeZone = "Europe/London";
 
-  # Select internationalisation properties.
-  i18n.defaultLocale = "en_GB.UTF-8";
-
-  console = {
-    earlySetup = true;
-    font = "ter-i32b";
-    packages = with pkgs; [ terminus_font ];
-    keyMap = "uk";
-  };
-
-  # Swap
   zramSwap = {
     enable = true;
     algorithm = "zstd";
@@ -38,16 +23,6 @@
 
   # Programs
   programs.gnupg.agent.enable = true;
-
-  programs.zsh = {
-    enable = true;
-    ohMyZsh = {
-      enable = true;
-      theme = "robbyrussell";
-      custom = "\${HOME}/.zsh-custom";
-      plugins = [ "aws" "git" "emacs" ];
-    };
-  };
 
   # List packages installed in system profile.
   environment.systemPackages = with pkgs; [
@@ -83,8 +58,6 @@
     };
 
     desktopManager.gnome.enable = true;
-
-    layout = "gb";
     xkbVariant = "";
   };
 

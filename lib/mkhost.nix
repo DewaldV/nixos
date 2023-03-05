@@ -6,10 +6,11 @@ nixpkgs.lib.nixosSystem rec {
 
   modules = [
     { nixpkgs.overlays = overlays; }
+
+    hardware
     ../machines/${name}/hardware.nix
     ../machines/${name}/configuration.nix
     ../users/${user}/user.nix
-    ../configuration.nix
-    hardware
+    ../common/configuration.nix
   ];
 }
