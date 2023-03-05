@@ -88,6 +88,7 @@
     gnumake
     nixfmt
     steampipe
+    tree
     vim
     wget
   ];
