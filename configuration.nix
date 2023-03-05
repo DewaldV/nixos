@@ -36,37 +36,6 @@
     algorithm = "zstd";
   };
 
-  users.users.dewaldv = {
-    isNormalUser = true;
-    description = "Dewald Viljoen";
-    extraGroups = [ "networkmanager" "wheel" ];
-    shell = pkgs.zsh;
-
-    packages = with pkgs; [
-      _1password
-      _1password-gui
-      alacritty
-      asdf-vm
-      awscli2
-      emacs-gtk
-      fd
-      firefox
-      git
-      gnome.gnome-tweaks
-      hack-font
-      htop
-      jq
-      k9s
-      kubectl
-      powertop
-      ripgrep
-      silver-searcher
-      slack
-      tmux
-      xstow
-    ];
-  };
-
   # Programs
   programs.gnupg.agent.enable = true;
 
@@ -83,11 +52,19 @@
   # List packages installed in system profile.
   environment.systemPackages = with pkgs; [
     curl
+    fd
+    git
+    gnome.gnome-tweaks
     gnomeExtensions.appindicator
     gnomeExtensions.vitals
     gnumake
+    htop
+    jq
     nixfmt
-    steampipe
+    powertop
+    ripgrep
+    silver-searcher
+    tmux
     tree
     vim
     wget
@@ -111,7 +88,6 @@
   };
 
   services.flatpak.enable = true;
-  services.fprintd.enable = true;
   services.fwupd.enable = true;
   services.printing.enable = true;
 
@@ -134,5 +110,4 @@
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "22.11"; # Did you read the comment?
-
 }
