@@ -29,7 +29,9 @@
       k9s
       kubectl
       slack
+      ssm-session-manager-plugin
       xstow
+      zoom
     ];
   };
 }
