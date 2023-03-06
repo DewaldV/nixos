@@ -16,8 +16,7 @@
     };
   };
 
-  outputs = { self, nixpkgs, nixpkgs-unstable, nixos-hardware, home-manager, ...
-    }@inputs:
+  outputs = { self, nixpkgs, home-manager, ... }@inputs:
     let
 
       mkHost = import ./lib/mkhost.nix;
@@ -26,13 +25,13 @@
         inherit nixpkgs home-manager;
         system = "x86_64-linux";
         user = "dewaldv";
-        hardware = nixos-hardware.nixosModules.lenovo-thinkpad-x1-10th-gen;
+        hardware =
+          inputs.nixos-hardware.nixosModules.lenovo-thinkpad-x1-10th-gen;
         overlays = [
           inputs.ipu6-nix.overlay.${system}
           (final: prev: {
-
             steampipe =
-              nixpkgs-unstable.legacyPackages.${prev.system}.steampipe;
+              inputs.nixpkgs-unstable.legacyPackages.${prev.system}.steampipe;
           })
         ];
       };

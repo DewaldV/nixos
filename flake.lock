@@ -114,11 +114,11 @@
         "nixpkgs": "nixpkgs"
       },
       "locked": {
-        "lastModified": 1678046202,
-        "narHash": "sha256-7g206MRoe7fu/yvn4EPk5gZOuycDtWIWkePmm3f190k=",
+        "lastModified": 1678094306,
+        "narHash": "sha256-kQAigxPd4p/xXW6ryRb41mqougpRA7bJbQ/cRPoPr24=",
         "owner": "dewaldv",
         "repo": "ipu6-nix",
-        "rev": "ee024843a22fe0e5906c8db385055a66ce4ef268",
+        "rev": "471a0cb3d7580e8a4a79f39c768c2408f9f28685",
         "type": "github"
       },
       "original": {
