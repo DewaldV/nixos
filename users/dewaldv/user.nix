@@ -23,13 +23,16 @@
       alacritty
       asdf-vm
       awscli2
+      bundler
       emacs-gtk
       firefox
       hack-font
       k9s
       kubectl
+      ruby_3_1
       slack
       ssm-session-manager-plugin
+      terraform
       xstow
       zoom
     ];

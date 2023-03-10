@@ -9,6 +9,7 @@
       "github:nixos/nixos-hardware?rev=77de4cd09db4dbee9551ed2853cfcf113d7dc5ce";
 
     ipu6-nix.url = "github:dewaldv/ipu6-nix";
+    nixpkgs-dewaldv.url = "github:dewaldv/nixpkgs";
 
     home-manager = {
       url = "github:nix-community/home-manager/release-22.11";
@@ -29,6 +30,7 @@
           inputs.nixos-hardware.nixosModules.lenovo-thinkpad-x1-10th-gen;
         overlays = [
           inputs.ipu6-nix.overlay.${system}
+          inputs.nixpkgs-dewaldv.overlay.${system}
           (final: prev: {
             steampipe =
               inputs.nixpkgs-unstable.legacyPackages.${prev.system}.steampipe;

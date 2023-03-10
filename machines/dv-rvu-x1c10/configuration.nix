@@ -15,14 +15,14 @@
   services.fprintd.enable = true;
   services.xserver.layout = "gb";
 
-  environment.systemPackages = with pkgs;
-    [
-      zoom
-      # ipu6-drivers
-      # ipu6-camera-bins
-      # ipu6-camera-hal
-      # icamerasrc
-      # ivsc-driver
-      # ivsc-firmware
-    ];
+  environment.systemPackages = with pkgs; [
+    rvu-u
+    rvu-kolide
+    # ipu6-drivers
+    # ipu6-camera-bins
+    # ipu6-camera-hal
+    # icamerasrc
+    # ivsc-driver
+    # ivsc-firmware
+  ];
 }
