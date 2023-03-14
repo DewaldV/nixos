@@ -16,6 +16,7 @@
   services.xserver.layout = "gb";
 
   environment.systemPackages = with pkgs; [
+    azure-cli
     rvu-u
     rvu-kolide
     # ipu6-drivers
