@@ -28,6 +28,7 @@
   environment.systemPackages = with pkgs; [
     curl
     fd
+    gcc
     git
     gnome.gnome-tweaks
     gnomeExtensions.appindicator

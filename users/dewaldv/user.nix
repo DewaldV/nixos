@@ -26,6 +26,7 @@
       bundler
       emacs-gtk
       firefox
+      go
       hack-font
       k9s
       kubectl
