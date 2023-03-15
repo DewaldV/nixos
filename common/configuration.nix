@@ -30,6 +30,7 @@
     fd
     gcc
     git
+    gimp
     gnome.gnome-tweaks
     gnomeExtensions.appindicator
     gnomeExtensions.vitals
