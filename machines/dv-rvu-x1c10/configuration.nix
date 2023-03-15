@@ -13,6 +13,8 @@
   };
 
   services.fprintd.enable = true;
+  services.power-profiles-daemon.enable = false;
+  services.tlp.enable = true;
   services.xserver.layout = "gb";
 
   environment.systemPackages = with pkgs; [
