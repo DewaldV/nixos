@@ -5,7 +5,7 @@
   nixpkgs.config.allowUnfree = true;
 
   # Boot
-  boot.kernelPackages = pkgs.linuxPackages_6_2;
+  boot.kernelPackages = pkgs.linuxPackages_6_1;
   boot.loader.efi.canTouchEfiVariables = true;
   boot.loader.systemd-boot.enable = true;
   boot.plymouth.enable = true;
@@ -29,8 +29,8 @@
     curl
     fd
     gcc
-    git
     gimp
+    git
     gnome.gnome-tweaks
     gnomeExtensions.appindicator
     gnomeExtensions.vitals
