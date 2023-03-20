@@ -14,13 +14,13 @@
 
   services.fprintd.enable = true;
   services.power-profiles-daemon.enable = false;
+  services.rvu-kolide.enable = true;
   services.tlp.enable = true;
   services.xserver.layout = "gb";
 
   environment.systemPackages = with pkgs; [
     azure-cli
     rvu-u
-    rvu-kolide
     # ipu6-drivers
     # ipu6-camera-bins
     # ipu6-camera-hal

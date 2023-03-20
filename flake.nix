@@ -26,8 +26,12 @@
         inherit nixpkgs home-manager;
         system = "x86_64-linux";
         user = "dewaldv";
-        hardware =
-          inputs.nixos-hardware.nixosModules.lenovo-thinkpad-x1-10th-gen;
+
+        extraModules = [
+          inputs.nixos-hardware.nixosModules.lenovo-thinkpad-x1-10th-gen
+          inputs.nixpkgs-dewaldv.nixosModules.rvu-kolide
+        ];
+
         overlays = [
           inputs.ipu6-nix.overlay.${system}
           inputs.nixpkgs-dewaldv.overlay.${system}

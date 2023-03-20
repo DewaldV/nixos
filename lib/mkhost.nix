@@ -1,5 +1,5 @@
 name:
-{ nixpkgs, home-manager, hardware, system, user, overlays }:
+{ nixpkgs, home-manager, extraModules, system, user, overlays }:
 
 nixpkgs.lib.nixosSystem rec {
   inherit system;
@@ -7,10 +7,9 @@ nixpkgs.lib.nixosSystem rec {
   modules = [
     { nixpkgs.overlays = overlays; }
 
-    hardware
     ../machines/${name}/hardware.nix
     ../machines/${name}/configuration.nix
     ../users/${user}/user.nix
     ../common/configuration.nix
-  ];
+  ] ++ extraModules;
 }
