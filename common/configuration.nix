@@ -27,6 +27,7 @@
   # List packages installed in system profile.
   environment.systemPackages = with pkgs; [
     curl
+    dig
     fd
     gcc
     gimp
