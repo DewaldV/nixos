@@ -24,7 +24,7 @@
       asdf-vm
       awscli2
       bundler
-      emacs-gtk
+      emacs
       firefox
       go
       hack-font
