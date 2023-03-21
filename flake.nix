@@ -5,8 +5,7 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixos-22.11";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixpkgs-unstable";
 
-    nixos-hardware.url =
-      "github:nixos/nixos-hardware?rev=77de4cd09db4dbee9551ed2853cfcf113d7dc5ce";
+    nixos-hardware.url = "github:nixos/nixos-hardware";
 
     ipu6-nix.url = "github:dewaldv/ipu6-nix";
     nixpkgs-dewaldv.url = "github:dewaldv/nixpkgs";
