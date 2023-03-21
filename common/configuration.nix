@@ -2,6 +2,7 @@
 
 {
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.netrc-file = "/etc/nix/netrc";
   nixpkgs.config.allowUnfree = true;
 
   # Boot
