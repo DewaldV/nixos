@@ -40,5 +40,15 @@
           })
         ];
       };
+
+      nixosConfigurations.dv-rvu-desktop = mkHost "dv-rvu-desktop" rec {
+        inherit nixpkgs home-manager;
+        system = "x86_64-linux";
+        user = "dewaldv";
+
+        extraModules = [ inputs.nixpkgs-dewaldv.nixosModules.rvu-kolide ];
+
+        overlays = [ inputs.nixpkgs-dewaldv.overlay.${system} ];
+      };
     };
 }
