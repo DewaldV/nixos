@@ -1,5 +1,23 @@
 {
   "nodes": {
+    "awsvpnclient": {
+      "inputs": {
+        "nixpkgs": "nixpkgs_4"
+      },
+      "locked": {
+        "lastModified": 1678777780,
+        "narHash": "sha256-OHeo0J7wdW7tm6kZWQpqQANnnGuvxxYv2MKU0Mq+GuY=",
+        "owner": "ymatsiuk",
+        "repo": "awsvpnclient",
+        "rev": "8bdfd42d893f7e80c5d0044cdb3181bdf3612ff2",
+        "type": "github"
+      },
+      "original": {
+        "owner": "ymatsiuk",
+        "repo": "awsvpnclient",
+        "type": "github"
+      }
+    },
     "flake-utils": {
       "locked": {
         "lastModified": 1676283394,
@@ -224,6 +242,26 @@
         "type": "github"
       }
     },
+    "nixpkgs-rvu": {
+      "inputs": {
+        "awsvpnclient": "awsvpnclient",
+        "nixpkgs": "nixpkgs_5"
+      },
+      "locked": {
+        "lastModified": 1679433742,
+        "narHash": "sha256-psaPh9kHD4zhbiuLr1Ku7tJ7G4iDqYc15+BcoEuuQnQ=",
+        "owner": "uswitch",
+        "repo": "nixpkgs",
+        "rev": "2bae351ca4d104960f5a69719054bd8f149002cb",
+        "type": "github"
+      },
+      "original": {
+        "owner": "uswitch",
+        "ref": "2bae351ca4d104960f5a69719054bd8f149002cb",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
     "nixpkgs-unstable": {
       "locked": {
         "lastModified": 1678875422,
@@ -270,6 +308,33 @@
         "type": "indirect"
       }
     },
+    "nixpkgs_4": {
+      "locked": {
+        "narHash": "sha256-8nQx02tTzgYO21BP/dy5BCRopE8OwE8Drsw98j+Qoaw=",
+        "path": "/nix/store/a33ann70s2kqn8q1h4vv4il56i0lk60g-source",
+        "type": "path"
+      },
+      "original": {
+        "id": "nixpkgs",
+        "type": "indirect"
+      }
+    },
+    "nixpkgs_5": {
+      "locked": {
+        "lastModified": 1678072060,
+        "narHash": "sha256-6a9Tbjhir5HxDx4uw0u6Z+LHUfYf7tsT9QxF9FN/32w=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "47c003416297e4d59a5e3e7a8b15cdbdf5110560",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "nixos-22.11",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
         "home-manager": "home-manager",
@@ -277,6 +342,7 @@
         "nixos-hardware": "nixos-hardware",
         "nixpkgs": "nixpkgs_2",
         "nixpkgs-dewaldv": "nixpkgs-dewaldv",
+        "nixpkgs-rvu": "nixpkgs-rvu",
         "nixpkgs-unstable": "nixpkgs-unstable"
       }
     },
