@@ -28,4 +28,9 @@
     # ivsc-driver
     # ivsc-firmware
   ];
+
+  virtualisation.podman = {
+    enable = true;
+    dockerCompat = true;
+  };
 }
