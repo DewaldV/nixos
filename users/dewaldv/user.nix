@@ -34,7 +34,6 @@
       ssm-session-manager-plugin
       terraform
       xstow
-      zoom
     ];
   };
 }
