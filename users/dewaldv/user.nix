@@ -23,7 +23,6 @@
       alacritty
       asdf-vm
       awscli2
-      bundler
       emacs
       firefox
       go
