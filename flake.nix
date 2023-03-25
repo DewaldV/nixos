@@ -8,7 +8,7 @@
     nixpkgs-rvu.url = "github:uswitch/nixpkgs?ref=kolide";
 
     nixos-hardware.url = "github:nixos/nixos-hardware";
-    ipu6-nix.url = "github:dewaldv/ipu6-nix";
+    ipu6-nix.url = "/home/dewaldv/Dev/ipu6-nix";
 
     home-manager = {
       url = "github:nix-community/home-manager/release-22.11";

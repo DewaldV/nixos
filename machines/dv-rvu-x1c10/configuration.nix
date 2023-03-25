@@ -21,12 +21,12 @@
   environment.systemPackages = with pkgs; [
     azure-cli
     rvu-u
-    # ipu6-drivers
-    # ipu6-camera-bins
-    # ipu6-camera-hal
-    # icamerasrc
-    # ivsc-driver
-    # ivsc-firmware
+    ipu6-drivers
+    ipu6-camera-bins
+    ipu6-camera-hal
+    icamerasrc
+    ivsc-driver
+    ivsc-firmware
   ];
 
   virtualisation.podman = {
