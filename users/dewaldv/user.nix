@@ -29,6 +29,7 @@
       hack-font
       k9s
       kubectl
+      kubernetes-helm
       ruby_3_1
       slack
       ssm-session-manager-plugin
