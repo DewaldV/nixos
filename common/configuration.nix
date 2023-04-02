@@ -38,6 +38,7 @@
     gnomeExtensions.vitals
     gnumake
     htop
+    ipcalc
     jq
     nixfmt
     podman

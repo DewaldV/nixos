@@ -34,6 +34,8 @@
       slack
       ssm-session-manager-plugin
       terraform
+      tflint
+      tflint-plugins.tflint-ruleset-aws
       xstow
     ];
   };

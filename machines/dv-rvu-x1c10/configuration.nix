@@ -20,6 +20,7 @@
 
   environment.systemPackages = with pkgs; [
     azure-cli
+    k6
     rvu-u
     ipu6-drivers
     ipu6-camera-bins
