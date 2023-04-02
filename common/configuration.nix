@@ -57,20 +57,6 @@
   ];
 
   # Services
-  services.xserver = {
-    enable = true;
-
-    displayManager = {
-      gdm = {
-        enable = true;
-        wayland = true;
-      };
-    };
-
-    desktopManager.gnome.enable = true;
-    xkbVariant = "";
-  };
-
   services.flatpak.enable = true;
   services.fwupd.enable = true;
   services.printing.enable = true;
