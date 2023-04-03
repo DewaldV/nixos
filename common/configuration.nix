@@ -47,6 +47,7 @@
     silver-searcher
     tmux
     tree
+    unzip
     vim
     wget
   ];
