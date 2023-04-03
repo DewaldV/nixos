@@ -43,6 +43,7 @@
     nixfmt
     podman
     powertop
+    python311
     ripgrep
     silver-searcher
     tmux
