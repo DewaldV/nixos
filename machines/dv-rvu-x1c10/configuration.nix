@@ -14,9 +14,16 @@
 
   services.fprintd.enable = true;
   services.power-profiles-daemon.enable = false;
-  services.rvu-kolide.enable = true;
   services.tlp.enable = true;
   services.xserver.layout = "gb";
+
+  # RVU specific services
+  services.rvu-kolide.enable = true;
+  services.awsvpnclient = {
+    enable = true;
+    configFile =
+      "/home/dewaldv/.config/rvu/aws-vpn-client/cvpn-endpoint-029d896993d560e48.ovpn";
+  };
 
   environment.systemPackages = with pkgs; [
     azure-cli
