@@ -19,6 +19,10 @@
 
   # RVU specific services
   services.rvu-kolide.enable = true;
+  services.awsvpnclient = {
+    enable = true;
+    configFile = "/home/dewaldv/.config/rvu/aws-vpn-client/cvpn.ovpn";
+  };
 
   environment.systemPackages = with pkgs; [
     azure-cli
