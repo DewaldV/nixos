@@ -27,6 +27,7 @@
 
   # List packages installed in system profile.
   environment.systemPackages = with pkgs; [
+    chromium
     curl
     dig
     fd
@@ -39,6 +40,7 @@
     gnumake
     htop
     ipcalc
+    insync-v3
     jq
     nixfmt
     podman
@@ -51,6 +53,7 @@
     unzip
     vim
     wget
+    yubioath-desktop
   ];
 
   # Services
