@@ -18,6 +18,13 @@
         # Launch Firefox on start
         { command = "firefox"; }
       ];
+
+      assigns = {
+        "1:web" = [{ app_id = "^firefox$"; }];
+        "2:code" = [{ class = "^Emacs$"; }];
+        "3:term" = [{ app_id = "^Alacritty$"; }];
+      };
+
       bars = [{
         command = "${pkgs.waybar}/bin/waybar";
         statusCommand = null;
