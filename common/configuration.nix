@@ -24,7 +24,14 @@
 
   fonts = {
     enableDefaultFonts = true;
-    fonts = with pkgs; [ font-awesome hack-font noto-fonts roboto ];
+    fonts = with pkgs; [
+      fira
+      fira-mono
+      font-awesome
+      hack-font
+      noto-fonts
+      roboto
+    ];
   };
 
   # Programs
