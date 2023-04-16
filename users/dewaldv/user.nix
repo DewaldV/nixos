@@ -26,7 +26,6 @@
       emacs
       firefox
       go
-      hack-font
       k9s
       kubectl
       kubernetes-helm
