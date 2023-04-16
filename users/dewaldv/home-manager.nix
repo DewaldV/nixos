@@ -51,12 +51,11 @@
           all-outputs = false;
           format = "{icon}";
           format-icons = {
-            "1:web" = "";
+            "1:web" = "";
             "2:code" = "";
             "3:term" = "";
-            "4:work" = "";
-            "5:music" = "";
-            "6:docs" = "";
+            "4:slack" = "";
+            "5:music" = "";
             "urgent" = "";
             "focused" = "";
             "default" = "";
@@ -118,7 +117,7 @@
       * {
           border: none;
           border-radius: 0;
-          font-family: "Noto Sans";
+          font-family: FontAwesome, Noto Sans, Roboto, Helvetica, Arial, sans-serif;
           font-size: 14px;
           min-height: 0;
       }
