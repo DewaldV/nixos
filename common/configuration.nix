@@ -22,6 +22,11 @@
     algorithm = "zstd";
   };
 
+  fonts = {
+    enableDefaultFonts = true;
+    fonts = with pkgs; [ font-awesome hack-font noto-fonts roboto ];
+  };
+
   # Programs
   programs.gnupg.agent.enable = true;
 
