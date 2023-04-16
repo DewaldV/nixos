@@ -1,5 +1,23 @@
 {
   "nodes": {
+    "awsvpnclient": {
+      "inputs": {
+        "nixpkgs": "nixpkgs_3"
+      },
+      "locked": {
+        "lastModified": 1678777780,
+        "narHash": "sha256-OHeo0J7wdW7tm6kZWQpqQANnnGuvxxYv2MKU0Mq+GuY=",
+        "owner": "ymatsiuk",
+        "repo": "awsvpnclient",
+        "rev": "8bdfd42d893f7e80c5d0044cdb3181bdf3612ff2",
+        "type": "github"
+      },
+      "original": {
+        "owner": "ymatsiuk",
+        "repo": "awsvpnclient",
+        "type": "github"
+      }
+    },
     "flake-utils": {
       "locked": {
         "lastModified": 1678901627,
@@ -37,13 +55,135 @@
         "type": "github"
       }
     },
+    "icamerasrc-src": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1678357247,
+        "narHash": "sha256-j8ZYe4nyy5yfo10CGeXDwbAaAPvdr0ptMWB8hQDyESQ=",
+        "owner": "intel",
+        "repo": "icamerasrc",
+        "rev": "17841ab6249aaa69bd9b3959262bf182dee74111",
+        "type": "github"
+      },
+      "original": {
+        "owner": "intel",
+        "ref": "icamerasrc_slim_api",
+        "repo": "icamerasrc",
+        "type": "github"
+      }
+    },
+    "ipu6-camera-bins-src": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1675854346,
+        "narHash": "sha256-QnedM2UBbGyd2wIF762Mi+VkDZYtC6MifK4XGGxlUzw=",
+        "owner": "intel",
+        "repo": "ipu6-camera-bins",
+        "rev": "276859fc6de83918a32727d676985ec40f31af2b",
+        "type": "github"
+      },
+      "original": {
+        "owner": "intel",
+        "repo": "ipu6-camera-bins",
+        "type": "github"
+      }
+    },
+    "ipu6-camera-hal-src": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1675854593,
+        "narHash": "sha256-AePL7IqoOhlxhfPRLpCman5DNh3wYS4MUcLgmgBUcCM=",
+        "owner": "intel",
+        "repo": "ipu6-camera-hal",
+        "rev": "884b81aae0ea19a974eb8ccdaeef93038136bdd4",
+        "type": "github"
+      },
+      "original": {
+        "owner": "intel",
+        "repo": "ipu6-camera-hal",
+        "type": "github"
+      }
+    },
+    "ipu6-drivers-src": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1676860321,
+        "narHash": "sha256-TKo04+fqY64SdDuWApuzRXBnaAW2DReubwFRsdfJMWM=",
+        "owner": "intel",
+        "repo": "ipu6-drivers",
+        "rev": "dfedab03f3856010d37968cb384696038c73c984",
+        "type": "github"
+      },
+      "original": {
+        "owner": "intel",
+        "repo": "ipu6-drivers",
+        "type": "github"
+      }
+    },
+    "ipu6-nix": {
+      "inputs": {
+        "flake-utils": "flake-utils",
+        "icamerasrc-src": "icamerasrc-src",
+        "ipu6-camera-bins-src": "ipu6-camera-bins-src",
+        "ipu6-camera-hal-src": "ipu6-camera-hal-src",
+        "ipu6-drivers-src": "ipu6-drivers-src",
+        "ivsc-driver-src": "ivsc-driver-src",
+        "ivsc-firmware-src": "ivsc-firmware-src",
+        "nixpkgs": "nixpkgs"
+      },
+      "locked": {
+        "lastModified": 1679760384,
+        "narHash": "sha256-d+oCSQv1Bsuw2pS6ZmLVzJ2q1etO3ubNoqoI7xTxBXM=",
+        "owner": "dewaldv",
+        "repo": "ipu6-nix",
+        "rev": "9e9278495bb60bcbb70520ad429c69c5221e5b90",
+        "type": "github"
+      },
+      "original": {
+        "owner": "dewaldv",
+        "repo": "ipu6-nix",
+        "type": "github"
+      }
+    },
+    "ivsc-driver-src": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1678435212,
+        "narHash": "sha256-OM9PljvaMKrk72BFeSCqaABFeAws+tOdd3oC2jyNreE=",
+        "owner": "intel",
+        "repo": "ivsc-driver",
+        "rev": "c8db12b907e2e455d4d5586e5812d1ae0eebd571",
+        "type": "github"
+      },
+      "original": {
+        "owner": "intel",
+        "repo": "ivsc-driver",
+        "type": "github"
+      }
+    },
+    "ivsc-firmware-src": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1667355668,
+        "narHash": "sha256-GuD1oTnDEs0HslJjXx26DkVQIe0eS+js4UoaTDa77ME=",
+        "owner": "intel",
+        "repo": "ivsc-firmware",
+        "rev": "29c5eff4cdaf83e90ef2dcd2035a9cdff6343430",
+        "type": "github"
+      },
+      "original": {
+        "owner": "intel",
+        "repo": "ivsc-firmware",
+        "type": "github"
+      }
+    },
     "nixos-hardware": {
       "locked": {
-        "lastModified": 1680070330,
-        "narHash": "sha256-aoT2YZCd9LEtiEULFLIF0ykKydgE72X8gw/k9/pRS5I=",
+        "lastModified": 1680876084,
+        "narHash": "sha256-eP9yxP0wc7XuVaODugh+ajgbFGaile2O1ihxiLxOuvU=",
         "owner": "nixos",
         "repo": "nixos-hardware",
-        "rev": "a6aa8174fa61e55bd7e62d35464d3092aefe0421",
+        "rev": "3006d2860a6ed5e01b0c3e7ffb730e9b293116e2",
         "type": "github"
       },
       "original": {
@@ -54,11 +194,11 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1681482634,
-        "narHash": "sha256-cT/nr3L8khEYZSGp8qqwxFH+/q4/547MfyOdSj6MhBk=",
+        "lastModified": 1679472241,
+        "narHash": "sha256-VK2YDic2NjPvfsuneJCLIrWS38qUfoW8rLLimx0rWXA=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "fda0d99c2cbbb5c89d8855d258cb0821bd9113ad",
+        "rev": "9ef6e7727f4c31507627815d4f8679c5841efb00",
         "type": "github"
       },
       "original": {
@@ -68,21 +208,22 @@
         "type": "github"
       }
     },
-    "nixpkgs-dewaldv": {
+    "nixpkgs-rvu": {
       "inputs": {
-        "flake-utils": "flake-utils",
-        "nixpkgs": "nixpkgs_2"
+        "awsvpnclient": "awsvpnclient",
+        "nixpkgs": "nixpkgs_4"
       },
       "locked": {
-        "lastModified": 1679344159,
-        "narHash": "sha256-XbuauJS74Ht3ILH1c0dzQoVtvk5DAhe2V/ZzNyt5QnA=",
-        "owner": "dewaldv",
+        "lastModified": 1680553619,
+        "narHash": "sha256-6b8QbFDdcbAJTY/KU2SF+nHaeKvYyh+ZprTSyvoYKPQ=",
+        "owner": "uswitch",
         "repo": "nixpkgs",
-        "rev": "31c0b310bc0a8567021398cc70ef967760564af8",
+        "rev": "fc65c0aacacf72df3104075aa6ca7370bda2367f",
         "type": "github"
       },
       "original": {
-        "owner": "dewaldv",
+        "owner": "uswitch",
+        "ref": "kolide",
         "repo": "nixpkgs",
         "type": "github"
       }
@@ -105,24 +246,54 @@
     },
     "nixpkgs_2": {
       "locked": {
-        "lastModified": 1680273054,
-        "narHash": "sha256-Bs6/5LpvYp379qVqGt9mXxxx9GSE789k3oFc+OAL07M=",
-        "owner": "NixOS",
+        "lastModified": 1681482634,
+        "narHash": "sha256-cT/nr3L8khEYZSGp8qqwxFH+/q4/547MfyOdSj6MhBk=",
+        "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "3364b5b117f65fe1ce65a3cdd5612a078a3b31e3",
+        "rev": "fda0d99c2cbbb5c89d8855d258cb0821bd9113ad",
         "type": "github"
+      },
+      "original": {
+        "owner": "nixos",
+        "ref": "nixos-22.11",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "nixpkgs_3": {
+      "locked": {
+        "narHash": "sha256-8nQx02tTzgYO21BP/dy5BCRopE8OwE8Drsw98j+Qoaw=",
+        "path": "/nix/store/a33ann70s2kqn8q1h4vv4il56i0lk60g-source",
+        "type": "path"
       },
       "original": {
         "id": "nixpkgs",
         "type": "indirect"
       }
     },
+    "nixpkgs_4": {
+      "locked": {
+        "lastModified": 1678072060,
+        "narHash": "sha256-6a9Tbjhir5HxDx4uw0u6Z+LHUfYf7tsT9QxF9FN/32w=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "47c003416297e4d59a5e3e7a8b15cdbdf5110560",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "nixos-22.11",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
         "home-manager": "home-manager",
+        "ipu6-nix": "ipu6-nix",
         "nixos-hardware": "nixos-hardware",
-        "nixpkgs": "nixpkgs",
-        "nixpkgs-dewaldv": "nixpkgs-dewaldv",
+        "nixpkgs": "nixpkgs_2",
+        "nixpkgs-rvu": "nixpkgs-rvu",
         "nixpkgs-unstable": "nixpkgs-unstable"
       }
     },
