@@ -12,28 +12,40 @@
     keyMap = "uk";
   };
 
+  security.polkit.enable = true;
+
+  # RVU specific services
+  services.rvu-kolide.enable = true;
+  # services.awsvpnclient = {
+  #   enable = true;
+  #   configFile = "/home/dewaldv/.config/rvu/aws-vpn-client/cvpn.ovpn";
+  # };
+  services.blueman.enable = true;
+
   services.fprintd.enable = true;
   services.power-profiles-daemon.enable = false;
   services.tlp.enable = true;
   services.xserver.layout = "gb";
 
-  # RVU specific services
-  services.rvu-kolide.enable = true;
-  services.awsvpnclient = {
+  programs.light.enable = true;
+
+  xdg.portal = {
     enable = true;
-    configFile = "/home/dewaldv/.config/rvu/aws-vpn-client/cvpn.ovpn";
+    wlr.enable = true;
+    # gtk portal needed to make gtk apps happy
+    extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
   };
 
   environment.systemPackages = with pkgs; [
     azure-cli
-    k6
-    rvu-u
-    ipu6-drivers
-    ipu6-camera-bins
-    ipu6-camera-hal
-    icamerasrc
-    ivsc-driver
-    ivsc-firmware
+    u
+    wofi
+    #   ipu6-drivers
+    #   ipu6-camera-bins
+    #   ipu6-camera-hal
+    #   icamerasrc
+    #   ivsc-driver
+    #   ivsc-firmware
   ];
 
   virtualisation.podman = {

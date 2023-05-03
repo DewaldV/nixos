@@ -14,7 +14,7 @@
   users.users.dewaldv = {
     isNormalUser = true;
     description = "Dewald Viljoen";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "video" ];
     shell = pkgs.zsh;
 
     packages = with pkgs; [
@@ -23,7 +23,7 @@
       alacritty
       asdf-vm
       awscli2
-      emacs
+      emacs-gtk
       firefox
       go
       k9s

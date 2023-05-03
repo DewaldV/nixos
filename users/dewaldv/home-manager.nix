@@ -12,6 +12,7 @@
   wayland.windowManager.sway = {
     enable = true;
     config = rec {
+      menu = ''wofi --show=drun --lines=5 --prompt=""'';
       modifier = "Mod4";
       terminal = "alacritty";
       startup = [
@@ -31,6 +32,9 @@
       }];
     };
   };
+
+  services.swayidle.enable = true;
+  # programs.swaylock.enable = true;
 
   programs.waybar = {
     enable = true;
