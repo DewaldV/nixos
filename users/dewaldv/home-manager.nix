@@ -30,6 +30,8 @@
         command = "${pkgs.waybar}/bin/waybar";
         statusCommand = null;
       }];
+
+      input = { "*" = { xkb_layout = "gb"; }; };
     };
   };
 
