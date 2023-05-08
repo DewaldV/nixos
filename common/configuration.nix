@@ -35,7 +35,10 @@
   };
 
   # Programs
-  programs.gnupg.agent.enable = true;
+  programs.gnupg.agent = {
+    enable = true;
+    pinentryFlavor = "gnome3";
+  };
 
   # List packages installed in system profile.
   environment.systemPackages = with pkgs; [
@@ -74,6 +77,7 @@
   services.printing.enable = true;
   services.emacs.enable = true;
 
+  # Gnome Keyring
   security.pam.services.dewaldv.enableGnomeKeyring = true;
   services.gnome.gnome-keyring.enable = true;
   programs.seahorse.enable = true;
