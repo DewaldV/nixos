@@ -23,7 +23,6 @@
       alacritty
       asdf-vm
       awscli2
-      emacs-gtk
       firefox
       go
       k9s

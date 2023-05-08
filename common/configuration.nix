@@ -72,6 +72,7 @@
   services.flatpak.enable = true;
   services.fwupd.enable = true;
   services.printing.enable = true;
+  services.emacs.enable = true;
 
   # Enable sound.
   sound.enable = true;
