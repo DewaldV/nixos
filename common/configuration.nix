@@ -74,6 +74,10 @@
   services.printing.enable = true;
   services.emacs.enable = true;
 
+  security.pam.services.dewaldv.enableGnomeKeyring = true;
+  services.gnome.gnome-keyring.enable = true;
+  programs.seahorse.enable = true;
+
   # Enable sound.
   sound.enable = true;
   hardware.pulseaudio.enable = false;
