@@ -22,8 +22,9 @@
 
       assigns = {
         "1:web" = [{ app_id = "^firefox$"; }];
-        "2:code" = [{ class = "^Emacs$"; }];
-        "3:term" = [{ app_id = "^Alacritty$"; }];
+        "2:term" = [{ app_id = "^Alacritty$"; }];
+        "3:code" = [{ app_id = "^emacs$"; }];
+        "4:slack" = [{ app_id = "^Slack$"; }];
       };
 
       bars = [{
@@ -39,10 +40,46 @@
       };
 
       output = { "eDP-1" = { scale = "2.0"; }; };
+
+      keybindings = lib.mkOptionDefault {
+        "${modifier}+l" = "exec swaylock";
+
+        "${modifier}+greater" = "move workspace to output right";
+        "${modifier}+less" = "move workspace to output left";
+
+        "XF86MonBrightnessDown" = "exec light -U 10";
+        "XF86MonBrightnessUp" = "exec light -A 10";
+
+        "XF86AudioRaiseVolume" =
+          "exec 'wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 1%+'";
+        "XF86AudioLowerVolume" =
+          "exec 'wpctl set-volume @DEFAULT_AUDIO_SINK@ 1%-'";
+        "XF86AudioMute" = "exec 'wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle'";
+        "XF86AudioMicMute" =
+          "exec 'wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle'";
+      };
     };
   };
 
-  services.swayidle.enable = true;
+  services.swayidle = {
+    enable = true;
+    events = [
+      {
+        event = "before-sleep";
+        command = "${pkgs.swaylock}/bin/swaylock";
+      }
+      {
+        event = "lock";
+        command = "lock";
+      }
+    ];
+    timeouts = [{
+      timeout = 180;
+      command = "${pkgs.swaylock}/bin/swaylock -fF";
+    }];
+
+    package = pkgs.swaylock-effects;
+  };
   # programs.swaylock.enable = true;
 
   programs.waybar = {
@@ -65,8 +102,8 @@
           format = "{icon}";
           format-icons = {
             "1:web" = "";
-            "2:code" = "";
-            "3:term" = "";
+            "2:term" = "";
+            "3:code" = "";
             "4:slack" = "";
             "5:music" = "";
             "urgent" = "";

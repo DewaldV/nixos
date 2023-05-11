@@ -11,6 +11,8 @@
     };
   };
 
+  environment.sessionVariables.NIXOS_OZONE_WL = "1";
+
   users.users.dewaldv = {
     isNormalUser = true;
     description = "Dewald Viljoen";
@@ -18,8 +20,6 @@
     shell = pkgs.zsh;
 
     packages = with pkgs; [
-      _1password
-      _1password-gui
       alacritty
       asdf-vm
       awscli2
@@ -31,7 +31,6 @@
       ruby_3_1
       slack
       ssm-session-manager-plugin
-      terraform
       tflint
       tflint-plugins.tflint-ruleset-aws
       xstow

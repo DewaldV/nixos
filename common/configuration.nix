@@ -41,8 +41,17 @@
     pinentryFlavor = "gnome3";
   };
 
+  programs._1password.enable = true;
+  programs._1password-gui = {
+    enable = true;
+    polkitPolicyOwners = [ "dewaldv" ];
+  };
+
   # List packages installed in system profile.
   environment.systemPackages = with pkgs; [
+    pavucontrol
+    xdg-utils
+    btop
     chromium
     curl
     dig
@@ -50,9 +59,6 @@
     gcc
     gimp
     git
-    gnome.gnome-tweaks
-    gnomeExtensions.appindicator
-    gnomeExtensions.vitals
     gnumake
     htop
     ipcalc
@@ -76,7 +82,10 @@
   services.flatpak.enable = true;
   services.fwupd.enable = true;
   services.printing.enable = true;
-  services.emacs.enable = true;
+  services.emacs = {
+    enable = true;
+    package = pkgs.emacsPgtk;
+  };
 
   # Gnome Keyring
   security.pam.services.dewaldv.enableGnomeKeyring = true;
