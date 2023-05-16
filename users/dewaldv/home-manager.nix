@@ -42,6 +42,7 @@
       output = { "eDP-1" = { scale = "2.0"; }; };
 
       keybindings = lib.mkOptionDefault {
+        "${modifier}+k" = "output eDP-1 toggle";
         "${modifier}+l" = "exec swaylock";
 
         "${modifier}+greater" = "move workspace to output right";
