@@ -12,6 +12,8 @@
   boot.plymouth.enable = true;
 
   networking.networkmanager.enable = true;
+  networking.nameservers =
+    [ "1.1.1.1" "1.0.0.1" "2606:4700:4700::1111" "2606:4700:4700::1001" ];
 
   # Timezone and Locale
   i18n.defaultLocale = "en_GB.UTF-8";
@@ -85,6 +87,12 @@
   services.emacs = {
     enable = true;
     package = pkgs.emacsPgtk;
+  };
+
+  services.resolved = {
+    enable = true;
+    fallbackDns =
+      [ "1.1.1.1" "1.0.0.1" "2606:4700:4700::1111" "2606:4700:4700::1001" ];
   };
 
   # Gnome Keyring
