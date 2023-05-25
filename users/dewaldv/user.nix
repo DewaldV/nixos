@@ -16,15 +16,18 @@
   users.users.dewaldv = {
     isNormalUser = true;
     description = "Dewald Viljoen";
-    extraGroups = [ "networkmanager" "wheel" "video" ];
+    extraGroups = [ "networkmanager" "wheel" "video" "docker" ];
     shell = pkgs.zsh;
 
     packages = with pkgs; [
+      argocd
       alacritty
       asdf-vm
       awscli2
       firefox
       go
+      kind
+      minikube
       k9s
       kubectl
       kubernetes-helm

@@ -124,7 +124,7 @@
           bat = "BAT0";
           states = {
             good = 95;
-            warning = 30;
+            warning = 25;
             critical = 15;
           };
           format = "{capacity}% {icon}";

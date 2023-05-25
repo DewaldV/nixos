@@ -250,18 +250,14 @@
         "nixpkgs": "nixpkgs_4"
       },
       "locked": {
-        "lastModified": 1681678598,
-        "narHash": "sha256-8rB07BaLBhS+4BPHiQmBIzEYBuVhkLLXH3A1tk1mkPw=",
-        "owner": "uswitch",
-        "repo": "nixpkgs",
-        "rev": "0a6b642c512d3b78515db968c91f1f4be4b69803",
-        "type": "github"
+        "lastModified": 1681678504,
+        "narHash": "sha256-CCHEPMH8LiloUWAeAUShYOBgBjNI27OlsUCj6Y+DaE0=",
+        "type": "git",
+        "url": "file:///home/dewaldv/Projects/nixpkgs"
       },
       "original": {
-        "owner": "uswitch",
-        "ref": "kolide",
-        "repo": "nixpkgs",
-        "type": "github"
+        "type": "git",
+        "url": "file:///home/dewaldv/Projects/nixpkgs"
       }
     },
     "nixpkgs-unstable": {
