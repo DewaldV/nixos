@@ -77,7 +77,7 @@
     unzip
     vim
     wget
-    yubioath-desktop
+    yubioath-flutter
   ];
 
   # Services
