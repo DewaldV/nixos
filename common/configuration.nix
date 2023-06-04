@@ -6,7 +6,7 @@
   nixpkgs.config.allowUnfree = true;
 
   # Boot
-  boot.kernelPackages = pkgs.linuxPackages_6_2;
+  boot.kernelPackages = pkgs.linuxPackages_6_3;
   boot.loader.efi.canTouchEfiVariables = true;
   boot.loader.systemd-boot.enable = true;
   boot.plymouth.enable = true;
