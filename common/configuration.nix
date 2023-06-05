@@ -86,7 +86,7 @@
   services.printing.enable = true;
   services.emacs = {
     enable = true;
-    package = pkgs.emacs29-pgtk;
+    package = pkgs.emacsPgtk;
   };
 
   services.resolved = {
