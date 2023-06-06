@@ -23,15 +23,14 @@
         "flake-utils": "flake-utils",
         "nixpkgs": [
           "nixpkgs"
-        ],
-        "nixpkgs-stable": "nixpkgs-stable"
+        ]
       },
       "locked": {
-        "lastModified": 1685678018,
-        "narHash": "sha256-r/8iDoUrqiZSwSI+/r5vFChby1qsM/dLxcwMpNhwZ8Q=",
+        "lastModified": 1683571286,
+        "narHash": "sha256-W9pObaS2aKdHKghnTniTAPoMam1bqL6LACaIbzpP22A=",
         "owner": "nix-community",
         "repo": "emacs-overlay",
-        "rev": "0e320163bcf62a4db3666d366f6752562c2aa409",
+        "rev": "5faeffd3d6d7f35348ef21f5245da783c7cd395f",
         "type": "github"
       },
       "original": {
@@ -253,8 +252,11 @@
         "nixpkgs": "nixpkgs_4"
       },
       "locked": {
-        "lastModified": 1681678504,
-        "narHash": "sha256-kSCQR5QV4Uc0qMrgACBImBIixPjHWmq7Dv3bzjTz5vs=",
+        "lastModified": 1686002041,
+        "narHash": "sha256-61wt0mY1AdLXZ534hChjccOi/5+qUYW+1D0PVo30U6U=",
+        "ref": "refs/heads/kolide-fhs",
+        "rev": "7bd08726c4876bdf3d090323f9d27cd6a8c49585",
+        "revCount": 45,
         "type": "git",
         "url": "file:///home/dewaldv/Projects/nixpkgs"
       },
