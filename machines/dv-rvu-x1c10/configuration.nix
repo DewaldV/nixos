@@ -44,12 +44,12 @@
     azure-cli
     u
     wofi
-    #   ipu6-drivers
-    #   ipu6-camera-bins
-    #   ipu6-camera-hal
-    #   icamerasrc
-    #   ivsc-driver
-    #   ivsc-firmware
+    # ipu6-drivers
+    # ipu6-camera-bins
+    # ipu6-camera-hal
+    # icamerasrc
+    # ivsc-driver
+    # ivsc-firmware
   ];
 
   virtualisation = {

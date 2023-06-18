@@ -2,7 +2,7 @@
   "nodes": {
     "awsvpnclient": {
       "inputs": {
-        "nixpkgs": "nixpkgs_3"
+        "nixpkgs": "nixpkgs_2"
       },
       "locked": {
         "lastModified": 1678777780,
@@ -58,12 +58,15 @@
       }
     },
     "flake-utils_2": {
+      "inputs": {
+        "systems": "systems_2"
+      },
       "locked": {
-        "lastModified": 1678901627,
-        "narHash": "sha256-U02riOqrKKzwjsxc/400XnElV+UtPUQWpANPlyazjH0=",
+        "lastModified": 1685518550,
+        "narHash": "sha256-o2d0KcvaXzTrPRIo0kOLV0/QXHhDQ5DTi+OxcjO8xqY=",
         "owner": "numtide",
         "repo": "flake-utils",
-        "rev": "93a2b84fc4b70d9e089d029deacc3583435c2ed6",
+        "rev": "a1720a10a6cfe8234c0e93907ffe81be440f4cef",
         "type": "github"
       },
       "original": {
@@ -96,11 +99,11 @@
     "icamerasrc-src": {
       "flake": false,
       "locked": {
-        "lastModified": 1678357247,
-        "narHash": "sha256-j8ZYe4nyy5yfo10CGeXDwbAaAPvdr0ptMWB8hQDyESQ=",
+        "lastModified": 1680758358,
+        "narHash": "sha256-Jp22z3bCQWmOESCFFuuZ93kVxlAnHs/tYBTISYJsXuE=",
         "owner": "intel",
         "repo": "icamerasrc",
-        "rev": "17841ab6249aaa69bd9b3959262bf182dee74111",
+        "rev": "82cb8fc35f1ceb22ad4ff52aed7c021c417528d5",
         "type": "github"
       },
       "original": {
@@ -145,11 +148,11 @@
     "ipu6-drivers-src": {
       "flake": false,
       "locked": {
-        "lastModified": 1676860321,
-        "narHash": "sha256-TKo04+fqY64SdDuWApuzRXBnaAW2DReubwFRsdfJMWM=",
+        "lastModified": 1685672442,
+        "narHash": "sha256-6GiDSGqVBTQrVMd+Rz/Lckvec+mtbuQ1w/ymC4Cie4I=",
         "owner": "intel",
         "repo": "ipu6-drivers",
-        "rev": "dfedab03f3856010d37968cb384696038c73c984",
+        "rev": "8e410803b5d31c2c5bf32961f786d205ba6acc5d",
         "type": "github"
       },
       "original": {
@@ -167,14 +170,16 @@
         "ipu6-drivers-src": "ipu6-drivers-src",
         "ivsc-driver-src": "ivsc-driver-src",
         "ivsc-firmware-src": "ivsc-firmware-src",
-        "nixpkgs": "nixpkgs"
+        "nixpkgs": [
+          "nixpkgs"
+        ]
       },
       "locked": {
-        "lastModified": 1679760384,
-        "narHash": "sha256-d+oCSQv1Bsuw2pS6ZmLVzJ2q1etO3ubNoqoI7xTxBXM=",
+        "lastModified": 1687097132,
+        "narHash": "sha256-mapbVdhoOyY4mF06oj6Qe/qZYMZD0eEg41f/fJXkLRw=",
         "owner": "dewaldv",
         "repo": "ipu6-nix",
-        "rev": "9e9278495bb60bcbb70520ad429c69c5221e5b90",
+        "rev": "2162297df8f57eb22b17f3cac81d23e32f7e5dfe",
         "type": "github"
       },
       "original": {
@@ -232,16 +237,16 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1679472241,
-        "narHash": "sha256-VK2YDic2NjPvfsuneJCLIrWS38qUfoW8rLLimx0rWXA=",
+        "lastModified": 1686921029,
+        "narHash": "sha256-J1bX9plPCFhTSh6E3TWn9XSxggBh/zDD4xigyaIQBy8=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "9ef6e7727f4c31507627815d4f8679c5841efb00",
+        "rev": "c7ff1b9b95620ce8728c0d7bd501c458e6da9e04",
         "type": "github"
       },
       "original": {
         "owner": "nixos",
-        "ref": "nixos-22.11",
+        "ref": "nixos-23.05",
         "repo": "nixpkgs",
         "type": "github"
       }
@@ -249,7 +254,7 @@
     "nixpkgs-rvu": {
       "inputs": {
         "awsvpnclient": "awsvpnclient",
-        "nixpkgs": "nixpkgs_4"
+        "nixpkgs": "nixpkgs_3"
       },
       "locked": {
         "lastModified": 1686002041,
@@ -283,22 +288,6 @@
     },
     "nixpkgs_2": {
       "locked": {
-        "lastModified": 1686921029,
-        "narHash": "sha256-J1bX9plPCFhTSh6E3TWn9XSxggBh/zDD4xigyaIQBy8=",
-        "owner": "nixos",
-        "repo": "nixpkgs",
-        "rev": "c7ff1b9b95620ce8728c0d7bd501c458e6da9e04",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nixos",
-        "ref": "nixos-23.05",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
-    "nixpkgs_3": {
-      "locked": {
         "narHash": "sha256-8nQx02tTzgYO21BP/dy5BCRopE8OwE8Drsw98j+Qoaw=",
         "path": "/nix/store/a33ann70s2kqn8q1h4vv4il56i0lk60g-source",
         "type": "path"
@@ -308,7 +297,7 @@
         "type": "indirect"
       }
     },
-    "nixpkgs_4": {
+    "nixpkgs_3": {
       "locked": {
         "lastModified": 1678072060,
         "narHash": "sha256-6a9Tbjhir5HxDx4uw0u6Z+LHUfYf7tsT9QxF9FN/32w=",
@@ -330,12 +319,27 @@
         "home-manager": "home-manager",
         "ipu6-nix": "ipu6-nix",
         "nixos-hardware": "nixos-hardware",
-        "nixpkgs": "nixpkgs_2",
+        "nixpkgs": "nixpkgs",
         "nixpkgs-rvu": "nixpkgs-rvu",
         "nixpkgs-unstable": "nixpkgs-unstable"
       }
     },
     "systems": {
+      "locked": {
+        "lastModified": 1681028828,
+        "narHash": "sha256-Vy1rq5AaRuLzOxct8nz4T6wlgyUR7zLU309k9mBC768=",
+        "owner": "nix-systems",
+        "repo": "default",
+        "rev": "da67096a3b9bf56a91d16901293e51ba5b49a27e",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-systems",
+        "repo": "default",
+        "type": "github"
+      }
+    },
+    "systems_2": {
       "locked": {
         "lastModified": 1681028828,
         "narHash": "sha256-Vy1rq5AaRuLzOxct8nz4T6wlgyUR7zLU309k9mBC768=",

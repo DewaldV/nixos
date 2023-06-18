@@ -8,7 +8,10 @@
     nixpkgs-rvu.url = "/home/dewaldv/Projects/nixpkgs";
 
     nixos-hardware.url = "github:nixos/nixos-hardware";
-    ipu6-nix.url = "github:dewaldv/ipu6-nix";
+    ipu6-nix = {
+      url = "github:dewaldv/ipu6-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     emacs = {
       url = "github:nix-community/emacs-overlay";
@@ -35,8 +38,7 @@
           inputs.home-manager.nixosModule
         ];
 
-        overlays =
-          [ inputs.ipu6-nix.overlay.${system} inputs.emacs.overlays.emacs ];
+        overlays = [ inputs.ipu6-nix.overlay.${system} ];
       };
 
       nixosConfigurations.dv-rvu-desktop = mkHost "dv-rvu-desktop" rec {
