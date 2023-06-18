@@ -72,6 +72,7 @@
     python311
     ripgrep
     silver-searcher
+    terraform
     tmux
     tree
     unzip
