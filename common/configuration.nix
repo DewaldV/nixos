@@ -51,8 +51,6 @@
 
   # List packages installed in system profile.
   environment.systemPackages = with pkgs; [
-    pavucontrol
-    xdg-utils
     btop
     chromium
     curl
@@ -63,10 +61,11 @@
     git
     gnumake
     htop
-    ipcalc
     insync
+    ipcalc
     jq
     nixfmt
+    pavucontrol
     podman
     powertop
     python311
@@ -79,6 +78,7 @@
     vim
     wget
     wl-clipboard
+    xdg-utils
     yubioath-flutter
   ];
 

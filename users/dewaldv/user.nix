@@ -7,7 +7,7 @@
       enable = true;
       theme = "robbyrussell";
       custom = "\${HOME}/.zsh-custom";
-      plugins = [ "aws" "git" "emacs" ];
+      plugins = [ "asdf" "aws" "emacs" "git" ];
     };
   };
 
