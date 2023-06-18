@@ -78,8 +78,6 @@
       timeout = 180;
       command = "${pkgs.swaylock}/bin/swaylock -fF";
     }];
-
-    package = pkgs.swaylock-effects;
   };
   # programs.swaylock.enable = true;
 
