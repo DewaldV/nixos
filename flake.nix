@@ -6,8 +6,7 @@
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixpkgs-unstable";
 
     nixpkgs-rvu = {
-      # url = "github:uswitch/nixpkgs?ref=kolide";
-      url = "/home/dewaldv/Projects/nixpkgs";
+      url = "github:uswitch/nixpkgs?ref=kolide-fhs";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 

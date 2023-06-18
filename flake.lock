@@ -220,17 +220,18 @@
         ]
       },
       "locked": {
-        "lastModified": 1686002041,
-        "narHash": "sha256-61wt0mY1AdLXZ534hChjccOi/5+qUYW+1D0PVo30U6U=",
-        "ref": "refs/heads/kolide-fhs",
-        "rev": "7bd08726c4876bdf3d090323f9d27cd6a8c49585",
-        "revCount": 45,
-        "type": "git",
-        "url": "file:///home/dewaldv/Projects/nixpkgs"
+        "lastModified": 1686043905,
+        "narHash": "sha256-BKpFoi0fYXOS9Z54Qq6uDml5n3vvoK8jpOTOIpO3mRc=",
+        "owner": "uswitch",
+        "repo": "nixpkgs",
+        "rev": "e9111711a4070eb90af0737d2d518f6e347b9467",
+        "type": "github"
       },
       "original": {
-        "type": "git",
-        "url": "file:///home/dewaldv/Projects/nixpkgs"
+        "owner": "uswitch",
+        "ref": "kolide-fhs",
+        "repo": "nixpkgs",
+        "type": "github"
       }
     },
     "nixpkgs-unstable": {
