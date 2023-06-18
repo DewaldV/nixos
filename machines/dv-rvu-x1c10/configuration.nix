@@ -16,10 +16,10 @@
 
   # RVU specific services
   services.rvu-kolide.enable = true;
-  services.awsvpnclient = {
-    enable = true;
-    configFile = "/home/dewaldv/.config/rvu/aws-vpn-client/cvpn.ovpn";
-  };
+  # services.awsvpnclient = {
+  #   enable = true;
+  #   configFile = "/home/dewaldv/.config/rvu/aws-vpn-client/cvpn.ovpn";
+  # };
   services.blueman.enable = true;
 
   services.fprintd.enable = true;
