@@ -4,8 +4,12 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-23.05";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixpkgs-unstable";
-    # nixpkgs-rvu.url = "github:uswitch/nixpkgs?ref=kolide";
-    nixpkgs-rvu.url = "/home/dewaldv/Projects/nixpkgs";
+
+    nixpkgs-rvu = {
+      # url = "github:uswitch/nixpkgs?ref=kolide";
+      url = "/home/dewaldv/Projects/nixpkgs";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     nixos-hardware.url = "github:nixos/nixos-hardware";
     ipu6-nix = {
