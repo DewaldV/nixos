@@ -34,7 +34,6 @@
         extraModules = [
           inputs.nixos-hardware.nixosModules.lenovo-thinkpad-x1-10th-gen
           inputs.nixpkgs-rvu.nixosModule
-          inputs.home-manager.nixosModule
         ];
 
         overlays = [ inputs.ipu6-nix.overlay.${system} ];
@@ -45,9 +44,9 @@
         system = "x86_64-linux";
         user = "dewaldv";
 
-        extraModules = [ inputs.nixpkgs-dewaldv.nixosModules.rvu-kolide ];
+        extraModules = [ inputs.nixpkgs-rvu.nixosModule ];
 
-        overlays = [ inputs.nixpkgs-dewaldv.overlay.${system} ];
+        overlays = [ ];
       };
 
       nixosConfigurations.dv-desktop = mkHost "dv-desktop" rec {

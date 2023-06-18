@@ -12,6 +12,7 @@ nixpkgs.lib.nixosSystem rec {
     ../users/${user}/user.nix
     ../common/configuration.nix
 
+    home-manager.nixosModule
     home-manager.nixosModules.home-manager
     {
       home-manager.useGlobalPkgs = true;
