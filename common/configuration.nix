@@ -64,7 +64,7 @@
     gnumake
     htop
     ipcalc
-    # insync-v3
+    insync
     jq
     nixfmt
     podman

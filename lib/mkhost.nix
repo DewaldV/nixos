@@ -1,7 +1,7 @@
 name:
 { nixpkgs, home-manager, extraModules, system, user, overlays }:
 
-nixpkgs.lib.nixosSystem rec {
+nixpkgs.lib.nixosSystem {
   inherit system;
 
   modules = [
