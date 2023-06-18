@@ -78,6 +78,7 @@
     unzip
     vim
     wget
+    wl-clipboard
     yubioath-flutter
   ];
 
