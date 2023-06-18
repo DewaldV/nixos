@@ -39,7 +39,7 @@
   # Programs
   programs.gnupg.agent = {
     enable = true;
-    enableSSHSupport = true;
+    enableSSHSupport = false;
     pinentryFlavor = "gnome3";
   };
 

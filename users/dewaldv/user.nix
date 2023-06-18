@@ -11,7 +11,10 @@
     };
   };
 
-  environment.sessionVariables.NIXOS_OZONE_WL = "1";
+  environment.sessionVariables = {
+    NIXOS_OZONE_WL = "1";
+    SSH_AUTH_SOCK = "/run/user/1000/keyring/ssh";
+  };
 
   users.users.dewaldv = {
     isNormalUser = true;
