@@ -40,7 +40,12 @@
         };
       };
 
-      output = { "eDP-1" = { scale = "1.5"; }; };
+      output = {
+        "eDP-1" = {
+          scale = "1.5";
+          bg = "${pkgs.nixos-artwork.wallpapers.dracula.gnomeFilePath} fill";
+        };
+      };
 
       keybindings = lib.mkOptionDefault {
         "${modifier}+k" = "output eDP-1 toggle";

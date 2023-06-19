@@ -67,6 +67,7 @@
     ipcalc
     jq
     nixfmt
+    nixos-artwork.wallpapers.dracula
     pavucontrol
     podman
     powertop
