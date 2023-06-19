@@ -60,6 +60,7 @@
     gcc
     gimp
     git
+    gnome.gnome-calculator
     gnumake
     htop
     insync
