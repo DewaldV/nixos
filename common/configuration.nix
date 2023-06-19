@@ -55,6 +55,7 @@
     chromium
     curl
     dig
+    evince # pdf document viewer
     fd
     gcc
     gimp
