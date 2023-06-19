@@ -15,7 +15,7 @@
   security.polkit.enable = true;
 
   # RVU specific services
-  services.rvu-kolide.enable = true;
+  # services.rvu-kolide.enable = true;
   # services.awsvpnclient = {
   #   enable = true;
   #   configFile = "/home/dewaldv/.config/rvu/aws-vpn-client/cvpn.ovpn";
