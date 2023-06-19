@@ -40,6 +40,7 @@
       tflint
       tflint-plugins.tflint-ruleset-aws
       xstow
+      zoom-us
     ];
   };
 }
