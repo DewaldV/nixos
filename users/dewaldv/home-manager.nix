@@ -165,6 +165,44 @@
     };
 
     style = ''
+      /*
+      *
+      * Catppuccin Mocha palette
+      * Maintainer: rubyowo
+      *
+      */
+
+      @define-color base   #1e1e2e;
+      @define-color mantle #181825;
+      @define-color crust  #11111b;
+
+      @define-color text     #cdd6f4;
+      @define-color subtext0 #a6adc8;
+      @define-color subtext1 #bac2de;
+
+      @define-color surface0 #313244;
+      @define-color surface1 #45475a;
+      @define-color surface2 #585b70;
+
+      @define-color overlay0 #6c7086;
+      @define-color overlay1 #7f849c;
+      @define-color overlay2 #9399b2;
+
+      @define-color blue      #89b4fa;
+      @define-color lavender  #b4befe;
+      @define-color sapphire  #74c7ec;
+      @define-color sky       #89dceb;
+      @define-color teal      #94e2d5;
+      @define-color green     #a6e3a1;
+      @define-color yellow    #f9e2af;
+      @define-color peach     #fab387;
+      @define-color maroon    #eba0ac;
+      @define-color red       #f38ba8;
+      @define-color mauve     #cba6f7;
+      @define-color pink      #f5c2e7;
+      @define-color flamingo  #f2cdcd;
+      @define-color rosewater #f5e0dc;
+
       * {
           border: none;
           border-radius: 0;
@@ -174,96 +212,102 @@
       }
 
       window#waybar {
-          background: transparent;
-          color: white;
+          background: @base;
       }
 
       #window {
+          background: @surface0;
+          color: @lavender;
+          padding: 0 10px;
           font-weight: normal;
           font-family: "Hack";
       }
-      /*
-      #workspaces {
-          padding: 0 5px;
-      }
-      */
+
+      /* #workspaces { */
+      /*     background: @base; */
+      /*     padding: 0 5px; */
+      /* } */
 
       #workspaces button {
-          padding: 0 5px;
-          background: transparent;
-          color: white;
+          padding: 0 10px;
+          background: @surface0;
+          color: @blue;
           border-top: 2px solid transparent;
       }
 
       #workspaces button.focused {
-          color: #c9545d;
-          border-top: 2px solid #c9545d;
+          color: @green;
+          border-top: 2px solid @green;
+      }
+
+      .modules-left {
+          background: @surface0;
+          border-right: 2px solid;
+          border-left: 0px;
+      }
+
+      .modules-right {
+          background: @surface0;
+          border-left: 10px solid;
+          border-right: 0px;
+          border-radius: 25px;
+      }
+
+      #clock, #battery, #cpu, #memory, #network, #pulseaudio, #custom-spotify, #tray {
+          background: @surface0;
+          padding: 0 3px;
+          margin: 0 2px;
       }
 
       #mode {
-          background: #64727D;
-          border-bottom: 3px solid white;
-      }
-
-      #clock, #battery, #cpu, #memory, #network, #pulseaudio, #custom-spotify, #tray, #mode {
+          color: @peach;
+          background: @surface0;
+          border-top: 2px solid @peach;
           padding: 0 3px;
           margin: 0 2px;
       }
 
       #clock {
+          color: @subtext1;
           font-weight: bold;
       }
 
       #battery {
+          color: @peach
       }
 
       #battery icon {
-          color: red;
+          color: @yellow;
       }
 
       #battery.charging {
       }
 
-      @keyframes blink {
-          to {
-              background-color: #ffffff;
-              color: black;
-          }
-      }
-
-      #battery.warning:not(.charging) {
-          color: white;
-          animation-name: blink;
-          animation-duration: 0.5s;
-          animation-timing-function: linear;
-          animation-iteration-count: infinite;
-          animation-direction: alternate;
+      #memory {
+          color: @green;
       }
 
       #cpu {
-      }
-
-      #memory {
+          color: @teal;
       }
 
       #network {
+          color: @sky;
       }
 
       #network.disconnected {
-          background: #f53c3c;
+          border-top: 2px solid @sky;
       }
 
       #pulseaudio {
+          color: @sapphire;
       }
 
       #pulseaudio.muted {
       }
 
-      #custom-spotify {
-          color: rgb(102, 220, 105);
-      }
-
       #tray {
+          background: @surface0
       }
     '';
   };
