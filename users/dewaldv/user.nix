@@ -29,6 +29,7 @@
       awscli2
       firefox
       go
+      google-cloud-sdk
       kind
       minikube
       k9s
