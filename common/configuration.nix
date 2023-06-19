@@ -71,6 +71,7 @@
     python311
     ripgrep
     silver-searcher
+    signal-desktop
     terraform
     tmux
     tree
