@@ -66,6 +66,7 @@
     insync
     ipcalc
     jq
+    kanshi
     nixfmt
     nixos-artwork.wallpapers.dracula
     pavucontrol
@@ -75,6 +76,7 @@
     ripgrep
     silver-searcher
     signal-desktop
+    swaylock
     terraform
     tmux
     tree
@@ -82,6 +84,7 @@
     vim
     wget
     wl-clipboard
+    wofi
     xdg-utils
     yubioath-flutter
   ];

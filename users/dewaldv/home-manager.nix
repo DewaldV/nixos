@@ -48,8 +48,8 @@
       };
 
       keybindings = lib.mkOptionDefault {
+        "${modifier}+esc" = "exec swaylock";
         "${modifier}+k" = "output eDP-1 toggle";
-        "${modifier}+l" = "exec swaylock";
 
         "${modifier}+greater" = "move workspace to output right";
         "${modifier}+less" = "move workspace to output left";

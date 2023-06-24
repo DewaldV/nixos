@@ -39,11 +39,8 @@
   security.pam.services.swaylock = { };
 
   environment.systemPackages = with pkgs; [
-    kanshi
-    swaylock
     azure-cli
     u
-    wofi
     # ipu6-drivers
     # ipu6-camera-bins
     # ipu6-camera-hal
