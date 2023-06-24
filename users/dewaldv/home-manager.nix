@@ -43,7 +43,7 @@
       output = {
         "eDP-1" = {
           scale = "1.5";
-          bg = "${pkgs.nixos-artwork.wallpapers.dracula.gnomeFilePath} fill";
+          bg = "/home/dewaldv/Pictures/wallpaper.png fill";
         };
       };
 
