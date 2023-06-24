@@ -85,6 +85,7 @@
     wget
     wl-clipboard
     wofi
+    wofi-emoji
     xdg-utils
     yubioath-flutter
   ];

@@ -49,6 +49,7 @@
 
       keybindings = lib.mkOptionDefault {
         "${modifier}+Escape" = "exec swaylock";
+        "${modifier}+Control+e" = "exec ${pkgs.wofi-emoji}/bin/wofi-emoji";
 
         "${modifier}+greater" = "move workspace to output right";
         "${modifier}+less" = "move workspace to output left";
