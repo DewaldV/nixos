@@ -48,11 +48,12 @@
       };
 
       keybindings = lib.mkOptionDefault {
-        "${modifier}+esc" = "exec swaylock";
-        "${modifier}+k" = "output eDP-1 toggle";
+        "${modifier}+Escape" = "exec swaylock";
 
         "${modifier}+greater" = "move workspace to output right";
         "${modifier}+less" = "move workspace to output left";
+
+        "XF86Display" = "output eDP-1 toggle";
 
         "XF86MonBrightnessDown" = "exec light -U 10";
         "XF86MonBrightnessUp" = "exec light -A 10";
