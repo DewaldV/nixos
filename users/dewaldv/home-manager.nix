@@ -124,7 +124,7 @@
           # "icon-size" = 21;
           spacing = 10;
         };
-        clock = { format-alt = "{:%Y-%m-%d}"; };
+        clock = { format = "{:%a %d %b %H:%M}"; };
         cpu = { format = " {load}"; };
         memory = { format = " {}%"; };
         battery = {
