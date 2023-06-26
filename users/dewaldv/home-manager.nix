@@ -41,10 +41,8 @@
       };
 
       output = {
-        "eDP-1" = {
-          scale = "1.5";
-          bg = "/home/dewaldv/Pictures/wallpaper.png fill";
-        };
+        "*" = { bg = "/home/dewaldv/Pictures/wallpaper.png fill"; };
+        "eDP-1" = { scale = "1.5"; };
       };
 
       keybindings = lib.mkOptionDefault {
