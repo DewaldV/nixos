@@ -12,7 +12,7 @@
   wayland.windowManager.sway = {
     enable = true;
     config = rec {
-      menu = ''wofi --show=drun --lines=5 --prompt=""'';
+      menu = ''wofi --show=drun --lines=5 --prompt="" --stylesheet=style.css'';
       modifier = "Mod4";
       terminal = "alacritty";
       startup = [
