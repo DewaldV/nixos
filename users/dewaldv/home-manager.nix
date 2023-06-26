@@ -25,7 +25,36 @@
         "2:term" = [{ app_id = "^Alacritty$"; }];
         "3:code" = [{ app_id = "^emacs$"; }];
         "4:slack" = [{ app_id = "^Slack$"; }];
-        "7:zoom" = [{ app_id = "^zoom$"; }];
+        "5:zoom" = [{
+          app_id = "";
+          title = "Zoom (Meeting)|(- Licensed Account)";
+        }];
+      };
+
+      window = {
+        commands = [
+          {
+            command = "floating enable";
+            criteria = {
+              app_id = "";
+              title = "^([Zz]oom.*)|(as_toolbar)";
+            };
+          }
+          {
+            command = "floating disable";
+            criteria = {
+              app_id = "";
+              title = "Zoom (Meeting)|(- Licensed Account)";
+            };
+          }
+          {
+            command = "move position mouse";
+            criteria = {
+              app_id = "";
+              title = "Chat";
+            };
+          }
+        ];
       };
 
       bars = [{
@@ -110,8 +139,7 @@
             "2:term" = "";
             "3:code" = "";
             "4:slack" = "";
-            "5:music" = "";
-            "7:zoom" = "Z";
+            "5:zoom" = "Z";
             "urgent" = "";
             "focused" = "";
             "default" = "";
