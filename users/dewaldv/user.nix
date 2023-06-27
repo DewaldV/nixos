@@ -29,6 +29,12 @@
       awscli2
       firefox
       go
+      gopls
+      gocode-gomod
+      gotools
+      gore
+      gotests
+      gomodifytags
       google-cloud-sdk
       kind
       minikube
