@@ -283,7 +283,6 @@
           background: @surface0;
           border-left: 10px solid;
           border-right: 0px;
-          border-radius: 25px;
       }
 
       #clock, #battery, #cpu, #memory, #network, #pulseaudio, #custom-spotify, #tray {
