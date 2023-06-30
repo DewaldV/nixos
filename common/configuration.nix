@@ -106,6 +106,8 @@
       [ "1.1.1.1" "1.0.0.1" "2606:4700:4700::1111" "2606:4700:4700::1001" ];
   };
 
+  services.tailscale.enable = true;
+
   # Gnome Keyring
   security.pam.services.dewaldv.enableGnomeKeyring = true;
   services.gnome.gnome-keyring.enable = true;
