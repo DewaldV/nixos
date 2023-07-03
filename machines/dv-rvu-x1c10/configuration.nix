@@ -40,6 +40,7 @@
 
   environment.systemPackages = with pkgs; [
     azure-cli
+    docker-compose
     u
     # ipu6-drivers
     # ipu6-camera-bins
