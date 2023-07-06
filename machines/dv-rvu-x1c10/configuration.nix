@@ -12,16 +12,9 @@
     keyMap = "uk";
   };
 
-  security.polkit.enable = true;
+  services.xserver.layout = "gb";
 
-  # RVU specific services
-  services.rvu-kolide.enable = true;
-  services.awsvpnclient = {
-    enable = true;
-    configFile = "/home/dewaldv/.config/rvu/aws-vpn-client/cvpn.ovpn";
-  };
   services.blueman.enable = true;
-
   services.fprintd.enable = true;
 
   services.power-profiles-daemon.enable = false;
@@ -30,33 +23,15 @@
     settings = { CPU_SCALING_GOVERNOR_ON_AC = "performance"; };
   };
 
-  services.xserver.layout = "gb";
-
   programs.light.enable = true;
 
-  xdg.portal = {
+  environment.systemPackages = with pkgs; [ azure-cli u ];
+
+  # RVU specific services
+  services.rvu-kolide.enable = true;
+  services.awsvpnclient = {
     enable = true;
-    wlr.enable = true;
-    # gtk portal needed to make gtk apps happy
-    extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+    configFile = "/home/dewaldv/.config/rvu/aws-vpn-client/cvpn.ovpn";
   };
 
-  security.pam.services.swaylock = { };
-
-  environment.systemPackages = with pkgs; [
-    azure-cli
-    docker-compose
-    u
-    # ipu6-drivers
-    # ipu6-camera-bins
-    # ipu6-camera-hal
-    # icamerasrc
-    # ivsc-driver
-    # ivsc-firmware
-  ];
-
-  virtualisation = {
-    docker = { enable = true; };
-    podman = { enable = true; };
-  };
 }

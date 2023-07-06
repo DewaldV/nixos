@@ -4,26 +4,27 @@
 { config, lib, pkgs, modulesPath, ... }:
 
 {
-  imports =
-    [ (modulesPath + "/installer/scan/not-detected.nix")
-    ];
+  imports = [ (modulesPath + "/installer/scan/not-detected.nix") ];
 
-  boot.initrd.availableKernelModules = [ "nvme" "xhci_pci" "ahci" "usb_storage" "usbhid" "sd_mod" ];
+  boot.initrd.availableKernelModules =
+    [ "nvme" "xhci_pci" "ahci" "usb_storage" "usbhid" "sd_mod" ];
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-amd" ];
   boot.extraModulePackages = [ ];
 
-  fileSystems."/" =
-    { device = "/dev/disk/by-uuid/005c89d0-4848-4509-88ae-78f45bc692e7";
-      fsType = "btrfs";
-    };
+  fileSystems."/" = {
+    device = "/dev/disk/by-uuid/005c89d0-4848-4509-88ae-78f45bc692e7";
+    fsType = "btrfs";
+    options = [ "compress=zstd:1" "discard=async" ];
+  };
 
-  boot.initrd.luks.devices."nix".device = "/dev/disk/by-uuid/13bb5138-5e02-46ed-bfea-6f8b73a32ac4";
+  boot.initrd.luks.devices."nix".device =
+    "/dev/disk/by-uuid/13bb5138-5e02-46ed-bfea-6f8b73a32ac4";
 
-  fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/077B-142B";
-      fsType = "vfat";
-    };
+  fileSystems."/boot" = {
+    device = "/dev/disk/by-uuid/077B-142B";
+    fsType = "vfat";
+  };
 
   swapDevices = [ ];
 
@@ -36,7 +37,12 @@
   # networking.interfaces.wlp4s0.useDHCP = lib.mkDefault true;
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
-  hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
+  hardware.cpu.amd.updateMicrocode =
+    lib.mkDefault config.hardware.enableRedistributableFirmware;
   # high-resolution display
   hardware.video.hidpi.enable = lib.mkDefault true;
+
+  hardware.bluetooth.enable = true;
+
+  hardware.opengl = { enable = true; };
 }

@@ -19,6 +19,8 @@
   i18n.defaultLocale = "en_GB.UTF-8";
   time.timeZone = "Europe/London";
 
+  security.polkit.enable = true;
+
   zramSwap = {
     enable = true;
     algorithm = "zstd";
@@ -55,6 +57,7 @@
     chromium
     curl
     dig
+    docker-compose
     evince # pdf document viewer
     fd
     gcc
@@ -123,6 +126,20 @@
       support32Bit = true;
     };
     pulse.enable = true;
+  };
+
+  xdg.portal = {
+    enable = true;
+    wlr.enable = true;
+    # gtk portal needed to make gtk apps happy
+    extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+  };
+
+  security.pam.services.swaylock = { };
+
+  virtualisation = {
+    docker = { enable = true; };
+    podman = { enable = true; };
   };
 
   # This value determines the NixOS release from which the default
