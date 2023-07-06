@@ -38,6 +38,7 @@
       google-cloud-sdk
       kind
       minikube
+      pre-commit
       k9s
       kubectl
       kubernetes-helm
