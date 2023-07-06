@@ -42,5 +42,9 @@
 
   hardware.bluetooth.enable = true;
 
-  hardware.opengl = { enable = true; };
+  hardware.opengl = {
+    enable = true;
+    driSupport = true;
+    extraPackages = with pkgs; [ amdvlk ];
+  };
 }

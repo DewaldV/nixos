@@ -8,4 +8,6 @@
   console = { keyMap = "us"; };
 
   services.xserver.layout = "us";
+
+  programs.steam.enable = true;
 }
