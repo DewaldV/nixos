@@ -62,11 +62,7 @@
         statusCommand = null;
       }];
 
-      input = {
-        "*" = {
-          xkb_options = "ctrl:nocaps";
-        };
-      };
+      input = { "*" = { xkb_options = "ctrl:nocaps"; }; };
 
       output = {
         "*" = { bg = "/home/dewaldv/Pictures/wallpaper.png fill"; };
