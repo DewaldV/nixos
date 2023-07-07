@@ -34,6 +34,11 @@
       window = {
         commands = [
           {
+            command = "inhibit_idle fullscreen";
+            criteria = { shell = ".*"; };
+          }
+
+          {
             command = "floating enable";
             criteria = {
               app_id = "";
