@@ -70,6 +70,7 @@
     ipcalc
     jq
     kanshi
+    neofetch
     nixfmt
     nixos-artwork.wallpapers.dracula
     pavucontrol
@@ -77,8 +78,8 @@
     powertop
     python311
     ripgrep
-    silver-searcher
     signal-desktop
+    silver-searcher
     swaylock
     terraform
     tmux
