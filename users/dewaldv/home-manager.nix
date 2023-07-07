@@ -123,8 +123,16 @@
         # Choose the order of the modules
         modules-left = [ "sway/workspaces" "sway/mode" ];
         modules-center = [ "sway/window" ];
-        modules-right =
-          [ "pulseaudio" "network" "cpu" "memory" "battery" "tray" "clock" ];
+        modules-right = [
+          "pulseaudio"
+          "network"
+          "cpu"
+          "temperature"
+          "memory"
+          "battery"
+          "tray"
+          "clock"
+        ];
         "sway/workspaces" = {
           disable-scroll = true;
           all-outputs = false;
@@ -146,6 +154,10 @@
           spacing = 10;
         };
         clock = { format = "{:%a %d %b %H:%M}"; };
+        temperature = {
+          format = " {temperatureC}°C";
+          hwmon-path = "/sys/class/hwmon/hwmon3/temp1_input";
+        };
         cpu = { format = " {load}"; };
         memory = { format = " {}%"; };
         battery = {
@@ -315,6 +327,10 @@
       }
 
       #cpu {
+          color: @teal;
+      }
+
+      #temperature {
           color: @teal;
       }
 
