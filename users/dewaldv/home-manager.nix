@@ -97,17 +97,17 @@
     events = [
       {
         event = "before-sleep";
-        command = "${pkgs.swaylock}/bin/swaylock -fF";
+        command = "${pkgs.swaylock}/bin/swaylock -f";
       }
       {
         event = "lock";
-        command = "${pkgs.swaylock}/bin/swaylock -fF";
+        command = "${pkgs.swaylock}/bin/swaylock -f";
       }
     ];
     timeouts = [
       {
         timeout = 300;
-        command = "${pkgs.swaylock}/bin/swaylock -fF";
+        command = "${pkgs.swaylock}/bin/swaylock -f";
       }
       {
         timeout = 330;
@@ -176,6 +176,7 @@
 
   programs.swaylock = {
     settings = {
+      show-failed-attempts = true;
       ignore-empty-password = true;
       font = "Roboto";
 
