@@ -46,5 +46,6 @@
     enable = true;
     driSupport = true;
     extraPackages = with pkgs; [ amdvlk ];
+    extraPackages32 = [ pkgs.driversi686Linux.amdvlk ];
   };
 }
