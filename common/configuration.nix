@@ -57,6 +57,7 @@
     chromium
     curl
     dig
+    discord
     docker-compose
     evince # pdf document viewer
     fd
