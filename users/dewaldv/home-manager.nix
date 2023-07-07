@@ -97,17 +97,24 @@
     events = [
       {
         event = "before-sleep";
-        command = "${pkgs.swaylock}/bin/swaylock";
+        command = "${pkgs.swaylock}/bin/swaylock -fF";
       }
       {
         event = "lock";
-        command = "lock";
+        command = "${pkgs.swaylock}/bin/swaylock -fF";
       }
     ];
-    timeouts = [{
-      timeout = 300;
-      command = "${pkgs.swaylock}/bin/swaylock -fF";
-    }];
+    timeouts = [
+      {
+        timeout = 300;
+        command = "${pkgs.swaylock}/bin/swaylock -fF";
+      }
+      {
+        timeout = 330;
+        command = ''${pkgs.sway}/bin/swaymsg "output * dpms off"'';
+        resumeCommand = ''${pkgs.sway}/bin/swaymsg "output * dpms on"'';
+      }
+    ];
   };
 
   programs.wofi = {
