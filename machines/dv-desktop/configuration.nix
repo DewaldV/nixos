@@ -8,6 +8,7 @@
   console = { keyMap = "us"; };
 
   services.xserver.layout = "us";
+  services.blueman.enable = true;
 
   programs.steam.enable = true;
 }
