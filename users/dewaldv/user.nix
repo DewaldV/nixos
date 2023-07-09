@@ -43,6 +43,7 @@
       kubectl
       kubernetes-helm
       ruby_3_1
+      skypeforlinux
       slack
       ssm-session-manager-plugin
       tflint
