@@ -1,3 +1,4 @@
+machineSettings:
 { config, lib, pkgs, ... }:
 
 {
@@ -64,7 +65,7 @@
         statusCommand = null;
       }];
 
-      input = { "*" = { xkb_options = "ctrl:nocaps"; }; };
+      input = machineSettings.sway.input;
 
       output = {
         "*" = { bg = "/home/dewaldv/Pictures/wallpaper.png fill"; };
