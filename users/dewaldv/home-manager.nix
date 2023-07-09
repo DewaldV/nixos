@@ -15,10 +15,7 @@
       menu = ''wofi --show=drun --lines=5 --prompt="" --stylesheet=style.css'';
       modifier = "Mod4";
       terminal = "alacritty";
-      startup = [
-        # Launch Firefox on start
-        { command = "firefox"; }
-      ];
+      # startup = [{ command = "mako"; }];
 
       assigns = {
         "1:web" = [{ app_id = "^firefox$"; }];
@@ -120,6 +117,12 @@
         resumeCommand = ''${pkgs.sway}/bin/swaymsg "output * dpms on"'';
       }
     ];
+  };
+
+  services.mako = {
+    enable = true;
+    actions = true;
+    icons = true;
   };
 
   programs.wofi = {
