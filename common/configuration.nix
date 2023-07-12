@@ -66,6 +66,7 @@
     git
     gnome.gnome-calculator
     gnumake
+    parted
     htop
     insync
     ipcalc
