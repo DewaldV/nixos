@@ -85,6 +85,7 @@
     ripgrep
     signal-desktop
     silver-searcher
+    stow
     swaylock
     sway-contrib.grimshot
     terraform
