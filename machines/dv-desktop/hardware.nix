@@ -12,18 +12,27 @@
   boot.kernelModules = [ "kvm-amd" ];
   boot.extraModulePackages = [ ];
 
+  boot.initrd.luks.devices."nix".device =
+    "/dev/disk/by-uuid/13bb5138-5e02-46ed-bfea-6f8b73a32ac4";
+
   fileSystems."/" = {
     device = "/dev/disk/by-uuid/005c89d0-4848-4509-88ae-78f45bc692e7";
     fsType = "btrfs";
     options = [ "compress=zstd:1" "discard=async" ];
   };
 
-  boot.initrd.luks.devices."nix".device =
-    "/dev/disk/by-uuid/13bb5138-5e02-46ed-bfea-6f8b73a32ac4";
-
   fileSystems."/boot" = {
     device = "/dev/disk/by-uuid/077B-142B";
     fsType = "vfat";
+  };
+
+  boot.initrd.luks.devices."popos-root".device =
+    "/dev/disk/by-uuid/9b9ccd4a-70fd-4d3a-ac26-508095f14f70";
+
+  fileSystems."/mnt/popos" = {
+    device = "/dev/disk/by-uuid/9147a0e6-e838-4fdb-a82f-c4597bdf80e2";
+    fsType = "btrfs";
+    options = [ "compress=zstd:1" "discard=async" ];
   };
 
   swapDevices = [ ];
