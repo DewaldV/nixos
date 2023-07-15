@@ -67,6 +67,7 @@
     git
     gnome.gnome-calculator
     gnumake
+    grim
     parted
     htop
     helmfile
@@ -85,6 +86,7 @@
     signal-desktop
     silver-searcher
     swaylock
+    sway-contrib.grimshot
     terraform
     tmux
     tree

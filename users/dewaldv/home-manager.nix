@@ -83,6 +83,10 @@ machineSettings:
         "${modifier}+greater" = "move workspace to output right";
         "${modifier}+less" = "move workspace to output left";
 
+        "${modifier}+p" = "exec grimshot save output";
+        "${modifier}+Shift+p" = "exec grimshot copy output";
+        "${modifier}+Ctrl+p" = "exec grimshot copy window";
+
         "XF86Display" = "output eDP-1 toggle";
 
         "XF86MonBrightnessDown" = "exec light -U 10";
