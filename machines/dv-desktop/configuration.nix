@@ -12,5 +12,8 @@
 
   programs.steam.enable = true;
 
-  environment.systemPackages = with pkgs; [ lutris ];
+  environment.systemPackages = with pkgs; [
+    lutris
+    system76-keyboard-configurator
+  ];
 }
