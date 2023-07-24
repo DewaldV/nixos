@@ -69,7 +69,11 @@ machineSettings:
 
       output = {
         "*" = { bg = "/home/dewaldv/Pictures/wallpaper.png fill"; };
-        "eDP-1" = { scale = "1.5"; };
+        "eDP-1" = {
+          scale = "1.5";
+          # scale = "1.0";
+          # mode = "--custom 1920x1080";
+        };
       };
 
       keybindings = lib.mkOptionDefault {
