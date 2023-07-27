@@ -18,10 +18,7 @@
   services.fprintd.enable = true;
 
   services.power-profiles-daemon.enable = false;
-  services.tlp = {
-    enable = true;
-    settings = { CPU_SCALING_GOVERNOR_ON_AC = "performance"; };
-  };
+  services.tlp = { enable = true; };
 
   programs.light.enable = true;
 
