@@ -62,6 +62,7 @@
     evince # pdf document viewer
     fd
     gcc
+    gh
     gimp
     git
     gnome.gnome-calculator
