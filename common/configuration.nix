@@ -69,6 +69,7 @@
     gnumake
     parted
     htop
+    helmfile
     insync
     ipcalc
     jq
