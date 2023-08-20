@@ -71,6 +71,8 @@
     gnumake
     grim
     parted
+    protonvpn-gui
+    protonvpn-cli
     htop
     helmfile
     insync
