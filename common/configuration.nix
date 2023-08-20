@@ -6,14 +6,18 @@
   nixpkgs.config.allowUnfree = true;
 
   # Boot
-  boot.kernelPackages = pkgs.linuxPackages_6_3;
-  boot.loader.efi.canTouchEfiVariables = true;
-  boot.loader.systemd-boot.enable = true;
-  boot.plymouth.enable = true;
+  boot = {
+    kernelPackages = pkgs.linuxPackages_6_4;
+    loader.efi.canTouchEfiVariables = true;
+    loader.systemd-boot.enable = true;
+    plymouth.enable = true;
+  };
 
   networking.networkmanager.enable = true;
   networking.nameservers =
     [ "1.1.1.1" "1.0.0.1" "2606:4700:4700::1111" "2606:4700:4700::1001" ];
+
+  networking.wireguard.enable = true;
 
   # Timezone and Locale
   i18n.defaultLocale = "en_GB.UTF-8";
