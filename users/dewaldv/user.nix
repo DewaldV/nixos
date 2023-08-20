@@ -34,6 +34,7 @@
       gotools
       gore
       gotests
+      gotestsum
       gomodifytags
       google-cloud-sdk
       kind
