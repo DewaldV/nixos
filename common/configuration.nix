@@ -51,6 +51,8 @@
     polkitPolicyOwners = [ "dewaldv" ];
   };
 
+  programs.thunar.enable = true;
+
   # List packages installed in system profile.
   environment.systemPackages = with pkgs; [
     btop
