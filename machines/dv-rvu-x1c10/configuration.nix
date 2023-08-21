@@ -22,7 +22,7 @@
 
   programs.light.enable = true;
 
-  environment.systemPackages = with pkgs; [ azure-cli jdk17 maven u ];
+  environment.systemPackages = with pkgs; [ azure-cli jdk17 maven u nodejs_18 ];
 
   # RVU specific services
   services.rvu-kolide.enable = true;
