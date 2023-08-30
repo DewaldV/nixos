@@ -22,7 +22,14 @@
 
   programs.light.enable = true;
 
-  environment.systemPackages = with pkgs; [ azure-cli jdk17 maven u nodejs_18 ];
+  environment.systemPackages = with pkgs; [
+    azure-cli
+    docker-compose
+    jdk17
+    maven
+    nodejs_18
+    u
+  ];
 
   # RVU specific services
   services.rvu-kolide.enable = true;
@@ -31,4 +38,5 @@
     configFile = "/home/dewaldv/.config/rvu/aws-vpn-client/cvpn.ovpn";
   };
 
+  virtualisation = { docker = { enable = true; }; };
 }

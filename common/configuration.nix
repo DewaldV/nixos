@@ -64,7 +64,6 @@
     curl
     dig
     discord
-    docker-compose
     evince # pdf document viewer
     fd
     gcc
@@ -153,10 +152,7 @@
 
   security.pam.services.swaylock = { };
 
-  virtualisation = {
-    docker = { enable = true; };
-    podman = { enable = true; };
-  };
+  virtualisation = { podman = { enable = true; }; };
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
