@@ -43,7 +43,11 @@
         system = "x86_64-linux";
         user = "dewaldv";
 
-        extraModules = [ inputs.nixpkgs-rvu.nixosModule ];
+        extraModules = [
+          inputs.nixos-hardware.nixosModules.common-cpu-amd
+          inputs.nixos-hardware.nixosModules.common-gpu-amd
+          inputs.nixpkgs-rvu.nixosModule
+        ];
 
         overlays = [ ];
       };
@@ -53,7 +57,10 @@
         system = "x86_64-linux";
         user = "dewaldv";
 
-        extraModules = [ ];
+        extraModules = [
+          inputs.nixos-hardware.nixosModules.common-cpu-amd
+          inputs.nixos-hardware.nixosModules.common-gpu-amd
+        ];
 
         overlays = [ ];
       };
