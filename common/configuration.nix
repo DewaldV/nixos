@@ -7,6 +7,7 @@
 
   # Boot
   boot = {
+    initrd.systemd.enable = true;
     kernelPackages = pkgs.linuxPackages_6_4;
     loader.efi.canTouchEfiVariables = true;
     loader.systemd-boot.enable = true;
@@ -73,11 +74,8 @@
     gnome.gnome-calculator
     gnumake
     grim
-    parted
-    protonvpn-gui
-    protonvpn-cli
-    htop
     helmfile
+    htop
     insync
     ipcalc
     jq
@@ -85,18 +83,22 @@
     neofetch
     nixfmt
     nixos-artwork.wallpapers.dracula
+    parted
     pavucontrol
     podman
     powertop
+    protonvpn-cli
+    protonvpn-gui
     python311
     ripgrep
     signal-desktop
     silver-searcher
     stow
-    swaylock
     sway-contrib.grimshot
+    swaylock
     terraform
     tmux
+    tpm2-tss
     tree
     unzip
     vim
