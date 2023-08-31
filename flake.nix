@@ -45,6 +45,7 @@
 
         extraModules = [
           inputs.nixos-hardware.nixosModules.common-cpu-amd
+          inputs.nixos-hardware.nixosModules.common-cpu-amd-pstate
           inputs.nixos-hardware.nixosModules.common-gpu-amd
           inputs.nixpkgs-rvu.nixosModule
         ];
@@ -59,6 +60,7 @@
 
         extraModules = [
           inputs.nixos-hardware.nixosModules.common-cpu-amd
+          inputs.nixos-hardware.nixosModules.common-cpu-amd-pstate
           inputs.nixos-hardware.nixosModules.common-gpu-amd
         ];
 
