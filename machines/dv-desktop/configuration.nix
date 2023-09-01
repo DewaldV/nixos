@@ -20,5 +20,6 @@
   environment.systemPackages = with pkgs; [
     lutris
     system76-keyboard-configurator
+    vulkan-tools
   ];
 }
