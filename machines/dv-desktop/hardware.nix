@@ -56,7 +56,7 @@
     driSupport = true;
   };
 
-  # amdvlk seems to give lower performance than mesa radv
+  # amdvlk seems to have lower performance than mesa radv
   # https://github.com/NixOS/nixos-hardware/blob/master/common/gpu/amd/default.nix
   # https://nixos.org/manual/nixos/unstable/index.html#sec-gpu-accel-vulkan
   # https://nixos.wiki/wiki/AMD_GPU
