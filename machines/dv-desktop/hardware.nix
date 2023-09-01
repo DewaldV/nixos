@@ -54,7 +54,12 @@
   hardware.opengl = {
     enable = true;
     driSupport = true;
-    extraPackages = with pkgs; [ amdvlk ];
-    extraPackages32 = [ pkgs.driversi686Linux.amdvlk ];
   };
+
+  # amdvlk seems to give lower performance than mesa radv
+  # https://github.com/NixOS/nixos-hardware/blob/master/common/gpu/amd/default.nix
+  # https://nixos.org/manual/nixos/unstable/index.html#sec-gpu-accel-vulkan
+  # https://nixos.wiki/wiki/AMD_GPU
+  # https://www.phoronix.com/review/amdvlk-radv-rx7900
+  hardware.amdgpu.amdvlk = false;
 }
