@@ -87,15 +87,18 @@
     nixos-artwork.wallpapers.dracula
     parted
     pavucontrol
+    pciutils
     podman
     powertop
     protonvpn-cli
     protonvpn-gui
     python311
     ripgrep
+    s-tui
     signal-desktop
     silver-searcher
     stow
+    stress
     sway-contrib.grimshot
     swaylock
     terraform
@@ -103,6 +106,7 @@
     tpm2-tss
     tree
     unzip
+    usbutils
     vim
     wget
     wl-clipboard
