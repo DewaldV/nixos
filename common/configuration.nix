@@ -74,6 +74,7 @@
     git
     gnome.gnome-calculator
     gnumake
+    gparted
     grim
     helmfile
     htop
