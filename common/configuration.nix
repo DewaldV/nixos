@@ -66,6 +66,7 @@
     curl
     dig
     discord
+    distrobox
     evince # pdf document viewer
     fd
     gcc
