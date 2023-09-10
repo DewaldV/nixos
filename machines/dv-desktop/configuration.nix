@@ -19,6 +19,7 @@
 
   environment.systemPackages = with pkgs; [
     lutris
+    mangohud
     system76-keyboard-configurator
     vulkan-tools
   ];
