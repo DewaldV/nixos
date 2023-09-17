@@ -11,11 +11,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    ipu6-nix = {
-      url = "github:dewaldv/ipu6-nix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     home-manager = {
       url = "github:nix-community/home-manager/release-23.05";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -35,7 +30,7 @@
           inputs.nixpkgs-rvu.nixosModule
         ];
 
-        overlays = [ inputs.ipu6-nix.overlay.${system} ];
+        overlays = [ ];
       };
 
       nixosConfigurations.dv-rvu-desktop = mkHost "dv-rvu-desktop" rec {
