@@ -1,6 +1,6 @@
 SOURCES = $(shell find . -type f -iname "*.nix")
 
-.PHONY: boot switch clean delete-old gc gc-gen
+.PHONY: boot switch clean delete-old gc gc-gen update-deps
 boot: $(SOURCES)
 	sudo nixos-rebuild boot --flake '.#'
 
@@ -20,3 +20,9 @@ gc-gen: delete-generations gc
 
 clean:
 	rm result
+
+update-deps:
+	nix flake lock --update-input nixpkgs
+	nix flake lock --update-input nixpkgs-unstable
+	nix flake lock --update-input nixos-hardware
+	nix flake lock --update-input home-manager
