@@ -62,17 +62,18 @@
   # List packages installed in system profile.
   environment.systemPackages = with pkgs; [
     btop
-    chromium
     curl
     dig
     discord
     distrobox
     evince # pdf document viewer
     fd
+    firefox
     gcc
     gh
     gimp
     git
+    glib
     gnome.gnome-calculator
     gnumake
     gparted
@@ -98,6 +99,8 @@
     s-tui
     signal-desktop
     silver-searcher
+    skypeforlinux
+    slack
     stow
     stress
     sway-contrib.grimshot
@@ -115,6 +118,7 @@
     wofi-emoji
     xdg-utils
     yubioath-flutter
+    zoom-us
   ];
 
   # Services

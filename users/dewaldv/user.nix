@@ -27,7 +27,6 @@
       alacritty
       asdf-vm
       awscli2
-      firefox
       go
       gopls
       gocode-gomod
@@ -37,20 +36,15 @@
       gotestsum
       gomodifytags
       google-cloud-sdk
-      kind
-      minikube
       pre-commit
       k9s
       kubectl
       kubernetes-helm
       ruby_3_1
-      skypeforlinux
-      slack
       ssm-session-manager-plugin
       tflint
       tflint-plugins.tflint-ruleset-aws
       xstow
-      zoom-us
     ];
   };
 }
