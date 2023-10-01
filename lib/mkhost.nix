@@ -13,6 +13,7 @@ in nixpkgs.lib.nixosSystem {
     ../machines/${name}/configuration.nix
     ../users/${user}/user.nix
     ../common/configuration.nix
+    ../common/xdg-mime-types.nix
 
     home-manager.nixosModule
     home-manager.nixosModules.home-manager
