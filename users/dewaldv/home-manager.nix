@@ -68,7 +68,7 @@ machineSettings:
       input = machineSettings.sway.input;
 
       output = {
-        "*" = { bg = "/home/dewaldv/Pictures/wallpaper.png fill"; };
+        "*" = { bg = "/home/dewaldv/Pictures/wallpaper.png fit"; };
         "eDP-1" = {
           scale = "1.5";
           # scale = "1.0";
