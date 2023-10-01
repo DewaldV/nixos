@@ -91,9 +91,11 @@
     pavucontrol
     pciutils
     podman
+    polkit_gnome
     powertop
     protonvpn-cli
     protonvpn-gui
+    pulseaudio
     python311
     ripgrep
     s-tui
@@ -155,10 +157,33 @@
     };
     pulse.enable = true;
   };
+  systemd = {
+    user = {
+      extraConfig = ''
+        DefaultEnvironment="PATH=/run/current-system/sw/bin"
+      '';
+
+      services.polkit-gnome-authentication-agent-1 = {
+        description = "polkit-gnome-authentication-agent-1";
+        wantedBy = [ "graphical-session.target" ];
+        wants = [ "graphical-session.target" ];
+        after = [ "graphical-session.target" ];
+        serviceConfig = {
+          Type = "simple";
+          ExecStart =
+            "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1";
+          Restart = "on-failure";
+          RestartSec = 1;
+          TimeoutStopSec = 10;
+        };
+      };
+    };
+  };
 
   xdg.portal = {
     enable = true;
     wlr.enable = true;
+    xdgOpenUsePortal = true;
     # gtk portal needed to make gtk apps happy
     extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
   };
