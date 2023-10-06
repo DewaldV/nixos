@@ -49,6 +49,11 @@
   hardware.cpu.amd.updateMicrocode =
     lib.mkDefault config.hardware.enableRedistributableFirmware;
 
+  programs.corectrl = {
+    enable = true;
+    gpuOverclock.enable = true;
+  };
+
   hardware.bluetooth.enable = true;
 
   hardware.opengl = {
