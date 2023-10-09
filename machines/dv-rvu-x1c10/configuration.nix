@@ -1,7 +1,10 @@
 { config, pkgs, ... }:
 
 {
-  boot.loader.systemd-boot.consoleMode = "1";
+  boot = {
+    loader.systemd-boot.consoleMode = "1";
+    kernelPackages = pkgs.linuxPackages_6_4;
+  };
 
   networking.hostName = "dv-rvu-x1c10";
 
