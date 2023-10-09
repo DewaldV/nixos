@@ -4,6 +4,23 @@ machineSettings:
 {
   home.stateVersion = "22.11";
 
+  editorconfig = {
+    enable = true;
+    settings = {
+      "*" = {
+        charset = "utf-8";
+        end_of_line = "lf";
+        indent_style = "space";
+        indent_size = 2;
+        insert_final_newline = true;
+        trim_trailing_whitespace = true;
+      };
+
+      "*.md" = { trim_trailing_whitespace = false; };
+      "*.go" = { indent_syle = "tab"; };
+    };
+  };
+
   home.pointerCursor = {
     name = "Adwaita";
     package = pkgs.gnome.adwaita-icon-theme;
