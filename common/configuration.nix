@@ -38,8 +38,11 @@
       fira-mono
       font-awesome
       hack-font
+      hackgen-nf-font
+      nerdfonts
       noto-fonts
       roboto
+      unifont
     ];
   };
 
