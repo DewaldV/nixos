@@ -77,6 +77,7 @@
     git
     glib
     gnome.gnome-calculator
+    gnome.gnome-font-viewer
     gnumake
     gparted
     grim
