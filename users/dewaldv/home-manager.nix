@@ -97,6 +97,11 @@ machineSettings:
           # scale = "1.0";
           # mode = "--custom 1920x1080";
         };
+
+        "DP-1" = {
+          mode = "3440x1440@165Hz";
+          adaptive_sync = "off";
+        };
       };
 
       keybindings = lib.mkOptionDefault {
