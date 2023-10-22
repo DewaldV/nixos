@@ -86,6 +86,7 @@
     htop
     insync
     ipcalc
+    ispell
     jq
     kanshi
     neofetch
