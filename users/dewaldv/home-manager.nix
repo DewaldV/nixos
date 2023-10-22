@@ -102,6 +102,11 @@ machineSettings:
           mode = "3440x1440@165Hz";
           adaptive_sync = "off";
         };
+
+        "HDMI-A-1" = {
+          mode = "3440x1440@100Hz";
+          adaptive_sync = "off";
+        };
       };
 
       keybindings = lib.mkOptionDefault {
