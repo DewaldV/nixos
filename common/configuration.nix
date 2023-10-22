@@ -70,6 +70,7 @@
     distrobox
     evince # pdf document viewer
     fd
+    file
     firefox
     gcc
     gh
