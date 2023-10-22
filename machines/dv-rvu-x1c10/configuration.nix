@@ -26,6 +26,7 @@
   programs.light.enable = true;
 
   environment.systemPackages = with pkgs; [
+    awsvpnclient
     azure-cli
     docker-compose
     jdk17
@@ -36,10 +37,10 @@
 
   # RVU specific services
   services.rvu-kolide.enable = true;
-  services.awsvpnclient = {
-    enable = true;
-    configFile = "/home/dewaldv/.config/rvu/aws-vpn-client/cvpn.ovpn";
-  };
+  # services.awsvpnclient = {
+  #   enable = true;
+  #   configFile = "/home/dewaldv/.config/rvu/aws-vpn-client/cvpn.ovpn";
+  # };
 
   virtualisation = { docker = { enable = true; }; };
 }
