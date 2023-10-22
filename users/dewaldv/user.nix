@@ -40,6 +40,7 @@
       k9s
       kubectl
       kubernetes-helm
+      kubernetes-helmPlugins.helm-diff
       ruby_3_1
       ssm-session-manager-plugin
       tflint
