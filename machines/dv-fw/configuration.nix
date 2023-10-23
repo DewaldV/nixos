@@ -17,6 +17,11 @@
 
   services.xserver.layout = "us";
 
+  services.fwupd.extraRemotes = [ "lvfs-testing" ];
+  services.fwupd.uefiCapsuleSettings = {
+    DisableCapsuleUpdateOnDisk = true;
+  };
+
   services.blueman.enable = true;
   services.fprintd.enable = true;
 
