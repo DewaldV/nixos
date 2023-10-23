@@ -61,5 +61,19 @@
 
         overlays = [ ];
       };
+
+      nixosConfigurations.dv-fw = mkHost "dv-fw" rec {
+        inherit nixpkgs home-manager;
+        system = "x86_64-linux";
+        user = "dewaldv";
+
+        extraModules = [
+          inputs.nixos-hardware.nixosModules.common-cpu-amd
+          inputs.nixos-hardware.nixosModules.common-cpu-amd-pstate
+          inputs.nixos-hardware.nixosModules.common-gpu-amd
+        ];
+
+        overlays = [ ];
+      };
     };
 }
