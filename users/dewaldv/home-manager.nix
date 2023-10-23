@@ -314,7 +314,7 @@ machineSettings:
         cpu = { format = " {load}"; };
         memory = { format = " {}%"; };
         battery = {
-          bat = "BAT0";
+          bat = machineSettings.sway.battery.bat;
           states = {
             good = 95;
             warning = 25;

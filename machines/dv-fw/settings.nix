@@ -6,5 +6,6 @@
         xkb_options = "ctrl:nocaps";
       };
     };
+    battery.bat = "BAT1";
   };
 }
