@@ -27,6 +27,7 @@
       alacritty
       asdf-vm
       awscli2
+      editorconfig-core-c
       go
       gopls
       gocode-gomod
@@ -41,7 +42,10 @@
       kubectl
       kubernetes-helm
       kubernetes-helmPlugins.helm-diff
+      pandoc
       ruby_3_1
+      shellcheck
+      shfmt
       ssm-session-manager-plugin
       tflint
       tflint-plugins.tflint-ruleset-aws
