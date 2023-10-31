@@ -324,7 +324,7 @@ machineSettings:
         clock = { format = "{:%a %d %b %H:%M}"; };
         temperature = {
           format = " {temperatureC}°C";
-          hwmon-path = "/sys/class/hwmon/hwmon3/temp1_input";
+          hwmon-path = machineSettings.sway.temperature.hwmon-path;
         };
         cpu = { format = " {load}"; };
         memory = { format = " {}%"; };
