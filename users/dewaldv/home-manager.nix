@@ -104,7 +104,7 @@ machineSettings:
       output = {
         "*" = { bg = "/home/dewaldv/Pictures/wallpaper.png fit"; };
         "eDP-1" = {
-          scale = "1.5";
+          scale = machineSettings.sway.output.edp.scale;
           pos = "760 1440";
           # scale = "1.0";
           # mode = "--custom 1920x1080";
