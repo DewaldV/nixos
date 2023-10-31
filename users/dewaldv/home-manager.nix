@@ -105,6 +105,7 @@ machineSettings:
         "*" = { bg = "/home/dewaldv/Pictures/wallpaper.png fit"; };
         "eDP-1" = {
           scale = "1.5";
+          pos = "760 1440";
           # scale = "1.0";
           # mode = "--custom 1920x1080";
         };
@@ -116,6 +117,7 @@ machineSettings:
 
         "HDMI-A-1" = {
           mode = "3440x1440@100Hz";
+          pos = "0 0";
           adaptive_sync = "off";
         };
       };
