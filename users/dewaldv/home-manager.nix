@@ -124,8 +124,10 @@ machineSettings:
         "${modifier}+Escape" = "exec swaylock";
         "${modifier}+Control+e" = "exec ${pkgs.wofi-emoji}/bin/wofi-emoji";
 
-        "${modifier}+greater" = "move workspace to output right";
-        "${modifier}+less" = "move workspace to output left";
+        "${modifier}+Ctrl+up" = "move workspace to output up";
+        "${modifier}+Ctrl+down" = "move workspace to output down";
+        "${modifier}+Ctrl+left" = "move workspace to output left";
+        "${modifier}+Ctrl+right" = "move workspace to output right";
 
         "${modifier}+p" = "exec grimshot save output";
         "${modifier}+Shift+p" = "exec grimshot copy output";
