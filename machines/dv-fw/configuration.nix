@@ -3,7 +3,7 @@
 {
   boot = {
     loader.systemd-boot.consoleMode = "1";
-    kernelPackages = pkgs.linuxPackages_latest;
+    kernelPackages = pkgs.linuxPackages_6_5;
   };
 
   networking.hostName = "dv-fw";
@@ -18,9 +18,7 @@
   services.xserver.layout = "us";
 
   services.fwupd.extraRemotes = [ "lvfs-testing" ];
-  services.fwupd.uefiCapsuleSettings = {
-    DisableCapsuleUpdateOnDisk = true;
-  };
+  services.fwupd.uefiCapsuleSettings = { DisableCapsuleUpdateOnDisk = true; };
 
   services.blueman.enable = true;
   services.fprintd.enable = true;
