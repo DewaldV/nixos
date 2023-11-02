@@ -54,6 +54,11 @@
     gpuOverclock.enable = true;
   };
 
+  services.hardware.openrgb = {
+    enable = true;
+    motherboard = "amd";
+  };
+
   hardware.bluetooth.enable = true;
 
   hardware.opengl = {
