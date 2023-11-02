@@ -8,5 +8,7 @@
     };
     output.edp.scale = "1.25";
     battery.bat = "BAT1";
+
+    temperature = { hwmon-path = "/sys/class/hwmon/hwmon5/temp1_input"; };
   };
 }
