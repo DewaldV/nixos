@@ -23,26 +23,27 @@
     shell = pkgs.zsh;
 
     packages = with pkgs; [
-      argocd
       alacritty
+      argocd
       asdf-vm
       awscli2
       editorconfig-core-c
       go
-      gopls
       gocode-gomod
-      gotools
+      gomodifytags
+      google-cloud-sdk
+      gopls
       gore
       gotests
       gotestsum
-      gomodifytags
-      google-cloud-sdk
-      pre-commit
+      gotools
       k9s
       kubectl
       kubernetes-helm
       kubernetes-helmPlugins.helm-diff
+      libreoffice-fresh
       pandoc
+      pre-commit
       ruby_3_1
       shellcheck
       shfmt
