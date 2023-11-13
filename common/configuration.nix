@@ -59,7 +59,10 @@
     polkitPolicyOwners = [ "dewaldv" ];
   };
 
-  programs.thunar.enable = true;
+  programs.thunar = {
+    enable = true;
+    plugins = with pkgs.xfce; [ thunar-archive-plugin thunar-volman ];
+  };
 
   # List packages installed in system profile.
   environment.systemPackages = with pkgs; [
