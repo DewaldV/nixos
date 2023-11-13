@@ -67,11 +67,8 @@
         system = "x86_64-linux";
         user = "dewaldv";
 
-        extraModules = [
-          inputs.nixos-hardware.nixosModules.common-cpu-amd
-          inputs.nixos-hardware.nixosModules.common-cpu-amd-pstate
-          inputs.nixos-hardware.nixosModules.common-gpu-amd
-        ];
+        extraModules =
+          [ inputs.nixos-hardware.nixosModules.framework-13-7040-amd ];
 
         overlays = [ ];
       };
