@@ -3,7 +3,7 @@ name:
 
 let
   machineSettings = import ../machines/${name}/settings.nix;
-  homeUserConfig = import ../users/${user}/home-manager.nix;
+  homeUserConfig = import ../users/${user};
 in nixpkgs.lib.nixosSystem {
   inherit system;
   modules = [
