@@ -20,7 +20,6 @@
     shell = pkgs.zsh;
 
     packages = with pkgs; [
-      alacritty
       argocd
       asdf-vm
       awscli2
