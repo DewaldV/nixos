@@ -2,8 +2,6 @@ machineSettings:
 { config, lib, pkgs, ... }:
 
 {
-  home.stateVersion = "22.11";
-
   editorconfig = {
     enable = true;
     settings = {
@@ -413,7 +411,7 @@ machineSettings:
 
       * {
           border: none;
-          border-radius: 0;
+          border-radius: 4;
           font-family: FontAwesome, Noto Sans, Roboto, Helvetica, Arial, sans-serif;
           font-size: 14px;
           min-height: 0;
@@ -450,14 +448,15 @@ machineSettings:
 
       .modules-left {
           background: @surface0;
-          border-right: 2px solid;
+          border-right: 0px solid;
           border-left: 0px;
       }
 
       .modules-right {
           background: @surface0;
-          border-left: 10px solid;
+          border-left: 0px solid;
           border-right: 0px;
+          padding-left: 5px;
       }
 
       #clock, #battery, #cpu, #memory, #network, #pulseaudio, #custom-spotify, #tray {
