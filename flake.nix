@@ -33,21 +33,6 @@
         overlays = [ ];
       };
 
-      nixosConfigurations.dv-rvu-desktop = mkHost "dv-rvu-desktop" rec {
-        inherit nixpkgs home-manager;
-        system = "x86_64-linux";
-        user = "dewaldv";
-
-        extraModules = [
-          inputs.nixos-hardware.nixosModules.common-cpu-amd
-          inputs.nixos-hardware.nixosModules.common-cpu-amd-pstate
-          inputs.nixos-hardware.nixosModules.common-gpu-amd
-          inputs.nixpkgs-rvu.nixosModule
-        ];
-
-        overlays = [ ];
-      };
-
       nixosConfigurations.dv-desktop = mkHost "dv-desktop" rec {
         inherit nixpkgs home-manager;
         system = "x86_64-linux";

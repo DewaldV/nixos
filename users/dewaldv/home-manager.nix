@@ -1,41 +1,10 @@
-machineSettings:
 { config, lib, pkgs, ... }:
 
 {
-  editorconfig = {
-    enable = true;
-    settings = {
-      "*" = {
-        charset = "utf-8";
-        end_of_line = "lf";
-        indent_style = "space";
-        indent_size = 2;
-        insert_final_newline = true;
-        trim_trailing_whitespace = true;
-      };
-
-      "*.md" = { trim_trailing_whitespace = false; };
-      "*.go" = { indent_syle = "tab"; };
-
-      "Makefile" = { indent_style = "tab"; };
-    };
-  };
-
   home.pointerCursor = {
     name = "Adwaita";
     package = pkgs.gnome.adwaita-icon-theme;
     size = 16;
-  };
-
-  xdg.desktopEntries.firefoxPersonal = {
-    categories = [ "Network" "WebBrowser" ];
-    exec = "firefox --name firefox -P Personal";
-    genericName = "Web Browser";
-    icon = "firefox";
-    name = "Firefox (Personal)";
-    startupNotify = true;
-    terminal = false;
-    type = "Application";
   };
 
   gtk = {
@@ -99,12 +68,12 @@ machineSettings:
         statusCommand = null;
       }];
 
-      input = machineSettings.sway.input;
+      input = { "*" = { xkb_layout = "gb"; }; };
 
       output = {
         "*" = { bg = "/home/dewaldv/Pictures/wallpaper.png fill"; };
         "eDP-1" = {
-          scale = machineSettings.sway.output.edp.scale;
+          scale = "1.5";
           pos = "760 1440";
           # scale = "1.0";
           # mode = "--custom 1920x1080";
@@ -324,12 +293,12 @@ machineSettings:
         clock = { format = "{:%a %d %b %H:%M}"; };
         temperature = {
           format = " {temperatureC}°C";
-          hwmon-path = machineSettings.sway.temperature.hwmon-path;
+          hwmon-path = "/sys/class/hwmon/hwmon1/temp1_input";
         };
         cpu = { format = " {load}"; };
         memory = { format = " {}%"; };
         battery = {
-          bat = machineSettings.sway.battery.bat;
+          bat = "BAT0";
           states = {
             good = 95;
             warning = 25;

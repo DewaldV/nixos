@@ -2,25 +2,24 @@ name:
 { nixpkgs, home-manager, extraModules, system, user, overlays }:
 
 let
-  machineSettings = import ../machines/${name}/settings.nix;
-  homeUserConfig = import ../users/${user};
+  homeUserConfig = { config, pkgs, ... }: {
+    imports = [ ../users/dewaldv ../machines/${name}/home ];
+  };
 in nixpkgs.lib.nixosSystem {
   inherit system;
   modules = [
     { nixpkgs.overlays = overlays; }
 
-    ../machines/${name}/hardware.nix
-    ../machines/${name}/configuration.nix
+    ../machines/${name}
     ../users/${user}/user.nix
-    ../common/configuration.nix
-    ../common/xdg-mime-types.nix
+    ../common
 
     home-manager.nixosModule
     home-manager.nixosModules.home-manager
     {
       home-manager.useGlobalPkgs = true;
       home-manager.useUserPackages = true;
-      home-manager.users.${user} = homeUserConfig machineSettings;
+      home-manager.users.${user} = homeUserConfig;
     }
   ] ++ extraModules;
 }
