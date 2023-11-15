@@ -1,1 +1,3 @@
-{ config, pkgs, ... }: { imports = [ ./git.nix ./sway.nix ./xdg-desktop.nix ]; }
+{ config, pkgs, ... }: {
+  imports = [ ../../../users/dewaldv ./git.nix ./sway.nix ./xdg-desktop.nix ];
+}

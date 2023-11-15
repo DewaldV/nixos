@@ -1,1 +1,1 @@
-{ config, pkgs, ... }: { imports = [ ./sway.nix ]; }
+{ config, pkgs, ... }: { imports = [ ../../../users/dewaldv ./sway.nix ]; }
