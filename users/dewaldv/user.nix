@@ -41,6 +41,8 @@
       pandoc
       pre-commit
       ruby_3_1
+      cargo
+      rustc
       shellcheck
       shfmt
       ssm-session-manager-plugin
