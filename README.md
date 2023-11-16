@@ -3,6 +3,13 @@ NixOS Configurations for my personal and work machines.
 
 This repo is for my own machines so it's not really set up to just clone and go but if you feel like taking inspiration feel free to dive in!
 
+If you're interested in this style of machine management I can recommend the following resources:
+- [NixOS & Flakes Book](https://nixos-and-flakes.thiscute.world/) - An excellent tutorial and write up for using Flakes, highly recommended!
+- [Nix Pills](https://nixos.org/guides/nix-pills/) - Tutorials on Nix and Nixpkgs in incremental steps. Great for learning more about Nix.
+- [Home Manager Manual](https://nix-community.github.io/home-manager/) - Core reference for all things Home Manager.
+- [NixOS Manual](https://nixos.org/manual/nixos/stable/) - Core reference for all things NixOS.
+- [NixOS Wiki](https://nixos.wiki/) - Unofficial user wiki for NixOS, some info is dated but still a good source.
+
 ## Bootstrapping
 
 The typical workflow is to clone this to a machine I'm setting up and bootstrap it with:
@@ -41,15 +48,14 @@ The goal of my setup is to be fairly minimal and to mostly get out of the way so
 
 ### [Sway](https://swaywm.org/)
 An excellent tiling window manager and Wayland compositor.
-Sway is lightweight, can be keyboard-driven and brilliantly customisable. 
-Wayland provides me with a better monitor management and scaling experience on my portable devices compared to X11.
+Sway is lightweight, keyboard-driven and easily customisable.
+Wayland provides better monitor management and scaling on portable devices compared to X11.
 
 ### [Doom Emacs](https://github.com/doomemacs/doomemacs)
-VIM binds with the power of Emacs. The pure-gtk build means its now Wayland native as well and handles scaling changed perfectly.
+VIM binds with the power of Emacs, now with Wayland support.
 
-### [Alacritty](https://github.com/alacritty/alacritty), [Tmux](https://github.com/tmux/tmux/wiki) and [zsh](https://www.zsh.org/)
+### [Alacritty](https://github.com/alacritty/alacritty), [Tmux](https://github.com/tmux/tmux/wiki) and [Zsh](https://www.zsh.org/)
 I manage terminal windows in Tmux rather than Sway more out of habit than anything else.
-[Oh My Zsh](https://ohmyz.sh/) with a few plugins (`git`, `aws` and `emacs` and others) and my own aliases and functions from [dewaldv/dotfiles](https://github.com/dewaldv/dotfiles)
+[Oh My Zsh](https://ohmyz.sh/) with a few plugins (`git`, `aws` and `emacs` and others) and my own aliases and functions from [home/zsh](home/zsh).
 
 ![image](https://github.com/DewaldV/nixos/assets/1655931/0b5d9c7d-40e5-4ad1-89b6-39b39b615a43)
-
