@@ -116,7 +116,6 @@
     sway-contrib.grimshot
     swaylock
     terraform
-    tmux
     tpm2-tss
     tree
     unzip
