@@ -9,7 +9,7 @@
     settings = {
       mainBar = {
         temperature = {
-          hwmon-path = lib.mkForce "/sys/class/hwmon/hwmon4/temp1_input";
+          hwmon-path = lib.mkForce "/sys/class/hwmon/hwmon3/temp1_input";
         };
       };
     };
