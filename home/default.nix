@@ -3,6 +3,7 @@
 {
   imports = [
     ./alacritty.nix
+    ./doom
     ./editorconfig.nix
     ./git.nix
     ./gtk.nix
