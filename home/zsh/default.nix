@@ -11,8 +11,8 @@
     };
     shellAliases = {
       gc = "git commit -m";
-      gbrclean =
-        "git branch --merged | egrep -v '(^*|master|main)' | xargs git branch -d";
+      gbrclean = ''
+        git branch --merged | egrep -v "^\*|  (master|main)" | xargs -r git branch -d'';
       tree = "tree -C";
       stree = "tree -aI .git";
     };
