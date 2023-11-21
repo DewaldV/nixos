@@ -10,7 +10,15 @@
         };
       };
 
-      output = { "eDP-1" = { scale = lib.mkForce "1.50"; }; };
+      output = {
+        "eDP-1" = { scale = lib.mkForce "1.50"; };
+
+        "DP-3" = {
+          mode = "3440x1440@100Hz";
+          pos = "0 0";
+          adaptive_sync = "off";
+        };
+      };
     };
   };
 
