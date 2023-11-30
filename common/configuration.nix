@@ -34,16 +34,21 @@
   fonts = {
     enableDefaultFonts = true;
     fonts = with pkgs; [
+      emacs-all-the-icons-fonts
       fira
       fira-mono
       font-awesome
       hack-font
       hackgen-nf-font
+      material-design-icons
       nerdfonts
       noto-fonts
       roboto
       unifont
+      weather-icons
     ];
+    fontconfig.enable = true;
+    fontDir.enable = true;
   };
 
   # Programs
