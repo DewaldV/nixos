@@ -25,5 +25,7 @@
     mangohud
     system76-keyboard-configurator
     vulkan-tools
+    winetricks
+    wineWowPackages.stable
   ];
 }
