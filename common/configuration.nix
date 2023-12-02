@@ -33,8 +33,8 @@
   };
 
   fonts = {
-    enableDefaultFonts = true;
-    fonts = with pkgs; [
+    enableDefaultPackages = true;
+    packages = with pkgs; [
       emacs-all-the-icons-fonts
       fira
       fira-mono
@@ -199,6 +199,18 @@
     xdgOpenUsePortal = true;
     # gtk portal needed to make gtk apps happy
     extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+
+    # warning: xdg-desktop-portal 1.17 reworked how portal implementations are loaded, you
+    # should either set `xdg.portal.config` or `xdg.portal.configPackages`
+    # to specify which portal backend to use for the requested interface.
+
+    # https://github.com/flatpak/xdg-desktop-portal/blob/1.18.1/doc/portals.conf.rst.in
+
+    # If you simply want to keep the behaviour in < 1.17, which uses the first
+    # portal implementation found in lexicographical order, use the following:
+
+    # xdg.portal.config.common.default = "*";
+    config.common.default = "*";
   };
 
   security.pam.services.swaylock = { };
