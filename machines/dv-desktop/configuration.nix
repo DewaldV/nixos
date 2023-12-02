@@ -1,10 +1,7 @@
 { config, pkgs, ... }:
 
 {
-  boot = {
-    loader.systemd-boot.consoleMode = "0";
-    kernelPackages = pkgs.linuxPackages_6_6;
-  };
+  boot = { loader.systemd-boot.consoleMode = "0"; };
 
   networking.hostName = "dv-desktop";
 
