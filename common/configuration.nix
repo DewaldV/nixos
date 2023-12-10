@@ -98,6 +98,7 @@
     ispell
     jq
     kanshi
+    lsof
     neofetch
     nixfmt
     nixos-artwork.wallpapers.dracula
