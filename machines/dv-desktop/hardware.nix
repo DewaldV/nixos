@@ -26,14 +26,14 @@
     fsType = "vfat";
   };
 
-  boot.initrd.luks.devices."popos-root".device =
-    "/dev/disk/by-uuid/9b9ccd4a-70fd-4d3a-ac26-508095f14f70";
+  # boot.initrd.luks.devices."popos-root".device =
+  #   "/dev/disk/by-uuid/9b9ccd4a-70fd-4d3a-ac26-508095f14f70";
 
-  fileSystems."/mnt/popos" = {
-    device = "/dev/disk/by-uuid/9147a0e6-e838-4fdb-a82f-c4597bdf80e2";
-    fsType = "btrfs";
-    options = [ "compress=zstd:1" "discard=async" ];
-  };
+  # fileSystems."/mnt/popos" = {
+  #   device = "/dev/disk/by-uuid/9147a0e6-e838-4fdb-a82f-c4597bdf80e2";
+  #   fsType = "btrfs";
+  #   options = [ "compress=zstd:1" "discard=async" ];
+  # };
 
   swapDevices = [ ];
 
