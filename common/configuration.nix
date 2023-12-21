@@ -23,7 +23,8 @@
 
   # Timezone and Locale
   i18n.defaultLocale = "en_GB.UTF-8";
-  time.timeZone = "Europe/London";
+  # time.timeZone = "Europe/London";
+  time.timeZone = "Africa/Johannesburg";
 
   security.polkit.enable = true;
 
