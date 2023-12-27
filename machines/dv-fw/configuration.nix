@@ -1,7 +1,7 @@
 { config, pkgs, ... }:
 
 {
-  boot = { loader.systemd-boot.consoleMode = "1"; };
+  boot.loader.systemd-boot.consoleMode = "1"; };
 
   networking.hostName = "dv-fw";
 
