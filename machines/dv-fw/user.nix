@@ -1,5 +1,5 @@
 { config, pkgs, home-manager, ... }:
 
 {
-  users.users.dewaldv.packages = with pkgs; [ godot_4 ];
+  users.users.dewaldv.packages = with pkgs; [ godot_4 haxe ];
 }
