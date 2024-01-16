@@ -1,7 +1,7 @@
 { config, pkgs, ... }:
 
 {
-  boot = { loader.systemd-boot.consoleMode = "1"; };
+  boot.loader.systemd-boot.consoleMode = "1";
 
   networking.hostName = "dv-rvu-x1c10";
 
@@ -18,7 +18,7 @@
   services.fprintd.enable = true;
 
   services.power-profiles-daemon.enable = false;
-  services.tlp = { enable = true; };
+  services.tlp.enable = true;
 
   programs.light.enable = true;
 
