@@ -26,6 +26,7 @@
       gotests
       gotestsum
       gotools
+      helvum
       k9s
       kubectl
       kubernetes-helm
