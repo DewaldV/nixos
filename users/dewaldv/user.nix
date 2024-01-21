@@ -9,7 +9,7 @@
   users.users.dewaldv = {
     isNormalUser = true;
     description = "Dewald Viljoen";
-    extraGroups = [ "networkmanager" "wheel" "video" "docker" ];
+    extraGroups = [ "docker" "networkmanager" "video" "wheel" ];
     shell = pkgs.zsh;
 
     packages = with pkgs; [
