@@ -7,7 +7,7 @@
     nixos-hardware.url = "github:nixos/nixos-hardware";
 
     nixpkgs-rvu = {
-      url = "github:uswitch/nixpkgs?ref=kolide-fhs";
+      url = "github:uswitch/nixpkgs";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
