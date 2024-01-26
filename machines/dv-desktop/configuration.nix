@@ -1,11 +1,11 @@
 { config, pkgs, ... }:
 
 {
-  boot = { loader.systemd-boot.consoleMode = "0"; };
+  boot.loader.systemd-boot.consoleMode = "0";
 
   networking.hostName = "dv-desktop";
 
-  console = { keyMap = "us"; };
+  console.keyMap = "us";
 
   services.xserver.layout = "us";
   services.blueman.enable = true;
