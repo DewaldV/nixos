@@ -1,1 +1,10 @@
-{ config, pkgs, ... }: { imports = [ ./configuration.nix ./hardware.nix ]; }
+{ config, pkgs, ... }:
+
+{
+  imports = [
+    ./configuration.nix
+    ./hardware.nix
+    ./virt.nix
+
+  ];
+}
