@@ -25,11 +25,14 @@
   environment.systemPackages = with pkgs; [
     awsvpnclient
     azure-cli
+    cilium-cli
     docker-compose
     jdk17
+    kind
     maven
     nodejs_18
     u
+    yq-go
   ];
 
   # RVU specific services
