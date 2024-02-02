@@ -199,7 +199,6 @@
   programs.swaylock = {
     settings = {
       show-failed-attempts = true;
-      ignore-empty-password = true;
       font = "Roboto";
 
       color = "1D1D1D";
