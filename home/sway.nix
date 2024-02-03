@@ -26,7 +26,11 @@
             command = "inhibit_idle fullscreen";
             criteria = { shell = ".*"; };
           }
-
+          {
+            command =
+              "border pixel 0, floating enable, fullscreen disable, move absolute position 0 0";
+            criteria = { app_id = "flameshot"; };
+          }
           {
             command = "floating enable";
             criteria = {

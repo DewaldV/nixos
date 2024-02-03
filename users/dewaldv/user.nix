@@ -17,6 +17,7 @@
       asdf-vm
       awscli2
       editorconfig-core-c
+      flameshot
       go
       gocode-gomod
       gomodifytags
