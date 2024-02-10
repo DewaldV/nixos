@@ -135,6 +135,22 @@
     enable = true;
     actions = true;
     icons = true;
+    defaultTimeout = 5000;
+    font = "Noto Sans 10";
+    borderRadius = 4;
+    backgroundColor = "#282a36";
+    textColor = "#f8f8f2";
+    borderColor = "#282a36";
+    extraConfig = ''
+      [urgency=low]
+      border-color=#282a36
+
+      [urgency=normal]
+      border-color=#6272a4
+
+      [urgency=high]
+      border-color=#ff5555
+    '';
   };
 
   programs.wofi = {
