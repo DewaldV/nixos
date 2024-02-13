@@ -14,7 +14,7 @@
         "2:term" = [{ app_id = "^Alacritty$"; }];
         "3:code" = [{ app_id = "^emacs$"; }];
         "4:slack" = [{ app_id = "^Slack$"; }];
-        "5:zoom" = [{ class = "^zoom$"; }];
+        "5:zoom" = [{ app_id = "^Zoom$"; }];
       };
 
       window = {
@@ -30,19 +30,26 @@
           }
           {
             command = "floating enable";
-            criteria = { class = "zoom"; };
+            criteria = { app_id = "Zoom"; };
+          }
+          {
+            command = "move position mouse";
+            criteria = {
+              app_id = "Zoom";
+              title = "zoom";
+            };
           }
           {
             command = "floating disable";
             criteria = {
-              class = "zoom";
+              app_id = "Zoom";
               title = "Zoom (Meeting|- (Licensed|Free) Account)";
             };
           }
           {
             command = "floating disable, move right, resize set width 20";
             criteria = {
-              class = "zoom";
+              app_id = "Zoom";
               title = "Meeting Chat";
             };
           }

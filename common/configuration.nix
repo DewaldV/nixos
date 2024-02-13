@@ -86,6 +86,7 @@
     gimp
     git
     glib
+    glxinfo
     gnome.gnome-calculator
     gnome.gnome-font-viewer
     gnumake
