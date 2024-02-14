@@ -15,6 +15,11 @@
       url = "github:nix-community/home-manager/release-23.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    lanzaboote = {
+      url = "github:nix-community/lanzaboote/v0.3.0";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = { self, nixpkgs, home-manager, ... }@inputs:
@@ -28,6 +33,7 @@
         extraModules = [
           inputs.nixos-hardware.nixosModules.lenovo-thinkpad-x1-10th-gen
           inputs.nixpkgs-rvu.nixosModule
+          inputs.lanzaboote.nixosModules.lanzaboote
         ];
 
         overlays = [ ];

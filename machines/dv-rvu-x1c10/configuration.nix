@@ -31,6 +31,7 @@
     kind
     maven
     nodejs_18
+    sbctl
     u
     yq-go
   ];
