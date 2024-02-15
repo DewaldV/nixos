@@ -32,6 +32,7 @@
     maven
     nodejs_18
     sbctl
+    snyk
     u
     yq-go
   ];
