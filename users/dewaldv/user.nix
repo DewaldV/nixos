@@ -27,6 +27,7 @@
       gotests
       gotestsum
       gotools
+      gzdoom
       helvum
       k9s
       kubectl
