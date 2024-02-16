@@ -16,6 +16,7 @@
       argocd
       asdf-vm
       awscli2
+      cargo
       editorconfig-core-c
       flameshot
       go
@@ -37,8 +38,9 @@
       pandoc
       pre-commit
       ruby_3_1
-      cargo
+      rust-analyzer
       rustc
+      rustfmt
       shellcheck
       shfmt
       ssm-session-manager-plugin
