@@ -17,6 +17,7 @@
       asdf-vm
       awscli2
       cargo
+      clippy
       editorconfig-core-c
       flameshot
       go
@@ -36,6 +37,7 @@
       kubernetes-helmPlugins.helm-diff
       libreoffice-fresh
       pandoc
+      pkg-config
       pre-commit
       ruby_3_1
       rust-analyzer
