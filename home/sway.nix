@@ -98,7 +98,7 @@
         "${modifier}+Shift+p" = "exec grimshot copy output";
         "${modifier}+Ctrl+p" = "exec grimshot copy window";
 
-        "XF86Display" = "output eDP-1 toggle";
+        "--locked XF86Display" = "output eDP-1 toggle";
 
         "XF86MonBrightnessDown" = "exec light -U 10";
         "XF86MonBrightnessUp" = "exec light -A 10";
