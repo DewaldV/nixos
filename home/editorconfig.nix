@@ -14,7 +14,8 @@
       };
 
       "*.md" = { trim_trailing_whitespace = false; };
-      "*.go" = { indent_syle = "tab"; };
+      "*.go" = { indent_style = "tab"; };
+      "*.rs" = { indent_size = 4; };
       "Makefile" = { indent_style = "tab"; };
     };
   };
