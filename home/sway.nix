@@ -4,7 +4,8 @@
   wayland.windowManager.sway = {
     enable = true;
     config = rec {
-      menu = ''wofi --show=drun --lines=5 --prompt="" --stylesheet=style.css'';
+      menu = "fuzzel";
+      # menu = ''wofi --show=drun --lines=5 --prompt="" --style=style.css'';
       modifier = "Mod4";
       terminal = "alacritty";
       # startup = [{ command = "mako"; }];
@@ -159,6 +160,8 @@
       border-color=#ff5555
     '';
   };
+
+  programs.fuzzel.enable = true;
 
   programs.wofi = {
     enable = true;
@@ -390,7 +393,7 @@
 
       * {
           border: none;
-          border-radius: 4;
+          border-radius: 4px;
           font-family: FontAwesome, Noto Sans, Roboto, Helvetica, Arial, sans-serif;
           font-size: 14px;
           min-height: 0;
