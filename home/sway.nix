@@ -146,18 +146,14 @@
     defaultTimeout = 5000;
     font = "Noto Sans 10";
     borderRadius = 4;
-    backgroundColor = "#282a36";
-    textColor = "#f8f8f2";
-    borderColor = "#282a36";
+    # catppuccin/mako: https://github.com/catppuccin/mako/blob/main/src/mocha
+    backgroundColor = "#1e1e2e";
+    textColor = "#cdd6f4";
+    borderColor = "#89b4fa";
+    progressColor = "over #313244";
     extraConfig = ''
-      [urgency=low]
-      border-color=#282a36
-
-      [urgency=normal]
-      border-color=#6272a4
-
       [urgency=high]
-      border-color=#ff5555
+      border-color=#fab387
     '';
   };
 
