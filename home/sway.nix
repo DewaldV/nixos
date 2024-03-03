@@ -5,10 +5,8 @@
     enable = true;
     config = rec {
       menu = "fuzzel";
-      # menu = ''wofi --show=drun --lines=5 --prompt="" --style=style.css'';
       modifier = "Mod4";
       terminal = "alacritty";
-      # startup = [{ command = "mako"; }];
 
       assigns = {
         "1:web" = [{ app_id = "^firefox$"; }];
@@ -87,7 +85,6 @@
 
       keybindings = lib.mkOptionDefault {
         "${modifier}+Escape" = "exec swaylock";
-        "${modifier}+Control+e" = "exec ${pkgs.wofi-emoji}/bin/wofi-emoji";
 
         "${modifier}+Ctrl+up" = "move workspace to output up";
         "${modifier}+Ctrl+down" = "move workspace to output down";
