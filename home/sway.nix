@@ -161,7 +161,21 @@
     '';
   };
 
-  programs.fuzzel.enable = true;
+  programs.fuzzel = {
+    enable = true;
+    settings = {
+      # catppuccin/fuzzel: https://github.com/catppuccin/fuzzel/blob/main/themes/mocha.ini
+      colors = {
+        background = "1e1e2edd";
+        text = "cdd6f4ff";
+        match = "f38ba8ff";
+        selection = "585b70ff";
+        selection-match = "f38ba8ff";
+        selection-text = "cdd6f4ff";
+        border = "b4befeff";
+      };
+    };
+  };
 
   programs.wofi = {
     enable = true;
