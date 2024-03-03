@@ -102,11 +102,9 @@
     lsof
     neofetch
     nixfmt
-    nixos-artwork.wallpapers.dracula
     parted
     pavucontrol
     pciutils
-    podman
     polkit_gnome
     powertop
     protonvpn-cli
@@ -116,7 +114,6 @@
     ripgrep
     s-tui
     signal-desktop
-    silver-searcher
     skypeforlinux
     slack
     stow
@@ -131,8 +128,6 @@
     vim
     wget
     wl-clipboard
-    wofi
-    wofi-emoji
     xdg-utils
     yubioath-flutter
     zoom-us
