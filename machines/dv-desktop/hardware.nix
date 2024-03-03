@@ -75,5 +75,5 @@
   # https://nixos.org/manual/nixos/unstable/index.html#sec-gpu-accel-vulkan
   # https://nixos.wiki/wiki/AMD_GPU
   # https://www.phoronix.com/review/amdvlk-radv-rx7900
-  hardware.amdgpu.amdvlk = false;
+  hardware.amdgpu.amdvlk = true;
 }
