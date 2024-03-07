@@ -7,7 +7,7 @@
     nixos-hardware.url = "github:nixos/nixos-hardware";
 
     nixpkgs-rvu = {
-      url = "github:uswitch/nixpkgs";
+      url = "github:uswitch/nixpkgs/cleanup";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 

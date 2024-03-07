@@ -218,15 +218,16 @@
         ]
       },
       "locked": {
-        "lastModified": 1705408291,
-        "narHash": "sha256-AWwkH4V5oMa8v1xwSD4BzEEi0bFHHg65JzJHEeKnb8g=",
+        "lastModified": 1709832992,
+        "narHash": "sha256-ZzChzB5zFt/rsAq/7GsyeasWrWcJh6+WyTERH18MzHg=",
         "owner": "uswitch",
         "repo": "nixpkgs",
-        "rev": "573b8172d42ae21c1cb8fcc0d082b6fde24412a3",
+        "rev": "050b643ddf828565729a118f128f713ea445e2e7",
         "type": "github"
       },
       "original": {
         "owner": "uswitch",
+        "ref": "cleanup",
         "repo": "nixpkgs",
         "type": "github"
       }
