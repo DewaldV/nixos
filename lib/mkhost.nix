@@ -1,8 +1,17 @@
 name:
-{ nixpkgs, home-manager, extraModules, system, user, overlays }:
+{ nixpkgs, nixpkgs-unstable, home-manager, extraModules, system, user, overlays
+}:
 
 nixpkgs.lib.nixosSystem {
   inherit system;
+
+  specialArgs = {
+    pkgs-unstable = import nixpkgs-unstable {
+      system = system;
+      config.allowUnfree = true;
+    };
+  };
+
   modules = [
     { nixpkgs.overlays = overlays; }
 

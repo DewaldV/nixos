@@ -22,11 +22,11 @@
     };
   };
 
-  outputs = { self, nixpkgs, home-manager, ... }@inputs:
+  outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, ... }@inputs:
     let mkHost = import ./lib/mkhost.nix;
     in {
       nixosConfigurations.dv-rvu-x1c10 = mkHost "dv-rvu-x1c10" rec {
-        inherit nixpkgs home-manager;
+        inherit nixpkgs nixpkgs-unstable home-manager;
         system = "x86_64-linux";
         user = "dewaldv";
 
@@ -40,7 +40,7 @@
       };
 
       nixosConfigurations.dv-desktop = mkHost "dv-desktop" rec {
-        inherit nixpkgs home-manager;
+        inherit nixpkgs nixpkgs-unstable home-manager;
         system = "x86_64-linux";
         user = "dewaldv";
 
@@ -54,7 +54,7 @@
       };
 
       nixosConfigurations.dv-fw = mkHost "dv-fw" rec {
-        inherit nixpkgs home-manager;
+        inherit nixpkgs nixpkgs-unstable home-manager;
         system = "x86_64-linux";
         user = "dewaldv";
 
