@@ -65,8 +65,11 @@
   hardware.opengl = {
     enable = true;
     driSupport = true;
-    extraPackages = [ pkgs-unstable.amdvlk ];
-    extraPackages32 = [ pkgs-unstable.driversi686Linux.amdvlk ];
+    driSupport32Bit = true;
+    #   package = pkgs-unstable.mesa.drivers;
+    #   package32 = pkgs-unstable.pkgsi686Linux.mesa.drivers;
+    #   extraPackages = [ pkgs-unstable.amdvlk ];
+    #   extraPackages32 = [ pkgs-unstable.driversi686Linux.amdvlk ];
   };
 
   # amdvlk seems to have lower performance than mesa radv
