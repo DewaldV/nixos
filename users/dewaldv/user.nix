@@ -34,6 +34,7 @@
       kubernetes-helm
       kubernetes-helmPlugins.helm-diff
       libreoffice-fresh
+      openmw
       pandoc
       pre-commit
       ruby_3_1
