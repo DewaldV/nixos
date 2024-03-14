@@ -100,12 +100,13 @@
         "XF86MonBrightnessDown" = "exec light -U 10";
         "XF86MonBrightnessUp" = "exec light -A 10";
 
-        "XF86AudioRaiseVolume" =
+        "--locked XF86AudioRaiseVolume" =
           "exec 'wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 1%+'";
-        "XF86AudioLowerVolume" =
+        "--locked XF86AudioLowerVolume" =
           "exec 'wpctl set-volume @DEFAULT_AUDIO_SINK@ 1%-'";
-        "XF86AudioMute" = "exec 'wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle'";
-        "XF86AudioMicMute" =
+        "--locked XF86AudioMute" =
+          "exec 'wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle'";
+        "--locked XF86AudioMicMute" =
           "exec 'wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle'";
       };
     };
