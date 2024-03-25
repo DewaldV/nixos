@@ -34,6 +34,7 @@
     sbctl
     snyk
     u
+    vscode
     yq-go
   ];
 
