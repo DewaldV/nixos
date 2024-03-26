@@ -1,3 +1,3 @@
 { config, pkgs, ... }: {
-  imports = [ ./configuration.nix ./hardware.nix ./lanzaboote.nix ];
+  imports = [ ./configuration.nix ./hardware.nix ./lanzaboote.nix ./virt.nix ];
 }
