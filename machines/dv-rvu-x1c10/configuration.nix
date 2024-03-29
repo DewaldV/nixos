@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, pkgs-unstable, ... }:
 
 {
   boot.loader.systemd-boot.consoleMode = "1";
@@ -34,7 +34,8 @@
     sbctl
     snyk
     u
-    vscode
+    pkgs-unstable.vscode-fhs
+    pkgs-unstable.dotnet-sdk_8
     yq-go
   ];
 
