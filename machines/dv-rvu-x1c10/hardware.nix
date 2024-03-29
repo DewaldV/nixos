@@ -46,7 +46,7 @@
 
   hardware.bluetooth.enable = true;
   hardware.ipu6 = {
-    enable = true;
+    enable = false;
     platform = "ipu6ep";
   };
 
