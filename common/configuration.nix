@@ -115,7 +115,6 @@
     s-tui
     signal-desktop
     skypeforlinux
-    slack
     stow
     stress
     sway-contrib.grimshot
@@ -123,6 +122,7 @@
     terraform
     tpm2-tss
     tree
+    unstable.slack
     unstable.zoom-us
     unzip
     usbutils
