@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, pkgs-unstable, ... }:
 
 {
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
@@ -105,6 +105,8 @@
     parted
     pavucontrol
     pciutils
+    pkgs-unstable.slack
+    pkgs-unstable.zoom-us
     polkit_gnome
     powertop
     protonvpn-cli
@@ -122,8 +124,6 @@
     terraform
     tpm2-tss
     tree
-    unstable.slack
-    unstable.zoom-us
     unzip
     usbutils
     vim
