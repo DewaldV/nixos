@@ -123,6 +123,7 @@
     terraform
     tpm2-tss
     tree
+    unstable.zoom-us
     unzip
     usbutils
     vim
@@ -130,7 +131,6 @@
     wl-clipboard
     xdg-utils
     yubioath-flutter
-    zoom-us
   ];
 
   # Services
