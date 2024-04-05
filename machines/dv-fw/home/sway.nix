@@ -19,7 +19,7 @@
       mainBar = {
         battery = { bat = lib.mkForce "BAT1"; };
         temperature = {
-          hwmon-path = lib.mkForce "/sys/class/hwmon/hwmon5/temp1_input";
+          hwmon-path = lib.mkForce "/sys/class/hwmon/hwmon4/temp1_input";
         };
       };
     };
