@@ -20,6 +20,7 @@
   environment.systemPackages = with pkgs; [
     lutris
     mangohud
+    protontricks
     system76-keyboard-configurator
     vulkan-tools
     winetricks
