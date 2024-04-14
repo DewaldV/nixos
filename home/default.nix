@@ -8,6 +8,7 @@
     ./editorconfig.nix
     ./git.nix
     ./gtk.nix
+    ./rust
     ./ssh.nix
     ./sway.nix
     ./tmux
