@@ -106,7 +106,6 @@
     pavucontrol
     pciutils
     pkgs-unstable.slack
-    pkgs-unstable.zoom-us
     polkit_gnome
     powertop
     protonvpn-cli
@@ -131,6 +130,7 @@
     wl-clipboard
     xdg-utils
     yubioath-flutter
+    zoom-us
   ];
 
   # Services
