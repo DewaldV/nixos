@@ -10,7 +10,7 @@
         };
       };
 
-      # output."eDP-1".scale = lib.mkForce "1.25";
+      output."eDP-1".scale = lib.mkForce "1.0";
     };
   };
 
