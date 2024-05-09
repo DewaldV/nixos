@@ -97,6 +97,9 @@
 
         "--locked XF86Display" = "output eDP-1 toggle";
 
+        "${modifier}+Shift+s" = "output eDP-1 scale 1.0";
+        "${modifier}+Shift+d" = "output eDP-1 scale 1.25";
+
         "XF86MonBrightnessDown" = "exec light -U 10";
         "XF86MonBrightnessUp" = "exec light -A 10";
 
