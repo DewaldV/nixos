@@ -42,6 +42,7 @@
   hardware.opengl = {
     enable = true;
     driSupport = true;
+    driSupport32Bit = true;
   };
 
   # amdvlk seems to have lower performance than mesa radv
