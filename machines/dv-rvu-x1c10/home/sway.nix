@@ -11,7 +11,10 @@
       };
 
       output = {
-        "eDP-1" = { scale = lib.mkForce "1.50"; };
+        "eDP-1" = {
+          pos = lib.mkForce "760 1440";
+          scale = lib.mkForce "1.50";
+        };
 
         "DP-3" = {
           mode = "3440x1440@100Hz";
