@@ -25,6 +25,7 @@
   environment.systemPackages = with pkgs; [
     awsvpnclient
     azure-cli
+    azuredatastudio
     cilium-cli
     docker-compose
     jdk17
