@@ -30,6 +30,7 @@
     docker-compose
     jdk17
     kind
+    mangohud
     maven
     nodejs_18
     sbctl
@@ -42,4 +43,15 @@
 
   # RVU specific services
   services.rvu-kolide.enable = true;
+
+  programs.gamemode = {
+    enable = true;
+    enableRenice = true;
+  };
+
+  programs.steam = {
+    enable = true;
+    gamescopeSession.enable = true;
+  };
+
 }
