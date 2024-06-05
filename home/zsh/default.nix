@@ -7,7 +7,7 @@
       enable = true;
       theme = "robbyrussell";
       custom = "\${HOME}/.zsh-custom";
-      plugins = [ "asdf" "aws" "emacs" "git" ];
+      plugins = [ "asdf" "aws" "azure" "emacs" "git" ];
     };
     shellAliases = {
       gc = "git commit -m";
