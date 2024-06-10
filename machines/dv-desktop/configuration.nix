@@ -7,7 +7,7 @@
 
   console.keyMap = "us";
 
-  services.xserver.layout = "us";
+  services.xserver.xkb.layout = "us";
   services.blueman.enable = true;
 
   programs.gamemode = {

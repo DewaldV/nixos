@@ -8,7 +8,7 @@
   # Boot
   boot = {
     initrd.systemd.enable = true;
-    kernelPackages = pkgs.linuxPackages_6_8;
+    kernelPackages = pkgs.linuxPackages_6_9;
     kernelParams = [ "quiet" ];
     loader.efi.canTouchEfiVariables = true;
     loader.systemd-boot.enable = true;
@@ -56,7 +56,6 @@
   programs.gnupg.agent = {
     enable = true;
     enableSSHSupport = false;
-    pinentryFlavor = "gnome3";
   };
 
   programs._1password.enable = true;
@@ -101,7 +100,7 @@
     kanshi
     lsof
     neofetch
-    nixfmt
+    nixfmt-rfc-style
     parted
     pavucontrol
     pciutils

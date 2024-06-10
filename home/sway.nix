@@ -3,6 +3,8 @@
 {
   wayland.windowManager.sway = {
     enable = true;
+    checkConfig = false;
+
     config = rec {
       menu = "fuzzel";
       modifier = "Mod4";
@@ -63,7 +65,7 @@
       input = { "*" = { xkb_layout = "gb"; }; };
 
       output = {
-        "*" = { bg = "/home/dewaldv/Pictures/wallpaper.png fill"; };
+        "*" = { bg = "${config.xdg.userDirs.pictures}/wallpaper.png fill"; };
 
         "DP-1" = {
           mode = "3440x1440@165Hz";
