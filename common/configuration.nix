@@ -92,6 +92,7 @@
     discord
     distrobox
     evince # pdf document viewer
+    fastfetch
     fd
     file
     firefox
@@ -114,7 +115,6 @@
     jq
     kanshi
     lsof
-    neofetch
     nixfmt-rfc-style
     parted
     pavucontrol
