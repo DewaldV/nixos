@@ -22,9 +22,18 @@
     };
   };
 
-  outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, ... }@inputs:
-    let mkHost = import ./lib/mkhost.nix;
-    in {
+  outputs =
+    {
+      self,
+      nixpkgs,
+      nixpkgs-unstable,
+      home-manager,
+      ...
+    }@inputs:
+    let
+      mkHost = import ./lib/mkhost.nix;
+    in
+    {
       nixosConfigurations.dv-rvu-x1c10 = mkHost "dv-rvu-x1c10" rec {
         inherit nixpkgs nixpkgs-unstable home-manager;
         system = "x86_64-linux";
@@ -58,8 +67,7 @@
         system = "x86_64-linux";
         user = "dewaldv";
 
-        extraModules =
-          [ inputs.nixos-hardware.nixosModules.framework-13-7040-amd ];
+        extraModules = [ inputs.nixos-hardware.nixosModules.framework-13-7040-amd ];
 
         overlays = [ ];
       };

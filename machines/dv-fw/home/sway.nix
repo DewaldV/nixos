@@ -1,4 +1,9 @@
-{ config, pkgs, lib, ... }:
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}:
 
 {
   wayland.windowManager.sway = {
@@ -17,7 +22,9 @@
   programs.waybar = {
     settings = {
       mainBar = {
-        battery = { bat = lib.mkForce "BAT1"; };
+        battery = {
+          bat = lib.mkForce "BAT1";
+        };
         temperature = {
           hwmon-path = lib.mkForce "/sys/class/hwmon/hwmon4/temp1_input";
         };

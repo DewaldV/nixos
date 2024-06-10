@@ -1,6 +1,10 @@
-{ config, pkgs, ... }: {
+{ config, pkgs, ... }:
+{
   xdg.desktopEntries.firefoxPersonal = {
-    categories = [ "Network" "WebBrowser" ];
+    categories = [
+      "Network"
+      "WebBrowser"
+    ];
     exec = "firefox --name firefox -P Personal";
     genericName = "Web Browser";
     icon = "firefox";

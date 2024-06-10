@@ -16,7 +16,9 @@
 
   services.fwupd = {
     extraRemotes = [ "lvfs-testing" ];
-    uefiCapsuleSettings = { DisableCapsuleUpdateOnDisk = true; };
+    uefiCapsuleSettings = {
+      DisableCapsuleUpdateOnDisk = true;
+    };
   };
 
   services.blueman.enable = true;

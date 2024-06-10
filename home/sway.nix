@@ -1,4 +1,9 @@
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
 {
   wayland.windowManager.sway = {
@@ -11,27 +16,32 @@
       terminal = "alacritty";
 
       assigns = {
-        "1:web" = [{ app_id = "^firefox$"; }];
-        "2:term" = [{ app_id = "^Alacritty$"; }];
-        "3:code" = [{ app_id = "^emacs$"; }];
-        "4:slack" = [{ app_id = "^Slack$"; }];
-        "5:zoom" = [{ app_id = "^Zoom$"; }];
+        "1:web" = [ { app_id = "^firefox$"; } ];
+        "2:term" = [ { app_id = "^Alacritty$"; } ];
+        "3:code" = [ { app_id = "^emacs$"; } ];
+        "4:slack" = [ { app_id = "^Slack$"; } ];
+        "5:zoom" = [ { app_id = "^Zoom$"; } ];
       };
 
       window = {
         commands = [
           {
             command = "inhibit_idle fullscreen";
-            criteria = { shell = ".*"; };
+            criteria = {
+              shell = ".*";
+            };
           }
           {
-            command =
-              "border pixel 0, floating enable, fullscreen disable, move absolute position 0 0";
-            criteria = { app_id = "flameshot"; };
+            command = "border pixel 0, floating enable, fullscreen disable, move absolute position 0 0";
+            criteria = {
+              app_id = "flameshot";
+            };
           }
           {
             command = "floating enable";
-            criteria = { app_id = "Zoom"; };
+            criteria = {
+              app_id = "Zoom";
+            };
           }
           {
             command = "move position mouse";
@@ -57,15 +67,23 @@
         ];
       };
 
-      bars = [{
-        command = "${pkgs.waybar}/bin/waybar";
-        statusCommand = null;
-      }];
+      bars = [
+        {
+          command = "${pkgs.waybar}/bin/waybar";
+          statusCommand = null;
+        }
+      ];
 
-      input = { "*" = { xkb_layout = "gb"; }; };
+      input = {
+        "*" = {
+          xkb_layout = "gb";
+        };
+      };
 
       output = {
-        "*" = { bg = "${config.xdg.userDirs.pictures}/wallpaper.png fill"; };
+        "*" = {
+          bg = "${config.xdg.userDirs.pictures}/wallpaper.png fill";
+        };
 
         "DP-1" = {
           mode = "3440x1440@165Hz";
@@ -99,14 +117,10 @@
         "XF86MonBrightnessDown" = "exec light -U 10";
         "XF86MonBrightnessUp" = "exec light -A 10";
 
-        "--locked XF86AudioRaiseVolume" =
-          "exec 'wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 1%+'";
-        "--locked XF86AudioLowerVolume" =
-          "exec 'wpctl set-volume @DEFAULT_AUDIO_SINK@ 1%-'";
-        "--locked XF86AudioMute" =
-          "exec 'wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle'";
-        "--locked XF86AudioMicMute" =
-          "exec 'wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle'";
+        "--locked XF86AudioRaiseVolume" = "exec 'wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 1%+'";
+        "--locked XF86AudioLowerVolume" = "exec 'wpctl set-volume @DEFAULT_AUDIO_SINK@ 1%-'";
+        "--locked XF86AudioMute" = "exec 'wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle'";
+        "--locked XF86AudioMicMute" = "exec 'wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle'";
       };
     };
   };
@@ -218,13 +232,19 @@
     enable = true;
     settings = {
       mainBar = {
-        fonts = [ "FontAwesome" "Noto Sans" ];
+        fonts = [
+          "FontAwesome"
+          "Noto Sans"
+        ];
         layer = "top"; # Waybar at top layer
         position = "top"; # Waybar at the top of your screen
         height = 24; # Waybar Height
         # "width": 1366, // Waybar width
         # Choose the order of the modules
-        modules-left = [ "sway/workspaces" "sway/mode" ];
+        modules-left = [
+          "sway/workspaces"
+          "sway/mode"
+        ];
         modules-center = [ "sway/window" ];
         modules-right = [
           "pulseaudio"
@@ -251,18 +271,26 @@
             "default" = "";
           };
         };
-        "sway/mode" = { format = ''<span style="italic">{}</span>''; };
+        "sway/mode" = {
+          format = ''<span style="italic">{}</span>'';
+        };
         tray = {
           # "icon-size" = 21;
           spacing = 10;
         };
-        clock = { format = "{:%a %d %b %H:%M}"; };
+        clock = {
+          format = "{:%a %d %b %H:%M}";
+        };
         temperature = {
           format = " {temperatureC}°C";
           hwmon-path = "/sys/class/hwmon/hwmon1/temp1_input";
         };
-        cpu = { format = " {load}"; };
-        memory = { format = " {}%"; };
+        cpu = {
+          format = " {load}";
+        };
+        memory = {
+          format = " {}%";
+        };
         battery = {
           bat = "BAT0";
           states = {
@@ -273,7 +301,13 @@
           format = "{capacity}% {icon}";
           # "format-good" = ""; // An empty format will hide the module
           # "format-full" = "";
-          format-icons = [ "" "" "" "" "" ];
+          format-icons = [
+            ""
+            ""
+            ""
+            ""
+            ""
+          ];
         };
         network = {
           # "interface": "wlp2s0", // (Optional) To force the use of this interface
@@ -293,7 +327,10 @@
             phone = "";
             portable = "";
             car = "";
-            default = [ "" "" ];
+            default = [
+              ""
+              ""
+            ];
           };
           on-click = "pavucontrol";
         };

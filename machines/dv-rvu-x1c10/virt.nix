@@ -7,5 +7,8 @@
 
   virtualisation.docker.enable = true;
 
-  users.users.dewaldv.extraGroups = [ "libvirtd" "docker" ];
+  users.users.dewaldv.extraGroups = [
+    "libvirtd"
+    "docker"
+  ];
 }

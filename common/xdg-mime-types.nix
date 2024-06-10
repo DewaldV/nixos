@@ -20,7 +20,8 @@ let
     "application/x-extension-xhtml" = browser;
     "application/x-extension-xht" = browser;
   };
-in {
+in
+{
   xdg.mime.enable = true;
   xdg.mime.addedAssociations = associations;
   xdg.mime.defaultApplications = associations;

@@ -1,8 +1,17 @@
-{ config, pkgs, lib, ... }:
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}:
 
 {
   wayland.windowManager.sway.config = {
-    input = lib.mkForce { "*" = { xkb_layout = "us"; }; };
+    input = lib.mkForce {
+      "*" = {
+        xkb_layout = "us";
+      };
+    };
   };
 
   programs.waybar.settings = {

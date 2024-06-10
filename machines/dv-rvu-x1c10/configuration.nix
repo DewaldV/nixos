@@ -1,4 +1,9 @@
-{ config, pkgs, pkgs-unstable, ... }:
+{
+  config,
+  pkgs,
+  pkgs-unstable,
+  ...
+}:
 
 {
   boot.loader.systemd-boot.consoleMode = "1";
@@ -53,5 +58,4 @@
     enable = true;
     gamescopeSession.enable = true;
   };
-
 }

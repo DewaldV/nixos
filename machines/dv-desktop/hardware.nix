@@ -1,10 +1,23 @@
-{ config, lib, pkgs, pkgs-unstable, modulesPath, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  pkgs-unstable,
+  modulesPath,
+  ...
+}:
 
 {
   imports = [ (modulesPath + "/installer/scan/not-detected.nix") ];
 
-  boot.initrd.availableKernelModules =
-    [ "nvme" "xhci_pci" "ahci" "usb_storage" "usbhid" "sd_mod" ];
+  boot.initrd.availableKernelModules = [
+    "nvme"
+    "xhci_pci"
+    "ahci"
+    "usb_storage"
+    "usbhid"
+    "sd_mod"
+  ];
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-amd" ];
   boot.extraModulePackages = [ ];
@@ -17,7 +30,10 @@
   fileSystems."/" = {
     device = "/dev/disk/by-uuid/005c89d0-4848-4509-88ae-78f45bc692e7";
     fsType = "btrfs";
-    options = [ "compress=zstd:1" "discard=async" ];
+    options = [
+      "compress=zstd:1"
+      "discard=async"
+    ];
   };
 
   fileSystems."/boot" = {
@@ -33,7 +49,10 @@
   fileSystems."/home/dewaldv/Games2" = {
     device = "/dev/disk/by-label/games";
     fsType = "btrfs";
-    options = [ "compress=zstd:1" "discard=async" ];
+    options = [
+      "compress=zstd:1"
+      "discard=async"
+    ];
   };
 
   swapDevices = [ ];
@@ -47,8 +66,7 @@
   # networking.interfaces.wlp4s0.useDHCP = lib.mkDefault true;
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
-  hardware.cpu.amd.updateMicrocode =
-    lib.mkDefault config.hardware.enableRedistributableFirmware;
+  hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
 
   programs.corectrl = {
     enable = true;

@@ -7,12 +7,17 @@
       enable = true;
       theme = "robbyrussell";
       custom = "\${HOME}/.zsh-custom";
-      plugins = [ "asdf" "aws" "azure" "emacs" "git" ];
+      plugins = [
+        "asdf"
+        "aws"
+        "azure"
+        "emacs"
+        "git"
+      ];
     };
     shellAliases = {
       gc = "git commit -m";
-      gbrclean = ''
-        git branch --merged | egrep -v "^\*|  (master|main)" | xargs -r git branch -d'';
+      gbrclean = ''git branch --merged | egrep -v "^\*|  (master|main)" | xargs -r git branch -d'';
       tree = "tree -C";
       stree = "tree -aI .git";
     };

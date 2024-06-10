@@ -1,5 +1,12 @@
 name:
-{ nixpkgs, nixpkgs-unstable, home-manager, extraModules, system, user, overlays
+{
+  nixpkgs,
+  nixpkgs-unstable,
+  home-manager,
+  extraModules,
+  system,
+  user,
+  overlays,
 }:
 
 nixpkgs.lib.nixosSystem {

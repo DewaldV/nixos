@@ -5,6 +5,5 @@
     ./configuration.nix
     ./hardware.nix
     ./virt.nix
-
   ];
 }
