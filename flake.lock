@@ -2,17 +2,18 @@
   "nodes": {
     "awsvpnclient": {
       "inputs": {
+        "flake-utils": "flake-utils_2",
         "nixpkgs": [
           "nixpkgs-rvu",
           "nixpkgs"
         ]
       },
       "locked": {
-        "lastModified": 1678777780,
-        "narHash": "sha256-OHeo0J7wdW7tm6kZWQpqQANnnGuvxxYv2MKU0Mq+GuY=",
+        "lastModified": 1709887232,
+        "narHash": "sha256-SpJv0a1QORJ0V1I2qWMGGTjkk3i3gb41ELOetlmM8oA=",
         "owner": "ymatsiuk",
         "repo": "awsvpnclient",
-        "rev": "8bdfd42d893f7e80c5d0044cdb3181bdf3612ff2",
+        "rev": "56ca114e3f7fe4db9d745a0ab8ed70c6bd803a8f",
         "type": "github"
       },
       "original": {
@@ -101,6 +102,24 @@
         "owner": "numtide",
         "repo": "flake-utils",
         "rev": "cfacdce06f30d2b68473a46042957675eebb3401",
+        "type": "github"
+      },
+      "original": {
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "type": "github"
+      }
+    },
+    "flake-utils_2": {
+      "inputs": {
+        "systems": "systems_2"
+      },
+      "locked": {
+        "lastModified": 1701680307,
+        "narHash": "sha256-kAuep2h5ajznlPMD9rnQyffWG8EM/C73lejGofXvdM8=",
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "rev": "4022d587cbbfd70fe950c1e2083a02621806a725",
         "type": "github"
       },
       "original": {
@@ -218,18 +237,16 @@
         ]
       },
       "locked": {
-        "lastModified": 1709832992,
-        "narHash": "sha256-ZzChzB5zFt/rsAq/7GsyeasWrWcJh6+WyTERH18MzHg=",
-        "owner": "uswitch",
-        "repo": "nixpkgs",
-        "rev": "050b643ddf828565729a118f128f713ea445e2e7",
-        "type": "github"
+        "dirtyRev": "3f25c3201335ee999bde323cdb196f71c927cf95-dirty",
+        "dirtyShortRev": "3f25c32-dirty",
+        "lastModified": 1718091894,
+        "narHash": "sha256-3iJ6ZWTbUwTU5v0nzhJ8gNW5kUFI33uz9ebQaCxuSko=",
+        "type": "git",
+        "url": "file:///home/dewaldv/Projects/nixpkgs"
       },
       "original": {
-        "owner": "uswitch",
-        "ref": "cleanup",
-        "repo": "nixpkgs",
-        "type": "github"
+        "type": "git",
+        "url": "file:///home/dewaldv/Projects/nixpkgs"
       }
     },
     "nixpkgs-stable": {
@@ -331,6 +348,21 @@
       }
     },
     "systems": {
+      "locked": {
+        "lastModified": 1681028828,
+        "narHash": "sha256-Vy1rq5AaRuLzOxct8nz4T6wlgyUR7zLU309k9mBC768=",
+        "owner": "nix-systems",
+        "repo": "default",
+        "rev": "da67096a3b9bf56a91d16901293e51ba5b49a27e",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-systems",
+        "repo": "default",
+        "type": "github"
+      }
+    },
+    "systems_2": {
       "locked": {
         "lastModified": 1681028828,
         "narHash": "sha256-Vy1rq5AaRuLzOxct8nz4T6wlgyUR7zLU309k9mBC768=",

@@ -17,7 +17,7 @@
     keyMap = "uk";
   };
 
-  services.xserver.layout = "gb";
+  services.xserver.xkb.layout = "gb";
 
   services.blueman.enable = true;
   services.fprintd.enable = true;
