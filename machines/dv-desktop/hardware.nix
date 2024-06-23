@@ -96,5 +96,5 @@
     # extraPackages32 = [ pkgs-unstable.driversi686Linux.amdvlk ];
   };
 
-  hardware.amdgpu.amdvlk = false;
+  hardware.amdgpu.amdvlk.enable = false;
 }
