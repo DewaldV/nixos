@@ -12,13 +12,11 @@
     keyMap = "us";
   };
 
-  services.xserver.layout = "us";
+  services.xserver.xkb.layout = "us";
 
   services.fwupd = {
     extraRemotes = [ "lvfs-testing" ];
-    uefiCapsuleSettings = {
-      DisableCapsuleUpdateOnDisk = true;
-    };
+    uefiCapsuleSettings.DisableCapsuleUpdateOnDisk = true;
   };
 
   services.blueman.enable = true;
