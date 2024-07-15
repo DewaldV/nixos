@@ -9,6 +9,7 @@
 
   services.xserver.xkb.layout = "us";
   services.blueman.enable = true;
+  services.ratbagd.enable = true;
 
   programs.gamemode = {
     enable = true;
@@ -21,6 +22,7 @@
   };
 
   environment.systemPackages = with pkgs; [
+    piper
     lutris
     mangohud
     protontricks
