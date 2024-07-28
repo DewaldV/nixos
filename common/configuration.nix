@@ -16,7 +16,7 @@
   # Boot
   boot = {
     initrd.systemd.enable = true;
-    kernelPackages = pkgs.linuxPackages_6_9;
+    kernelPackages = pkgs.linuxPackages_6_10;
     kernelParams = [ "quiet" ];
     loader.efi.canTouchEfiVariables = true;
     loader.systemd-boot.enable = true;
