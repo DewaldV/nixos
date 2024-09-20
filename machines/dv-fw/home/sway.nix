@@ -1,4 +1,9 @@
-{ config, pkgs, lib, ... }:
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}:
 
 {
   wayland.windowManager.sway.config = {
@@ -9,12 +14,14 @@
       };
     };
 
-    output."eDP-1".scale = lib.mkForce "1.25";
+    output."eDP-1".scale = lib.mkForce "1.5";
   };
 
   programs.waybar.settings = {
     mainBar = {
-      battery = { bat = lib.mkForce "BAT1"; };
+      battery = {
+        bat = lib.mkForce "BAT1";
+      };
       temperature = {
         hwmon-path = lib.mkForce "/sys/class/hwmon/hwmon4/temp1_input";
       };
