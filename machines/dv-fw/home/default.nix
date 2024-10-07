@@ -3,5 +3,5 @@ let
   composeHome = import ../../../lib/composehome.nix;
 in
 {
-  imports = composeHome [ ./sway.nix ];
+  imports = composeHome [ ../../sway ./sway.nix ];
 }

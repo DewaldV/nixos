@@ -23,6 +23,12 @@ in
         };
       }
     ];
+
+    extraConfig = {
+      gpg."ssh" = {
+        program = lib.mkForce "/opt/1Password/op-ssh-sign";
+      };
+    };
   };
 
   programs.ssh = {

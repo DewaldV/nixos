@@ -2,15 +2,16 @@
 
 {
   imports = [
+    ./1password
     ./alacritty.nix
     ./direnv.nix
     ./doom
     ./editorconfig.nix
+    ./foot.nix
     ./git.nix
     ./gtk.nix
     ./rust
     ./ssh.nix
-    ./sway.nix
     ./tmux
     ./zsh
   ];

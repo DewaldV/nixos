@@ -5,7 +5,7 @@
     enable = true;
     settings = {
       font = {
-        normal.family = "Hack";
+        normal.family = "Fira Code";
         size = 12;
       };
       window.opacity = 0.975;
