@@ -6,7 +6,7 @@ in
 
   imports = composeHome [
     ./dconf.nix
-    ../../sway
+    ../../../sway
     ./sway.nix
   ];
 }
