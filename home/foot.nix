@@ -6,8 +6,14 @@
     settings = {
       main = {
         term = "xterm-256color";
-        font = "Fira Code:size=8";
-        dpi-aware = "yes";
+        font = "Hack:size=12";
+        dpi-aware = "no";
+      };
+
+      colors = {
+        alpha = 0.925;
+        foreground = "ffffff";
+        background = "000000";
       };
     };
   };

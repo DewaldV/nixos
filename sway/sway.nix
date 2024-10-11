@@ -13,11 +13,11 @@
     config = rec {
       menu = "fuzzel";
       modifier = "Mod4";
-      terminal = "alacritty";
+      terminal = "foot";
 
       assigns = {
         "1:web" = [ { app_id = "^firefox$"; } ];
-        "2:term" = [ { app_id = "^Alacritty$"; } ];
+        "2:term" = [ { app_id = "^foot$"; } ];
         "3:code" = [ { app_id = "^emacs$"; } ];
         "4:slack" = [ { app_id = "^Slack$"; } ];
         "5:zoom" = [ { app_id = "^Zoom$"; } ];
