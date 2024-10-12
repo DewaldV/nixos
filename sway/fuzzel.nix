@@ -11,13 +11,13 @@
     enable = true;
     settings = {
       colors = {
-        background = "1e1e2edd";
-        text = "cdd6f4ff";
+        background = "1a1a1add";
+        text = "d1d1d1ff";
         match = "f38ba8ff";
-        selection = "585b70ff";
+        selection = "585858ff";
         selection-match = "f38ba8ff";
         selection-text = "cdd6f4ff";
-        border = "b4befeff";
+        border = "b4b4b4ff";
       };
     };
   };
