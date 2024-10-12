@@ -31,6 +31,7 @@ nixpkgs.lib.nixosSystem {
     {
       home-manager.useGlobalPkgs = true;
       home-manager.useUserPackages = true;
+      home-manager.backupFileExtension = "bak";
       home-manager.users.${user} = ../machines/${name}/home;
     }
   ] ++ extraModules;
