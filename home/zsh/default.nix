@@ -23,5 +23,7 @@
     };
   };
 
+  home.file.".zsh-custom/bin.zsh".source = ./zsh-custom/bin.zsh;
+  home.file.".zsh-custom/go.zsh".source = ./zsh-custom/go.zsh;
   home.file.".zsh-custom/kube.zsh".source = ./zsh-custom/kube.zsh;
 }
