@@ -32,6 +32,7 @@
     azure-cli
     cilium-cli
     docker-compose
+    fzf
     jdk17
     kind
     mangohud

@@ -4,10 +4,12 @@
   programs.tmux = {
     enable = true;
     clock24 = true;
-    escapeTime = 0;
-    keyMode = "vi";
     mouse = true;
     prefix = "C-a";
-    terminal = "screen-256color";
+    sensibleOnTop = true;
+    plugins = with pkgs; [
+      tmuxPlugins.sensible
+      tmuxPlugins.fzf-tmux-url
+    ];
   };
 }
