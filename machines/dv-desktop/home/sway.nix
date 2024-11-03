@@ -21,4 +21,6 @@
       };
     };
   };
+
+  services.swayidle.enable = lib.mkForce false;
 }
