@@ -22,13 +22,13 @@
   };
 
   environment.systemPackages = with pkgs; [
-    piper
     lutris
     mangohud
+    piper
     protontricks
     system76-keyboard-configurator
     vulkan-tools
-    winetricks
     wineWowPackages.stable
+    winetricks
   ];
 }

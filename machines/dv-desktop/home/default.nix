@@ -8,5 +8,6 @@ in
     ./dconf.nix
     ../../../sway
     ./sway.nix
+    ./vscode.nix
   ];
 }
