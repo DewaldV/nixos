@@ -16,7 +16,7 @@
   # Boot
   boot = {
     initrd.systemd.enable = true;
-    kernelPackages = pkgs.linuxPackages_6_11;
+    kernelPackages = pkgs.linuxPackages_6_12;
     kernelParams = [ "quiet" ];
     loader.efi.canTouchEfiVariables = true;
     loader.systemd-boot.enable = true;
@@ -102,8 +102,8 @@
     git
     glib
     glxinfo
-    gnome.gnome-calculator
-    gnome.gnome-font-viewer
+    gnome-calculator
+    gnome-font-viewer
     gnumake
     gparted
     grim
@@ -175,7 +175,6 @@
   programs.seahorse.enable = true;
 
   # Enable sound.
-  sound.enable = true;
   hardware.pulseaudio.enable = false;
   services.pipewire = {
     enable = true;
