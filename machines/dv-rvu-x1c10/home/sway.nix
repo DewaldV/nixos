@@ -7,6 +7,7 @@
 
 {
   wayland.windowManager.sway = {
+    package = pkgs.emptyDirectory;
     config = {
       input = lib.mkForce {
         "*" = {
@@ -41,5 +42,9 @@
         };
       };
     };
+  };
+
+  services.swayidle = {
+    enable = lib.mkForce false;
   };
 }

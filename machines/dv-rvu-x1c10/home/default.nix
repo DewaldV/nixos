@@ -4,9 +4,11 @@ let
 in
 {
   imports = composeHome [
+    ../../../sway
     ./alacritty.nix
     ./foot.nix
     ./git.nix
+    ./sway.nix
     ./xdg-desktop.nix
     ./zsh
   ];
