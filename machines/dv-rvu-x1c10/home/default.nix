@@ -17,6 +17,7 @@ in
   home.homeDirectory = "/home/dewaldv";
   home.stateVersion = "22.11";
   home.packages = with pkgs; [
+    btop
     curl
     dig
     fastfetch
