@@ -55,38 +55,3 @@
 ;;
 ;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
 ;; they are implemented.
-
-;; BEGIN astro-ts
-;; Source: https://edmundmiller.dev/posts/emacs-astro/
-
-;; set up astro-ts-mode
-(use-package! astro-ts-mode
-  :after treesit-auto
-  :init
-  (when (modulep! +lsp)
-    (add-hook 'astro-ts-mode-hook #'lsp! 'append))
-  :config
-  (global-treesit-auto-mode)
-  (let ((astro-recipe (make-treesit-auto-recipe
-                       :lang 'astro
-                       :ts-mode 'astro-ts-mode
-                       :url "https://github.com/virchau13/tree-sitter-astro"
-                       :revision "master"
-                       :source-dir "src")))
-    (add-to-list 'treesit-auto-recipe-list astro-recipe)))
-
-;; prettier support for *.astro files
-(set-formatter! 'prettier-astro
-  '("npx" "prettier" "--parser=astro"
-    (apheleia-formatters-indent "--use-tabs" "--tab-width" 'astro-ts-mode-indent-offset))
-  :modes '(astro-ts-mode))
-
-;; tailwind-css intellisense
-(use-package! lsp-tailwindcss
-  :when (modulep! +lsp)
-  :init
-  (setq! lsp-tailwindcss-add-on-mode t)
-  :config
-  (add-to-list 'lsp-tailwindcss-major-modes 'astro-ts-mode))
-
-;; END astro-ts
