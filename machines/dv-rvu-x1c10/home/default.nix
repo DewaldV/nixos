@@ -18,6 +18,7 @@ in
   home.homeDirectory = "/home/dewaldv";
   home.stateVersion = "22.11";
   home.packages = with pkgs; [
+    aws-sam-cli
     btop
     curl
     dig
