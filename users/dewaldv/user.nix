@@ -30,15 +30,7 @@
       awscli2
       editorconfig-core-c
       flameshot
-      go
-      gocode-gomod
-      gomodifytags
       google-cloud-sdk
-      gopls
-      gore
-      gotests
-      gotestsum
-      gotools
       gzdoom
       helvum
       k9s

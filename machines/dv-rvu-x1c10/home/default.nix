@@ -19,11 +19,11 @@ in
   home.stateVersion = "22.11";
   home.packages = with pkgs; [
     aws-sam-cli
+    azure-cli
     btop
     curl
     dig
     fastfetch
-    fd
     file
     gh
     helmfile
@@ -32,7 +32,13 @@ in
     jq
     lsof
     nixfmt-rfc-style
-    ripgrep
+    pavucontrol
+    snyk
+    tree
+    unzip
+    vim
+    wget
+    yq-go
   ];
 
   programs.home-manager.enable = true;

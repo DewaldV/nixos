@@ -12,4 +12,8 @@
       tmuxPlugins.fzf-tmux-url
     ];
   };
+
+  home.packages = with pkgs; [
+    fzf
+  ];
 }

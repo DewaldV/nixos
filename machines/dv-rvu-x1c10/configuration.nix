@@ -29,21 +29,17 @@
 
   environment.systemPackages = with pkgs; [
     awsvpnclient
-    azure-cli
     cilium-cli
     docker-compose
-    fzf
     jdk17
     kind
     mangohud
     maven
     nodejs_18
     sbctl
-    snyk
     u
     pkgs-unstable.vscode-fhs
     pkgs-unstable.dotnet-sdk_8
-    yq-go
   ];
 
   # RVU specific services

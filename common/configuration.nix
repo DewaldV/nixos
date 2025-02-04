@@ -93,7 +93,6 @@
     distrobox
     evince # pdf document viewer
     fastfetch
-    fd
     file
     firefox
     gcc
@@ -126,7 +125,6 @@
     protonvpn-gui
     pulseaudio
     python311
-    ripgrep
     s-tui
     signal-desktop
     skypeforlinux
