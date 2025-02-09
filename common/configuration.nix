@@ -121,6 +121,7 @@
     pkgs-unstable.slack
     polkit_gnome
     powertop
+    proton-pass
     protonvpn-cli
     protonvpn-gui
     pulseaudio

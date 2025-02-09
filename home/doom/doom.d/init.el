@@ -113,7 +113,7 @@
        ;;tty               ; improve the terminal Emacs experience
 
        :lang
-       (astro +lsp)        ; from: https://github.com/edmundmiller/.doom.d/blob/main/init.el
+       ;;(astro +lsp)        ; from: https://github.com/edmundmiller/.doom.d/blob/main/init.el
        ;;agda              ; types of types of types of types...
        ;;cc                ; C/C++/Obj-C madness
        ;;clojure           ; java with a lisp
@@ -169,7 +169,7 @@
        ;;solidity          ; do you need a blockchain? No.
        ;;swift             ; who asked for emoji variables?
        ;;terra             ; Earth and Moon in alignment for performance.
-       templ
+       ;;templ
        (web +lsp +tree-sitter) ; the tubes
        yaml              ; JSON, but readable
 
