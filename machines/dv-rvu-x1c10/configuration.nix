@@ -27,21 +27,6 @@
 
   programs.light.enable = true;
 
-  environment.systemPackages = with pkgs; [
-    awsvpnclient
-    cilium-cli
-    docker-compose
-    jdk17
-    kind
-    mangohud
-    maven
-    nodejs_18
-    sbctl
-    u
-    pkgs-unstable.vscode-fhs
-    pkgs-unstable.dotnet-sdk_8
-  ];
-
   # RVU specific services
   services.rvu-kolide.enable = true;
 
