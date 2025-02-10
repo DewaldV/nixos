@@ -8,11 +8,12 @@
     ./doom
     ./editorconfig.nix
     ./foot.nix
+    ./fzf.nix
     ./git.nix
     ./gtk.nix
     ./rust
     ./ssh.nix
-    ./tmux
+    ./tmux.nix
     ./zsh
   ];
 
