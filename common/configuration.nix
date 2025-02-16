@@ -47,7 +47,6 @@
   fonts = {
     enableDefaultPackages = true;
     packages = with pkgs; [
-      emacs-all-the-icons-fonts
       fira
       fira-mono
       font-awesome
@@ -150,11 +149,6 @@
   services.flatpak.enable = true;
   services.fwupd.enable = true;
   services.printing.enable = true;
-  services.emacs = {
-    enable = true;
-    defaultEditor = true;
-    package = pkgs.emacs29-pgtk;
-  };
 
   services.resolved = {
     enable = true;

@@ -6,7 +6,6 @@ in
   imports = composeHome [
     ../../../sway
     ./alacritty.nix
-    ./emacs.nix
     ./foot.nix
     ./git.nix
     ./sway.nix
