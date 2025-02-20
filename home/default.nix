@@ -25,7 +25,7 @@
 
   home.stateVersion = "22.11";
 
-  packages = with pkgs; [
+  home.packages = with pkgs; [
     argocd
     asdf-vm
     awscli2
@@ -40,7 +40,6 @@
     libreoffice-fresh
     pandoc
     pre-commit
-    ruby_3_1
     shellcheck
     shfmt
     ssm-session-manager-plugin
