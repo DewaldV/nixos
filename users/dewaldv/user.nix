@@ -23,31 +23,5 @@
       "wheel"
     ];
     shell = pkgs.zsh;
-
-    packages = with pkgs; [
-      argocd
-      asdf-vm
-      awscli2
-      editorconfig-core-c
-      flameshot
-      google-cloud-sdk
-      gzdoom
-      helvum
-      k9s
-      kubectl
-      kubernetes-helm
-      kubernetes-helmPlugins.helm-diff
-      libreoffice-fresh
-      openmw
-      pandoc
-      pre-commit
-      ruby_3_1
-      shellcheck
-      shfmt
-      ssm-session-manager-plugin
-      tflint
-      tflint-plugins.tflint-ruleset-aws
-      xstow
-    ];
   };
 }
