@@ -34,6 +34,7 @@ in
     lsof
     nixfmt-rfc-style
     pavucontrol
+    signal-desktop
     snyk
     tree
     unzip
