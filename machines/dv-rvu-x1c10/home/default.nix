@@ -30,6 +30,7 @@ in
     htop
     ipcalc
     jq
+    k6
     lsof
     nixfmt-rfc-style
     pavucontrol
