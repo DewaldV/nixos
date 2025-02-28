@@ -40,11 +40,11 @@
           all-outputs = false;
           format = "{icon}";
           format-icons = {
-            "1:web" = "";
+            "1:web" = "";
             "2:term" = "";
             "3:code" = "";
-            "4:slack" = "";
-            "5:zoom" = "Z";
+            "4:chat" = "";
+            "5:zoom" = "";
             "urgent" = "";
             "focused" = "";
             "default" = "";
@@ -100,13 +100,13 @@
         };
         network = {
           # "interface": "wlp2s0", // (Optional) To force the use of this interface
-          format-wifi = " {essid} ({signalStrength}%)";
+          format-wifi = "    {essid} ({signalStrength}%)";
           format-ethernet = " {ifname}: {ipaddr}/{cidr}";
           format-disconnected = "⚠ Disconnected";
         };
         pulseaudio = {
           # "scroll-step": 1,
-          format = "{icon} {volume}%";
+          format = "{icon}    {volume}%";
           format-bluetooth = "{icon}  {volume}% ";
           format-muted = "";
           format-icons = {
@@ -139,7 +139,7 @@
 
       * {
         border: none;
-        font-family: Noto Sans, FontAwesome;
+        font-family: "Nerd Font", "Font Awesome 5 Free", Noto Sans;
         font-size: 16px;
         min-height: 0;
         color: @text;

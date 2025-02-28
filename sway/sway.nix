@@ -16,10 +16,16 @@
       terminal = "foot";
 
       assigns = {
-        "1:web" = [ { app_id = "^firefox$"; } ];
+        "1:web" = [
+          { app_id = "^firefox$"; }
+          { app_id = "^brave-browser$"; }
+        ];
         "2:term" = [ { app_id = "^foot$"; } ];
         "3:code" = [ { app_id = "^emacs$"; } ];
-        "4:slack" = [ { app_id = "^Slack$"; } ];
+        "4:chat" = [
+          { app_id = "^Slack$"; }
+          { app_id = "^discord$"; }
+        ];
         "5:zoom" = [ { app_id = "^Zoom$"; } ];
       };
 
