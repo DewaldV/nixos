@@ -2,7 +2,7 @@
 
 let
   browser = [
-    "firefox.desktop" # assume firefox provides this
+    "brave-browser.desktop" # assume brave provides this
   ];
   associations = {
     "inode/directory" = [ "thunar.desktop" ];

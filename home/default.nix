@@ -29,6 +29,7 @@
     argocd
     asdf-vm
     awscli2
+    brave
     editorconfig-core-c
     flameshot
     google-cloud-sdk
