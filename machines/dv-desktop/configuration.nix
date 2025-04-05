@@ -16,10 +16,14 @@
     enableRenice = true;
   };
 
+  programs.gamescope.enable = true;
+
   programs.steam = {
     enable = true;
     gamescopeSession.enable = true;
   };
+
+  services.power-profiles-daemon.enable = true;
 
   environment.systemPackages = with pkgs; [
     lutris
