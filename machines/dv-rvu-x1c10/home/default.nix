@@ -23,6 +23,7 @@ in
     btop
     curl
     dig
+    dotnet-sdk
     fastfetch
     file
     gh
