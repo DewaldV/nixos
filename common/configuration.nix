@@ -127,7 +127,6 @@
     python311
     s-tui
     signal-desktop
-    skypeforlinux
     stow
     stress
     sway-contrib.grimshot
