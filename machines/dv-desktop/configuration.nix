@@ -26,6 +26,7 @@
   services.power-profiles-daemon.enable = true;
 
   environment.systemPackages = with pkgs; [
+    heroic
     lutris
     mangohud
     piper
