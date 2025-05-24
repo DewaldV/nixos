@@ -14,6 +14,7 @@
     ./rust
     ./ssh.nix
     ./tmux.nix
+    ./zellij.nix
     ./zsh
   ];
 
@@ -29,8 +30,10 @@
     argocd
     asdf-vm
     awscli2
+    bat
     brave
     editorconfig-core-c
+    eza
     flameshot
     google-cloud-sdk
     helvum
@@ -46,6 +49,7 @@
     ssm-session-manager-plugin
     tflint
     tflint-plugins.tflint-ruleset-aws
+    xh
     xstow
   ];
 }
