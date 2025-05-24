@@ -10,11 +10,6 @@
       url = "github:nix-community/home-manager/release-24.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
-    lanzaboote = {
-      url = "github:nix-community/lanzaboote/v0.4.1";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
   };
 
   outputs =
@@ -30,20 +25,6 @@
       mkHost = import ./lib/mkhost.nix;
     in
     {
-      # nixosConfigurations.dv-rvu-x1c10 = mkHost "dv-rvu-x1c10" rec {
-      #   inherit nixpkgs nixpkgs-unstable home-manager;
-      #   system = "x86_64-linux";
-      #   user = "dewaldv";
-
-      #   extraModules = [
-      #     inputs.nixos-hardware.nixosModules.lenovo-thinkpad-x1-10th-gen
-      #     inputs.nixpkgs-rvu.nixosModule
-      #     inputs.lanzaboote.nixosModules.lanzaboote
-      #   ];
-
-      #   overlays = [ ];
-      # };
-
       homeConfigurations.dewaldv = mkHome "dv-rvu-x1c10" rec {
         inherit nixpkgs nixpkgs-unstable home-manager;
         system = "x86_64-linux";
