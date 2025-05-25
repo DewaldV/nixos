@@ -28,7 +28,6 @@
   environment.systemPackages = with pkgs; [
     heroic
     lutris
-    mangohud
     piper
     protontricks
     system76-keyboard-configurator

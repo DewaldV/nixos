@@ -11,6 +11,7 @@
     ./fzf.nix
     ./git.nix
     ./gtk.nix
+    ./mangohud.nix
     ./rust
     ./ssh.nix
     ./tmux.nix

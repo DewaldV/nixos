@@ -38,7 +38,6 @@
 
   environment.systemPackages = with pkgs; [
     lutris
-    mangohud
     protontricks
     vulkan-tools
     winetricks
