@@ -14,7 +14,6 @@
     ./rust
     ./ssh.nix
     ./tmux.nix
-    ./zellij.nix
     ./zsh
   ];
 
