@@ -26,7 +26,6 @@ nixpkgs.lib.nixosSystem {
     ../users/${user}/user.nix
     ../common
 
-    home-manager.nixosModule
     home-manager.nixosModules.home-manager
     {
       home-manager.useGlobalPkgs = true;

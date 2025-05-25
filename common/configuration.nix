@@ -46,19 +46,21 @@
 
   fonts = {
     enableDefaultPackages = true;
-    packages = with pkgs; [
-      fira
-      fira-mono
-      font-awesome
-      hack-font
-      hackgen-nf-font
-      material-design-icons
-      nerdfonts
-      noto-fonts
-      roboto
-      unifont
-      weather-icons
-    ];
+    packages =
+      with pkgs;
+      [
+        fira
+        fira-mono
+        font-awesome
+        hack-font
+        hackgen-nf-font
+        material-design-icons
+        noto-fonts
+        roboto
+        unifont
+        weather-icons
+      ]
+      ++ builtins.filter lib.attrsets.isDerivation (builtins.attrValues pkgs.nerd-fonts);
     fontconfig.enable = true;
     fontDir.enable = true;
   };
@@ -167,7 +169,6 @@
   programs.seahorse.enable = true;
 
   # Enable sound.
-  hardware.pulseaudio.enable = false;
   services.pipewire = {
     enable = true;
     alsa = {
