@@ -11,14 +11,14 @@
     settings = {
       actions = true;
       icons = true;
-      defaultTimeout = 5000;
+      default-timeout = 5000;
       font = "Noto Sans 10";
-      borderRadius = 4;
+      border-radius = 4;
       # catppuccin/mako: https://github.com/catppuccin/mako/blob/main/src/mocha
-      backgroundColor = "#1e1e2e";
-      textColor = "#cdd6f4";
-      borderColor = "#89b4fa";
-      progressColor = "over #313244";
+      background-color = "#1e1e2e";
+      text-color = "#cdd6f4";
+      border-color = "#89b4fa";
+      progress-color = "over #313244";
       "urgency=high" = {
         border-color = "#fab387";
       };
