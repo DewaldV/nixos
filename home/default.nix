@@ -12,6 +12,7 @@
     ./git.nix
     ./gtk.nix
     ./mangohud.nix
+    ./neovim.nix
     ./rust
     ./ssh.nix
     ./tmux.nix
