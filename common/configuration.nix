@@ -139,6 +139,7 @@
     unzip
     usbutils
     vim
+    wireguard-tools
     wget
     wl-clipboard
     xdg-utils
