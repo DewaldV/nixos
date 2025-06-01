@@ -30,6 +30,7 @@
     lutris
     piper
     protontricks
+    scummvm
     system76-keyboard-configurator
     vulkan-tools
     wineWowPackages.stable
