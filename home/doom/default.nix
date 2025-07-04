@@ -29,7 +29,7 @@ in
     gore
     gotests
     gotestsum
-    # gotools
+    gotools
     go-tools
     unconvert
   ];
