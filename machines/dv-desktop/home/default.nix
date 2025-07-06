@@ -10,4 +10,9 @@ in
     ./sway.nix
     ./vscode.nix
   ];
+
+  home.packages = with pkgs; [
+    bun
+    nodejs_24
+  ];
 }
