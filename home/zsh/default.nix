@@ -13,6 +13,7 @@
         "azure"
         "emacs"
         "git"
+        "rust"
       ];
     };
     shellAliases = {
