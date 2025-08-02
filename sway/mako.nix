@@ -22,6 +22,7 @@
       "urgency=high" = {
         border-color = "#fab387";
       };
+      on-button-middle = "exec makoctl menu -n \"$id\" fuzzel -- -d -p 'Action:'";
     };
   };
 }
