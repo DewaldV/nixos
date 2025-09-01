@@ -162,8 +162,6 @@
     ];
   };
 
-  services.tailscale.enable = true;
-
   # Gnome Keyring
   security.pam.services.dewaldv.enableGnomeKeyring = true;
   services.gnome.gnome-keyring.enable = true;
