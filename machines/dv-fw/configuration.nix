@@ -38,8 +38,10 @@
   };
 
   environment.systemPackages = with pkgs; [
+    heroic
     lutris
     protontricks
+    scummvm
     vulkan-tools
     winetricks
   ];
