@@ -1,4 +1,9 @@
-{ config, pkgs, ... }:
+{
+  config,
+  pkgs,
+  pkgs-unstable,
+  ...
+}:
 
 {
   imports = [
@@ -50,6 +55,7 @@
     ssm-session-manager-plugin
     tflint
     tflint-plugins.tflint-ruleset-aws
+    pkgs-unstable.codex
     xh
     xstow
   ];

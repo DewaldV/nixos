@@ -9,6 +9,9 @@ name:
   overlays,
 }:
 
+let
+  pkgs-unstable = nixpkgs-unstable.legacyPackages.${system};
+in
 nixpkgs.lib.nixosSystem {
   inherit system;
 
@@ -32,6 +35,10 @@ nixpkgs.lib.nixosSystem {
       home-manager.useUserPackages = true;
       home-manager.backupFileExtension = "bak";
       home-manager.users.${user} = ../machines/${name}/home;
+      home-manager.extraSpecialArgs = {
+        pkgs-unstable = pkgs-unstable;
+      };
     }
-  ] ++ extraModules;
+  ]
+  ++ extraModules;
 }
