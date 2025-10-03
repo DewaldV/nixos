@@ -36,4 +36,6 @@
     wineWowPackages.stable
     winetricks
   ];
+
+  services.tailscale.enable = true;
 }
