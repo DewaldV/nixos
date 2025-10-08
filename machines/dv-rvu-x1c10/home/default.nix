@@ -10,6 +10,7 @@ in
     ./git.nix
     ./sway.nix
     ./xdg-desktop.nix
+    ./opencode
     ./zsh
   ];
 
