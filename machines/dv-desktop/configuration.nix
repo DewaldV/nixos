@@ -1,4 +1,9 @@
-{ config, pkgs, ... }:
+{
+  config,
+  pkgs,
+  pkgs-unstable,
+  ...
+}:
 
 {
   boot.loader.systemd-boot.consoleMode = "0";
@@ -27,7 +32,7 @@
 
   environment.systemPackages = with pkgs; [
     heroic
-    lutris
+    pkgs-unstable.lutris
     piper
     protontricks
     scummvm

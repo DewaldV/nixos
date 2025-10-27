@@ -71,6 +71,7 @@
   services.hardware.openrgb = {
     enable = true;
     motherboard = "amd";
+    package = pkgs-unstable.openrgb;
   };
 
   hardware.bluetooth.enable = true;
