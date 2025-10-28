@@ -5,7 +5,7 @@
       "npm": "@ai-sdk/openai",
       "name": "OpenAI Direct",
       "options": {
-        "baseURL": "https://litellm.external.rvu.cloud/v1",
+        "baseURL": "https://litellm.external-ai.rvu.cloud/v1",
         "apiKey": "{env:LITE_LLM_API_KEY}",
         "extraHeaders": {
           "litellm-drop-params": "true"
@@ -52,7 +52,7 @@
       "npm": "@ai-sdk/openai-compatible",
       "name": "LiteLLM",
       "options": {
-        "baseURL": "https://litellm.external.rvu.cloud/v1",
+        "baseURL": "https://litellm.external-ai.rvu.cloud/v1",
         "apiKey": "{env:LITE_LLM_API_KEY}",
         "extraHeaders": {
           "litellm-drop-params": "true"
