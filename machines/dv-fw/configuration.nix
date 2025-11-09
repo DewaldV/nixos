@@ -45,4 +45,6 @@
     vulkan-tools
     winetricks
   ];
+
+  services.tailscale.enable = true;
 }
