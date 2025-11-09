@@ -18,6 +18,7 @@ in
   home.homeDirectory = "/home/dewaldv";
   home.stateVersion = "22.11";
   home.packages = with pkgs; [
+    asdf-vm
     awscli2
     aws-sam-cli
     azure-cli

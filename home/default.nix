@@ -34,7 +34,6 @@
 
   home.packages = with pkgs; [
     argocd
-    asdf-vm
     awscli2
     bat
     brave
