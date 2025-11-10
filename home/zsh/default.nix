@@ -3,6 +3,7 @@
 {
   programs.zsh = {
     enable = true;
+    history.ignoreSpace = true;
     oh-my-zsh = {
       enable = true;
       theme = "robbyrussell";
