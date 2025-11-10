@@ -4,7 +4,7 @@ let
 in
 {
   imports = composeHome [
-    ../../../sway
+    ../../../profiles/sway/home.nix
     ./sway.nix
   ];
 }

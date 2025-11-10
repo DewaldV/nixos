@@ -11,7 +11,7 @@ in
 
   imports = composeHome [
     ./dconf.nix
-    ../../../sway
+    ../../../profiles/sway/home.nix
     ./sway.nix
     ./vscode.nix
   ];
