@@ -19,7 +19,7 @@ gc:
 gc-gen: delete-generations gc
 
 clean:
-	rm result
+	rm -f result
 
 update:
 	nix flake update
