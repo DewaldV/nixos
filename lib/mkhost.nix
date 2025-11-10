@@ -27,7 +27,7 @@ nixpkgs.lib.nixosSystem {
 
     ../machines/${name}
     ../users/${user}/user.nix
-    ../common
+    ../profiles/base
 
     home-manager.nixosModules.home-manager
     {
