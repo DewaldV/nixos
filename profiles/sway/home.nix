@@ -1,3 +1,4 @@
+# home-manager module for Sway config
 {
   imports = [
     ./fuzzel.nix
