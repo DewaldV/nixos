@@ -1,4 +1,9 @@
-{ config, pkgs, ... }:
+{
+  config,
+  pkgs,
+  pkgs-unstable,
+  ...
+}:
 let
   composeHome = import ../../../lib/composehome.nix;
 in
@@ -14,5 +19,6 @@ in
   home.packages = with pkgs; [
     bun
     nodejs_24
+    pkgs-unstable.opencode
   ];
 }
