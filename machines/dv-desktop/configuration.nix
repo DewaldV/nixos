@@ -16,30 +16,12 @@
   services.blueman.enable = true;
   services.ratbagd.enable = true;
 
-  programs.gamemode = {
-    enable = true;
-    enableRenice = true;
-  };
-
-  programs.gamescope.enable = true;
-
-  programs.steam = {
-    enable = true;
-    gamescopeSession.enable = true;
-  };
-
   services.power-profiles-daemon.enable = true;
 
+  # Desktop-specific packages
   environment.systemPackages = with pkgs; [
-    heroic
-    pkgs-unstable.lutris
     piper
-    protontricks
-    scummvm
     system76-keyboard-configurator
-    vulkan-tools
-    wineWowPackages.stable
-    winetricks
   ];
 
   services.tailscale.enable = true;

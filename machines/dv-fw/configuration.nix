@@ -27,24 +27,5 @@
 
   programs.light.enable = true;
 
-  programs.gamemode = {
-    enable = true;
-    enableRenice = true;
-  };
-
-  programs.steam = {
-    enable = true;
-    gamescopeSession.enable = true;
-  };
-
-  environment.systemPackages = with pkgs; [
-    heroic
-    lutris
-    protontricks
-    scummvm
-    vulkan-tools
-    winetricks
-  ];
-
   services.tailscale.enable = true;
 }
