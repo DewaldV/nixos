@@ -7,14 +7,20 @@ name:
 }:
 
 let
-  pkgs = nixpkgs.legacyPackages.${system};
-  pkgs-unstable = nixpkgs-unstable.legacyPackages.${system};
+  pkgs = import nixpkgs {
+    inherit system;
+    config.allowUnfree = true;
+  };
+  pkgs-unstable = import nixpkgs-unstable {
+    inherit system;
+    config.allowUnfree = true;
+  };
 in
 home-manager.lib.homeManagerConfiguration {
-  pkgs = pkgs;
+  inherit pkgs;
 
   extraSpecialArgs = {
-    pkgs-unstable = pkgs-unstable;
+    inherit pkgs-unstable;
   };
 
   modules = [

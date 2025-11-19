@@ -10,16 +10,15 @@ name:
 }:
 
 let
-  pkgs-unstable = nixpkgs-unstable.legacyPackages.${system};
+  pkgs-unstable = import nixpkgs-unstable {
+    inherit system;
+    config.allowUnfree = true;
+  };
 in
 nixpkgs.lib.nixosSystem {
   inherit system;
-
   specialArgs = {
-    pkgs-unstable = import nixpkgs-unstable {
-      system = system;
-      config.allowUnfree = true;
-    };
+    inherit pkgs-unstable;
   };
 
   modules = [
@@ -36,7 +35,7 @@ nixpkgs.lib.nixosSystem {
       home-manager.backupFileExtension = "bak";
       home-manager.users.${user} = ../machines/${name}/home;
       home-manager.extraSpecialArgs = {
-        pkgs-unstable = pkgs-unstable;
+        inherit pkgs-unstable;
       };
     }
   ]
