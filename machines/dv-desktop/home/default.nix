@@ -20,5 +20,6 @@ in
     bun
     nodejs_24
     pkgs-unstable.opencode
+    pkgs-unstable.claude-code
   ];
 }
