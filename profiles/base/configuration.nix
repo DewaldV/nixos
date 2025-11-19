@@ -6,11 +6,20 @@
 }:
 
 {
-  nix.settings.experimental-features = [
-    "nix-command"
-    "flakes"
-  ];
-  nix.settings.netrc-file = "/etc/nix/netrc";
+  nix.settings = {
+    trusted-users = [
+      "root"
+      "@wheel"
+    ];
+
+    experimental-features = [
+      "nix-command"
+      "flakes"
+    ];
+
+    netrc-file = "/etc/nix/netrc";
+  };
+
   nixpkgs.config.allowUnfree = true;
 
   # Boot
