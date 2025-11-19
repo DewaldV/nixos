@@ -55,3 +55,6 @@
 ;;
 ;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
 ;; they are implemented.
+
+;; Load work config for Emacs, don't error if it doesn't exist
+(load! "work/config" doom-user-dir t)
