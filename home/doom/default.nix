@@ -8,6 +8,7 @@ in
   home.file.".doom.d/init.el".source = ./doom.d/init.el;
   home.file.".doom.d/packages.el".source = ./doom.d/packages.el;
   home.file.".doom.d/modules".source = ./doom.d/modules;
+  home.file.".doom.d/personal".source = ./doom.d/personal;
 
   home.packages = with pkgs; [
     # Doom Emacs requisites
