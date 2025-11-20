@@ -21,5 +21,5 @@
 ## Architecture
 - **Structure**: Flake-based with `mkHost` and `mkHome` helper functions in `lib/`
 - **Machines**: Per-machine configs in `machines/<name>/` with NixOS config and home-manager config
-- **Profiles**: Shared system config profiles in `profiles`, shared home config in `home/`
+- **Profiles**: Shared config profiles in `profiles`
 - **Never modify**: `flake.lock` manually; `system.stateVersion` values

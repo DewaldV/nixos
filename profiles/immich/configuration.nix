@@ -6,10 +6,7 @@
 }:
 
 {
-  environment.systemPackages = [
-    pkgs.immich-go
-  ];
-
+  # Immich photo management service
   services.immich = {
     enable = true;
   };

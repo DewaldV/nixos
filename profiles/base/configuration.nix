@@ -94,66 +94,25 @@
     ];
   };
 
-  # List packages installed in system profile.
+  # System-level packages only
+  # Note: User-facing utilities moved to profiles/base/home.nix
+  # Note: GUI apps moved to profiles/desktop-apps
+  # Note: Development tools moved to profiles/development
   environment.systemPackages = with pkgs; [
-    btop
-    curl
-    dig
-    discord
-    distrobox
-    evince # pdf document viewer
-    fastfetch
-    file
-    firefox
+    # Build tools
     gcc
-    gh
-    gimp
-    git
-    glib
-    glxinfo
-    gnome-calculator
-    gnome-font-viewer
     gnumake
+
+    # System utilities (require root/system integration)
+    glib
     gparted
-    grim
-    helmfile
-    htop
-    insync
-    ipcalc
-    ispell
-    jq
-    kanshi
-    lsof
-    nixfmt-rfc-style
     parted
-    pavucontrol
     pciutils
-    pkgs-unstable.slack
     polkit_gnome
-    powertop
-    proton-pass
-    protonvpn-cli
-    protonvpn-gui
-    pulseaudio
-    python311
-    s-tui
-    signal-desktop
-    stow
-    stress
-    sway-contrib.grimshot
-    swaylock
-    terraform
     tpm2-tss
-    tree
-    unzip
     usbutils
-    vim
     wireguard-tools
-    wget
-    wl-clipboard
     xdg-utils
-    yubioath-flutter
-    zoom-us
   ];
 
   # Services

@@ -4,45 +4,26 @@ let
 in
 {
   imports = composeHome [
+    ../../../profiles/base/home.nix
     ../../../profiles/sway/home.nix
+    ../../../profiles/development/home.nix
+    ../../../profiles/work/home.nix
     ./alacritty.nix
     ./foot.nix
     ./git.nix
     ./sway.nix
     ./xdg-desktop.nix
-    ./opencode
+    ./opencode # Work-specific opencode config
     ./zsh
   ];
 
   home.username = "dewaldv";
   home.homeDirectory = "/home/dewaldv";
   home.stateVersion = "22.11";
-  home.packages = with pkgs; [
-    asdf-vm
-    awscli2
-    aws-sam-cli
-    azure-cli
-    btop
-    curl
-    dig
-    fastfetch
-    file
-    gh
-    helmfile
-    htop
-    ipcalc
-    jq
-    lsof
-    nixfmt-rfc-style
-    pavucontrol
-    signal-desktop
-    snyk
-    tree
-    unzip
-    vim
-    wget
-    yq-go
-  ];
+
+  # All packages now in profiles (base, development, work)
+  # No machine-specific packages needed
+  home.packages = [ ];
 
   programs.home-manager.enable = true;
 }

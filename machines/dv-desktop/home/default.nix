@@ -10,16 +10,15 @@ in
 {
 
   imports = composeHome [
-    ./dconf.nix
     ../../../profiles/sway/home.nix
+    ../../../profiles/development/home.nix
+    ../../../profiles/desktop-apps/home.nix
+    ../../../profiles/editors/home.nix
+    ../../../profiles/virtualization/home.nix
+    ../../../profiles/immich/home.nix
     ./sway.nix
     ./vscode.nix
   ];
 
-  home.packages = with pkgs; [
-    bun
-    nodejs_24
-    pkgs-unstable.opencode
-    pkgs-unstable.claude-code
-  ];
+  # All packages now in profiles
 }

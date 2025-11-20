@@ -3,10 +3,11 @@
 {
   imports = [
     ../../profiles/gaming
+    ../../profiles/virtualization
+    ../../profiles/llm
+    ../../profiles/immich
+    # Note: development and desktop-apps profiles are home-manager only (no system config)
     ./configuration.nix
     ./hardware.nix
-    ./immich.nix
-    ./llm.nix
-    ./virt.nix
   ];
 }

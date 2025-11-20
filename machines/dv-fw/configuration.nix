@@ -1,6 +1,7 @@
 { config, pkgs, ... }:
 
 {
+  # Note: Laptop-specific services moved to profiles/laptop
   boot.loader.systemd-boot.consoleMode = "1";
 
   networking.hostName = "dv-fw";
@@ -18,14 +19,6 @@
     extraRemotes = [ "lvfs-testing" ];
     uefiCapsuleSettings.DisableCapsuleUpdateOnDisk = true;
   };
-
-  services.blueman.enable = true;
-  services.fprintd.enable = true;
-
-  services.power-profiles-daemon.enable = false;
-  services.tlp.enable = true;
-
-  programs.light.enable = true;
 
   services.tailscale.enable = true;
 }

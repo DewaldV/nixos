@@ -10,6 +10,7 @@ in
   home.file.".doom.d/modules".source = ./doom.d/modules;
   home.file.".doom.d/personal".source = ./doom.d/personal;
 
+  # Note: Go development tools moved to profiles/development
   home.packages = with pkgs; [
     # Doom Emacs requisites
     fd
@@ -19,23 +20,6 @@ in
 
     # all-the-icons-fonts
     emacs-all-the-icons-fonts
-
-    # Go dev tools
-    dockfmt
-    errcheck
-    gci
-    go
-    gocode-gomod
-    golangci-lint
-    golangci-lint-langserver
-    gomodifytags
-    gopls
-    gore
-    gotests
-    gotestsum
-    gotools
-    go-tools
-    unconvert
   ];
 
   # For these programs to work correctly on Ubuntu Gnome it is required to add
