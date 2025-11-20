@@ -5,7 +5,6 @@ name:
   nixos-hardware,
   home-manager,
   system,
-  user,
 }:
 
 let
@@ -22,7 +21,6 @@ nixpkgs.lib.nixosSystem {
 
   modules = [
     ../machines/${name}
-    ../users/${user}/user.nix
     ../profiles/base
 
     home-manager.nixosModules.home-manager
@@ -30,7 +28,7 @@ nixpkgs.lib.nixosSystem {
       home-manager.useGlobalPkgs = true;
       home-manager.useUserPackages = true;
       home-manager.backupFileExtension = "bak";
-      home-manager.users.${user} = ../machines/${name}/home;
+      home-manager.users.dewaldv = ../machines/${name}/home;
       home-manager.extraSpecialArgs = {
         inherit pkgs-unstable;
       };

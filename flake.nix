@@ -38,7 +38,6 @@
           home-manager
           ;
         system = "x86_64-linux";
-        user = "dewaldv";
       };
 
       nixosConfigurations.dv-fw = mkHost "dv-fw" {
@@ -49,7 +48,6 @@
           home-manager
           ;
         system = "x86_64-linux";
-        user = "dewaldv";
       };
     };
 }
