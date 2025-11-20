@@ -12,9 +12,9 @@
     firefox
 
     # Communication
-    # Note: signal-desktop is in base/home.nix
     discord
     pkgs-unstable.slack
+    signal-desktop
     zoom-us
 
     # Productivity
@@ -24,8 +24,11 @@
     libreoffice-fresh
 
     # Graphics & Media
-    flameshot
     gimp
-    helvum
+
+    # Security/VPN
+    proton-pass
+    protonvpn-gui
+    yubioath-flutter
   ];
 }

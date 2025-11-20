@@ -40,7 +40,6 @@
     file
     tree
     unzip
-    stow
 
     # Text processing
     ispell
@@ -65,24 +64,15 @@
     wl-clipboard
 
     # Audio/Video
+    helvum
     pavucontrol
     pulseaudio
 
     # Security/VPN
     proton-pass
     protonvpn-cli
-    protonvpn-gui
-    yubioath-flutter
-
-    # Communication
-    signal-desktop
-
-    # Cloud sync
-    insync
 
     # Additional utilities
     editorconfig-core-c
-    pkgs-unstable.codex
-    xstow
   ];
 }
