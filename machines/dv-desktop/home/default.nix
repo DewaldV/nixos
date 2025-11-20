@@ -4,12 +4,9 @@
   pkgs-unstable,
   ...
 }:
-let
-  composeHome = import ../../../lib/composehome.nix;
-in
-{
 
-  imports = composeHome [
+{
+  imports = [
     ../../../profiles/base/home.nix
     ../../../profiles/shell/home.nix
     ../../../profiles/sway/home.nix
