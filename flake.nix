@@ -17,9 +17,9 @@
       self,
       nixpkgs,
       nixpkgs-unstable,
+      nixos-hardware,
       home-manager,
-      ...
-    }@inputs:
+    }:
     let
       mkHome = import ./lib/mkhome.nix;
       mkHost = import ./lib/mkhost.nix;
@@ -30,28 +30,26 @@
         system = "x86_64-linux";
       };
 
-      nixosConfigurations.dv-desktop = mkHost "dv-desktop" rec {
-        inherit nixpkgs nixpkgs-unstable home-manager;
+      nixosConfigurations.dv-desktop = mkHost "dv-desktop" {
+        inherit
+          nixpkgs
+          nixpkgs-unstable
+          nixos-hardware
+          home-manager
+          ;
         system = "x86_64-linux";
         user = "dewaldv";
-
-        extraModules = [
-          inputs.nixos-hardware.nixosModules.common-cpu-amd-pstate
-          inputs.nixos-hardware.nixosModules.common-gpu-amd
-          inputs.nixos-hardware.nixosModules.common-pc-ssd
-        ];
-
-        overlays = [ ];
       };
 
-      nixosConfigurations.dv-fw = mkHost "dv-fw" rec {
-        inherit nixpkgs nixpkgs-unstable home-manager;
+      nixosConfigurations.dv-fw = mkHost "dv-fw" {
+        inherit
+          nixpkgs
+          nixpkgs-unstable
+          nixos-hardware
+          home-manager
+          ;
         system = "x86_64-linux";
         user = "dewaldv";
-
-        extraModules = [ inputs.nixos-hardware.nixosModules.framework-13-7040-amd ];
-
-        overlays = [ ];
       };
     };
 }

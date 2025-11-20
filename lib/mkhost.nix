@@ -2,11 +2,10 @@ name:
 {
   nixpkgs,
   nixpkgs-unstable,
+  nixos-hardware,
   home-manager,
-  extraModules,
   system,
   user,
-  overlays,
 }:
 
 let
@@ -18,12 +17,10 @@ in
 nixpkgs.lib.nixosSystem {
   inherit system;
   specialArgs = {
-    inherit pkgs-unstable;
+    inherit pkgs-unstable nixos-hardware;
   };
 
   modules = [
-    { nixpkgs.overlays = overlays; }
-
     ../machines/${name}
     ../users/${user}/user.nix
     ../profiles/base
@@ -38,6 +35,5 @@ nixpkgs.lib.nixosSystem {
         inherit pkgs-unstable;
       };
     }
-  ]
-  ++ extraModules;
+  ];
 }
