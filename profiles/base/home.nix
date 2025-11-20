@@ -1,6 +1,26 @@
-{ config, pkgs, ... }:
+{
+  config,
+  pkgs,
+  pkgs-unstable,
+  ...
+}:
 
 {
+  # Base home-manager configuration
+  imports = [
+    ./1password
+    ./gtk.nix
+  ];
+
+  # Pointer cursor configuration
+  home.pointerCursor = {
+    name = "Adwaita";
+    package = pkgs.adwaita-icon-theme;
+    size = 16;
+  };
+
+  # Note: home.stateVersion should be set in machine configs
+
   # User-level base utilities
   # These are common tools that every user needs regardless of machine
   home.packages = with pkgs; [
@@ -25,9 +45,10 @@
     # Text processing
     ispell
     jq
+    pandoc
 
     # Development basics
-    git
+    # Note: git moved to development profile
     nixfmt-rfc-style
     vim
 
@@ -58,5 +79,10 @@
 
     # Cloud sync
     insync
+
+    # Additional utilities
+    editorconfig-core-c
+    pkgs-unstable.codex
+    xstow
   ];
 }

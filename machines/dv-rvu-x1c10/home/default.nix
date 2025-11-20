@@ -5,9 +5,11 @@ in
 {
   imports = composeHome [
     ../../../profiles/base/home.nix
+    ../../../profiles/shell/home.nix
     ../../../profiles/sway/home.nix
     ../../../profiles/development/home.nix
     ../../../profiles/work/home.nix
+    # Machine-specific overrides
     ./alacritty.nix
     ./foot.nix
     ./git.nix

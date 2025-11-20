@@ -10,6 +10,8 @@ in
 {
 
   imports = composeHome [
+    ../../../profiles/base/home.nix
+    ../../../profiles/shell/home.nix
     ../../../profiles/sway/home.nix
     ../../../profiles/development/home.nix
     ../../../profiles/desktop-apps/home.nix
@@ -20,5 +22,5 @@ in
     ./vscode.nix
   ];
 
-  # All packages now in profiles
+  home.stateVersion = "22.11";
 }

@@ -1,9 +1,16 @@
 { config, pkgs, ... }:
 
 {
+  # Development tool configurations
+  imports = [
+    ./direnv.nix
+    ./git.nix
+    ./rust
+    ./ssh.nix
+  ];
+
   home.packages = with pkgs; [
     # Version control & CLI tools
-    # Note: git is in base/home.nix
     gh
 
     # Cloud & Kubernetes
