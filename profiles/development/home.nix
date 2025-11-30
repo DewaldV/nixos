@@ -25,6 +25,7 @@
     ssm-session-manager-plugin
 
     # Development utilities
+    devenv
     pre-commit
     shellcheck
     shfmt
