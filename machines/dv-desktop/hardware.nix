@@ -76,19 +76,7 @@
 
   hardware.bluetooth.enable = true;
 
-  # amdvlk seems to have lower performance than mesa radv
-  # https://github.com/NixOS/nixos-hardware/blob/master/common/gpu/amd/default.nix
-  # https://nixos.org/manual/nixos/unstable/index.html#sec-gpu-accel-vulkan
-  # https://nixos.wiki/wiki/AMD_GPU
-  # https://www.phoronix.com/review/amdvlk-radv-rx7900
   hardware.graphics = {
     enable = true;
-
-    # package = pkgs-unstable.mesa.drivers;
-    # package32 = pkgs-unstable.pkgsi686Linux.mesa.drivers;
-    # extraPackages = [ pkgs-unstable.amdvlk ];
-    # extraPackages32 = [ pkgs-unstable.driversi686Linux.amdvlk ];
   };
-
-  hardware.amdgpu.amdvlk.enable = false;
 }

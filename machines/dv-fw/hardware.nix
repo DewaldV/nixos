@@ -20,7 +20,8 @@
   boot.kernelModules = [ "kvm-amd" ];
   boot.extraModulePackages = [ ];
 
-  boot.initrd.luks.devices."nixos-root".device = "/dev/disk/by-uuid/203cff4a-1ff6-40eb-ac62-aca2986219f1";
+  boot.initrd.luks.devices."nixos-root".device =
+    "/dev/disk/by-uuid/203cff4a-1ff6-40eb-ac62-aca2986219f1";
 
   fileSystems."/" = {
     device = "/dev/disk/by-uuid/f6e54cdc-c4f9-466b-90d7-f6918c9c7f27";
@@ -54,11 +55,4 @@
   hardware.graphics = {
     enable = true;
   };
-
-  # amdvlk seems to have lower performance than mesa radv
-  # https://github.com/NixOS/nixos-hardware/blob/master/common/gpu/amd/default.nix
-  # https://nixos.org/manual/nixos/unstable/index.html#sec-gpu-accel-vulkan
-  # https://nixos.wiki/wiki/AMD_GPU
-  # https://www.phoronix.com/review/amdvlk-radv-rx7900
-  hardware.amdgpu.amdvlk.enable = false;
 }
