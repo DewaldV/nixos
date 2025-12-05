@@ -54,8 +54,8 @@
     # System utilities
     distrobox
     fastfetch
-    glxinfo
     lsof
+    mesa-demos
 
     # Wayland/Sway utilities
     grim
