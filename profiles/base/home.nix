@@ -70,7 +70,6 @@
 
     # Security/VPN
     proton-pass
-    protonvpn-cli
 
     # Additional utilities
     editorconfig-core-c
