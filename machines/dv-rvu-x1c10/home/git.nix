@@ -11,8 +11,16 @@ let
 in
 {
   programs.git = {
-    userEmail = lib.mkForce email;
+
     signing.key = lib.mkForce sshPubKey;
+
+    settings = {
+      user.email = lib.mkForce email;
+      gpg."ssh" = {
+        program = lib.mkForce "/opt/1Password/op-ssh-sign";
+      };
+    };
+
     includes = [
       {
         condition = "gitdir:~/Projects/tempcover";
@@ -23,12 +31,6 @@ in
         };
       }
     ];
-
-    extraConfig = {
-      gpg."ssh" = {
-        program = lib.mkForce "/opt/1Password/op-ssh-sign";
-      };
-    };
   };
 
   programs.ssh = {
