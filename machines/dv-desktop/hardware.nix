@@ -69,7 +69,7 @@
   hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
 
   services.hardware.openrgb = {
-    enable = true;
+    enable = false;
     motherboard = "amd";
     package = pkgs-unstable.openrgb;
   };
