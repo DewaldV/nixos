@@ -111,6 +111,9 @@
         "${modifier}+Ctrl+left" = "move workspace to output left";
         "${modifier}+Ctrl+right" = "move workspace to output right";
 
+        "${modifier}+Shift+w" = "exec bemoji -t";
+        "${modifier}+Ctrl+w" = "exec bemoji -c";
+
         "${modifier}+p" = "exec grimshot save output";
         "${modifier}+Shift+p" = "exec grimshot copy output";
         "${modifier}+Ctrl+p" = "exec grimshot copy window";
