@@ -17,5 +17,6 @@
     # Machine-specific config
     ./configuration.nix
     ./hardware.nix
+    ./fanctrl.nix
   ];
 }
