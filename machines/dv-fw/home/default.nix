@@ -8,6 +8,7 @@
     ../../../profiles/development/home.nix
     ../../../profiles/desktop-apps/home.nix
     ../../../profiles/editors/home.nix
+    ../../../profiles/sync/home.nix
     ./sway.nix
   ];
 
