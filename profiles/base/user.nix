@@ -15,7 +15,6 @@
     isNormalUser = true;
     description = "Dewald Viljoen";
     extraGroups = [
-      "docker"
       "networkmanager"
       "video"
       "wheel"
