@@ -10,15 +10,21 @@
       url = "github:nix-community/home-manager/release-25.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    nixos-private = {
+      url = "git+ssh://git@github.com/dewaldv/nixos-private";
+      flake = true;
+    };
   };
 
   outputs =
     {
       self,
+      home-manager,
+      nixos-hardware,
+      nixos-private,
       nixpkgs,
       nixpkgs-unstable,
-      nixos-hardware,
-      home-manager,
     }:
     let
       mkHome = import ./lib/mkhome.nix;
@@ -26,26 +32,33 @@
     in
     {
       homeConfigurations.dewaldv = mkHome "dv-rvu-x1c10" rec {
-        inherit nixpkgs nixpkgs-unstable home-manager;
+        inherit
+          home-manager
+          nixos-private
+          nixpkgs
+          nixpkgs-unstable
+          ;
         system = "x86_64-linux";
       };
 
       nixosConfigurations.dv-desktop = mkHost "dv-desktop" {
         inherit
+          home-manager
+          nixos-hardware
+          nixos-private
           nixpkgs
           nixpkgs-unstable
-          nixos-hardware
-          home-manager
           ;
         system = "x86_64-linux";
       };
 
       nixosConfigurations.dv-fw = mkHost "dv-fw" {
         inherit
+          home-manager
+          nixos-hardware
+          nixos-private
           nixpkgs
           nixpkgs-unstable
-          nixos-hardware
-          home-manager
           ;
         system = "x86_64-linux";
       };

@@ -1,8 +1,9 @@
 name:
 {
+  home-manager,
+  nixos-private,
   nixpkgs,
   nixpkgs-unstable,
-  home-manager,
   system,
 }:
 
@@ -20,7 +21,7 @@ home-manager.lib.homeManagerConfiguration {
   inherit pkgs;
 
   extraSpecialArgs = {
-    inherit pkgs-unstable;
+    inherit nixos-private pkgs-unstable;
   };
 
   modules = [

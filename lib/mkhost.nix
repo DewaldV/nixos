@@ -1,9 +1,10 @@
 name:
 {
+  home-manager,
+  nixos-hardware,
+  nixos-private,
   nixpkgs,
   nixpkgs-unstable,
-  nixos-hardware,
-  home-manager,
   system,
 }:
 
@@ -16,7 +17,7 @@ in
 nixpkgs.lib.nixosSystem {
   inherit system;
   specialArgs = {
-    inherit pkgs-unstable nixos-hardware;
+    inherit nixos-hardware nixos-private pkgs-unstable;
   };
 
   modules = [
@@ -30,7 +31,7 @@ nixpkgs.lib.nixosSystem {
       home-manager.backupFileExtension = "bak";
       home-manager.users.dewaldv = ../machines/${name}/home;
       home-manager.extraSpecialArgs = {
-        inherit pkgs-unstable;
+        inherit nixos-private pkgs-unstable;
       };
     }
   ];
