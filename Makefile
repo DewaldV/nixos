@@ -2,10 +2,10 @@ SOURCES = $(shell find . -type f -iname "*.nix")
 
 .PHONY: boot switch clean delete-old gc gc-gen update-deps diff
 boot: $(SOURCES)
-	sudo nixos-rebuild boot --flake '.#'
+	nixos-rebuild boot --flake '.#' --sudo
 
 switch: $(SOURCES)
-	sudo nixos-rebuild switch --flake '.#'
+	nixos-rebuild switch --flake '.#' --sudo
 
 result: $(SOURCES)
 	nixos-rebuild build --flake '.#'
