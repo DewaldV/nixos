@@ -21,6 +21,15 @@
 
   # Note: home.stateVersion should be set in machine configs
 
+  # Show diff before activation
+  home.activation.report-changes = config.lib.dag.entryAnywhere ''
+    if [[ -e $HOME/.local/state/nix/profiles/home-manager ]]; then
+      echo "--- diff to previous home-manager generation"
+      ${pkgs.nvd}/bin/nvd diff $HOME/.local/state/nix/profiles/home-manager $newGenPath
+      echo "---"
+    fi
+  '';
+
   # User-level base utilities
   # These are common tools that every user needs regardless of machine
   home.packages = with pkgs; [
