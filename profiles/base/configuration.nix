@@ -108,6 +108,7 @@
     # System utilities (require root/system integration)
     glib
     gparted
+    nvd
     parted
     pciutils
     polkit_gnome

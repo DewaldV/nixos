@@ -49,6 +49,7 @@
     # Development basics
     # Note: git moved to development profile
     nixfmt-rfc-style
+    nvd
     vim
 
     # System utilities
