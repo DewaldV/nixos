@@ -2,12 +2,15 @@
   config,
   pkgs,
   lib,
+  osConfig,
   nixos-private,
   ...
 }:
 
 let
+  hostname = osConfig.networking.hostName or (builtins.getEnv "HOSTNAME");
   syncthingData = nixos-private.private.syncthing;
+  otherDevices = lib.filterAttrs (deviceName: _: deviceName != hostname) syncthingData.devices;
 in
 {
   services.syncthing = {
@@ -22,13 +25,13 @@ in
         localAnnounceEnabled = true; # Keep local network discovery
       };
 
-      devices = syncthingData.devices;
+      devices = otherDevices;
 
       folders = lib.mapAttrs (
         name: folder:
         folder
         // {
-          devices = builtins.attrNames syncthingData.devices;
+          devices = builtins.attrNames otherDevices;
         }
       ) syncthingData.folders;
     };

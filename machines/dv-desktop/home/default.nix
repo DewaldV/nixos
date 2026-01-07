@@ -15,6 +15,7 @@
     ../../../profiles/editors/home.nix
     ../../../profiles/virtualization/home.nix
     ../../../profiles/immich/home.nix
+    ../../../profiles/sync/home.nix
     ./sway.nix
     ./vscode.nix
   ];

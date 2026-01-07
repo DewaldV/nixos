@@ -5,7 +5,7 @@
 - **Apply config**: `make switch` (builds and activates immediately)
 - **Apply on reboot**: `make boot` (builds and sets as default for next boot)
 - **Update flake inputs**: `make update`
-- **Format Nix files**: `nixfmt-rfc-style <file.nix>` (use RFC 166 style)
+- **Format Nix files**: `nixfmt <file.nix>` (use RFC 166 style)
 - **No test suite**: This is a declarative configuration repo with no automated tests
 
 ## Code Style
