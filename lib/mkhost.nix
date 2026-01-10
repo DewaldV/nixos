@@ -21,6 +21,7 @@ nixpkgs.lib.nixosSystem {
   };
 
   modules = [
+    nixos-private.nixosModule
     ../machines/${name}
     ../profiles/base
 
@@ -29,7 +30,16 @@ nixpkgs.lib.nixosSystem {
       home-manager.useGlobalPkgs = true;
       home-manager.useUserPackages = true;
       home-manager.backupFileExtension = "bak";
-      home-manager.users.dewaldv = ../machines/${name}/home;
+      home-manager.users.dewaldv =
+        {
+          ...
+        }:
+        {
+          imports = [
+            nixos-private.homeManagerModule
+            ../machines/${name}/home
+          ];
+        };
       home-manager.extraSpecialArgs = {
         inherit nixos-private pkgs-unstable;
       };

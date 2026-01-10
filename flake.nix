@@ -13,7 +13,8 @@
 
     nixos-private = {
       url = "git+ssh://git@github.com/dewaldv/nixos-private";
-      flake = true;
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.home-manager.follows = "home-manager";
     };
   };
 

@@ -11,10 +11,16 @@ let
   hostname = osConfig.networking.hostName or (builtins.getEnv "HOSTNAME");
   syncthingData = nixos-private.private.syncthing;
   otherDevices = lib.filterAttrs (deviceName: _: deviceName != hostname) syncthingData.devices;
+
+  cert = config.age.secrets."syncthing-${hostname}-cert".path;
+  key = config.age.secrets."syncthing-${hostname}-key".path;
 in
 {
   services.syncthing = {
     enable = true;
+
+    cert = cert;
+    key = key;
 
     settings = {
 
