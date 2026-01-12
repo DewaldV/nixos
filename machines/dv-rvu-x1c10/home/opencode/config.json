@@ -97,6 +97,23 @@
             "output": 65535
           }
         },
+        "gemini-3-flash-preview": {
+          "name": "Gemini 3 Flash Preview",
+          "attachment": true,
+          "reasoning": true,
+          "temperature": true,
+          "tool_call": true,
+          "cost": {
+            "input": 0.3,
+            "output": 2.5,
+            "cache_read": 0.08,
+            "cache_write": 2.5
+          },
+          "limit": {
+            "context": 1048576,
+            "output": 65535
+          }
+        },
         "gemini-2.5-flash": {
           "name": "Gemini 2.5 Flash",
           "attachment": true,
@@ -169,7 +186,7 @@
     }
   },
   "model": "litellm/claude-sonnet-4-5-20250929",
-  "small_model": "litellm/claude-haiku-4-5-20251001",
+  "small_model": "litellm/gemini-3-flash-preview",
   "mcp": {
     "weather": {
       "type": "local",
