@@ -12,7 +12,7 @@
         }
       },
       "models": {
-        "eu.anthropic.claude-sonnet-4-5-20250929-v1:0": {
+        "claude-sonnet-4-5-20250929": {
           "name": "Claude Sonnet 4.5",
           "attachment": true,
           "reasoning": true,
@@ -29,17 +29,17 @@
             "output": 50000
           }
         },
-        "eu.anthropic.claude-sonnet-4-20250514-v1:0": {
-          "name": "Claude Sonnet 4",
+        "claude-opus-4-5-20251101": {
+          "name": "Claude Opus 4.5",
           "attachment": true,
           "reasoning": true,
           "temperature": true,
           "tool_call": true,
           "cost": {
-            "input": 3.0,
-            "output": 15.0,
-            "cache_read": 0.3,
-            "cache_write": 3.75
+            "input": 15.0,
+            "output": 75.0,
+            "cache_read": 1.5,
+            "cache_write": 18.75
           },
           "limit": {
             "context": 200000,
@@ -80,6 +80,23 @@
             "output": 65535
           }
         },
+        "gemini-3-pro-preview": {
+          "name": "Gemini 3 Pro Preview",
+          "attachment": true,
+          "reasoning": true,
+          "temperature": true,
+          "tool_call": true,
+          "cost": {
+            "input": 1.25,
+            "output": 10.0,
+            "cache_read": 1.25,
+            "cache_write": 10.0
+          },
+          "limit": {
+            "context": 2000000,
+            "output": 65535
+          }
+        },
         "gemini-2.5-flash": {
           "name": "Gemini 2.5 Flash",
           "attachment": true,
@@ -114,8 +131,8 @@
             "output": 65535
           }
         },
-        "gpt-5": {
-          "name": "GPT-5",
+        "gpt-5.2": {
+          "name": "GPT-5.2",
           "attachment": true,
           "reasoning": true,
           "temperature": true,
@@ -131,50 +148,16 @@
             "output": 128000
           }
         },
-        "gpt-5-chat-latest": {
-          "name": "GPT-5 Chat Latest",
-          "attachment": true,
-          "reasoning": true,
-          "temperature": true,
-          "tool_call": false,
-          "cost": {
-            "input": 1.25,
-            "output": 10.0,
-            "cache_read": 0.31,
-            "cache_write": 0
-          },
-          "limit": {
-            "context": 400000,
-            "output": 128000
-          }
-        },
-        "gpt-5-mini": {
-          "name": "GPT-5 Mini",
+        "gpt-5.2-pro": {
+          "name": "GPT-5.2 Pro",
           "attachment": true,
           "reasoning": true,
           "temperature": true,
           "tool_call": true,
           "cost": {
-            "input": 1.25,
-            "output": 10.0,
-            "cache_read": 0.31,
-            "cache_write": 0
-          },
-          "limit": {
-            "context": 400000,
-            "output": 128000
-          }
-        },
-        "gpt-5-nano": {
-          "name": "GPT-5 Nano",
-          "attachment": true,
-          "reasoning": true,
-          "temperature": true,
-          "tool_call": true,
-          "cost": {
-            "input": 0.05,
-            "output": 0.4,
-            "cache_read": 0.01,
+            "input": 2.5,
+            "output": 20.0,
+            "cache_read": 0.62,
             "cache_write": 0
           },
           "limit": {
@@ -185,7 +168,7 @@
       }
     }
   },
-  "model": "litellm/eu.anthropic.claude-sonnet-4-5-20250929-v1:0",
+  "model": "litellm/claude-sonnet-4-5-20250929",
   "small_model": "litellm/claude-haiku-4-5-20251001",
   "mcp": {
     "weather": {
