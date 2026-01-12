@@ -6,7 +6,6 @@
     asdf-vm
 
     # Cloud providers
-    aws-sam-cli
     azure-cli
 
     # Security & utilities
