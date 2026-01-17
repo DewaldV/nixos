@@ -18,11 +18,11 @@
         controlMaster = "no";
         controlPath = "~/.ssh/master-%r@%n:%p";
         controlPersist = "no";
-        identityFile = "~/.ssh/personal-ed25519";
+        # identityFile = "~/.ssh/personal-ed25519";
         identitiesOnly = true;
-        extraOptions = {
-          IdentityAgent = "~/.1password/agent.sock";
-        };
+        # extraOptions = {
+        #   IdentityAgent = "~/.1password/agent.sock";
+        # };
       };
 
       "github.com" = {
