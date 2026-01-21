@@ -9,8 +9,8 @@
 
 let
   hostname = osConfig.networking.hostName or (builtins.getEnv "HOSTNAME");
-  syncthingData = nixos-private.private.syncthing;
-  otherDevices = lib.filterAttrs (deviceName: _: deviceName != hostname) syncthingData.devices;
+  syncthingConfig = nixos-private.private.syncthing;
+  peers = lib.filterAttrs (deviceName: _: deviceName != hostname) syncthingConfig.devices;
 
   cert = config.age.secrets."syncthing-${hostname}-cert".path;
   key = config.age.secrets."syncthing-${hostname}-key".path;
@@ -31,15 +31,15 @@ in
         localAnnounceEnabled = true; # Keep local network discovery
       };
 
-      devices = otherDevices;
+      devices = peers;
 
       folders = lib.mapAttrs (
         name: folder:
         folder
         // {
-          devices = builtins.attrNames otherDevices;
+          devices = builtins.attrNames peers;
         }
-      ) syncthingData.folders;
+      ) syncthingConfig.folders;
     };
   };
 }
