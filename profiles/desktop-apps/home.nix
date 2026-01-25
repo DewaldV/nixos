@@ -14,7 +14,7 @@
     # Communication
     discord
     pkgs-unstable.slack
-    signal-desktop
+    pkgs-unstable.signal-desktop
     zoom-us
 
     # Productivity
