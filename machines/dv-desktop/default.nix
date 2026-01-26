@@ -17,6 +17,7 @@
     ../../profiles/virtualization
     ../../profiles/llm
     ../../profiles/immich
+    ../../profiles/jellyfin
     # Note: development and desktop-apps profiles are home-manager only (no system config)
 
     # Machine-specific config
