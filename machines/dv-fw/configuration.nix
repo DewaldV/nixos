@@ -6,6 +6,13 @@
 
   networking.hostName = "dv-fw";
 
+  networking.firewall = {
+    enable = true;
+    allowedUDPPorts = [
+      41641 # Tailscale
+    ];
+  };
+
   console = {
     earlySetup = true;
     font = "ter-i32b";
