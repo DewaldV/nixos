@@ -186,7 +186,7 @@
     }
   },
   "model": "litellm/claude-sonnet-4-5-20250929",
-  "small_model": "litellm/gemini-3-flash-preview",
+  "small_model": "claude-haiku-4-5-20251001",
   "mcp": {
     "weather": {
       "type": "local",
