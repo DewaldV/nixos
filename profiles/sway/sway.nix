@@ -114,9 +114,10 @@
         "${modifier}+Shift+w" = "exec bemoji -t";
         "${modifier}+Ctrl+w" = "exec bemoji -c";
 
-        "${modifier}+p" = "exec grimshot save output";
-        "${modifier}+Shift+p" = "exec grimshot copy output";
-        "${modifier}+Ctrl+p" = "exec grimshot copy window";
+        "${modifier}+p" = "exec grimshot save area";
+        "${modifier}+Ctrl+p" = "exec grimshot save window";
+        "${modifier}+Shift+p" = "exec grimshot copy area";
+        "${modifier}+Shift+Ctrl+p" = "exec grimshot copy window";
 
         "--locked XF86Display" = "output eDP-1 toggle";
 
