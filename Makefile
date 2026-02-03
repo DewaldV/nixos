@@ -24,6 +24,11 @@ gc:
 
 gc-gen: delete-generations gc
 
+home-manager-delete-generations:
+	home-manager expire-generations "-5 days"
+
+home-manager-gc: home-manager-delete-generations gc
+
 clean:
 	rm -f result
 
