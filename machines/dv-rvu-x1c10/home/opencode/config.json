@@ -187,11 +187,8 @@
   },
   "model": "litellm/claude-sonnet-4-5-20250929",
   "small_model": "claude-haiku-4-5-20251001",
+  "plugin": ["@franlol/opencode-md-table-formatter@0.0.3"],
   "mcp": {
-    "weather": {
-      "type": "local",
-      "command": ["opencode", "x", "@h1deya/mcp-server-weather"]
-    },
     "grafana": {
       "type": "remote",
       "url": "https://mcp-grafana.tempcover.tech/sse"
