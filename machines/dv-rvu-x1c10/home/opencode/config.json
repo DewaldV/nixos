@@ -195,6 +195,10 @@
     "grafana": {
       "type": "remote",
       "url": "https://mcp-grafana.tempcover.tech/sse"
+    },
+    "notion": {
+      "type": "remote",
+      "url": "https://mcp.notion.com/sse"
     }
   }
 }
