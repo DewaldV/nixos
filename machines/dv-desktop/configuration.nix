@@ -33,6 +33,4 @@
     piper
     system76-keyboard-configurator
   ];
-
-  services.tailscale.enable = true;
 }

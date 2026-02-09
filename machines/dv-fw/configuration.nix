@@ -26,6 +26,4 @@
     extraRemotes = [ "lvfs-testing" ];
     uefiCapsuleSettings.DisableCapsuleUpdateOnDisk = true;
   };
-
-  services.tailscale.enable = true;
 }
