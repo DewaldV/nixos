@@ -36,10 +36,27 @@
           "temperature": true,
           "tool_call": true,
           "cost": {
-            "input": 15.0,
-            "output": 75.0,
-            "cache_read": 1.5,
-            "cache_write": 18.75
+            "input": 5.0,
+            "output": 25.0,
+            "cache_read": 0.5,
+            "cache_write": 6.25
+          },
+          "limit": {
+            "context": 200000,
+            "output": 50000
+          }
+        },
+        "claude-opus-4-6": {
+          "name": "Claude Opus 4.6",
+          "attachment": true,
+          "reasoning": true,
+          "temperature": true,
+          "tool_call": true,
+          "cost": {
+            "input": 5.0,
+            "output": 25.0,
+            "cache_read": 0.5,
+            "cache_write": 6.25
           },
           "limit": {
             "context": 200000,
@@ -53,10 +70,10 @@
           "temperature": true,
           "tool_call": true,
           "cost": {
-            "input": 0.8,
-            "output": 4.0,
-            "cache_read": 0.08,
-            "cache_write": 1.0
+            "input": 1.0,
+            "output": 5.0,
+            "cache_read": 0.1,
+            "cache_write": 1.25
           },
           "limit": {
             "context": 200000,
@@ -155,9 +172,9 @@
           "temperature": true,
           "tool_call": true,
           "cost": {
-            "input": 1.25,
-            "output": 10.0,
-            "cache_read": 0.31,
+            "input": 1.75,
+            "output": 14.0,
+            "cache_read": 0.175,
             "cache_write": 0
           },
           "limit": {
@@ -172,9 +189,9 @@
           "temperature": true,
           "tool_call": true,
           "cost": {
-            "input": 2.5,
-            "output": 20.0,
-            "cache_read": 0.62,
+            "input": 21.0,
+            "output": 168.0,
+            "cache_read": 0,
             "cache_write": 0
           },
           "limit": {
