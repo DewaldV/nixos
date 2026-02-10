@@ -27,7 +27,7 @@
 
       user = {
         name = "DewaldV";
-        email = "dewald.viljoen@pm.me";
+        email = nixos-private.private.keys.personal.email;
       };
 
       color.ui = "auto";
