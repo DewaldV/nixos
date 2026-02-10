@@ -1,11 +1,16 @@
-{ config, pkgs, ... }:
+{
+  config,
+  pkgs,
+  nixos-private,
+  ...
+}:
 {
 
   programs.git = {
     enable = true;
 
     signing = {
-      key = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGifLJfVQ78SU0tpXu1A8W+0BLANiprEnYFtDWTlBlTv";
+      key = nixos-private.private.keys.personal.ssh.pub;
       signByDefault = true;
     };
 

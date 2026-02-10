@@ -17,7 +17,11 @@ in
 nixpkgs.lib.nixosSystem {
   inherit system;
   specialArgs = {
-    inherit nixos-hardware nixos-private pkgs-unstable;
+    inherit
+      nixos-hardware
+      nixos-private
+      pkgs-unstable
+      ;
   };
 
   modules = [

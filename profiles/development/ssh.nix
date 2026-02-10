@@ -1,4 +1,9 @@
-{ config, pkgs, ... }:
+{
+  config,
+  pkgs,
+  nixos-private,
+  ...
+}:
 
 {
   programs.ssh = {
@@ -36,9 +41,8 @@
     };
   };
 
-  home.file.".ssh/personal-ed25519".text =
-    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGifLJfVQ78SU0tpXu1A8W+0BLANiprEnYFtDWTlBlTv";
+  home.file.".ssh/personal-ed25519".text = nixos-private.private.keys.personal.ssh.pub;
 
   home.file.".ssh/allowed_signers".text =
-    "dewald.viljoen@pm.me ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGifLJfVQ78SU0tpXu1A8W+0BLANiprEnYFtDWTlBlTv";
+    "${nixos-private.private.keys.personal.email} ${nixos-private.private.keys.personal.ssh.pub}";
 }
