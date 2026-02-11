@@ -213,6 +213,10 @@
     "notion": {
       "type": "remote",
       "url": "https://mcp.notion.com/sse"
+    },
+    "linear": {
+      "type": "remote",
+      "url": "https://mcp.linear.app/mcp"
     }
   }
 }
