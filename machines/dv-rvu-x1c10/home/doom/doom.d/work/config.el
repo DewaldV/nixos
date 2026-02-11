@@ -1,7 +1,7 @@
 ;;; $DOOMDIR/work/config.el -*- lexical-binding: t; -*-
 
 ;; Configure LiteLLM backend
-(after! gptel
+(with-eval-after-load 'gptel
   (gptel-make-openai "RVU LiteLLM"
     :host "litellm.external-ai.rvu.cloud"
     :endpoint "/v1/chat/completions"
