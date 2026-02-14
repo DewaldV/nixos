@@ -16,12 +16,17 @@
     "usb_storage"
     "sd_mod"
   ];
-  boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-amd" ];
   boot.extraModulePackages = [ ];
 
+  boot.initrd.kernelModules = [ ];
   boot.initrd.luks.devices."nixos-root".device =
     "/dev/disk/by-uuid/203cff4a-1ff6-40eb-ac62-aca2986219f1";
+
+  boot.kernelParams = [
+    "resume_offset=63050915"
+  ];
+  boot.resumeDevice = "/dev/disk/by-uuid/f6e54cdc-c4f9-466b-90d7-f6918c9c7f27";
 
   fileSystems."/" = {
     device = "/dev/disk/by-uuid/f6e54cdc-c4f9-466b-90d7-f6918c9c7f27";
@@ -37,7 +42,12 @@
     fsType = "vfat";
   };
 
-  swapDevices = [ ];
+  swapDevices = [
+    {
+      device = "/swap/swapfile";
+      priority = 10;
+    }
+  ];
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
   # (the default) this is the recommended approach. When using systemd-networkd it's

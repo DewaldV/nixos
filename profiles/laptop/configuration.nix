@@ -7,8 +7,17 @@
 
   # Power management
   services.power-profiles-daemon.enable = false;
-  services.tlp.enable = true;
+  services.tlp = {
+    enable = true;
+    settings = {
+      RESTORE_DEVICE_STATE_ON_STARTUP = 0;
+    };
+  };
 
   # Backlight control
   programs.light.enable = true;
+
+  # Trigger suspend then hibernate
+  services.logind.lidSwitch = "suspend-then-hibernate";
+  services.logind.lidSwitchExternalPower = "suspend-then-hibernate";
 }
