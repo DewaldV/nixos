@@ -105,6 +105,7 @@
     gnumake
 
     # System utilities (require root/system integration)
+    e2fsprogs
     glib
     gparted
     nvd
