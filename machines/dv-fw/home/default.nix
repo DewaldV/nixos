@@ -9,6 +9,7 @@
     ../../../profiles/desktop-apps/home.nix
     ../../../profiles/editors/home.nix
     ../../../profiles/sync/home.nix
+    ../../../profiles/ovh/home.nix
     ./sway.nix
   ];
 
