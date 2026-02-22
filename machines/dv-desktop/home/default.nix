@@ -12,6 +12,7 @@
     ../../../profiles/sway/home.nix
     ../../../profiles/development/home.nix
     ../../../profiles/desktop-apps/home.nix
+    ../../../profiles/agents/home.nix
     ../../../profiles/editors/home.nix
     ../../../profiles/virtualization/home.nix
     ../../../profiles/immich/home.nix
