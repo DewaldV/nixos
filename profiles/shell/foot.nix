@@ -5,7 +5,7 @@
     enable = true;
     settings = {
       main = {
-        term = "xterm-256color";
+        term = "foot-direct";
         font = "Hack:size=12";
         dpi-aware = "no";
       };
