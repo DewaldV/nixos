@@ -56,6 +56,11 @@
 ;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
 ;; they are implemented.
 
+;; Seamless navigation between Emacs windows and tmux panes
+(use-package! tmux-pane
+  :config
+  (tmux-pane-mode))
+
 ;; Load personal config
 (load! "personal/config" doom-user-dir t)
 
