@@ -22,6 +22,11 @@
   boot.kernelModules = [ "kvm-amd" ];
   boot.extraModulePackages = [ ];
 
+  # MT7921 PCIe WiFi adapter intermittently fails to bind on cold boot due to
+  # PCIe ASPM power state timing. Disabling ASPM ensures the card is fully
+  # powered and stable when the driver initialises.
+  boot.kernelParams = [ "pcie_aspm=off" ];
+
   boot.initrd.luks.devices."nix" = {
     allowDiscards = true;
     device = "/dev/disk/by-uuid/13bb5138-5e02-46ed-bfea-6f8b73a32ac4";
