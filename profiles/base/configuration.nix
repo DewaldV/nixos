@@ -154,6 +154,7 @@
     };
     pulse.enable = true;
   };
+
   systemd = {
     user = {
       extraConfig = ''

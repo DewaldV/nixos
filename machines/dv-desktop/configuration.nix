@@ -44,6 +44,14 @@
     nixos-private.private.keys.personal.ssh.pub
   ];
 
+  # Suppress USB audio control errors during device initialisation.
+  # The Schiit Fulla stalls on GET_CUR requests at boot causing ALSA mixer
+  # attach failures (EPIPE/Broken pipe), which prevents WirePlumber from
+  # saving and restoring volume state for the device.
+  boot.extraModprobeConfig = ''
+    options snd_usb_audio ignore_ctl_error=1
+  '';
+
   # Desktop-specific packages
   environment.systemPackages = with pkgs; [
     piper
