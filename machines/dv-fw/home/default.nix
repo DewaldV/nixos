@@ -7,6 +7,7 @@
     ../../../profiles/sway/home.nix
     ../../../profiles/development/home.nix
     ../../../profiles/desktop-apps/home.nix
+    ../../../profiles/agents/home.nix
     ../../../profiles/editors/home.nix
     ../../../profiles/sync/home.nix
     ../../../profiles/ovh/home.nix
