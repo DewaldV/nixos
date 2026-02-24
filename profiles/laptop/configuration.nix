@@ -25,6 +25,6 @@
 
   services.logind.settings.Login = {
     HandleLidSwitch = "suspend-then-hibernate";
-    HandleLidSwitchExternalPower = "suspend-then-hibernate";
+    HandleLidSwitchExternalPower = "suspend"; # Only suspend when plugged in, don't hibernate
   };
 }
