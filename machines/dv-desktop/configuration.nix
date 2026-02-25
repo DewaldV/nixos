@@ -44,6 +44,20 @@
     nixos-private.private.keys.personal.ssh.pub
   ];
 
+  # Allow PipeWire to switch sample rates to match source content,
+  # avoiding unnecessary resampling (e.g. 44.1kHz music to 48kHz).
+  services.pipewire.extraConfig.pipewire."10-clock-rates" = {
+    "context.properties" = {
+      "default.clock.rate" = 48000;
+      "default.clock.allowed-rates" = [
+        44100
+        48000
+        96000
+        192000
+      ];
+    };
+  };
+
   # Suppress USB audio control errors during device initialisation.
   # The Schiit Fulla stalls on GET_CUR requests at boot causing ALSA mixer
   # attach failures (EPIPE/Broken pipe), which prevents WirePlumber from
