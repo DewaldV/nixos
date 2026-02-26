@@ -29,6 +29,23 @@
             "output": 50000
           }
         },
+        "claude-sonnet-4-6": {
+          "name": "Claude Sonnet 4.6",
+          "attachment": true,
+          "reasoning": true,
+          "temperature": true,
+          "tool_call": true,
+          "cost": {
+            "input": 3.0,
+            "output": 15.0,
+            "cache_read": 0.3,
+            "cache_write": 3.75
+          },
+          "limit": {
+            "context": 200000,
+            "output": 50000
+          }
+        },
         "claude-opus-4-5-20251101": {
           "name": "Claude Opus 4.5",
           "attachment": true,
@@ -202,7 +219,7 @@
       }
     }
   },
-  "model": "litellm/claude-sonnet-4-5-20250929",
+  "model": "litellm/claude-sonnet-4-6",
   "small_model": "claude-haiku-4-5-20251001",
   "plugin": ["@franlol/opencode-md-table-formatter@0.0.3"],
   "mcp": {
