@@ -1,4 +1,9 @@
-{ config, pkgs, ... }:
+{
+  config,
+  pkgs,
+  pkgs-unstable,
+  ...
+}:
 
 {
   # Development tool configurations
@@ -44,6 +49,9 @@
     # Languages
     python314
     ruby
+
+    # k6
+    pkgs-unstable.k6
 
     # Go development tools
     dockfmt
