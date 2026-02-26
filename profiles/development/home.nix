@@ -13,20 +13,26 @@
     # Version control & CLI tools
     gh
 
-    # Cloud & Kubernetes
-    argocd
+    # AWS
     awscli2
+    ssm-session-manager-plugin
+
+    # Google Cloud
     google-cloud-sdk
+
+    # Kubernetes
     helmfile
     k9s
     kubectl
     kubernetes-helm
     kubernetes-helmPlugins.helm-diff
-    ssm-session-manager-plugin
+    kustomize
 
     # Development utilities
     devenv
     pre-commit
+
+    # Shell dev
     shellcheck
     shfmt
 
@@ -36,7 +42,8 @@
     tflint-plugins.tflint-ruleset-aws
 
     # Languages
-    python311
+    python314
+    ruby
 
     # Go development tools
     dockfmt
@@ -58,5 +65,6 @@
     # Node.js
     bun
     nodejs_24
+    pnpm
   ];
 }

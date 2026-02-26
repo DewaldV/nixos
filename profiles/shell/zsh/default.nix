@@ -9,7 +9,6 @@
       theme = "robbyrussell";
       custom = "\${HOME}/.zsh-custom";
       plugins = [
-        "asdf"
         "aws"
         "azure"
         "emacs"
