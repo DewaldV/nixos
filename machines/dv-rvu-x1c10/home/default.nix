@@ -10,7 +10,6 @@
 
     # Machine-specific overrides
     ./doom
-    ./foot.nix
     ./git.nix
     ./sway.nix
     ./xdg-desktop.nix
