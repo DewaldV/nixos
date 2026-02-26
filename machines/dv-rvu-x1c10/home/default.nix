@@ -9,7 +9,6 @@
     ../../../profiles/work/home.nix
 
     # Machine-specific overrides
-    ./alacritty.nix
     ./doom
     ./foot.nix
     ./git.nix

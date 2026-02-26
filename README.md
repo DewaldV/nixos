@@ -54,7 +54,7 @@ Wayland provides better monitor management and scaling on portable devices compa
 ### [Doom Emacs](https://github.com/doomemacs/doomemacs)
 VIM binds with the power of Emacs, now with Wayland support.
 
-### [Alacritty](https://github.com/alacritty/alacritty), [Tmux](https://github.com/tmux/tmux/wiki) and [Zsh](https://www.zsh.org/)
+### [Foot](https://codeberg.org/dnkl/foot), [Tmux](https://github.com/tmux/tmux/wiki) and [Zsh](https://www.zsh.org/)
 I manage terminal windows in Tmux rather than Sway more out of habit than anything else.
 [Oh My Zsh](https://ohmyz.sh/) with a few plugins (`git`, `aws` and `emacs` and others) and my own aliases and functions from [home/zsh](home/zsh).
 

@@ -3,7 +3,6 @@
 {
   # Terminal emulators, shell, and CLI utilities
   imports = [
-    ./alacritty.nix
     ./foot.nix
     ./fzf.nix
     ./tmux.nix
