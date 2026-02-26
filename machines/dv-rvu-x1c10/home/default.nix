@@ -11,8 +11,6 @@
     # Machine-specific overrides
     ./doom
     ./git.nix
-    ./sway.nix
-    ./xdg-desktop.nix
     ./opencode # Work-specific opencode config
     ./zsh
   ];
@@ -20,10 +18,6 @@
   home.username = "dewaldv";
   home.homeDirectory = "/home/dewaldv";
   home.stateVersion = "22.11";
-
-  # All packages now in profiles (base, development, work)
-  # No machine-specific packages needed
-  home.packages = [ ];
 
   programs.home-manager.enable = true;
 }
