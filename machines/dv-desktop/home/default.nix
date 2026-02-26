@@ -18,7 +18,6 @@
     ../../../profiles/immich/home.nix
     ../../../profiles/sync/home.nix
     ./sway.nix
-    ./vscode.nix
   ];
 
   home.stateVersion = "22.11";
