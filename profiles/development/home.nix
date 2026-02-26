@@ -48,7 +48,7 @@
 
     # Languages
     python314
-    ruby
+    # ruby
 
     # k6
     pkgs-unstable.k6
