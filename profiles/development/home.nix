@@ -57,7 +57,7 @@
     dockfmt
     errcheck
     gci
-    go
+    pkgs-unstable.go
     gocode-gomod
     golangci-lint
     golangci-lint-langserver
