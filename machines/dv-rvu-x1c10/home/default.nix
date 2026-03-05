@@ -12,7 +12,6 @@
     ./doom
     ./git.nix
     ./opencode # Work-specific opencode config
-    ./vscode.nix
     ./zsh
   ];
 
