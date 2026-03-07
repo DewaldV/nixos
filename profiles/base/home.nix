@@ -78,9 +78,6 @@
     pavucontrol
     pulseaudio
 
-    # Security/VPN
-    proton-pass
-
     # Additional utilities
     editorconfig-core-c
   ];

@@ -27,7 +27,8 @@
     gimp
 
     # Security/VPN
-    proton-pass
+    pkgs-unstable.proton-pass
+    pkgs-unstable.proton-pass-cli
     protonvpn-gui
     yubioath-flutter
   ];
