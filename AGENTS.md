@@ -2,7 +2,8 @@
 
 ## Build/Test Commands
 - **Build config**: `make result` (creates `result` symlink without activating)
-- **Apply config**: 
+- **Apply config**:
+  - **Never apply config without explicit confirmation from the user**
   - Check `/etc/os-release` first to determine if running on NixOS
   - If `grep -q "ID=nixos" /etc/os-release`: run `make switch` (builds and activates immediately on NixOS)
   - Otherwise: run `make home-manager-switch` (applies home-manager config only)
