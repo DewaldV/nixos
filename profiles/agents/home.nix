@@ -4,6 +4,10 @@
 }:
 
 {
+  imports = [
+    ./opencode
+  ];
+
   # AI agent tools
   home.packages = [
     pkgs-unstable.claude-code
