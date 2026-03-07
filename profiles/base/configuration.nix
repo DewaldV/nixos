@@ -82,6 +82,8 @@
     enableSSHSupport = false;
   };
 
+  programs.ssh.startAgent = true;
+
   programs._1password.enable = true;
   programs._1password-gui = {
     enable = true;
@@ -140,9 +142,10 @@
     '';
   };
 
-  # Gnome Keyring
+  # Gnome Keyring (SSH component disabled - using system ssh-agent instead)
   security.pam.services.dewaldv.enableGnomeKeyring = true;
   services.gnome.gnome-keyring.enable = true;
+  services.gnome.gcr-ssh-agent.enable = false;
   programs.seahorse.enable = true;
 
   # Enable sound.

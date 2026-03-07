@@ -9,6 +9,7 @@
   # Base home-manager configuration
   imports = [
     ./1password
+    ./proton-pass/home.nix
     ./gtk.nix
   ];
 

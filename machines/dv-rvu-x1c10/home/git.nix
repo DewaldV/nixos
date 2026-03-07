@@ -17,9 +17,6 @@ in
 
     settings = {
       user.email = lib.mkForce email;
-      gpg."ssh" = {
-        program = lib.mkForce "/opt/1Password/op-ssh-sign";
-      };
     };
 
     includes = [
@@ -43,9 +40,6 @@ in
         hostname = "ssh.dev.azure.com";
         identitiesOnly = true;
         identityFile = "~/.ssh/rvu-rsa";
-        extraOptions = {
-          IdentityAgent = "~/.1password/agent.sock";
-        };
       };
     };
   };

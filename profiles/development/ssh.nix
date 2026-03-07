@@ -25,18 +25,12 @@
         controlPersist = "no";
         # identityFile = "~/.ssh/personal-ed25519";
         identitiesOnly = true;
-        # extraOptions = {
-        #   IdentityAgent = "~/.1password/agent.sock";
-        # };
       };
 
       "github.com" = {
         hostname = "github.com";
         identityFile = "~/.ssh/personal-ed25519";
         identitiesOnly = true;
-        extraOptions = {
-          IdentityAgent = "~/.1password/agent.sock";
-        };
       };
     };
   };

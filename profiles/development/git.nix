@@ -35,7 +35,7 @@
 
       gpg.format = "ssh";
       gpg."ssh" = {
-        program = "op-ssh-sign";
+        program = "${pkgs.openssh}/bin/ssh-keygen";
         allowedSignersFile = "/home/dewaldv/.ssh/allowed_signers";
       };
       init.defaultBranch = "main";
