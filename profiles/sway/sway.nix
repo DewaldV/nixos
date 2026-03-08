@@ -104,12 +104,6 @@
         };
       };
 
-      startup = [
-        {
-          command = "${pkgs-unstable.proton-pass-cli}/bin/pass-cli ssh-agent load";
-        }
-      ];
-
       keybindings = lib.mkOptionDefault {
         "${modifier}+Escape" = "exec swaylock";
 
