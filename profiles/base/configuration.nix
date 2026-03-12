@@ -142,9 +142,18 @@
     '';
   };
 
+  # Greeter
+  services.greetd = {
+    enable = true;
+    settings.default_session = {
+      command = "${pkgs.tuigreet}/bin/tuigreet --time --remember --cmd sway";
+      user = "greeter";
+    };
+  };
+
   # Gnome Keyring (SSH component disabled - using system ssh-agent instead)
-  # Hook into the `login` PAM service so the keyring is unlocked at TTY login
-  security.pam.services.login.enableGnomeKeyring = true;
+  # Hook into greetd PAM service so the keyring is unlocked on login
+  security.pam.services.greetd.enableGnomeKeyring = true;
   services.gnome.gnome-keyring.enable = true;
   services.gnome.gcr-ssh-agent.enable = false;
   programs.seahorse.enable = true;
