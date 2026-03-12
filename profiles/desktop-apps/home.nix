@@ -25,6 +25,7 @@
 
     # Graphics & Media
     gimp
+    imv
 
     # Security/VPN
     protonvpn-gui

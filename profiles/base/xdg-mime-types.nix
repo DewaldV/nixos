@@ -4,8 +4,17 @@ let
   browser = [
     "brave-browser.desktop" # assume brave provides this
   ];
+  imageViewer = [ "imv.desktop" ];
   associations = {
     "inode/directory" = [ "thunar.desktop" ];
+    "image/jpeg" = imageViewer;
+    "image/png" = imageViewer;
+    "image/gif" = imageViewer;
+    "image/webp" = imageViewer;
+    "image/tiff" = imageViewer;
+    "image/bmp" = imageViewer;
+    "image/svg+xml" = imageViewer;
+    "image/avif" = imageViewer;
     "text/html" = browser;
     "x-scheme-handler/http" = browser;
     "x-scheme-handler/https" = browser;
