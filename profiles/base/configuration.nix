@@ -98,6 +98,9 @@
     ];
   };
 
+  services.gvfs.enable = true;
+  services.tumbler.enable = true;
+
   # System-level packages only
   # Note: User-facing utilities moved to profiles/base/home.nix
   # Note: GUI apps moved to profiles/desktop-apps
@@ -119,6 +122,10 @@
     usbutils
     wireguard-tools
     xdg-utils
+
+    # Thunar support
+    ffmpegthumbnailer
+    xarchiver
   ];
 
   # Services
