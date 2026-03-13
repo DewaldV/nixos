@@ -23,8 +23,6 @@
         controlMaster = "no";
         controlPath = "~/.ssh/master-%r@%n:%p";
         controlPersist = "no";
-        # identityFile = "~/.ssh/personal-ed25519";
-        identitiesOnly = true;
       };
 
       "github.com" = {
