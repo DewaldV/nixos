@@ -32,7 +32,7 @@
       mkHost = import ./lib/mkhost.nix;
     in
     {
-      homeConfigurations.dewaldv = mkHome "dv-rvu-x1c10" rec {
+      homeConfigurations.dewaldv = mkHome "dv-rvu" rec {
         inherit
           home-manager
           nixos-private
