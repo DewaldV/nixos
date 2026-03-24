@@ -36,11 +36,6 @@ in
     PROTON_PASS_LINUX_KEYRING = "dbus";
   };
 
-  programs.zsh.shellAliases = {
-    # Manual reload mid-session; auto-load is handled by the systemd service
-    pass-ssh-load = "pass-cli ssh-agent load";
-  };
-
   # Auto-load SSH keys into the agent at login. Runs after GNOME Keyring is
   # unlocked (so pass-cli can retrieve its encryption key via D-Bus) and after
   # the SSH agent is ready.
