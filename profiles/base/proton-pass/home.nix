@@ -11,10 +11,14 @@
     pkgs-unstable.proton-pass-cli
   ];
 
-  # Workaround: pass-cli stores its local encryption key in the kernel user
-  # keyring, which is wiped on reboot. Login is required after each reboot
-  # before SSH keys can be loaded.
+  # Use the D-Bus Secret Service (GNOME Keyring) as the keyring backend so
+  # that the pass-cli encryption key persists across reboots. Requires a
+  # running and unlocked Secret Service provider in the session.
+  home.sessionVariables = {
+    PROTON_PASS_LINUX_KEYRING = "dbus";
+  };
+
   programs.zsh.shellAliases = {
-    pass-ssh-load = "pass-cli login && pass-cli ssh-agent load";
+    pass-ssh-load = "pass-cli ssh-agent load";
   };
 }
