@@ -29,11 +29,11 @@
 
   boot.initrd.luks.devices."nix" = {
     allowDiscards = true;
-    device = "/dev/disk/by-uuid/13bb5138-5e02-46ed-bfea-6f8b73a32ac4";
+    device = "/dev/disk/by-partlabel/nixos-crypt";
   };
 
   fileSystems."/" = {
-    device = "/dev/disk/by-uuid/005c89d0-4848-4509-88ae-78f45bc692e7";
+    device = "/dev/disk/by-label/nixos";
     fsType = "btrfs";
     options = [
       "compress=zstd:1"
