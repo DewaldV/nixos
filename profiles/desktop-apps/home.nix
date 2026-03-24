@@ -28,6 +28,7 @@
     imv
 
     # Security/VPN
+    pkgs-unstable.proton-pass
     protonvpn-gui
     yubioath-flutter
   ];

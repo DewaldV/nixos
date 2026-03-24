@@ -26,7 +26,6 @@ in
 
 {
   home.packages = [
-    pkgs-unstable.proton-pass
     proton-pass-cli
   ];
 
