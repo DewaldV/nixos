@@ -1,0 +1,22 @@
+{
+  config,
+  pkgs,
+  nixos-hardware,
+  ...
+}:
+
+{
+  imports = [
+    # Hardware-specific modules
+    nixos-hardware.nixosModules.common-cpu-amd
+    nixos-hardware.nixosModules.common-cpu-amd-pstate
+    nixos-hardware.nixosModules.common-pc-ssd
+
+    # Profiles
+    ../../profiles/server
+
+    # Machine-specific config
+    ./configuration.nix
+    ./hardware.nix
+  ];
+}

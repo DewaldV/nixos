@@ -39,6 +39,13 @@
       mkDarwin = import ./lib/mkdarwin.nix;
     in
     {
+      packages.x86_64-linux.installer =
+        (nixpkgs.lib.nixosSystem {
+          system = "x86_64-linux";
+          specialArgs = { inherit nixos-private; };
+          modules = [ ./installer ];
+        }).config.system.build.isoImage;
+
       homeConfigurations.dewaldv = mkHome "dv-rvu" rec {
         inherit
           home-manager
@@ -72,6 +79,17 @@
       };
 
       nixosConfigurations.dv-fw = mkHost "dv-fw" {
+        inherit
+          home-manager
+          nixos-hardware
+          nixos-private
+          nixpkgs
+          nixpkgs-unstable
+          ;
+        system = "x86_64-linux";
+      };
+
+      nixosConfigurations.home-srv = mkHost "home-srv" {
         inherit
           home-manager
           nixos-hardware
