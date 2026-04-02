@@ -84,12 +84,6 @@
 
   programs.ssh.startAgent = true;
 
-  programs._1password.enable = true;
-  programs._1password-gui = {
-    enable = true;
-    polkitPolicyOwners = [ "dewaldv" ];
-  };
-
   programs.thunar = {
     enable = true;
     plugins = with pkgs.xfce; [
@@ -104,7 +98,7 @@
   services.tumbler.enable = true;
 
   # System-level packages only
-  # Note: User-facing utilities moved to profiles/base/home.nix
+  # Note: User-facing utilities moved to profiles/workstation/home.nix
   # Note: GUI apps moved to profiles/desktop-apps
   # Note: Development tools moved to profiles/development
   environment.systemPackages = with pkgs; [

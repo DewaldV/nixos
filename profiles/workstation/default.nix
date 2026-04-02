@@ -3,7 +3,7 @@
   imports = [
     ./configuration.nix
     ./user.nix
-    ./xdg-mime-types.nix
     ./tailscale.nix
+    ./1password
   ];
 }

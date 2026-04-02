@@ -11,6 +11,7 @@
 
     # Profiles
     ../../profiles/workstation
+    ../../profiles/desktop-apps
     ../../profiles/gaming
     ../../profiles/laptop
     ../../profiles/docker

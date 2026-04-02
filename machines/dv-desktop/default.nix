@@ -14,6 +14,7 @@
 
     # Profiles
     ../../profiles/workstation
+    ../../profiles/desktop-apps
     ../../profiles/gaming
     ../../profiles/virtualization
     ../../profiles/llm

@@ -9,8 +9,9 @@
 {
   # Base home-manager configuration
   imports = [
-    ./1password
-  ] ++ lib.optionals (!isDarwin) [ ./linux.nix ];
+    ./1password/home.nix
+  ]
+  ++ lib.optionals (!isDarwin) [ ./linux.nix ];
 
   # Note: home.stateVersion should be set in machine configs
 

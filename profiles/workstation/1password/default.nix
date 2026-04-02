@@ -1,5 +1,9 @@
-{ config, pkgs, ... }:
+{ ... }:
 
 {
-  home.file.".config/1Password/ssh/agent.toml".source = ./agent.toml;
+  programs._1password.enable = true;
+  programs._1password-gui = {
+    enable = true;
+    polkitPolicyOwners = [ "dewaldv" ];
+  };
 }
