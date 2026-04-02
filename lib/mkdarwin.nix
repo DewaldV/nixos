@@ -1,7 +1,7 @@
 name:
 {
+  nix-darwin,
   home-manager,
-  nixos-hardware,
   nixos-private,
   nixpkgs,
   nixpkgs-unstable,
@@ -15,27 +15,23 @@ let
   };
   isDarwin = nixpkgs.lib.hasSuffix "-darwin" system;
 in
-nixpkgs.lib.nixosSystem {
+nix-darwin.lib.darwinSystem {
   inherit system;
   specialArgs = {
-    inherit
-      nixos-hardware
-      nixos-private
-      pkgs-unstable
-      ;
+    inherit nixos-private pkgs-unstable;
   };
 
   modules = [
-    nixos-private.nixosModule
     ../machines/${name}
-    ../profiles/base
 
-    home-manager.nixosModules.home-manager
+    home-manager.darwinModules.home-manager
     {
+
+      users.users."dewald.viljoen".home = "/Users/dewald.viljoen";
       home-manager.useGlobalPkgs = true;
       home-manager.useUserPackages = true;
       home-manager.backupFileExtension = "bak";
-      home-manager.users.dewaldv =
+      home-manager.users."dewald.viljoen" =
         {
           ...
         }:
@@ -44,6 +40,7 @@ nixpkgs.lib.nixosSystem {
             nixos-private.homeManagerModule
             ../machines/${name}/home
           ];
+
         };
       home-manager.extraSpecialArgs = {
         inherit nixos-private pkgs-unstable isDarwin;

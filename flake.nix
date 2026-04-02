@@ -16,12 +16,18 @@
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.home-manager.follows = "home-manager";
     };
+
+    nix-darwin = {
+      url = "github:nix-darwin/nix-darwin/nix-darwin-25.11";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
     {
       self,
       home-manager,
+      nix-darwin,
       nixos-hardware,
       nixos-private,
       nixpkgs,
@@ -30,6 +36,7 @@
     let
       mkHome = import ./lib/mkhome.nix;
       mkHost = import ./lib/mkhost.nix;
+      mkDarwin = import ./lib/mkdarwin.nix;
     in
     {
       homeConfigurations.dewaldv = mkHome "dv-rvu" rec {
@@ -51,6 +58,17 @@
           nixpkgs-unstable
           ;
         system = "x86_64-linux";
+      };
+
+      darwinConfigurations.RVU-TQWC4MH4Y7 = mkDarwin "dv-rvu-mac" {
+        inherit
+          nix-darwin
+          home-manager
+          nixos-private
+          nixpkgs
+          nixpkgs-unstable
+          ;
+        system = "aarch64-darwin";
       };
 
       nixosConfigurations.dv-fw = mkHost "dv-fw" {

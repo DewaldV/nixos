@@ -1,7 +1,13 @@
-{ config, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  isDarwin,
+  ...
+}:
 
 let
-  emacsPackage = pkgs.emacs30-pgtk;
+  emacsPackage = if isDarwin then pkgs.emacs30 else pkgs.emacs30-pgtk;
 in
 {
   home.file.".doom.d/config.el".source = ./doom.d/config.el;
@@ -36,7 +42,7 @@ in
     package = emacsPackage;
   };
 
-  services.emacs = {
+  services.emacs = lib.mkIf (!isDarwin) {
     enable = true;
 
     defaultEditor = true;
@@ -50,7 +56,7 @@ in
   # Gnome Wayland matches the desktop file name to the app_id to track an app's windows.
   # The default desktop file from the package launches emacs directly, this
   # overrides that to launch emacsclient instead.
-  xdg.desktopEntries = {
+  xdg.desktopEntries = lib.mkIf (!isDarwin) {
     emacs = {
       categories = [
         "Development"

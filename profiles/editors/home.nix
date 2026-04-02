@@ -9,6 +9,6 @@
   imports = [
     ./doom
     ./editorconfig.nix
-    ./neovim.nix
+    # ./neovim.nix
   ];
 }

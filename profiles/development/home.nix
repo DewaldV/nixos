@@ -35,7 +35,6 @@
 
     # Development utilities
     devenv
-    pre-commit
 
     # Shell dev
     shellcheck

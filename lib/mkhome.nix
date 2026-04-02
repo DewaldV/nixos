@@ -16,12 +16,13 @@ let
     inherit system;
     config.allowUnfree = true;
   };
+  isDarwin = nixpkgs.lib.hasSuffix "-darwin" system;
 in
 home-manager.lib.homeManagerConfiguration {
   inherit pkgs;
 
   extraSpecialArgs = {
-    inherit nixos-private pkgs-unstable;
+    inherit nixos-private pkgs-unstable isDarwin;
   };
 
   modules = [

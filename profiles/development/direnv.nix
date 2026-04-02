@@ -1,9 +1,10 @@
-{ config, pkgs, ... }:
+{ pkgs-unstable, ... }:
 
 {
   programs.direnv = {
     enable = true;
     enableZshIntegration = true;
     nix-direnv.enable = true;
+    package = pkgs-unstable.direnv;
   };
 }

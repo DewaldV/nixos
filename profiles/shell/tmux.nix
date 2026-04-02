@@ -9,7 +9,6 @@
     sensibleOnTop = true;
     terminal = "tmux-direct";
     extraConfig = ''
-      set -as terminal-features ",foot*:RGB:bce:ccolour:clipboard:cstyle:extkeys:focus:title"
       set -g extended-keys on
       set -g focus-events on
     '';

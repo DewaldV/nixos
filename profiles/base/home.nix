@@ -1,7 +1,8 @@
 {
   config,
   pkgs,
-  pkgs-unstable,
+  lib,
+  isDarwin,
   ...
 }:
 
@@ -9,16 +10,7 @@
   # Base home-manager configuration
   imports = [
     ./1password
-    ./proton-pass/home.nix
-    ./gtk.nix
-  ];
-
-  # Pointer cursor configuration
-  home.pointerCursor = {
-    name = "Adwaita";
-    package = pkgs.adwaita-icon-theme;
-    size = 16;
-  };
+  ] ++ lib.optionals (!isDarwin) [ ./linux.nix ];
 
   # Note: home.stateVersion should be set in machine configs
 
@@ -31,14 +23,12 @@
     fi
   '';
 
-  # User-level base utilities
-  # These are common tools that every user needs regardless of machine
+  # User-level base utilities common to all platforms
   home.packages = with pkgs; [
     # System monitoring
     btop
     htop
-    powertop
-    s-tui
+    # s-tui
 
     # Network utilities
     curl
@@ -57,27 +47,13 @@
     pandoc
 
     # Development basics
-    # Note: git moved to development profile
     nixfmt-rfc-style
     nvd
     vim
 
     # System utilities
-    distrobox
     fastfetch
     lsof
-    mesa-demos
-
-    # Wayland/Sway utilities
-    grim
-    kanshi
-    sway-contrib.grimshot
-    wl-clipboard
-
-    # Audio/Video
-    helvum
-    pavucontrol
-    pulseaudio
 
     # Additional utilities
     editorconfig-core-c

@@ -36,7 +36,7 @@
       gpg.format = "ssh";
       gpg."ssh" = {
         program = "${pkgs.openssh}/bin/ssh-keygen";
-        allowedSignersFile = "/home/dewaldv/.ssh/allowed_signers";
+        allowedSignersFile = "${config.home.homeDirectory}/.ssh/allowed_signers";
       };
       init.defaultBranch = "main";
       pull.rebase = true;

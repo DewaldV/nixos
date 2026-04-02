@@ -1,6 +1,6 @@
 SOURCES = $(shell find . -type f -iname "*.nix")
 
-.PHONY: boot switch home-manager-switch clean delete-old gc gc-gen update-deps diff
+.PHONY: boot switch home-manager-switch clean delete-old gc gc-gen update-deps diff darwin-switch darwin-build
 boot: $(SOURCES)
 	nixos-rebuild boot --flake '.#' --sudo
 
@@ -12,6 +12,12 @@ home-manager-switch: $(SOURCES)
 
 result: $(SOURCES)
 	nixos-rebuild build --flake '.#'
+
+darwin-switch: $(SOURCES)
+	sudo darwin-rebuild switch --flake '.#'
+
+darwin-build: $(SOURCES)
+	darwin-rebuild build --flake '.#'
 
 diff: result
 	nvd diff /run/current-system ./result
