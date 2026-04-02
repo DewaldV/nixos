@@ -28,7 +28,7 @@ nixpkgs.lib.nixosSystem {
   modules = [
     nixos-private.nixosModule
     ../machines/${name}
-    ../profiles/base
+    ../profiles/workstation
 
     home-manager.nixosModules.home-manager
     {

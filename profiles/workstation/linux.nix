@@ -2,7 +2,6 @@
 
 {
   imports = [
-    ./gtk.nix
     ./proton-pass/home.nix
   ];
 

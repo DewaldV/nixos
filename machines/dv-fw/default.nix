@@ -10,6 +10,7 @@
     nixos-hardware.nixosModules.framework-13-7040-amd
 
     # Profiles
+    ../../profiles/workstation
     ../../profiles/gaming
     ../../profiles/laptop
     ../../profiles/docker

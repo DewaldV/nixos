@@ -2,7 +2,7 @@
 
 {
   imports = [
-    ../../../profiles/base/home.nix
+    ../../../profiles/workstation/home.nix
     ../../../profiles/shell/home.nix
     ../../../profiles/development/home.nix
     # ../../../profiles/editors/home.nix

@@ -13,6 +13,7 @@
     nixos-hardware.nixosModules.common-pc-ssd
 
     # Profiles
+    ../../profiles/workstation
     ../../profiles/gaming
     ../../profiles/virtualization
     ../../profiles/llm
