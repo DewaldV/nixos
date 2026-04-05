@@ -1,5 +1,6 @@
 {
   config,
+  lib,
   nixos-private,
   pkgs,
   ...
@@ -33,6 +34,8 @@
 
   console.keyMap = "us";
 
+  system.stateVersion = "25.11";
+
   # Allow SSH access with personal key
   users.users.dewaldv.openssh.authorizedKeys.keys = [
     nixos-private.private.keys.personal.ssh.pub
@@ -49,13 +52,20 @@
       enable = true;
       port = 2222;
       authorizedKeys = [ nixos-private.private.keys.personal.ssh.pub ];
-      hostKeys = [ nixos-private.private.machines.home-srv.initrd.private ];
+      hostKeys = [
+        (pkgs.writeText "initrd-ssh-host-key" nixos-private.private.keys.machines.home-srv.initrd.private)
+      ];
     };
   };
 
-  # Static IP in the initrd (independent of the normal system network config)
-  boot.initrd.network.postCommands = ''
-    ip addr add 192.168.0.10/24 dev eno1
-    ip route add default via 192.168.0.1
-  '';
+  # Static IP in the initrd via systemd-networkd
+  boot.initrd.systemd.network = {
+    enable = true;
+    networks."10-eno1" = {
+      matchConfig.Name = "eno1";
+      addresses = [ { Address = "192.168.0.10/24"; } ];
+      routes = [ { Gateway = "192.168.0.1"; } ];
+      linkConfig.RequiredForOnline = "routable";
+    };
+  };
 }
