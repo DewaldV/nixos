@@ -7,27 +7,67 @@
 }:
 
 {
-  # Disable desktop-only services that are enabled in profiles/base
-  services.greetd.enable = lib.mkForce false;
-  services.pipewire.enable = lib.mkForce false;
-  services.flatpak.enable = lib.mkForce false;
-  services.printing.enable = lib.mkForce false;
-  services.tumbler.enable = lib.mkForce false;
-  services.gvfs.enable = lib.mkForce false;
-  services.gnome.gnome-keyring.enable = lib.mkForce false;
-  services.gnome.gcr-ssh-agent.enable = lib.mkForce false;
-  programs.seahorse.enable = lib.mkForce false;
-  programs._1password.enable = lib.mkForce false;
-  programs._1password-gui.enable = lib.mkForce false;
-  programs.thunar.enable = lib.mkForce false;
-  programs.dconf.enable = lib.mkForce false;
-  xdg.portal.enable = lib.mkForce false;
-  security.pam.services.greetd = lib.mkForce { };
-  security.pam.services.swaylock = lib.mkForce { };
-  boot.plymouth.enable = lib.mkForce false;
+  nix.settings = {
+    trusted-users = [
+      "root"
+      "@wheel"
+    ];
 
-  # Disable desktop-only systemd user services
-  systemd.user.services.polkit-gnome-authentication-agent-1 = lib.mkForce { };
+    experimental-features = [
+      "nix-command"
+      "flakes"
+    ];
+
+    netrc-file = "/etc/nix/netrc";
+  };
+
+  nixpkgs.config.allowUnfree = true;
+
+  # Boot
+  boot = {
+    initrd.systemd.enable = true;
+    loader.efi.canTouchEfiVariables = true;
+    loader.systemd-boot.enable = true;
+  };
+
+  # Networking
+  networking.networkmanager.enable = false;
+  networking.nameservers = [
+    "9.9.9.9"
+    "149.112.112.112"
+    "2620:fe::fe"
+    "2620:fe::92"
+  ];
+
+  services.resolved = {
+    enable = true;
+    fallbackDns = [
+      "9.9.9.9"
+      "149.112.112.112"
+      "2620:fe::fe"
+      "2620:fe::92"
+    ];
+    dnssec = "true";
+    extraConfig = ''
+      [Resolve]
+      DNS=9.9.9.9#dns.quad9.net 149.112.112.112#dns.quad9.net 2620:fe::fe#dns.quad9.net 2620:fe::9#dns.quad9.net
+      DNSOverTLS=yes
+    '';
+  };
+
+  # Timezone and Locale
+  i18n.defaultLocale = "en_GB.UTF-8";
+  time.timeZone = "Europe/London";
+
+  # User
+  programs.zsh.enable = true;
+
+  users.users.dewaldv = {
+    isNormalUser = true;
+    description = "Dewald Viljoen";
+    extraGroups = [ "wheel" ];
+    shell = pkgs.zsh;
+  };
 
   # SSH server
   services.openssh = {
@@ -37,4 +77,31 @@
       PermitRootLogin = "no";
     };
   };
+
+  # SSH agent
+  programs.ssh.startAgent = true;
+
+  # GPG
+  programs.gnupg.agent = {
+    enable = true;
+    enableSSHSupport = false;
+  };
+
+  environment.systemPackages = with pkgs; [
+    gcc
+    gnumake
+    e2fsprogs
+    pciutils
+    usbutils
+    nvd
+  ];
+
+  # Show diff before activation
+  system.activationScripts.preActivation = ''
+    if [[ -e /run/current-system ]]; then
+      echo "--- diff to current-system"
+      ${pkgs.nvd}/bin/nvd --nix-bin-dir=${config.nix.package}/bin diff /run/current-system "$systemConfig"
+      echo "---"
+    fi
+  '';
 }

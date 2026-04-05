@@ -24,6 +24,7 @@
     enable = true;
     allowedTCPPorts = [
       22 # SSH
+      2222 # SSH initrd unlock
     ];
     allowedUDPPorts = [
       41641 # Tailscale
@@ -36,4 +37,25 @@
   users.users.dewaldv.openssh.authorizedKeys.keys = [
     nixos-private.private.keys.personal.ssh.pub
   ];
+
+  # Initrd SSH unlock
+  # Allows remote LUKS passphrase entry on boot before the filesystem is mounted.
+  # The host key is stored unencrypted in the Nix store — this is intentional and safe.
+  # Its only purpose is to prevent MITM on the initrd SSH connection; it holds no secrets.
+  # Generate with: ssh-keygen -t ed25519 -N "" -f machines/home-srv/initrd-ssh-host-key
+  boot.initrd.network = {
+    enable = true;
+    ssh = {
+      enable = true;
+      port = 2222;
+      authorizedKeys = [ nixos-private.private.keys.personal.ssh.pub ];
+      hostKeys = [ nixos-private.private.machines.home-srv.initrd.private ];
+    };
+  };
+
+  # Static IP in the initrd (independent of the normal system network config)
+  boot.initrd.network.postCommands = ''
+    ip addr add 192.168.0.10/24 dev eno1
+    ip route add default via 192.168.0.1
+  '';
 }
