@@ -7,6 +7,9 @@ boot: $(SOURCES)
 switch: $(SOURCES)
 	nixos-rebuild switch --flake '.#' --sudo
 
+home-srv-switch: $(SOURCES)
+	nixos-rebuild switch --flake .#home-srv --target-host dewaldv@192.168.0.10 --use-remote-sudo --ask-sudo-password
+
 home-manager-switch: $(SOURCES)
 	home-manager switch --flake '.#dewaldv'
 

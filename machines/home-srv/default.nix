@@ -14,6 +14,7 @@
 
     # Profiles
     ../../profiles/server
+    ../../profiles/caddy
 
     # Machine-specific config
     ./configuration.nix

@@ -25,6 +25,8 @@
     enable = true;
     allowedTCPPorts = [
       22 # SSH
+      80 # HTTP (Caddy — redirects to HTTPS)
+      443 # HTTPS (Caddy)
       2222 # SSH initrd unlock
     ];
     allowedUDPPorts = [
@@ -57,6 +59,11 @@
       ];
     };
   };
+
+  # Caddy virtual hosts
+  services.caddy.virtualHosts."home-assistant.home.dewaldv.com".extraConfig = ''
+    reverse_proxy http://192.168.0.2:8123
+  '';
 
   # Static IP in the initrd via systemd-networkd
   boot.initrd.systemd.network = {
