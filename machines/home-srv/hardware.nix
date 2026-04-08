@@ -81,6 +81,17 @@
     ];
   };
 
+  fileSystems."/mnt/media" = {
+    device = "/dev/disk/by-label/nixos";
+    fsType = "btrfs";
+    options = [
+      "subvol=@media"
+      "compress=zstd:1"
+      "discard=async"
+      "noatime"
+    ];
+  };
+
   fileSystems."/boot" = {
     device = "/dev/disk/by-partlabel/efi";
     fsType = "vfat";

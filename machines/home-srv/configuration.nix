@@ -60,6 +60,13 @@
     };
   };
 
+  # Give jellyfin read access to the media library
+  users.users.jellyfin.extraGroups = [ "media" ];
+  users.groups.media = { };
+  systemd.tmpfiles.rules = [
+    "d /mnt/media 0755 root media - -"
+  ];
+
   # Caddy virtual hosts
   services.caddy.virtualHosts."home-assistant.home.dewaldv.com".extraConfig = ''
     reverse_proxy http://192.168.0.2:8123
