@@ -25,6 +25,10 @@
         controlPersist = "no";
       };
 
+      "192.168.0.10" = {
+        forwardAgent = true;
+      };
+
       "github.com" = {
         hostname = "github.com";
         identityFile = "~/.ssh/personal-ed25519";
