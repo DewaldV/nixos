@@ -15,6 +15,8 @@
     # Profiles
     ../../profiles/server
     ../../profiles/caddy
+    ../../profiles/jellyfin
+    ../../profiles/immich
 
     # Machine-specific config
     ./configuration.nix

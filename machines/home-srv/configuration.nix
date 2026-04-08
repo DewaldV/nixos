@@ -64,6 +64,12 @@
   services.caddy.virtualHosts."home-assistant.home.dewaldv.com".extraConfig = ''
     reverse_proxy http://192.168.0.2:8123
   '';
+  services.caddy.virtualHosts."jellyfin.home.dewaldv.com".extraConfig = ''
+    reverse_proxy http://localhost:8096
+  '';
+  services.caddy.virtualHosts."immich.home.dewaldv.com".extraConfig = ''
+    reverse_proxy http://localhost:2283
+  '';
 
   # Static IP in the initrd via systemd-networkd
   boot.initrd.systemd.network = {
