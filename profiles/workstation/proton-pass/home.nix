@@ -6,14 +6,7 @@
 }:
 
 let
-  # TODO: remove once 1.8.0 reaches nixpkgs unstable
-  proton-pass-cli = pkgs-unstable.proton-pass-cli.overrideAttrs (old: {
-    version = "1.8.0";
-    src = pkgs-unstable.fetchurl {
-      url = "https://proton.me/download/pass-cli/1.8.0/pass-cli-linux-x86_64";
-      hash = "sha256-M7zWxVYHHjM86/l3K+0AR8QceiydP0n0sXj9rSctaeI=";
-    };
-  });
+  proton-pass-cli = pkgs-unstable.proton-pass-cli;
 in
 
 {
