@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script>
+    (function() {
+      var e = localStorage.getItem("theme");
+      if (e) document.documentElement.setAttribute("data-theme", e);
+    })();
+  </script>
+  <title>FURFACES</title>
+  <style>
+    html { overflow-y: scroll; }
+
+    :root {
+      --bgcolor: #f5f5f5;
+      --fontcolor: #222;
+      --linkcolor: #3a6a8f;
+      --visitedcolor: #2a5575;
+      --hrcolor: #ccc;
+      --mutedcolor: #666;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bgcolor: #202020;
+        --fontcolor: #e0e0e0;
+        --linkcolor: #5a8fab;
+        --visitedcolor: #4a7a95;
+        --hrcolor: #444;
+        --mutedcolor: #999;
+      }
+    }
+
+    [data-theme="dark"] {
+      --bgcolor: #202020;
+      --fontcolor: #e0e0e0;
+      --linkcolor: #5a8fab;
+      --visitedcolor: #4a7a95;
+      --hrcolor: #444;
+      --mutedcolor: #999;
+    }
+
+    [data-theme="light"] {
+      --bgcolor: #f5f5f5;
+      --fontcolor: #222;
+      --linkcolor: #3a6a8f;
+      --visitedcolor: #2a5575;
+      --hrcolor: #ccc;
+      --mutedcolor: #666;
+    }
+
+    body {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 0 10px;
+      font-family: ui-monospace, "Cascadia Code", "Segoe UI Mono", "Source Code Pro", Menlo, Consolas, "DejaVu Sans Mono", monospace;
+      font-size: 14px;
+      line-height: 1.6;
+      color: var(--fontcolor);
+      background: var(--bgcolor);
+    }
+
+    a:link { color: var(--linkcolor); }
+    a:visited { color: var(--visitedcolor); }
+
+    h1, h2, h3 { line-height: 1.2; }
+
+    hr {
+      border: none;
+      border-top: 1px solid var(--hrcolor);
+    }
+
+    .site-header { margin-bottom: 40px; }
+
+    .header-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+
+    .site-title {
+      font-size: 24px;
+      font-weight: bold;
+      text-decoration: none;
+      color: var(--fontcolor);
+    }
+
+    .site-title:hover { text-decoration: underline; }
+
+    .theme-toggle {
+      background: none;
+      border: 1px solid var(--hrcolor);
+      color: var(--fontcolor);
+      font: inherit;
+      padding: 0 8px;
+      line-height: 1.4;
+      cursor: pointer;
+    }
+
+    .theme-toggle:hover { border-color: var(--fontcolor); }
+
+    footer {
+      margin-top: 40px;
+    }
+
+    footer p {
+      color: var(--mutedcolor);
+      font-size: 12px;
+    }
+
+    main ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    main ul li {
+      padding: 6px 0;
+      border-bottom: 1px solid var(--hrcolor);
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 16px;
+    }
+
+    main ul li:first-child { border-top: 1px solid var(--hrcolor); }
+
+    main ul a:link { color: var(--linkcolor); }
+    main ul a:visited { color: var(--visitedcolor); }
+
+    .service-desc {
+      color: var(--mutedcolor);
+      font-size: 12px;
+    }
+
+    @media (max-width: 600px) {
+      .header-content {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-content">
+      <a href="/" class="site-title">FURFACES</a>
+      <button class="theme-toggle" aria-label="Toggle theme">light/dark</button>
+    </div>
+    <hr>
+  </header>
+
+  <main>
+    <ul>
+      <li>
+        <a href="https://home-assistant.furfaces.net">home-assistant.furfaces.net</a>
+        <span class="service-desc">Home Assistant</span>
+      </li>
+      <li>
+        <a href="https://immich.furfaces.net">immich.furfaces.net</a>
+        <span class="service-desc">Immich</span>
+      </li>
+      <li>
+        <a href="https://jellyfin.furfaces.net">jellyfin.furfaces.net</a>
+        <span class="service-desc">Jellyfin</span>
+      </li>
+      <li>
+        <a href="https://portainer.furfaces.net">portainer.furfaces.net</a>
+        <span class="service-desc">Portainer</span>
+      </li>
+      <li>
+        <a href="https://z2mqtt.furfaces.net">z2mqtt.furfaces.net</a>
+        <span class="service-desc">Zigbee2MQTT</span>
+      </li>
+      <li>
+        <a href="https://dv-pi5.syncthing.furfaces.net">dv-pi5.syncthing.furfaces.net</a>
+        <span class="service-desc">Syncthing (dv-pi5)</span>
+      </li>
+    </ul>
+  </main>
+
+  <footer>
+    <hr>
+  </footer>
+
+  <script>
+    document.querySelector(".theme-toggle").addEventListener("click", function() {
+      var current = document.documentElement.getAttribute("data-theme");
+      var isDark = current ? current === "dark" : window.matchMedia("(prefers-color-scheme: dark)").matches;
+      var next = isDark ? "light" : "dark";
+      document.documentElement.setAttribute("data-theme", next);
+      localStorage.setItem("theme", next);
+    });
+  </script>
+</body>
+</html>

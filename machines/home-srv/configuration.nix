@@ -68,6 +68,10 @@
   ];
 
   # Caddy virtual hosts
+  services.caddy.virtualHosts."furfaces.net".extraConfig = ''
+    root * ${./homepage}
+    file_server
+  '';
   services.caddy.virtualHosts."portainer.furfaces.net".extraConfig = ''
     reverse_proxy http://192.168.0.2:9000
   '';
