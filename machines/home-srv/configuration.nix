@@ -68,13 +68,13 @@
   ];
 
   # Caddy virtual hosts
-  services.caddy.virtualHosts."home-assistant.home.dewaldv.com".extraConfig = ''
+  services.caddy.virtualHosts."home-assistant.furfaces.net".extraConfig = ''
     reverse_proxy http://192.168.0.2:8123
   '';
-  services.caddy.virtualHosts."jellyfin.home.dewaldv.com".extraConfig = ''
+  services.caddy.virtualHosts."jellyfin.furfaces.net".extraConfig = ''
     reverse_proxy http://localhost:8096
   '';
-  services.caddy.virtualHosts."immich.home.dewaldv.com".extraConfig = ''
+  services.caddy.virtualHosts."immich.furfaces.net".extraConfig = ''
     reverse_proxy http://localhost:2283
   '';
 
