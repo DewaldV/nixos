@@ -68,6 +68,15 @@
   ];
 
   # Caddy virtual hosts
+  services.caddy.virtualHosts."portainer.furfaces.net".extraConfig = ''
+    reverse_proxy http://192.168.0.2:9000
+  '';
+  services.caddy.virtualHosts."z2mqtt.furfaces.net".extraConfig = ''
+    reverse_proxy http://192.168.0.2:8080
+  '';
+  services.caddy.virtualHosts."dv-pi5.syncthing.furfaces.net".extraConfig = ''
+    reverse_proxy http://192.168.0.2:8384
+  '';
   services.caddy.virtualHosts."home-assistant.furfaces.net".extraConfig = ''
     reverse_proxy http://192.168.0.2:8123
   '';
