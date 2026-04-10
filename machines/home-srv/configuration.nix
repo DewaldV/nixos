@@ -29,10 +29,9 @@
       443 # HTTPS (Caddy)
       2222 # SSH initrd unlock
     ];
-    allowedUDPPorts = [
-      41641 # Tailscale
-    ];
   };
+
+  services.tailscale.useRoutingFeatures = "both";
 
   console.keyMap = "us";
 

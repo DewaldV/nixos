@@ -17,6 +17,7 @@
     ../../profiles/caddy
     ../../profiles/jellyfin
     ../../profiles/immich
+    ../../profiles/tailscale
 
     # Machine-specific config
     ./configuration.nix

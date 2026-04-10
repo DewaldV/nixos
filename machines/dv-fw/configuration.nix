@@ -8,9 +8,6 @@
 
   networking.firewall = {
     enable = true;
-    allowedUDPPorts = [
-      41641 # Tailscale
-    ];
   };
 
   console = {

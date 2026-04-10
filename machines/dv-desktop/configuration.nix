@@ -17,9 +17,6 @@
       8096 # Jellyfin
       2283 # Immich API
     ];
-    allowedUDPPorts = [
-      41641 # Tailscale
-    ];
   };
 
   console.keyMap = "us";

@@ -3,7 +3,7 @@
   imports = [
     ./configuration.nix
     ./user.nix
-    ./tailscale.nix
+    ../tailscale
     ./1password
   ];
 }
