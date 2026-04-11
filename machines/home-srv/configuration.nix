@@ -64,28 +64,31 @@
   ];
 
   # Caddy virtual hosts
-  services.caddy.virtualHosts."furfaces.net".extraConfig = ''
-    root * ${./homepage}
-    file_server
-  '';
-  services.caddy.virtualHosts."portainer.furfaces.net".extraConfig = ''
-    reverse_proxy http://192.168.0.2:9000
-  '';
-  services.caddy.virtualHosts."z2mqtt.furfaces.net".extraConfig = ''
-    reverse_proxy http://192.168.0.2:8080
-  '';
-  services.caddy.virtualHosts."dv-pi5.syncthing.furfaces.net".extraConfig = ''
-    reverse_proxy http://192.168.0.2:8384
-  '';
-  services.caddy.virtualHosts."home-assistant.furfaces.net".extraConfig = ''
-    reverse_proxy http://192.168.0.2:8123
-  '';
-  services.caddy.virtualHosts."jellyfin.furfaces.net".extraConfig = ''
-    reverse_proxy http://localhost:8096
-  '';
-  services.caddy.virtualHosts."immich.furfaces.net".extraConfig = ''
-    reverse_proxy http://localhost:2283
-  '';
+  services.caddy.virtualHosts = {
+    "furfaces.net".extraConfig = ''
+      root * ${./homepage}
+      file_server
+    '';
+    "portainer.furfaces.net".extraConfig = ''
+      reverse_proxy http://192.168.0.2:9000
+    '';
+    "z2mqtt.furfaces.net".extraConfig = ''
+      reverse_proxy http://192.168.0.2:8080
+    '';
+    "dv-pi5.syncthing.furfaces.net".extraConfig = ''
+      reverse_proxy http://192.168.0.2:8384
+    '';
+    "home-assistant.furfaces.net".extraConfig = ''
+      reverse_proxy http://192.168.0.2:8123
+    '';
+    "jellyfin.furfaces.net".extraConfig = ''
+      reverse_proxy http://localhost:8096
+    '';
+    "immich.furfaces.net".extraConfig = ''
+      reverse_proxy http://localhost:2283
+    '';
+
+  };
 
   # Static IP in the initrd via systemd-networkd
   boot.initrd.systemd.network = {
