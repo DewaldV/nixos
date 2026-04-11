@@ -24,6 +24,8 @@
   networking.firewall = {
     enable = true;
     allowedTCPPorts = [
+      80 # Caddy HTTP
+      443 # Caddy HTTPS
       2222 # SSH initrd unlock
     ];
   };
