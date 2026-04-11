@@ -24,9 +24,6 @@
   networking.firewall = {
     enable = true;
     allowedTCPPorts = [
-      22 # SSH
-      80 # HTTP (Caddy — redirects to HTTPS)
-      443 # HTTPS (Caddy)
       2222 # SSH initrd unlock
     ];
   };

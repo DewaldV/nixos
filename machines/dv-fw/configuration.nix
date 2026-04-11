@@ -5,10 +5,7 @@
   boot.loader.systemd-boot.consoleMode = "1";
 
   networking.hostName = "dv-fw";
-
-  networking.firewall = {
-    enable = true;
-  };
+  networking.firewall.enable = true;
 
   console = {
     earlySetup = true;

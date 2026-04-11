@@ -16,6 +16,7 @@
     ../../profiles/workstation
     ../../profiles/desktop-apps
     ../../profiles/gaming
+    ../../profiles/sshd
     ../../profiles/virtualization
     ../../profiles/llm
     # Note: development and desktop-apps profiles are home-manager only (no system config)

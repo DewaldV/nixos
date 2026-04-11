@@ -7,6 +7,10 @@
 }:
 
 {
+  import = [
+    ../sshd
+  ];
+
   nix.settings = {
     trusted-users = [
       "root"
@@ -67,15 +71,6 @@
     description = "Dewald Viljoen";
     extraGroups = [ "wheel" ];
     shell = pkgs.zsh;
-  };
-
-  # SSH server
-  services.openssh = {
-    enable = true;
-    settings = {
-      PasswordAuthentication = false;
-      PermitRootLogin = "no";
-    };
   };
 
   # SSH agent

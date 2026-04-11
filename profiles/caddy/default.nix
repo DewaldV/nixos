@@ -14,6 +14,7 @@ in
   services.caddy = {
     enable = true;
     package = caddyWithOvh;
+    openFirewall = true;
     globalConfig = ''
       email dv@dewaldv.com
       acme_dns

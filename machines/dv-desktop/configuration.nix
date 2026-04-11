@@ -10,12 +10,7 @@
   boot.loader.systemd-boot.consoleMode = "0";
 
   networking.hostName = "dv-desktop";
-  networking.firewall = {
-    enable = true;
-    allowedTCPPorts = [
-      22 # SSH
-    ];
-  };
+  networking.firewall.enable = true;
 
   console.keyMap = "us";
 
@@ -24,15 +19,6 @@
   services.ratbagd.enable = true;
 
   services.power-profiles-daemon.enable = true;
-
-  # SSH server
-  services.openssh = {
-    enable = true;
-    settings = {
-      PasswordAuthentication = false;
-      PermitRootLogin = "no";
-    };
-  };
 
   # Allow SSH access with personal key
   users.users.dewaldv.openssh.authorizedKeys.keys = [
