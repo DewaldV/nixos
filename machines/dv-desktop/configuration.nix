@@ -14,8 +14,6 @@
     enable = true;
     allowedTCPPorts = [
       22 # SSH
-      8096 # Jellyfin
-      2283 # Immich API
     ];
   };
 

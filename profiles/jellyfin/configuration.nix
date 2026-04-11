@@ -9,6 +9,7 @@
   # Jellyfin media server
   services.jellyfin = {
     enable = true;
+    openFirewall = true;
   };
 
   # Grant jellyfin access to the GPU for VA-API hardware transcoding
