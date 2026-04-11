@@ -21,6 +21,7 @@
 
     # Machine-specific config
     ./configuration.nix
+    ./dl-vm.nix
     ./hardware.nix
   ];
 }

@@ -9,6 +9,7 @@
 {
   imports = [
     ../sshd
+    ./virtualisation.nix
   ];
 
   nix.settings = {

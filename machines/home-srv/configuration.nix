@@ -9,7 +9,9 @@
 {
   networking.hostName = "home-srv";
 
-  networking.interfaces.eno1 = {
+  networking.interfaces.eno1.useDHCP = false;
+
+  networking.interfaces.br0 = {
     useDHCP = false;
     ipv4.addresses = [
       {
@@ -19,7 +21,12 @@
     ];
   };
 
-  networking.defaultGateway = "192.168.0.1";
+  networking.bridges.br0.interfaces = [ "eno1" ];
+
+  networking.defaultGateway = {
+    address = "192.168.0.1";
+    interface = "br0";
+  };
 
   networking.firewall = {
     enable = true;
