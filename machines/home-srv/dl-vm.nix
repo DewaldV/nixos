@@ -14,8 +14,8 @@ let
   domainXml = pkgs.writeText "${vmName}.xml" ''
     <domain type='kvm'>
       <name>${vmName}</name>
-      <memory unit='MiB'>4096</memory>
-      <vcpu placement='static'>2</vcpu>
+      <memory unit='MiB'>2048</memory>
+      <vcpu placement='static'>1</vcpu>
       <os>
         <type arch='x86_64' machine='q35'>hvm</type>
         <loader readonly='yes' type='pflash'>${ovmfCodePath}</loader>
