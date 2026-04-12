@@ -1,5 +1,6 @@
 name:
 {
+  disko,
   home-manager,
   nixos-hardware,
   nixos-private,
@@ -19,6 +20,7 @@ nixpkgs.lib.nixosSystem {
   inherit system;
   specialArgs = {
     inherit
+      disko
       nixos-hardware
       nixos-private
       pkgs-unstable

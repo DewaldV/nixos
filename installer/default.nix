@@ -11,9 +11,6 @@
     "${modulesPath}/installer/cd-dvd/installation-cd-minimal.nix"
   ];
 
-  # Use the same kernel as the rest of the fleet
-  boot.kernelPackages = pkgs.linuxPackages_6_19;
-
   networking.hostName = "nixos-installer";
   networking.useDHCP = lib.mkForce true;
 

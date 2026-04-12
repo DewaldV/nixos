@@ -5,6 +5,10 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixos-25.11";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixpkgs-unstable";
     nixos-hardware.url = "github:nixos/nixos-hardware";
+    disko = {
+      url = "github:nix-community/disko";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     home-manager = {
       url = "github:nix-community/home-manager/release-25.11";
@@ -26,6 +30,7 @@
   outputs =
     {
       self,
+      disko,
       home-manager,
       nix-darwin,
       nixos-hardware,
@@ -58,6 +63,7 @@
 
       nixosConfigurations.dv-desktop = mkHost "dv-desktop" {
         inherit
+          disko
           home-manager
           nixos-hardware
           nixos-private
@@ -80,6 +86,7 @@
 
       nixosConfigurations.dv-fw = mkHost "dv-fw" {
         inherit
+          disko
           home-manager
           nixos-hardware
           nixos-private
@@ -91,6 +98,7 @@
 
       nixosConfigurations.home-srv = mkHost "home-srv" {
         inherit
+          disko
           home-manager
           nixos-hardware
           nixos-private
@@ -102,6 +110,7 @@
 
       nixosConfigurations.dl-vm = mkHost "dl-vm" {
         inherit
+          disko
           home-manager
           nixos-hardware
           nixos-private
