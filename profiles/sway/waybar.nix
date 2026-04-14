@@ -11,15 +11,12 @@
     settings = {
       mainBar = {
         fonts = [
-          "FontAwesome"
-          "Noto Sans"
+          "Hack Nerd Font"
           "Hack"
         ];
-        layer = "top"; # Waybar at top layer
-        position = "top"; # Waybar at the top of your screen
-        height = 36; # Waybar Height
-        # "width": 1366, // Waybar width
-        # Choose the order of the modules
+        layer = "top";
+        position = "top";
+        height = 36;
         modules-left = [
           "sway/workspaces"
           "sway/mode"
@@ -53,10 +50,7 @@
         "sway/mode" = {
           format = ''<span style="italic">{}</span>'';
         };
-        tray = {
-          # "icon-size" = 21;
-          spacing = 10;
-        };
+        tray.spacing = 10;
         clock = {
           format = "{:%a %d %b %H:%M}";
         };
@@ -78,7 +72,7 @@
           ];
         };
         memory = {
-          format = " {}%";
+          format = "󰍛 {}%";
         };
         battery = {
           bat = "BAT0";
@@ -88,27 +82,25 @@
             critical = 15;
           };
           format = "{icon} {capacity}%";
-          # "format-good" = ""; // An empty format will hide the module
-          # "format-full" = "";
+          format-charging = "󰂄 {capacity}%";
           format-icons = [
-            ""
-            ""
-            ""
-            ""
-            ""
+            "󰁺"
+            "󰁻"
+            "󰁽"
+            "󰁿"
+            "󰂁"
+            "󰁹"
           ];
         };
         network = {
-          # "interface": "wlp2s0", // (Optional) To force the use of this interface
-          format-wifi = "    {essid} ({signalStrength}%)";
-          format-ethernet = " {ifname}: {ipaddr}/{cidr}";
-          format-disconnected = "⚠ Disconnected";
+          format-wifi = "  {essid} ({signalStrength}%)";
+          format-ethernet = "󰈁 {ifname}: {ipaddr}/{cidr}";
+          format-disconnected = "󰈂 Disconnected";
         };
         pulseaudio = {
-          # "scroll-step": 1,
-          format = "{icon}    {volume}%";
-          format-bluetooth = "{icon}  {volume}% ";
-          format-muted = "";
+          format = "{icon}  {volume}%";
+          format-bluetooth = "{icon}   {volume}%";
+          format-muted = " ";
           format-icons = {
             headphones = "";
             handsfree = "";
@@ -123,13 +115,6 @@
           };
           on-click = "pavucontrol";
         };
-        # "custom/spotify": {
-        #     "format": " {}",
-        #     "max-length": 40,
-        #     "interval": 30, // Remove this if your script is endless and write in loop
-        #     "exec": "$HOME/.config/waybar/mediaplayer.sh 2> /dev/null", // Script in resources folder
-        #     "exec-if": "pgrep spotify"
-        # }
       };
     };
 
@@ -139,7 +124,8 @@
 
       * {
         border: none;
-        font-family: "Nerd Font", "Font Awesome 5 Free", Noto Sans;
+        border-radius: 0;
+        font-family: "Hack Nerd Font", "Hack";
         font-size: 16px;
         min-height: 0;
         color: @text;
@@ -174,15 +160,24 @@
         padding-left: 5px;
       }
 
-      #clock, #battery, #cpu, #memory, #network, #pulseaudio, #custom-spotify, #tray {
+      #clock,
+      #battery,
+      #cpu,
+      #memory,
+      #network,
+      #pulseaudio,
+      #temperature,
+      #tray {
         padding: 0 3px;
         margin: 0 2px;
       }
 
-      #cpu, #temperature, #memory, #battery {
-        font-family: Hack;
-        border-left: 0px solid;
-        border-radius: 0;
+      #battery,
+      #cpu,
+      #memory,
+      #network,
+      #pulseaudio,
+      #temperature {
         margin-top: 4px;
         margin-bottom: 4px;
         padding-left: 4px;
@@ -196,40 +191,6 @@
 
       #clock {
         font-weight: bold;
-      }
-
-      #battery {
-      }
-
-      #battery icon {
-      }
-
-      #battery.charging {
-      }
-
-      #memory {
-      }
-
-      #cpu {
-      }
-
-      #temperature {
-      }
-
-      #network {
-      }
-
-      #network.disconnected {
-        border-top: 2px solid;
-      }
-
-      #pulseaudio {
-      }
-
-      #pulseaudio.muted {
-      }
-
-      #tray {
       }
     '';
   };
