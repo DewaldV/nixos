@@ -31,6 +31,7 @@
       };
 
       window = {
+        titlebar = false;
         commands = [
           {
             command = "inhibit_idle fullscreen";
@@ -73,6 +74,8 @@
           }
         ];
       };
+
+      floating.titlebar = true;
 
       bars = [
         {

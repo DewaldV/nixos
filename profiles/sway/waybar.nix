@@ -21,7 +21,7 @@
           "sway/workspaces"
           "sway/mode"
         ];
-        modules-center = [ "sway/window" ];
+        modules-center = [ ];
         modules-right = [
           "pulseaudio"
           "network"
@@ -133,11 +133,6 @@
 
       window#waybar {
         background: @base;
-      }
-
-      #window {
-        padding: 0 10px;
-        font-weight: normal;
       }
 
       #workspaces button {
