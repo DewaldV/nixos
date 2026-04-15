@@ -1,6 +1,5 @@
 {
   "plugin": [
-    "opencode-claude-auth",
     "@franlol/opencode-md-table-formatter@latest"
   ]
 }
