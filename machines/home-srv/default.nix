@@ -20,6 +20,7 @@
     ../../profiles/tailscale
 
     # Machine-specific config
+    ./adguardhome.nix
     ./configuration.nix
     ./caddy-vhosts.nix
     ./dl-vm.nix

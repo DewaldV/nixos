@@ -19,6 +19,9 @@
     "home-assistant.furfaces.net".extraConfig = ''
       reverse_proxy http://192.168.0.2:8123
     '';
+    "adguard.furfaces.net".extraConfig = ''
+      reverse_proxy http://127.0.0.1:3000
+    '';
     "jellyfin.furfaces.net".extraConfig = ''
       reverse_proxy http://localhost:8096
     '';
