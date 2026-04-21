@@ -113,25 +113,25 @@ in
     '';
   };
 
-  systemd.services."libvirt-define-${vmName}" = {
-    description = "Define ${vmName} libvirt domain";
-    wantedBy = [ "multi-user.target" ];
-    after = [
-      "libvirtd.service"
-      "${vmName}-system-disk.service"
-      "${vmName}-uefi-vars.service"
-    ];
-    wants = [
-      "libvirtd.service"
-      "${vmName}-system-disk.service"
-      "${vmName}-uefi-vars.service"
-    ];
-    serviceConfig = {
-      Type = "oneshot";
-      RemainAfterExit = true;
-    };
-    script = ''
-      ${pkgs.libvirt}/bin/virsh define ${domainXml}
-    '';
-  };
+  # systemd.services."libvirt-define-${vmName}" = {
+  #   description = "Define ${vmName} libvirt domain";
+  #   wantedBy = [ "multi-user.target" ];
+  #   after = [
+  #     "libvirtd.service"
+  #     "${vmName}-system-disk.service"
+  #     "${vmName}-uefi-vars.service"
+  #   ];
+  #   wants = [
+  #     "libvirtd.service"
+  #     "${vmName}-system-disk.service"
+  #     "${vmName}-uefi-vars.service"
+  #   ];
+  #   serviceConfig = {
+  #     Type = "oneshot";
+  #     RemainAfterExit = true;
+  #   };
+  #   script = ''
+  #     ${pkgs.libvirt}/bin/virsh define ${domainXml}
+  #   '';
+  # };
 }
