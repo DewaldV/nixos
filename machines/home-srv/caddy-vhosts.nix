@@ -29,7 +29,19 @@
       reverse_proxy http://localhost:2283
     '';
     "router.furfaces.net".extraConfig = ''
-      reverse_proxy https://192.168.0.1
+      reverse_proxy https://192.168.0.1 {
+        transport http {
+          tls_insecure_skip_verify
+        }
+      }
+    '';
+    "frontdoor.cctv.furfaces.net".extraConfig = ''
+      reverse_proxy https://192.168.0.201 {
+        header_up -Via
+        transport http {
+          tls_insecure_skip_verify
+        }
+      }
     '';
   };
 
