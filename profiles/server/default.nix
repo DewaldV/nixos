@@ -83,6 +83,8 @@
     enableSSHSupport = false;
   };
 
+  services.fwupd.enable = true;
+
   environment.systemPackages = with pkgs; [
     gcc
     gnumake
