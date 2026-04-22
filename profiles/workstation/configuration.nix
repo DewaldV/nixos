@@ -131,7 +131,6 @@
       "2620:fe::fe"
       "2620:fe::92"
     ];
-    dnssec = "true";
   };
 
   # Greeter
