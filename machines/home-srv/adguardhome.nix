@@ -36,6 +36,7 @@
         ];
         port = 53;
         upstream_dns = [
+          "quic://dns.quad9.net"
           "https://dns.quad9.net/dns-query"
           "https://dns.mullvad.net/dns-query"
         ];
@@ -45,7 +46,6 @@
           "tls://194.242.2.2"
         ];
         fallback_dns = [
-          "quic://dns.quad9.net"
           "tls://dns.quad9.net"
           "https://dns.cloudflare.com/dns-query"
           "tls://1.1.1.1"
