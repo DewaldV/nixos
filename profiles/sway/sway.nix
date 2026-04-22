@@ -118,7 +118,7 @@
         "${modifier}+Shift+w" = "exec bemoji -t";
         "${modifier}+Ctrl+w" = "exec bemoji -c";
 
-        "${modifier}+p" = "exec grimshot save area";
+        "${modifier}+p" = "exec grimshot save output";
         "${modifier}+Ctrl+p" = "exec grimshot save window";
         "${modifier}+Shift+p" = "exec grimshot copy area";
         "${modifier}+Shift+Ctrl+p" = "exec grimshot copy window";
