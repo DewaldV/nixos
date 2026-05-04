@@ -19,20 +19,11 @@
     enable = true;
     settings = {
       PasswordAuthentication = false;
-      PermitRootLogin = "no";
+      PermitRootLogin = "yes";
     };
   };
 
-  users.users.nixos = {
-    isNormalUser = true;
-    extraGroups = [ "wheel" ];
-    openssh.authorizedKeys.keys = [
-      nixos-private.private.keys.personal.ssh.pub
-    ];
-  };
-
-  # Allow wheel without password so nixos-install can sudo
-  security.sudo.wheelNeedsPassword = false;
+  users.users.root.openssh.authorizedKeys.keys = [ nixos-private.private.keys.personal.ssh.pub ];
 
   environment.systemPackages = with pkgs; [
     btrfs-progs
