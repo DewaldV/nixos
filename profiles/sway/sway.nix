@@ -94,17 +94,6 @@
         "*" = {
           bg = "${config.xdg.userDirs.pictures}/wallpaper.png fill";
         };
-
-        "DP-1" = {
-          mode = "3440x1440@165Hz";
-          adaptive_sync = "off";
-        };
-
-        "HDMI-A-1" = {
-          mode = "3440x1440@100Hz";
-          pos = "0 0";
-          adaptive_sync = "off";
-        };
       };
 
       keybindings = lib.mkOptionDefault {

@@ -12,6 +12,14 @@
         xkb_layout = "us";
       };
     };
+
+    output = {
+      "DP-1" = {
+        mode = "3440x1440@165Hz";
+        adaptive_sync = "off";
+        render_bit_depth = "10";
+      };
+    };
   };
 
   programs.waybar.settings = {
