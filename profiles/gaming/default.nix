@@ -12,11 +12,16 @@
     enableRenice = true;
   };
 
-  programs.gamescope.enable = true;
+  programs.gamescope = {
+    enable = true;
+  };
 
   programs.steam = {
     enable = true;
-    gamescopeSession.enable = true;
+    gamescopeSession = {
+      enable = true;
+      args = [ "--hdr-enabled" ];
+    };
   };
 
   # Gaming packages (common to both machines)
