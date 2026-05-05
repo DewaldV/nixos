@@ -113,7 +113,7 @@
               ""
             ];
           };
-          on-click = "pavucontrol";
+          on-click = "pwvucontrol";
         };
       };
     };

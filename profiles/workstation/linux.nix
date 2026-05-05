@@ -29,7 +29,7 @@
 
     # Audio
     helvum
-    pavucontrol
+    pwvucontrol
     pulseaudio
   ];
 }
