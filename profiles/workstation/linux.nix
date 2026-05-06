@@ -24,6 +24,7 @@
     # Wayland/Sway utilities
     grim
     kanshi
+    slurp
     sway-contrib.grimshot
     wl-clipboard
 
