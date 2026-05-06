@@ -17,7 +17,6 @@
     ../../profiles/sway
     ../../profiles/desktop-apps
     ../../profiles/gaming
-    ../../profiles/hyprland
     ../../profiles/sshd
     ../../profiles/virtualization
     ../../profiles/llm
