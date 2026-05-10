@@ -25,11 +25,6 @@ in
 
     dnsOverTls = lib.mkEnableOption "Quad9 DNS-over-TLS for systemd-resolved";
 
-    dnsOverTlsSecondaryIpv6 = lib.mkOption {
-      type = lib.types.str;
-      default = "2620:fe::9";
-      description = "Secondary Quad9 IPv6 resolver used in DNS-over-TLS configuration.";
-    };
   };
 
   config = {
@@ -41,7 +36,7 @@ in
       dnssec = lib.mkIf cfg.dnsOverTls "true";
       extraConfig = lib.mkIf cfg.dnsOverTls ''
         [Resolve]
-        DNS=9.9.9.9#dns.quad9.net 149.112.112.112#dns.quad9.net 2620:fe::fe#dns.quad9.net ${cfg.dnsOverTlsSecondaryIpv6}#dns.quad9.net
+        DNS=9.9.9.9#dns.quad9.net 149.112.112.112#dns.quad9.net 2620:fe::fe#dns.quad9.net 2620:fe::9#dns.quad9.net
         DNSOverTLS=yes
       '';
     };

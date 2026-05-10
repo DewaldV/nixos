@@ -26,6 +26,7 @@ home-manager.lib.homeManagerConfiguration {
   };
 
   modules = [
+    ../profiles/activation-report/home.nix
     nixos-private.homeManagerModule
     ../machines/${name}/home
   ];

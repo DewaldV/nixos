@@ -4,7 +4,6 @@
   networking.useDHCP = false;
 
   profiles.dns.quad9 = {
-    secondaryIpv6 = "2620:fe::9";
     setNameservers = true;
     dnsOverTls = true;
   };

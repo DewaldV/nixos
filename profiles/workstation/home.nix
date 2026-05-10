@@ -9,7 +9,6 @@
 {
   # Base home-manager configuration
   imports = [
-    ../activation-report/home.nix
     ./1password/home.nix
   ]
   ++ lib.optionals (!isDarwin) [ ./linux.nix ];

@@ -8,7 +8,6 @@
 
 {
   imports = [
-    ../activation-report
     ../dns/quad9.nix
     ../nix
   ];

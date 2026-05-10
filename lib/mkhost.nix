@@ -29,6 +29,7 @@ nixpkgs.lib.nixosSystem {
 
   modules = [
     nixos-private.nixosModule
+    ../profiles/activation-report
     ../machines/${name}
 
     home-manager.nixosModules.home-manager
@@ -44,6 +45,7 @@ nixpkgs.lib.nixosSystem {
         }:
         {
           imports = [
+            ../profiles/activation-report/home.nix
             nixos-private.homeManagerModule
             ../machines/${name}/home
           ];
