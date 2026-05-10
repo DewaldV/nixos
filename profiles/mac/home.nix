@@ -1,9 +1,7 @@
-{ pkgs, pkgs-unstable, ... }:
+{ ... }:
 
 {
-  home.packages = with pkgs; [
-    pkgs-unstable.proton-pass-cli
-  ];
+  imports = [ ./ghostty.nix ];
 
   programs.aerospace = {
     enable = true;

@@ -1,30 +1,28 @@
 {
   config,
-  pkgs,
+  lib,
   pkgs-unstable,
+  isDarwin,
   ...
 }:
 
 let
   proton-pass-cli = pkgs-unstable.proton-pass-cli;
 in
-
 {
-  home.packages = [
-    proton-pass-cli
-  ];
+  home.packages = [ proton-pass-cli ];
 
   # Use the D-Bus Secret Service (GNOME Keyring) as the keyring backend so
   # that the pass-cli encryption key persists across reboots. Requires a
   # running and unlocked Secret Service provider in the session.
-  home.sessionVariables = {
+  home.sessionVariables = lib.mkIf (!isDarwin) {
     PROTON_PASS_LINUX_KEYRING = "dbus";
   };
 
   # Auto-load SSH keys into the agent at login. Runs after GNOME Keyring is
   # unlocked (so pass-cli can retrieve its encryption key via D-Bus) and after
   # the SSH agent is ready.
-  systemd.user.services.proton-pass-ssh-load = {
+  systemd.user.services.proton-pass-ssh-load = lib.mkIf (!isDarwin) {
     Unit = {
       Description = "Load Proton Pass SSH keys into agent";
       After = [

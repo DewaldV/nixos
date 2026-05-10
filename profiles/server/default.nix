@@ -44,24 +44,11 @@
   services.fwupd.enable = true;
 
   environment.systemPackages = with pkgs; [
-    btop
-    curl
-    dig
     gcc
     gnumake
     e2fsprogs
-    file
-    htop
-    jq
-    lsof
-    nixfmt-rfc-style
     pciutils
-    tree
-    unzip
     usbutils
-    nvd
-    vim
-    wget
   ];
 
 }

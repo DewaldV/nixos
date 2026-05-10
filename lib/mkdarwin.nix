@@ -22,6 +22,7 @@ nix-darwin.lib.darwinSystem {
   };
 
   modules = [
+    ../profiles/core-tools
     ../machines/${name}
 
     home-manager.darwinModules.home-manager

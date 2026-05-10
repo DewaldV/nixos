@@ -1,10 +1,6 @@
 { pkgs, ... }:
 
 {
-  imports = [
-    ./proton-pass/home.nix
-  ];
-
   home.pointerCursor = {
     name = "Adwaita";
     package = pkgs.adwaita-icon-theme;

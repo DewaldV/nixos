@@ -30,6 +30,7 @@ nixpkgs.lib.nixosSystem {
   modules = [
     nixos-private.nixosModule
     ../profiles/activation-report
+    ../profiles/core-tools
     ../machines/${name}
 
     home-manager.nixosModules.home-manager

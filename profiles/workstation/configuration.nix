@@ -94,7 +94,6 @@
     e2fsprogs
     glib
     gparted
-    nvd
     parted
     pciutils
     polkit_gnome

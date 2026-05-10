@@ -1,4 +1,4 @@
-{ ... }:
+{ pkgs, ... }:
 
 {
   nix.settings = {
@@ -16,4 +16,9 @@
   };
 
   nixpkgs.config.allowUnfree = true;
+
+  environment.systemPackages = with pkgs; [
+    nixfmt-rfc-style
+    nvd
+  ];
 }

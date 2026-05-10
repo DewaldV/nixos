@@ -19,10 +19,8 @@ in
   # Note: Go development tools moved to profiles/development
   home.packages = with pkgs; [
     # Doom Emacs requisites
-    fd
     git
     findutils
-    ripgrep
 
     # all-the-icons-fonts
     emacs-all-the-icons-fonts

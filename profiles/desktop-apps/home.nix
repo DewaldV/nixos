@@ -6,6 +6,11 @@
 }:
 
 {
+  imports = [
+    ../proton-pass/desktop.nix
+    ./foot.nix
+  ];
+
   home.packages = with pkgs; [
     # Web browsers
     brave
@@ -28,7 +33,6 @@
     imv
 
     # Security/VPN
-    pkgs-unstable.proton-pass
     protonvpn-gui
     yubioath-flutter
   ];
