@@ -1,0 +1,19 @@
+{ ... }:
+
+{
+  nix.settings = {
+    trusted-users = [
+      "root"
+      "@wheel"
+    ];
+
+    experimental-features = [
+      "nix-command"
+      "flakes"
+    ];
+
+    netrc-file = "/etc/nix/netrc";
+  };
+
+  nixpkgs.config.allowUnfree = true;
+}

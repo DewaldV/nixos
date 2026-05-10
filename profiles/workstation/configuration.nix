@@ -1,26 +1,17 @@
 {
   config,
+  lib,
   pkgs,
   pkgs-unstable,
   ...
 }:
 
 {
-  nix.settings = {
-    trusted-users = [
-      "root"
-      "@wheel"
-    ];
-
-    experimental-features = [
-      "nix-command"
-      "flakes"
-    ];
-
-    netrc-file = "/etc/nix/netrc";
-  };
-
-  nixpkgs.config.allowUnfree = true;
+  imports = [
+    ../activation-report
+    ../dns/quad9.nix
+    ../nix
+  ];
 
   # Boot
   boot = {
@@ -123,16 +114,6 @@
   services.fwupd.enable = true;
   services.printing.enable = true;
 
-  services.resolved = {
-    enable = true;
-    fallbackDns = [
-      "9.9.9.9"
-      "149.112.112.112"
-      "2620:fe::fe"
-      "2620:fe::92"
-    ];
-  };
-
   # Greeter
   services.greetd = {
     enable = true;
@@ -182,15 +163,6 @@
   };
 
   virtualisation.podman.enable = true;
-
-  # Show diff before activation
-  system.activationScripts.preActivation = ''
-    if [[ -e /run/current-system ]]; then
-      echo "--- diff to current-system"
-      ${pkgs.nvd}/bin/nvd --nix-bin-dir=${config.nix.package}/bin diff /run/current-system "$systemConfig"
-      echo "---"
-    fi
-  '';
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions

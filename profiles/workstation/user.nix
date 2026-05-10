@@ -5,20 +5,14 @@
 }:
 
 {
-  programs.zsh.enable = true;
+  imports = [ ../user/dewaldv.nix ];
 
   environment.sessionVariables = {
     NIXOS_OZONE_WL = "1";
   };
 
-  users.users.dewaldv = {
-    isNormalUser = true;
-    description = "Dewald Viljoen";
-    extraGroups = [
-      "networkmanager"
-      "video"
-      "wheel"
-    ];
-    shell = pkgs.zsh;
-  };
+  users.users.dewaldv.extraGroups = [
+    "networkmanager"
+    "video"
+  ];
 }

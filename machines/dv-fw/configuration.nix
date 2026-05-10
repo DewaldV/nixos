@@ -4,7 +4,6 @@
   # Note: Laptop-specific services moved to profiles/laptop
   boot.loader.systemd-boot.consoleMode = "1";
 
-  networking.hostName = "dv-fw";
   networking.firewall.enable = true;
 
   console = {

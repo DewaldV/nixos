@@ -33,6 +33,8 @@ nixpkgs.lib.nixosSystem {
 
     home-manager.nixosModules.home-manager
     {
+      networking.hostName = nixpkgs.lib.mkDefault name;
+
       home-manager.useGlobalPkgs = true;
       home-manager.useUserPackages = true;
       home-manager.backupFileExtension = "bak";

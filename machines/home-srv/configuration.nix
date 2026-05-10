@@ -7,8 +7,6 @@
 }:
 
 {
-  networking.hostName = "home-srv";
-
   networking.interfaces.eno1.useDHCP = false;
 
   networking.interfaces.br0 = {

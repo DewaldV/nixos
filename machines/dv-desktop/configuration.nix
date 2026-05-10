@@ -9,7 +9,6 @@
 {
   boot.loader.systemd-boot.consoleMode = "0";
 
-  networking.hostName = "dv-desktop";
   networking.firewall.enable = true;
 
   console.keyMap = "us";

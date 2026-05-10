@@ -14,6 +14,7 @@
 
     # Profiles
     ../../profiles/server
+    ../../profiles/virtualization
     ../../profiles/caddy
     ../../profiles/jellyfin
     ../../profiles/immich
