@@ -29,6 +29,7 @@
     heroic
     lutris
     protontricks
+    protonup-qt
     scummvm
     vulkan-tools
     winetricks
