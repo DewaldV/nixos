@@ -9,6 +9,8 @@ let
   systemDiskSize = "40G";
   dataSharePath = "/srv/${vmName}";
   ovmfCodePath = "${pkgs.OVMF.fd}/FV/OVMF_CODE.fd";
+  ovmfVarsTemplatePath = "${pkgs.OVMF.fd}/FV/OVMF_VARS.fd";
+  ovmfVarsPath = "/var/lib/libvirt/qemu/nvram/${vmName}_VARS.fd";
   domainXml = pkgs.writeText "${vmName}.xml" ''
     <domain type='kvm'>
       <name>${vmName}</name>
@@ -22,6 +24,7 @@ let
       <os>
         <type arch='x86_64' machine='q35'>hvm</type>
         <loader readonly='yes' type='pflash'>${ovmfCodePath}</loader>
+        <nvram template='${ovmfVarsTemplatePath}'>${ovmfVarsPath}</nvram>
       </os>
       <cpu mode='host-passthrough'/>
       <features>
@@ -78,6 +81,7 @@ in
 
   systemd.tmpfiles.rules = [
     "d /var/lib/libvirt/images 0755 root root - -"
+    "d /var/lib/libvirt/qemu/nvram 0755 root root - -"
     "d ${dataSharePath} 2775 root ${mediaGroup} - -"
     "d ${dataSharePath}/incomplete 2775 root ${mediaGroup} - -"
     "d ${dataSharePath}/staging 2775 root ${mediaGroup} - -"
@@ -99,16 +103,33 @@ in
     '';
   };
 
+  systemd.services."${vmName}-uefi-vars" = {
+    description = "Create ${vmName} UEFI variable store";
+    wantedBy = [ "multi-user.target" ];
+    after = [ "systemd-tmpfiles-setup.service" ];
+    serviceConfig = {
+      Type = "oneshot";
+      RemainAfterExit = true;
+    };
+    script = ''
+      if [ ! -e "${ovmfVarsPath}" ]; then
+        install -m 0644 "${ovmfVarsTemplatePath}" "${ovmfVarsPath}"
+      fi
+    '';
+  };
+
   systemd.services."libvirt-define-${vmName}" = {
     description = "Define ${vmName} libvirt domain";
     wantedBy = [ "multi-user.target" ];
     after = [
       "libvirtd.service"
       "${vmName}-system-disk.service"
+      "${vmName}-uefi-vars.service"
     ];
     wants = [
       "libvirtd.service"
       "${vmName}-system-disk.service"
+      "${vmName}-uefi-vars.service"
     ];
     serviceConfig = {
       Type = "oneshot";
