@@ -4,7 +4,7 @@
   networking.useDHCP = false;
 
   profiles.dns.quad9 = {
-    setNameservers = true;
+    enable = true;
     dnsOverTls = true;
   };
 
@@ -31,34 +31,16 @@
   time.timeZone = "Europe/London";
   console.keyMap = "us";
 
-  users.groups.media.gid = 2000;
-
   users.users.dewaldv = {
-    extraGroups = [
-      "media"
-    ];
     openssh.authorizedKeys.keys = [
       nixos-private.private.keys.personal.ssh.pub
     ];
-  };
-
-  users.users.downloads = {
-    isSystemUser = true;
-    group = "media";
-    home = "/var/lib/downloads";
-    createHome = true;
   };
 
   fileSystems."/srv/data" = {
     device = "dl-vm-data";
     fsType = "virtiofs";
   };
-
-  systemd.tmpfiles.rules = [
-    "d /srv/data/incomplete 2775 downloads media - -"
-    "d /srv/data/staging 2775 downloads media - -"
-    "d /srv/data/complete 2775 downloads media - -"
-  ];
 
   system.stateVersion = "25.11";
 }

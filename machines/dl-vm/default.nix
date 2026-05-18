@@ -16,5 +16,6 @@
     ./configuration.nix
     ./disko.nix
     ./hardware.nix
+    ./transmission.nix
   ];
 }
