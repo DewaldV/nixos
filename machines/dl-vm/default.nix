@@ -7,10 +7,7 @@
     (modulesPath + "/profiles/qemu-guest.nix")
 
     # Profiles
-    ../../profiles/dns/quad9.nix
-    ../../profiles/nix
-    ../../profiles/sshd
-    ../../profiles/user/dewaldv.nix
+    ../../profiles/server
 
     # Machine-specific config
     ./configuration.nix

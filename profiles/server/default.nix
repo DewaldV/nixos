@@ -51,4 +51,7 @@
     usbutils
   ];
 
+  systemd.tmpfiles.rules = [
+    "d /var/lib/agenix 0700 root root - -"
+  ];
 }
