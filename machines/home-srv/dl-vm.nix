@@ -19,7 +19,7 @@ let
           <libosinfo:os id="http://nixos.org/nixos/25.11"/>
         </libosinfo:libosinfo>
       </metadata>
-      <os firmware="efi">
+      <os>
         <type arch='x86_64' machine='q35'>hvm</type>
         <loader readonly='yes' type='pflash'>${ovmfCodePath}</loader>
       </os>
@@ -105,12 +105,10 @@ in
     after = [
       "libvirtd.service"
       "${vmName}-system-disk.service"
-      "${vmName}-uefi-vars.service"
     ];
     wants = [
       "libvirtd.service"
       "${vmName}-system-disk.service"
-      "${vmName}-uefi-vars.service"
     ];
     serviceConfig = {
       Type = "oneshot";
