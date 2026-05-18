@@ -10,25 +10,17 @@ let
     "9.9.9.9"
     "149.112.112.112"
     "2620:fe::fe"
-    cfg.secondaryIpv6
+    "2620:fe::92"
   ];
 in
 {
   options.profiles.dns.quad9 = {
-    secondaryIpv6 = lib.mkOption {
-      type = lib.types.str;
-      default = "2620:fe::92";
-      description = "Secondary Quad9 IPv6 resolver.";
-    };
-
-    setNameservers = lib.mkEnableOption "setting Quad9 as system nameservers";
-
+    enable = lib.mkEnableOption "setting Quad9 as system nameservers";
     dnsOverTls = lib.mkEnableOption "Quad9 DNS-over-TLS for systemd-resolved";
-
   };
 
   config = {
-    networking.nameservers = lib.mkIf cfg.setNameservers servers;
+    networking.nameservers = lib.mkIf cfg.enable servers;
 
     services.resolved = {
       enable = true;

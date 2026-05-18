@@ -19,4 +19,9 @@
     extraRemotes = [ "lvfs-testing" ];
     uefiCapsuleSettings.DisableCapsuleUpdateOnDisk = true;
   };
+
+  profiles.dns.quad9 = {
+    enable = true;
+    dnsOverTls = true;
+  };
 }

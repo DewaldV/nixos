@@ -15,7 +15,7 @@
   ];
 
   profiles.dns.quad9 = {
-    setNameservers = true;
+    enable = true;
     dnsOverTls = true;
   };
 
