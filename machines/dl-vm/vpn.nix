@@ -2,6 +2,7 @@
   config,
   lib,
   nixos-private,
+  pkgs,
   ...
 }:
 
@@ -17,6 +18,7 @@ in
   networking.wg-quick.interfaces.${interface} = {
     address = vpn.interface.address;
     dns = vpn.interface.dns;
+    postUp = "${pkgs.systemd}/bin/resolvectl dnsovertls ${interface} no";
     privateKeyFile = config.age.secrets.dl-vm-private-key.path;
     peers = [
       {
