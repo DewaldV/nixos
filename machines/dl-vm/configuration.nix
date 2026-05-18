@@ -1,4 +1,9 @@
-{ nixos-private, pkgs, ... }:
+{
+  lib,
+  nixos-private,
+  pkgs,
+  ...
+}:
 
 {
   networking.useDHCP = false;
@@ -30,6 +35,9 @@
   i18n.defaultLocale = "en_GB.UTF-8";
   time.timeZone = "Europe/London";
   console.keyMap = "us";
+
+  services.openssh.settings.PermitRootLogin = lib.mkForce "yes";
+  users.users.root.openssh.authorizedKeys.keys = [ nixos-private.private.keys.personal.ssh.pub ];
 
   users.users.dewaldv = {
     openssh.authorizedKeys.keys = [
