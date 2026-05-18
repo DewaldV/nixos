@@ -17,5 +17,6 @@
     ./disko.nix
     ./hardware.nix
     ./transmission.nix
+    ./vpn.nix
   ];
 }
