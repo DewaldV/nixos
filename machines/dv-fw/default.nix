@@ -15,7 +15,6 @@
     ../../profiles/desktop-apps
     ../../profiles/gaming
     ../../profiles/laptop
-    ../../profiles/docker
     ../../profiles/uk/crosscountry.nix
     # Note: development and desktop-apps profiles are home-manager only (no system config)
 
