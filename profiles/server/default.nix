@@ -12,6 +12,7 @@
     ../nix
     ../sshd
     ../user/dewaldv.nix
+    ./update.nix
   ];
 
   profiles.dns.quad9 = {
@@ -31,15 +32,6 @@
   # Timezone and Locale
   i18n.defaultLocale = "en_GB.UTF-8";
   time.timeZone = "Europe/London";
-
-  # SSH agent
-  programs.ssh.startAgent = true;
-
-  # GPG
-  programs.gnupg.agent = {
-    enable = true;
-    enableSSHSupport = false;
-  };
 
   services.fwupd.enable = true;
 
