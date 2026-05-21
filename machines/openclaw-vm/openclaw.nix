@@ -3,6 +3,8 @@
 {
   environment.systemPackages = with pkgs; [
     git
+    pkgs-unstable.codex
+    pkgs-unstable.opencode
     pkgs-unstable.openclaw
   ];
 
