@@ -119,5 +119,17 @@
           ;
         system = "x86_64-linux";
       };
+
+      nixosConfigurations.openclaw-vm = mkHost "openclaw-vm" {
+        inherit
+          disko
+          home-manager
+          nixos-hardware
+          nixos-private
+          nixpkgs
+          nixpkgs-unstable
+          ;
+        system = "x86_64-linux";
+      };
     };
 }

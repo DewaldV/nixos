@@ -24,7 +24,9 @@
     ./adguardhome.nix
     ./configuration.nix
     ./caddy-vhosts.nix
-    ./dl-vm.nix
     ./hardware.nix
+
+    # VMs
+    ./vm
   ];
 }

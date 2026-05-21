@@ -12,7 +12,12 @@ name:
 let
   pkgs-unstable = import nixpkgs-unstable {
     inherit system;
-    config.allowUnfree = true;
+    config = {
+      allowUnfree = true;
+      permittedInsecurePackages = [
+        "openclaw-2026.5.7"
+      ];
+    };
   };
   isDarwin = nixpkgs.lib.hasSuffix "-darwin" system;
 in
