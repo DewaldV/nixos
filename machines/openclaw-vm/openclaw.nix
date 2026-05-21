@@ -13,4 +13,10 @@
     createHome = true;
     extraGroups = [ "docker" ];
   };
+
+  networking.firewall = {
+    allowedTCPPorts = [
+      18789 # Openclaw Gateway
+    ];
+  };
 }
