@@ -5,6 +5,8 @@ let
   networkName = vmName;
   bridgeName = "virbr-openclaw";
   networkGateway = "10.50.0.1";
+  dhcpRangeStart = "10.50.0.100";
+  dhcpRangeEnd = "10.50.0.200";
   vmMacAddress = "52:54:00:00:00:12";
   systemDiskPath = "/var/lib/libvirt/images/${vmName}.qcow2";
   systemDiskSize = "40G";
@@ -16,7 +18,11 @@ let
       <name>${networkName}</name>
       <forward mode='nat'/>
       <bridge name='${bridgeName}' stp='on' delay='0'/>
-      <ip address='${networkGateway}' netmask='255.255.255.0'/>
+      <ip address='${networkGateway}' netmask='255.255.255.0'>
+        <dhcp>
+          <range start='${dhcpRangeStart}' end='${dhcpRangeEnd}'/>
+        </dhcp>
+      </ip>
     </network>
   '';
   domainXml = pkgs.writeText "${vmName}.xml" ''
