@@ -43,6 +43,10 @@
         }
       }
     '';
+
+    "openclaw.furfaces.net".extraConfig = ''
+      reverse_proxy http://10.50.0.2:18789
+    '';
   };
 
 }
