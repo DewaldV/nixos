@@ -1,5 +1,6 @@
-# nixos
-NixOS Configurations for my personal and work machines.
+# NixOS
+
+NixOS configurations for my personal and work machines.
 
 This repo is for my own machines so it's not really set up to just clone and go but if you feel like taking inspiration feel free to dive in!
 
