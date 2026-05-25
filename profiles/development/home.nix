@@ -34,7 +34,7 @@
     kustomize
 
     # Development utilities
-    devenv
+    pkgs-unstable.devenv
 
     # Shell dev
     shellcheck
