@@ -10,7 +10,7 @@ let
     "9.9.9.9"
     "149.112.112.112"
     "2620:fe::fe"
-    "2620:fe::92"
+    "2620:fe::9"
   ];
 in
 {
@@ -24,11 +24,11 @@ in
 
     services.resolved = {
       enable = true;
-      fallbackDns = servers;
-      dnssec = lib.mkIf cfg.dnsOverTls "true";
       settings = lib.mkIf cfg.enable {
         Resolve = {
           DNS = "9.9.9.9#dns.quad9.net 149.112.112.112#dns.quad9.net 2620:fe::fe#dns.quad9.net 2620:fe::9#dns.quad9.net";
+          FallbackDNS = servers;
+          DNSSEC = lib.mkIf cfg.dnsOverTls "true";
           DNSOverTLS = "yes";
         };
       };
