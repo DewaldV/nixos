@@ -25,7 +25,7 @@
     wl-clipboard
 
     # Audio
-    helvum
+    crosspipe
     pwvucontrol
     pulseaudio
   ];

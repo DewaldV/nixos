@@ -26,11 +26,12 @@ in
       enable = true;
       fallbackDns = servers;
       dnssec = lib.mkIf cfg.dnsOverTls "true";
-      extraConfig = lib.mkIf cfg.dnsOverTls ''
-        [Resolve]
-        DNS=9.9.9.9#dns.quad9.net 149.112.112.112#dns.quad9.net 2620:fe::fe#dns.quad9.net 2620:fe::9#dns.quad9.net
-        DNSOverTLS=yes
-      '';
+      settings = lib.mkIf cfg.enable {
+        Resolve = {
+          DNS = "9.9.9.9#dns.quad9.net 149.112.112.112#dns.quad9.net 2620:fe::fe#dns.quad9.net 2620:fe::9#dns.quad9.net";
+          DNSOverTLS = "yes";
+        };
+      };
     };
   };
 }

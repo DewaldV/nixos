@@ -14,14 +14,11 @@
     };
   };
 
-  # Backlight control
-  programs.light.enable = true;
-
   # Trigger suspend then hibernate
-  systemd.sleep.extraConfig = ''
-    HibernateDelaySec=2h
-    SuspendState=mem
-  '';
+  systemd.sleep.settings.Sleep = {
+    HibernateDelaySec = "2h";
+    SuspendState = "mem";
+  };
 
   services.logind.settings.Login = {
     HandleLidSwitch = "suspend-then-hibernate";
