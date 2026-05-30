@@ -32,14 +32,14 @@ in
   };
 
   programs.ssh = {
-    matchBlocks = {
+    settings = {
       "github.com" = {
-        identityFile = lib.mkForce "~/.ssh/rvu";
+        IdentityFile = lib.mkForce "~/.ssh/rvu";
       };
       "ssh.dev.azure.com" = {
-        hostname = "ssh.dev.azure.com";
-        identitiesOnly = true;
-        identityFile = "~/.ssh/rvu-rsa";
+        HostName = "ssh.dev.azure.com";
+        IdentitiesOnly = true;
+        IdentityFile = "~/.ssh/rvu-rsa";
       };
     };
   };
