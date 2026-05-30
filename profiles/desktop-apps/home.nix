@@ -33,7 +33,7 @@
     imv
 
     # Security/VPN
-    protonvpn-gui
+    proton-vpn
     yubioath-flutter
   ];
 }
