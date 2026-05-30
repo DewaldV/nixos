@@ -10,29 +10,29 @@
     enableDefaultConfig = false;
     enable = true;
 
-    matchBlocks = {
+    settings = {
       # Default SSH options
       "*" = {
-        forwardAgent = false;
-        addKeysToAgent = "no";
-        compression = true;
-        serverAliveInterval = 0;
-        serverAliveCountMax = 3;
-        hashKnownHosts = false;
-        userKnownHostsFile = "~/.ssh/known_hosts";
-        controlMaster = "no";
-        controlPath = "~/.ssh/master-%r@%n:%p";
-        controlPersist = "no";
+        ForwardAgent = false;
+        AddKeysToAgent = "no";
+        Compression = true;
+        ServerAliveInterval = 0;
+        ServerAliveCountMax = 3;
+        HashKnownHosts = false;
+        UserKnownHostsFile = "~/.ssh/known_hosts";
+        ControlMaster = "no";
+        ControlPath = "~/.ssh/master-%r@%n:%p";
+        ControlPersist = "no";
       };
 
       "192.168.0.10" = {
-        forwardAgent = true;
+        ForwardAgent = true;
       };
 
       "github.com" = {
-        hostname = "github.com";
-        identityFile = "~/.ssh/personal-ed25519";
-        identitiesOnly = true;
+        HostName = "github.com";
+        IdentityFile = "~/.ssh/personal-ed25519";
+        IdentitiesOnly = true;
       };
     };
   };
