@@ -27,12 +27,10 @@
   console.keyMap = "us";
 
   services.openssh.settings.PermitRootLogin = lib.mkForce "yes";
-  users.users.root.openssh.authorizedKeys.keys = [ nixos-private.private.keys.personal.ssh.pub ];
 
-  users.users.dewaldv = {
-    openssh.authorizedKeys.keys = [
-      nixos-private.private.keys.personal.ssh.pub
-    ];
+  users.users = {
+    root.openssh.authorizedKeys.keys = [ nixos-private.private.keys.personal.ssh.pub ];
+    dewaldv.openssh.authorizedKeys.keys = [ nixos-private.private.keys.personal.ssh.pub ];
   };
 
   system.stateVersion = "25.11";
