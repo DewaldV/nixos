@@ -1,17 +1,26 @@
 { ... }:
 
+let
+  baseDir = "/srv/data";
+  downloadDir = "${baseDir}/complete";
+  incompleteDir = "${baseDir}/incomplete";
+  watchDir = "${baseDir}/watch";
+  stagingDir = "${baseDir}/staging";
+in
 {
-  users.groups.media.gid = 2000;
+  users = {
+    groups.media.gid = 2000;
 
-  users.users.dewaldv.extraGroups = [
-    "media"
-  ];
+    users.dewaldv.extraGroups = [
+      "media"
+    ];
 
-  users.users.downloads = {
-    isSystemUser = true;
-    group = "media";
-    home = "/var/lib/downloads";
-    createHome = true;
+    users.downloads = {
+      isSystemUser = true;
+      group = "media";
+      home = "/var/lib/downloads";
+      createHome = true;
+    };
   };
 
   services.transmission = {
@@ -21,22 +30,22 @@
     openFirewall = true;
     openRPCPort = true;
     settings = {
-      download-dir = "/srv/data/complete";
+      download-dir = downloadDir;
       incomplete-dir-enabled = true;
-      incomplete-dir = "/srv/data/incomplete";
+      incomplete-dir = incompleteDir;
       peer-port = 51413;
       rpc-bind-address = "0.0.0.0";
       rpc-whitelist = "127.0.0.1,192.168.0.*";
       rpc-whitelist-enabled = true;
       watch-dir-enabled = true;
-      watch-dir = "/srv/data/watch";
+      watch-dir = watchDir;
     };
   };
 
   systemd.tmpfiles.rules = [
-    "d /srv/data/incomplete 2775 downloads media - -"
-    "d /srv/data/watch 2775 downloads media - -"
-    "d /srv/data/staging 2775 downloads media - -"
-    "d /srv/data/complete 2775 downloads media - -"
+    "d ${downloadDir} 2775 downloads media - -"
+    "d ${incompleteDir} 2775 downloads media - -"
+    "d ${watchDir} 2775 downloads media - -"
+    "d ${stagingDir} 2775 downloads media - -"
   ];
 }

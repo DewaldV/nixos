@@ -8,7 +8,7 @@
 
 {
   imports = [
-    ../dns/quad9.nix
+    ../dns
     ../nix
   ];
 

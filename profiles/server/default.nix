@@ -8,7 +8,7 @@
 
 {
   imports = [
-    ../dns/quad9.nix
+    ../dns
     ../nix
     ../sshd
     ../user/dewaldv.nix
@@ -29,9 +29,11 @@
 
   # Networking
   networking.networkmanager.enable = false;
+
   # Timezone and Locale
   i18n.defaultLocale = "en_GB.UTF-8";
   time.timeZone = "Europe/London";
+  console.keyMap = "us";
 
   services.fwupd.enable = true;
 
