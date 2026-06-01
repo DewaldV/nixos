@@ -14,7 +14,7 @@ in
   imports = [
     disko.nixosModules.disko
     (modulesPath + "/profiles/qemu-guest.nix")
-    ../server
+    ../../server
   ];
 
   options.profiles.machines.vm = {
