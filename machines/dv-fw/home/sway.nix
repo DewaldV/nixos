@@ -10,6 +10,7 @@
     input = lib.mkForce {
       "*" = {
         xkb_layout = "us";
+        xkb_variant = "altgr-intl";
         xkb_options = "ctrl:nocaps";
       };
     };

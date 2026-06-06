@@ -13,7 +13,11 @@
     keyMap = "us";
   };
 
-  services.xserver.xkb.layout = "us";
+  services.xserver.xkb = {
+    layout = "us";
+    variant = "altgr-intl";
+    options = "ctrl:nocaps";
+  };
 
   services.fwupd = {
     extraRemotes = [ "lvfs-testing" ];
