@@ -15,7 +15,7 @@ let
     config = {
       allowUnfree = true;
       permittedInsecurePackages = [
-        "openclaw-2026.5.7"
+        "openclaw-2026.6.5"
       ];
     };
   };
