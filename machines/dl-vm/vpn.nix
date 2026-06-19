@@ -34,33 +34,24 @@ in
 
   networking.firewall = {
     checkReversePath = false;
-    extraCommands = ''
-      iptables -N vpn-egress 2>/dev/null || true
-      iptables -F vpn-egress
-      iptables -C OUTPUT -j vpn-egress 2>/dev/null || iptables -I OUTPUT 1 -j vpn-egress
-      iptables -A vpn-egress -o lo -j RETURN
-      iptables -A vpn-egress -m conntrack --ctstate ESTABLISHED,RELATED -j RETURN
-      iptables -A vpn-egress -o ${interface} -j RETURN
-      iptables -A vpn-egress -d ${lanCidr} -j RETURN
-      iptables -A vpn-egress -p udp -d ${endpointAddress} --dport ${endpointPort} -j RETURN
-      iptables -A vpn-egress -o eth0 -j REJECT
+  };
 
-      ip6tables -N vpn-egress 2>/dev/null || true
-      ip6tables -F vpn-egress
-      ip6tables -C OUTPUT -j vpn-egress 2>/dev/null || ip6tables -I OUTPUT 1 -j vpn-egress
-      ip6tables -A vpn-egress -o lo -j RETURN
-      ip6tables -A vpn-egress -m conntrack --ctstate ESTABLISHED,RELATED -j RETURN
-      ip6tables -A vpn-egress -o ${interface} -j RETURN
-      ip6tables -A vpn-egress -o eth0 -j REJECT
-    '';
-    extraStopCommands = ''
-      iptables -D OUTPUT -j vpn-egress 2>/dev/null || true
-      iptables -F vpn-egress 2>/dev/null || true
-      iptables -X vpn-egress 2>/dev/null || true
+  networking.nftables = {
+    enable = true;
+    tables.vpn-egress = {
+      family = "inet";
+      content = ''
+        chain output {
+          type filter hook output priority filter; policy accept;
 
-      ip6tables -D OUTPUT -j vpn-egress 2>/dev/null || true
-      ip6tables -F vpn-egress 2>/dev/null || true
-      ip6tables -X vpn-egress 2>/dev/null || true
-    '';
+          oifname "lo" accept
+          ct state established,related accept
+          oifname "${interface}" accept
+          ip daddr ${lanCidr} accept
+          ip daddr ${endpointAddress} udp dport ${endpointPort} accept
+          oifname "eth0" reject
+        }
+      '';
+    };
   };
 }
