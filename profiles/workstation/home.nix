@@ -10,7 +10,6 @@
   # Base home-manager configuration
   imports = [
     ../proton-pass/home.nix
-    ./1password/home.nix
   ]
   ++ lib.optionals (!isDarwin) [ ./linux.nix ];
 
