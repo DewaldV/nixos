@@ -5,7 +5,7 @@
     ../../../profiles/workstation/home.nix
     ../../../profiles/shell/home.nix
     ../../../profiles/development/home.nix
-    # ../../../profiles/editors/home.nix
+    ../../../profiles/editors/home.nix
     ../../../profiles/work/home.nix
     ../../../profiles/mac/home.nix
 
