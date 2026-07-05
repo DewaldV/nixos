@@ -73,7 +73,7 @@
         system = "x86_64-linux";
       };
 
-      darwinConfigurations.RVU-TQWC4MH4Y7 = mkDarwin "dv-rvu-mac" {
+      darwinConfigurations.USW-TQWC4MH4Y7 = mkDarwin "dv-rvu-mac" {
         inherit
           nix-darwin
           home-manager
