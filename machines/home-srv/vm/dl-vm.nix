@@ -41,6 +41,10 @@ let
       </memoryBacking>
       <devices>
         <emulator>${pkgs.qemu}/bin/qemu-system-x86_64</emulator>
+        <graphics type='spice' autoport='yes' listen='127.0.0.1'/>
+        <video>
+          <model type='virtio'/>
+        </video>
         <controller type='scsi' model='virtio-scsi'/>
         <disk type='file' device='disk'>
           <driver name='qemu' type='qcow2' discard='unmap'/>
