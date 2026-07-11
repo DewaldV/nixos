@@ -6,10 +6,11 @@
 {
   services.resolved = {
     enable = true;
-    extraConfig = lib.mkAfter ''
-      [Resolve]
-      DNSStubListener=no
-    '';
+    settings = {
+      Resolve = {
+        DNSStubListener = "no";
+      };
+    };
   };
 
   networking.nameservers = [ "127.0.0.1" ];
