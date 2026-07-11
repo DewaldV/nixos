@@ -18,6 +18,7 @@
     ../../profiles/caddy
     ../../profiles/jellyfin
     ../../profiles/immich
+    ../../profiles/notes
     ../../profiles/tailscale
 
     # Machine-specific config

@@ -63,6 +63,24 @@
     };
   };
 
+  profiles.notes = {
+    enable = true;
+    sshKeyFile = config.age.secrets.notes-git-key.path;
+    webdav.htpasswdFile = config.age.secrets.notes-webdav-htpasswd.path;
+  };
+
+  age.secrets.notes-git-key = {
+    owner = "notes";
+    group = "notes";
+    mode = "0400";
+  };
+
+  age.secrets.notes-webdav-htpasswd = {
+    owner = "notes";
+    group = "notes";
+    mode = "0400";
+  };
+
   # Give jellyfin read access to the media library
   users.users.jellyfin.extraGroups = [ "media" ];
   users.groups.media = { };
