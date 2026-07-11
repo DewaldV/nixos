@@ -2,6 +2,7 @@
 
 let
   vmName = "openclaw-vm";
+  vmUuid = "d7f830a8-2f17-44a9-b712-2c8b177d363c";
   networkName = vmName;
   bridgeName = "virbr-openclaw";
   networkGateway = "10.50.0.1";
@@ -16,6 +17,7 @@ let
   networkXml = pkgs.writeText "${networkName}.xml" ''
     <network>
       <name>${networkName}</name>
+      <uuid>3ec7d8ec-ce39-44cd-b833-21a1bda68efe</uuid>
       <forward mode='nat'/>
       <bridge name='${bridgeName}' stp='on' delay='0'/>
       <ip address='${networkGateway}' netmask='255.255.255.0'>
@@ -28,6 +30,7 @@ let
   domainXml = pkgs.writeText "${vmName}.xml" ''
     <domain type='kvm'>
       <name>${vmName}</name>
+      <uuid>${vmUuid}</uuid>
       <memory unit='MiB'>4096</memory>
       <vcpu placement='static'>2</vcpu>
       <metadata>

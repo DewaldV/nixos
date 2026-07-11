@@ -2,6 +2,7 @@
 
 let
   vmName = "dl-vm";
+  vmUuid = "87246a4c-1388-49e5-9654-e9f60a3b8dd1";
   mediaGroup = "media";
   mediaGid = 2000;
   vmMacAddress = "52:54:00:00:00:11";
@@ -14,6 +15,7 @@ let
   domainXml = pkgs.writeText "${vmName}.xml" ''
     <domain type='kvm'>
       <name>${vmName}</name>
+      <uuid>${vmUuid}</uuid>
       <memory unit='MiB'>2048</memory>
       <vcpu placement='static'>1</vcpu>
       <metadata>
