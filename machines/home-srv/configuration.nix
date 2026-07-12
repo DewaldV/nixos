@@ -37,6 +37,15 @@
 
   services.tailscale.useRoutingFeatures = "both";
 
+  services.beszel = {
+    hub.enable = true;
+    agent = {
+      enable = true;
+      environmentFile = config.age.secrets.beszel-agent-env.path;
+      smartmon.enable = true;
+    };
+  };
+
   console.keyMap = "us";
 
   system.stateVersion = "25.11";

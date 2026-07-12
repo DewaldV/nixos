@@ -46,6 +46,11 @@ in
 
     services.qemuGuest.enable = true;
 
+    services.beszel.agent = {
+      enable = true;
+      environmentFile = config.age.secrets.beszel-agent-env.path;
+    };
+
     networking = {
       useDHCP = false;
       defaultGateway = cfg.gateway;

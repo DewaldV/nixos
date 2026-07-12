@@ -28,6 +28,9 @@
     "immich.furfaces.net".extraConfig = ''
       reverse_proxy http://localhost:2283
     '';
+    "beszel.furfaces.net".extraConfig = ''
+      reverse_proxy http://127.0.0.1:8090
+    '';
     "router.furfaces.net".extraConfig = ''
       reverse_proxy https://192.168.0.1 {
         transport http {

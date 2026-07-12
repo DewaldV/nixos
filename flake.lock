@@ -120,11 +120,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1779275897,
-        "narHash": "sha256-xbSHeUnvESDllsZeXfh7O1bO7gPh3A2B1yL5DSU0XWM=",
+        "lastModified": 1783847330,
+        "narHash": "sha256-YPa1vizEBX8tbm817gIXW/6Rok3LXBhtUvSVpOM9wnI=",
         "ref": "refs/heads/main",
-        "rev": "c6f9798e1e429953c3fd80c6e45d634ad2f5c7bc",
-        "revCount": 21,
+        "rev": "44351cc702a68816174fd7613d3c7fa9484180df",
+        "revCount": 22,
         "type": "git",
         "url": "ssh://git@github.com/dewaldv/nixos-private"
       },
