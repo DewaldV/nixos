@@ -47,6 +47,7 @@
 
     # Languages
     python314
+    uv
     # ruby
 
     # k6
