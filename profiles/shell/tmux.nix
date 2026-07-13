@@ -11,6 +11,8 @@
     extraConfig = ''
       set -g extended-keys on
       set -g focus-events on
+
+      set -as terminal-features ",xterm-ghostty:RGB:bce:ccolour:clipboard:cstyle:extkeys:focus:title"
     '';
     plugins = with pkgs; [
       tmuxPlugins.sensible
