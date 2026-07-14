@@ -38,7 +38,12 @@
   services.tailscale.useRoutingFeatures = "both";
 
   services.beszel = {
-    hub.enable = true;
+    hub = {
+      enable = true;
+      environment = {
+        APP_URL = "https://beszel.furfaces.net";
+      };
+    };
     agent = {
       enable = true;
       environmentFile = config.age.secrets.beszel-agent-env.path;
