@@ -17,7 +17,10 @@
     ./zsh
   ];
 
-  home.packages = with pkgs; [ docker ];
+  home.packages = with pkgs; [
+    docker
+    src-cli
+  ];
 
   home.username = "dewald.viljoen";
   home.homeDirectory = "/Users/dewald.viljoen";
