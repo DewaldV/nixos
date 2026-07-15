@@ -1,4 +1,4 @@
-{ ... }:
+{ pkgs, ... }:
 
 {
   imports = [
@@ -16,6 +16,8 @@
 
     ./zsh
   ];
+
+  home.packages = with pkgs; [ docker ];
 
   home.username = "dewald.viljoen";
   home.homeDirectory = "/Users/dewald.viljoen";
