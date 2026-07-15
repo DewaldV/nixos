@@ -7,7 +7,7 @@
     oh-my-zsh = {
       enable = true;
       theme = "robbyrussell";
-      custom = "\${HOME}/.zsh-custom";
+      custom = "${config.home.homeDirectory}/.zsh-custom";
       plugins = [
         "aws"
         "azure"
