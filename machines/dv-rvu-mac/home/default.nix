@@ -13,8 +13,7 @@
     ../../dv-rvu/home/doom
     ../../dv-rvu/home/git.nix
     ../../dv-rvu/home/opencode
-
-    ./zsh
+    ../../dv-rvu/home/zsh
   ];
 
   home.packages = with pkgs; [

@@ -11,8 +11,8 @@
     # Machine-specific overrides
     ./doom
     ./git.nix
-    ./microsoft-identity-broker.nix
     ./opencode # Work-specific opencode config
+    ./services/microsoft-identity-broker.nix
     ./zsh
   ];
 
