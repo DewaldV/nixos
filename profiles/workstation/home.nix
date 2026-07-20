@@ -17,6 +17,7 @@
 
   # User-level base utilities common to all platforms
   home.packages = with pkgs; [
+    hyperfine
     ipcalc
 
     # Text processing
