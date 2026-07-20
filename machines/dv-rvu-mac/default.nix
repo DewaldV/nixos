@@ -1,4 +1,4 @@
-{ ... }:
+{ config, pkgs, ... }:
 
 {
   imports = [ ../../profiles/nix/darwin.nix ];
@@ -7,4 +7,18 @@
   system.stateVersion = 6;
 
   programs.zsh.enable = true;
+
+  environment.systemPackages = with pkgs; [
+    coreutils-prefixed
+    fontconfig
+  ];
+
+  fonts = {
+    packages = with pkgs; [
+      hack-font
+      emacs-all-the-icons-fonts
+      nerd-fonts.hack
+      # symbola # currently unavailable
+    ];
+  };
 }
