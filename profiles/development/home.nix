@@ -19,7 +19,7 @@
     gh
 
     # AWS
-    awscli2
+    pkgs-unstable.awscli2
     ssm-session-manager-plugin
 
     # Google Cloud
