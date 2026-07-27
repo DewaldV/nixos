@@ -14,6 +14,7 @@
     pkgs-unstable.codex
     pkgs-unstable.opencode
     pkgs-unstable.opencode-desktop
+    pkgs-unstable.herdr
   ];
 
   # Agent skills
