@@ -1,5 +1,6 @@
 {
   config,
+  microvm,
   pkgs,
   nixos-hardware,
   ...
@@ -13,6 +14,7 @@
     nixos-hardware.nixosModules.common-pc-ssd
 
     # Profiles
+    microvm.nixosModules.host
     ../../profiles/server
     ../../profiles/virtualization
     ../../profiles/caddy

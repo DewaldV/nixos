@@ -2,10 +2,12 @@ name:
 {
   disko,
   home-manager,
+  microvm ? null,
   nixos-hardware,
   nixos-private,
   nixpkgs,
   nixpkgs-unstable,
+  zeroclaw ? null,
   system,
 }:
 
@@ -26,9 +28,11 @@ nixpkgs.lib.nixosSystem {
   specialArgs = {
     inherit
       disko
+      microvm
       nixos-hardware
       nixos-private
       pkgs-unstable
+      zeroclaw
       ;
   };
 

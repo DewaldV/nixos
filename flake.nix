@@ -4,6 +4,14 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-26.05";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixpkgs-unstable";
+    zeroclaw = {
+      url = "github:zeroclaw-labs/zeroclaw/v0.8.3";
+      inputs.nixpkgs.follows = "nixpkgs-unstable";
+    };
+    microvm = {
+      url = "github:microvm-nix/microvm.nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     nixos-hardware.url = "github:nixos/nixos-hardware";
     disko = {
       url = "github:nix-community/disko";
@@ -32,11 +40,13 @@
       self,
       disko,
       home-manager,
+      microvm,
       nix-darwin,
       nixos-hardware,
       nixos-private,
       nixpkgs,
       nixpkgs-unstable,
+      zeroclaw,
     }:
     let
       mkHome = import ./lib/mkhome.nix;
@@ -100,10 +110,12 @@
         inherit
           disko
           home-manager
+          microvm
           nixos-hardware
           nixos-private
           nixpkgs
           nixpkgs-unstable
+          zeroclaw
           ;
         system = "x86_64-linux";
       };
@@ -131,5 +143,6 @@
           ;
         system = "x86_64-linux";
       };
+
     };
 }
