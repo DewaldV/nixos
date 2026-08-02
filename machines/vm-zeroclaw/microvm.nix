@@ -17,6 +17,10 @@
     vcpu = 1;
     # QEMU hangs when microvm.nix assigns exactly 2 GiB.
     mem = 2047;
+    vsock = {
+      cid = 3;
+      ssh.enable = true;
+    };
 
     interfaces = [
       {
