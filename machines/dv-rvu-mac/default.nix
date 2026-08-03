@@ -51,7 +51,7 @@
       minimize-to-application = true;
       orientation = "bottom";
       magnification = false;
-      tilesize = 48;
+      tilesize = 64;
     };
 
     finder = {
