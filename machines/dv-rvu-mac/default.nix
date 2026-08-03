@@ -18,6 +18,8 @@
     reattach = true; # fixes Touch ID for sudo inside tmux
   };
 
+  system.primaryUser = "dewald.viljoen";
+
   system.keyboard = {
     enableKeyMapping = true;
     remapCapsLockToControl = true;
