@@ -33,6 +33,8 @@ in
       incomplete-dir = incompleteDir;
       peer-port = 51413;
       rpc-bind-address = "0.0.0.0";
+      rpc-host-whitelist = "transmission.furfaces.net";
+      rpc-host-whitelist-enabled = true;
       rpc-whitelist = "127.0.0.1,192.168.0.*";
       rpc-whitelist-enabled = true;
       watch-dir-enabled = true;
