@@ -33,6 +33,11 @@
       reverse_proxy http://127.0.0.1:2283
     '';
 
+    ### vm-dl
+    "transmission.furfaces.net".extraConfig = ''
+      reverse_proxy http://192.168.0.11:9091
+    '';
+
     # https://www.beszel.dev/guide/reverse-proxy#caddy
     "beszel.furfaces.net".extraConfig = ''
       request_body {
