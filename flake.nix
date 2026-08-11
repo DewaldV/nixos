@@ -123,17 +123,5 @@
         system = "x86_64-linux";
       };
 
-      nixosConfigurations.dl-vm = mkHost "dl-vm" {
-        inherit
-          disko
-          home-manager
-          nixos-hardware
-          nixos-private
-          nixpkgs
-          nixpkgs-unstable
-          ;
-        system = "x86_64-linux";
-      };
-
     };
 }

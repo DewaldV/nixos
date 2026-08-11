@@ -6,8 +6,6 @@
 }:
 
 {
-  microvm.autostart = [ "vm-zeroclaw" ];
-
   microvm.vms.vm-zeroclaw = {
     specialArgs = {
       inherit

@@ -1,7 +1,7 @@
 { ... }:
 {
   imports = [
-    ./dl-vm.nix
+    ./vm-dl.nix
     ./vm-zeroclaw.nix
   ];
 

@@ -11,9 +11,7 @@ in
   users = {
     groups.media.gid = 2000;
 
-    users.dewaldv.extraGroups = [
-      "media"
-    ];
+    users.dewaldv.extraGroups = [ "media" ];
 
     users.downloads = {
       isSystemUser = true;
