@@ -21,6 +21,10 @@
     # QEMU hangs when microvm.nix assigns exactly 2 GiB.
     mem = 2047;
     credentialFiles.dl-vm-private-key = vpnPrivateKeyPath;
+    vsock = {
+      cid = 4;
+      ssh.enable = true;
+    };
 
     interfaces = [
       {
