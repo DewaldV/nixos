@@ -16,9 +16,6 @@ let
     inherit system;
     config = {
       allowUnfree = true;
-      permittedInsecurePackages = [
-        "openclaw-2026.6.11"
-      ];
     };
   };
   isDarwin = nixpkgs.lib.hasSuffix "-darwin" system;

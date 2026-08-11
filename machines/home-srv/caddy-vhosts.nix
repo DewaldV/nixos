@@ -45,11 +45,6 @@
       }
     '';
 
-    ### openclaw-vm
-    "openclaw.furfaces.net".extraConfig = ''
-      reverse_proxy http://10.50.0.2:18789
-    '';
-
     ### vm-zeroclaw
     "zeroclaw.furfaces.net".extraConfig = ''
       reverse_proxy http://127.0.0.1:42617

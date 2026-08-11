@@ -2,7 +2,6 @@
 {
   imports = [
     ./dl-vm.nix
-    ./openclaw-vm.nix
     ./vm-zeroclaw.nix
   ];
 
