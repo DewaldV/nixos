@@ -8,6 +8,9 @@
 
   programs.zsh.enable = true;
 
+  # https://nix-darwin.github.io/nix-darwin/manual/#opt-services.tailscale.enable
+  services.tailscale.enable = true;
+
   services.emacs = {
     enable = true;
     package = pkgs.emacs30;
