@@ -10,6 +10,7 @@
     ../../../profiles/mac/home.nix
 
     # Shared with dv-rvu
+    ../../dv-rvu/home/claude
     ../../dv-rvu/home/doom
     ../../dv-rvu/home/git.nix
     ../../dv-rvu/home/opencode

@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, pkgs-unstable, ... }:
 
 {
   imports = [ ../../profiles/nix/darwin.nix ];
@@ -9,7 +9,10 @@
   programs.zsh.enable = true;
 
   # https://nix-darwin.github.io/nix-darwin/manual/#opt-services.tailscale.enable
-  services.tailscale.enable = true;
+  services.tailscale = {
+    enable = true;
+    package = pkgs-unstable.tailscale;
+  };
 
   services.emacs = {
     enable = true;

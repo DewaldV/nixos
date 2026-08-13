@@ -9,6 +9,7 @@
     ../../../profiles/work/home.nix
 
     # Machine-specific overrides
+    ./claude # Work-specific Claude Code config
     ./doom
     ./git.nix
     ./opencode # Work-specific opencode config
