@@ -80,11 +80,12 @@
         chain output {
           type filter hook output priority filter; policy accept;
 
-          ip daddr 192.168.0.1 accept
-          ip daddr 192.168.0.10 udp dport 53 accept
-          ip daddr 192.168.0.10 tcp dport 53 accept
-          ip daddr 192.168.0.0/24 reject
-        }
+           ip daddr 192.168.0.1 accept
+           ip daddr 192.168.0.10 udp dport 53 accept
+           ip daddr 192.168.0.10 tcp dport 53 accept
+           ip daddr 192.168.0.10 tcp dport 443 accept
+           ip daddr 192.168.0.0/24 reject
+         }
       '';
     };
   };
