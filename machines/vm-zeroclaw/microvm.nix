@@ -1,4 +1,5 @@
 {
+  beszelAgentEnvironmentFile,
   nixos-private,
   pkgs-unstable,
   zeroclaw,
@@ -17,6 +18,8 @@
     vcpu = 1;
     # QEMU hangs when microvm.nix assigns exactly 2 GiB.
     mem = 2047;
+    machineId = "35d02f68-7aad-05a6-08e7-169c899af18e";
+    credentialFiles.beszel-agent-env = beszelAgentEnvironmentFile;
     vsock = {
       cid = 3;
       ssh.enable = true;
@@ -56,6 +59,17 @@
       }
     ];
   };
+
+  services.beszel.agent = {
+    enable = true;
+    environment = {
+      DISABLE_SSH = "true";
+      SYSTEM_NAME = "vm-zeroclaw";
+    };
+    environmentFile = "/run/credentials/beszel-agent.service/beszel-agent-env";
+  };
+
+  systemd.services.beszel-agent.serviceConfig.ImportCredential = "beszel-agent-env";
 
   networking.useDHCP = true;
   networking.nameservers = [ "192.168.0.10" ];

@@ -1,5 +1,6 @@
 {
   lib,
+  beszelAgentEnvironmentFile,
   nixos-private,
   pkgs,
   vpnPrivateKeyPath,
@@ -20,7 +21,11 @@
     vcpu = 1;
     # QEMU hangs when microvm.nix assigns exactly 2 GiB.
     mem = 2047;
-    credentialFiles.dl-vm-private-key = vpnPrivateKeyPath;
+    machineId = "57ad0239-244f-e74c-3463-0b75be850c46";
+    credentialFiles = {
+      beszel-agent-env = beszelAgentEnvironmentFile;
+      dl-vm-private-key = vpnPrivateKeyPath;
+    };
     vsock = {
       cid = 4;
       ssh.enable = true;
@@ -65,6 +70,17 @@
       ${lib.getExe' pkgs.iproute2 "ip"} link set dev vm-dl master br0
     '';
   };
+
+  services.beszel.agent = {
+    enable = true;
+    environment = {
+      DISABLE_SSH = "true";
+      SYSTEM_NAME = "vm-dl";
+    };
+    environmentFile = "/run/credentials/beszel-agent.service/beszel-agent-env";
+  };
+
+  systemd.services.beszel-agent.serviceConfig.ImportCredential = "beszel-agent-env";
 
   networking = {
     useDHCP = false;

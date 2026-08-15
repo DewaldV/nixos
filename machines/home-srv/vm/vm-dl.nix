@@ -24,6 +24,7 @@
   microvm.vms.vm-dl = {
     specialArgs = {
       inherit nixos-private;
+      beszelAgentEnvironmentFile = config.age.secrets.beszel-agent-env.path;
       vpnPrivateKeyPath = config.age.secrets.dl-vm-private-key.path;
     };
     config = import ../../vm-dl/microvm.nix;
