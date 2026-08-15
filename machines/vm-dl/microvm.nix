@@ -77,10 +77,8 @@
       DISABLE_SSH = "true";
       SYSTEM_NAME = "vm-dl";
     };
-    environmentFile = "/run/credentials/beszel-agent.service/beszel-agent-env";
+    environmentFile = "/run/credentials/@system/beszel-agent-env";
   };
-
-  systemd.services.beszel-agent.serviceConfig.ImportCredential = "beszel-agent-env";
 
   networking = {
     useDHCP = false;
