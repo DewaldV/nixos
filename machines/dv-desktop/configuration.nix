@@ -13,7 +13,10 @@
 
   console.keyMap = "us";
 
-  services.xserver.xkb.layout = "us";
+  services.xserver.xkb = {
+    layout = "us";
+    variant = "altgr-intl";
+  };
   services.blueman.enable = true;
   services.ratbagd.enable = true;
 
