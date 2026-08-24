@@ -248,9 +248,9 @@
       "type": "remote",
       "url": "https://rvu.sourcegraph.com/.api/mcp"
     },
-    "vanta": {
+    "whimsical": {
       "type": "remote",
-      "url": "https://mcp.eu.vanta.com/mcp"
+      "url": "https://mcp.whimsical.com/mcp"
     }
   }
 }
