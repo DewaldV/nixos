@@ -7,7 +7,7 @@
 let
   caddyWithOvh = pkgs.caddy.withPlugins {
     plugins = [ "github.com/caddy-dns/ovh@v1.1.0" ];
-    hash = "sha256-/xpTqYydmJEthBgGJ3uZ9FDF19dlvWs0h8XUf8KkS/M=";
+    hash = "sha256-f3alHFzSVez4sCrcSYCX3QTiK0OwaI4LtWTsZ18QCBI=";
   };
 in
 {

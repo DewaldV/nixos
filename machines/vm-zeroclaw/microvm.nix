@@ -8,6 +8,7 @@
 
 {
   imports = [
+    ../../profiles/machines/microvm
     ../../profiles/sshd
     ../../profiles/user/dewaldv.nix
     zeroclaw.nixosModules.default
