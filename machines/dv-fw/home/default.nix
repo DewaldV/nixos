@@ -1,4 +1,9 @@
-{ config, pkgs, ... }:
+{
+  config,
+  pkgs,
+  pkgs-unstable,
+  ...
+}:
 
 {
   imports = [
@@ -15,8 +20,7 @@
 
   home.stateVersion = "22.11";
 
-  # Machine-specific packages
   home.packages = with pkgs; [
-    godot_4 # Game engine for development
+    pkgs-unstable.amdtop
   ];
 }
