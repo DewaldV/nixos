@@ -52,6 +52,7 @@
         material-design-icons
         noto-fonts
         roboto
+        symbola
         unifont
         weather-icons
       ]
