@@ -1,4 +1,9 @@
-{ config, pkgs, pkgs-unstable, ... }:
+{
+  config,
+  pkgs,
+  pkgs-unstable,
+  ...
+}:
 
 {
   imports = [ ../../profiles/nix/darwin.nix ];
@@ -76,7 +81,7 @@
       hack-font
       emacs-all-the-icons-fonts
       nerd-fonts.hack
-      # symbola # currently unavailable
+      symbola
     ];
   };
 }
