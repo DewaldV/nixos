@@ -112,7 +112,7 @@
         "${modifier}+Shift+p" = "exec grimshot copy area";
         "${modifier}+Shift+Ctrl+p" = "exec grimshot copy window";
 
-        "--locked XF86Display" = "output eDP-1 toggle";
+        "--locked XF86AudioMedia" = "output eDP-1 toggle";
 
         "${modifier}+Shift+s" = "output eDP-1 scale 1.0";
         "${modifier}+Shift+d" = "output eDP-1 scale 1.25";
