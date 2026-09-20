@@ -16,6 +16,7 @@
     ../../profiles/workstation
     ../../profiles/sway
     ../../profiles/desktop-apps
+    ../../profiles/game-dev
     ../../profiles/gaming
     ../../profiles/sshd
     ../../profiles/virtualization
