@@ -4,6 +4,9 @@
     "aperture-anthropic",
     "aperture-openai",
     "aperture-openai-compatible",
+    "aperture-google",
+    "aperture-google-vertex",
+    "aperture-google-vertex-anthropic",
     "aperture-amazon-bedrock-anthropic",
     "aperture-amazon-bedrock"
   ],
@@ -18,15 +21,47 @@
       "models": {
         "eu.anthropic.claude-opus-4-8": {
           "name": "eu.anthropic.claude-opus-4-8",
-          "tool_call": true
+          "tool_call": true,
+          "reasoning": true,
+          "cost": {
+            "input": 5.0,
+            "output": 25.0,
+            "cache_read": 0.5,
+            "cache_write": 6.25
+          }
         },
         "eu.anthropic.claude-opus-5": {
           "name": "eu.anthropic.claude-opus-5",
-          "tool_call": true
+          "tool_call": true,
+          "reasoning": true,
+          "cost": {
+            "input": 5.0,
+            "output": 25.0,
+            "cache_read": 0.5,
+            "cache_write": 6.25
+          }
+        },
+        "eu.anthropic.claude-opus-5-5": {
+          "name": "eu.anthropic.claude-opus-5-5",
+          "tool_call": true,
+          "reasoning": true,
+          "cost": {
+            "input": 5.0,
+            "output": 25.0,
+            "cache_read": 0.5,
+            "cache_write": 6.25
+          }
         },
         "eu.anthropic.claude-sonnet-5": {
           "name": "eu.anthropic.claude-sonnet-5",
-          "tool_call": true
+          "tool_call": true,
+          "reasoning": true,
+          "cost": {
+            "input": 2.0,
+            "output": 10.0,
+            "cache_read": 0.2,
+            "cache_write": 2.5
+          }
         }
       }
     },
@@ -40,15 +75,47 @@
       "models": {
         "eu.anthropic.claude-opus-4-8": {
           "name": "eu.anthropic.claude-opus-4-8",
-          "tool_call": true
+          "tool_call": true,
+          "reasoning": true,
+          "cost": {
+            "input": 5.0,
+            "output": 25.0,
+            "cache_read": 0.5,
+            "cache_write": 6.25
+          }
         },
         "eu.anthropic.claude-opus-5": {
           "name": "eu.anthropic.claude-opus-5",
-          "tool_call": true
+          "tool_call": true,
+          "reasoning": true,
+          "cost": {
+            "input": 5.0,
+            "output": 25.0,
+            "cache_read": 0.5,
+            "cache_write": 6.25
+          }
+        },
+        "eu.anthropic.claude-opus-5-5": {
+          "name": "eu.anthropic.claude-opus-5-5",
+          "tool_call": true,
+          "reasoning": true,
+          "cost": {
+            "input": 5.0,
+            "output": 25.0,
+            "cache_read": 0.5,
+            "cache_write": 6.25
+          }
         },
         "eu.anthropic.claude-sonnet-5": {
           "name": "eu.anthropic.claude-sonnet-5",
-          "tool_call": true
+          "tool_call": true,
+          "reasoning": true,
+          "cost": {
+            "input": 2.0,
+            "output": 10.0,
+            "cache_read": 0.2,
+            "cache_write": 2.5
+          }
         }
       }
     },
@@ -63,6 +130,7 @@
         "claude-fable-5": {
           "name": "claude-fable-5",
           "tool_call": true,
+          "reasoning": true,
           "cost": {
             "input": 10.0,
             "output": 50.0,
@@ -73,6 +141,7 @@
         "claude-haiku-4-5": {
           "name": "claude-haiku-4-5",
           "tool_call": true,
+          "reasoning": true,
           "cost": {
             "input": 1.0,
             "output": 5.0,
@@ -83,6 +152,7 @@
         "claude-haiku-4-5-20251001": {
           "name": "claude-haiku-4-5-20251001",
           "tool_call": true,
+          "reasoning": true,
           "cost": {
             "input": 1.0,
             "output": 5.0,
@@ -93,6 +163,7 @@
         "claude-opus-4-7": {
           "name": "claude-opus-4-7",
           "tool_call": true,
+          "reasoning": true,
           "cost": {
             "input": 5.0,
             "output": 25.0,
@@ -103,6 +174,7 @@
         "claude-opus-4-8": {
           "name": "claude-opus-4-8",
           "tool_call": true,
+          "reasoning": true,
           "cost": {
             "input": 5.0,
             "output": 25.0,
@@ -113,6 +185,7 @@
         "claude-opus-5": {
           "name": "claude-opus-5",
           "tool_call": true,
+          "reasoning": true,
           "cost": {
             "input": 5.0,
             "output": 25.0,
@@ -123,6 +196,7 @@
         "claude-sonnet-4-5": {
           "name": "claude-sonnet-4-5",
           "tool_call": true,
+          "reasoning": true,
           "cost": {
             "input": 3.0,
             "output": 15.0,
@@ -133,6 +207,7 @@
         "claude-sonnet-4-6": {
           "name": "claude-sonnet-4-6",
           "tool_call": true,
+          "reasoning": true,
           "cost": {
             "input": 3.0,
             "output": 15.0,
@@ -143,6 +218,213 @@
         "claude-sonnet-5": {
           "name": "claude-sonnet-5",
           "tool_call": true,
+          "reasoning": true,
+          "cost": {
+            "input": 2.0,
+            "output": 10.0,
+            "cache_read": 0.2,
+            "cache_write": 2.5
+          }
+        }
+      }
+    },
+    "aperture-google": {
+      "npm": "@ai-sdk/google",
+      "name": "Aperture (Gemini)",
+      "options": {
+        "baseURL": "http://ai.tail3b05ae.ts.net/v1beta",
+        "apiKey": "not-required"
+      },
+      "models": {
+        "claude-haiku-4-5@20251001": {
+          "name": "claude-haiku-4-5@20251001",
+          "tool_call": true,
+          "reasoning": true,
+          "cost": {
+            "input": 1.0,
+            "output": 5.0,
+            "cache_read": 0.1,
+            "cache_write": 1.25
+          }
+        },
+        "claude-opus-4-8": {
+          "name": "claude-opus-4-8",
+          "tool_call": true,
+          "reasoning": true,
+          "cost": {
+            "input": 5.0,
+            "output": 25.0,
+            "cache_read": 0.5,
+            "cache_write": 6.25
+          }
+        },
+        "claude-opus-5": {
+          "name": "claude-opus-5",
+          "tool_call": true,
+          "reasoning": true,
+          "cost": {
+            "input": 5.0,
+            "output": 25.0,
+            "cache_read": 0.5,
+            "cache_write": 6.25
+          }
+        },
+        "claude-sonnet-5": {
+          "name": "claude-sonnet-5",
+          "tool_call": true,
+          "reasoning": true,
+          "cost": {
+            "input": 2.0,
+            "output": 10.0,
+            "cache_read": 0.2,
+            "cache_write": 2.5
+          }
+        },
+        "gemini-3.1-pro-preview": {
+          "name": "gemini-3.1-pro-preview",
+          "tool_call": true,
+          "reasoning": true,
+          "cost": {
+            "input": 2.0,
+            "output": 12.0,
+            "cache_read": 0.2,
+            "cache_write": 0.375
+          }
+        },
+        "gemini-3.1-pro-preview-customtools": {
+          "name": "gemini-3.1-pro-preview-customtools",
+          "tool_call": true,
+          "reasoning": true,
+          "cost": {
+            "input": 2.0,
+            "output": 12.0,
+            "cache_read": 0.2,
+            "cache_write": 0.375
+          }
+        },
+        "gemini-3.5-flash": {
+          "name": "gemini-3.5-flash",
+          "tool_call": true,
+          "reasoning": true,
+          "cost": {
+            "input": 1.5,
+            "output": 9.0,
+            "cache_read": 0.15,
+            "cache_write": 0.08333
+          }
+        },
+        "gemini-3.8-flash": {
+          "name": "gemini-3.8-flash",
+          "tool_call": true,
+          "reasoning": true,
+          "cost": {
+            "input": 0.75,
+            "output": 3.75,
+            "cache_read": 0.075,
+            "cache_write": 0.04167
+          }
+        }
+      }
+    },
+    "aperture-google-vertex": {
+      "npm": "@ai-sdk/google-vertex",
+      "name": "Aperture (Vertex Gemini)",
+      "options": {
+        "baseURL": "http://ai.tail3b05ae.ts.net/v1/projects/aperture/locations/global/publishers/google",
+        "apiKey": "not-required"
+      },
+      "models": {
+        "gemini-3.1-pro-preview": {
+          "name": "gemini-3.1-pro-preview",
+          "tool_call": true,
+          "reasoning": true,
+          "cost": {
+            "input": 2.0,
+            "output": 12.0,
+            "cache_read": 0.2,
+            "cache_write": 0.375
+          }
+        },
+        "gemini-3.1-pro-preview-customtools": {
+          "name": "gemini-3.1-pro-preview-customtools",
+          "tool_call": true,
+          "reasoning": true,
+          "cost": {
+            "input": 2.0,
+            "output": 12.0,
+            "cache_read": 0.2,
+            "cache_write": 0.375
+          }
+        },
+        "gemini-3.5-flash": {
+          "name": "gemini-3.5-flash",
+          "tool_call": true,
+          "reasoning": true,
+          "cost": {
+            "input": 1.5,
+            "output": 9.0,
+            "cache_read": 0.15,
+            "cache_write": 0.08333
+          }
+        },
+        "gemini-3.8-flash": {
+          "name": "gemini-3.8-flash",
+          "tool_call": true,
+          "reasoning": true,
+          "cost": {
+            "input": 0.75,
+            "output": 3.75,
+            "cache_read": 0.075,
+            "cache_write": 0.04167
+          }
+        }
+      }
+    },
+    "aperture-google-vertex-anthropic": {
+      "npm": "@ai-sdk/google-vertex/anthropic",
+      "name": "Aperture (Vertex Claude)",
+      "options": {
+        "baseURL": "http://ai.tail3b05ae.ts.net/v1/projects/aperture/locations/global/publishers/anthropic/models",
+        "apiKey": "not-required"
+      },
+      "models": {
+        "claude-haiku-4-5@20251001": {
+          "name": "claude-haiku-4-5@20251001",
+          "tool_call": true,
+          "reasoning": true,
+          "cost": {
+            "input": 1.0,
+            "output": 5.0,
+            "cache_read": 0.1,
+            "cache_write": 1.25
+          }
+        },
+        "claude-opus-4-8": {
+          "name": "claude-opus-4-8",
+          "tool_call": true,
+          "reasoning": true,
+          "cost": {
+            "input": 5.0,
+            "output": 25.0,
+            "cache_read": 0.5,
+            "cache_write": 6.25
+          }
+        },
+        "claude-opus-5": {
+          "name": "claude-opus-5",
+          "tool_call": true,
+          "reasoning": true,
+          "cost": {
+            "input": 5.0,
+            "output": 25.0,
+            "cache_read": 0.5,
+            "cache_write": 6.25
+          }
+        },
+        "claude-sonnet-5": {
+          "name": "claude-sonnet-5",
+          "tool_call": true,
+          "reasoning": true,
           "cost": {
             "input": 2.0,
             "output": 10.0,
@@ -170,15 +452,30 @@
         },
         "gpt-5.5": {
           "name": "gpt-5.5",
-          "tool_call": true
+          "tool_call": true,
+          "reasoning": true,
+          "cost": {
+            "input": 5.0,
+            "output": 30.0,
+            "cache_read": 0.5,
+            "cache_write": 6.25
+          }
         },
         "gpt-5.5-pro": {
           "name": "gpt-5.5-pro",
-          "tool_call": true
+          "tool_call": true,
+          "reasoning": true,
+          "cost": {
+            "input": 30.0,
+            "output": 180.0,
+            "cache_read": 30.0,
+            "cache_write": 30.0
+          }
         },
         "gpt-5.6-luna": {
           "name": "gpt-5.6-luna",
           "tool_call": true,
+          "reasoning": true,
           "cost": {
             "input": 1.0,
             "output": 6.0,
@@ -189,6 +486,7 @@
         "gpt-5.6-sol": {
           "name": "gpt-5.6-sol",
           "tool_call": true,
+          "reasoning": true,
           "cost": {
             "input": 5.0,
             "output": 30.0,
@@ -199,6 +497,7 @@
         "gpt-5.6-terra": {
           "name": "gpt-5.6-terra",
           "tool_call": true,
+          "reasoning": true,
           "cost": {
             "input": 2.5,
             "output": 15.0,
@@ -206,9 +505,38 @@
             "cache_write": 3.125
           }
         },
+        "gpt-6-luna": {
+          "name": "gpt-6-luna",
+          "tool_call": true,
+          "reasoning": true,
+          "cost": {
+            "input": 0.1,
+            "output": 0.5,
+            "cache_read": 0.01,
+            "cache_write": 0.125
+          }
+        },
+        "gpt-6-sol": {
+          "name": "gpt-6-sol",
+          "tool_call": true,
+          "reasoning": true,
+          "cost": {
+            "input": 2.0,
+            "output": 10.0,
+            "cache_read": 0.2,
+            "cache_write": 2.5
+          }
+        },
         "o3": {
           "name": "o3",
-          "tool_call": true
+          "tool_call": true,
+          "reasoning": true,
+          "cost": {
+            "input": 1.0,
+            "output": 4.0,
+            "cache_read": 0.25,
+            "cache_write": 1.25
+          }
         }
       }
     },
@@ -230,15 +558,30 @@
         },
         "gpt-5.5": {
           "name": "gpt-5.5",
-          "tool_call": true
+          "tool_call": true,
+          "reasoning": true,
+          "cost": {
+            "input": 5.0,
+            "output": 30.0,
+            "cache_read": 0.5,
+            "cache_write": 6.25
+          }
         },
         "gpt-5.5-pro": {
           "name": "gpt-5.5-pro",
-          "tool_call": true
+          "tool_call": true,
+          "reasoning": true,
+          "cost": {
+            "input": 30.0,
+            "output": 180.0,
+            "cache_read": 30.0,
+            "cache_write": 30.0
+          }
         },
         "gpt-5.6-luna": {
           "name": "gpt-5.6-luna",
           "tool_call": true,
+          "reasoning": true,
           "cost": {
             "input": 1.0,
             "output": 6.0,
@@ -249,6 +592,7 @@
         "gpt-5.6-sol": {
           "name": "gpt-5.6-sol",
           "tool_call": true,
+          "reasoning": true,
           "cost": {
             "input": 5.0,
             "output": 30.0,
@@ -259,6 +603,7 @@
         "gpt-5.6-terra": {
           "name": "gpt-5.6-terra",
           "tool_call": true,
+          "reasoning": true,
           "cost": {
             "input": 2.5,
             "output": 15.0,
@@ -266,9 +611,38 @@
             "cache_write": 3.125
           }
         },
+        "gpt-6-luna": {
+          "name": "gpt-6-luna",
+          "tool_call": true,
+          "reasoning": true,
+          "cost": {
+            "input": 0.1,
+            "output": 0.5,
+            "cache_read": 0.01,
+            "cache_write": 0.125
+          }
+        },
+        "gpt-6-sol": {
+          "name": "gpt-6-sol",
+          "tool_call": true,
+          "reasoning": true,
+          "cost": {
+            "input": 2.0,
+            "output": 10.0,
+            "cache_read": 0.2,
+            "cache_write": 2.5
+          }
+        },
         "o3": {
           "name": "o3",
-          "tool_call": true
+          "tool_call": true,
+          "reasoning": true,
+          "cost": {
+            "input": 1.0,
+            "output": 4.0,
+            "cache_read": 0.25,
+            "cache_write": 1.25
+          }
         }
       }
     }
@@ -278,7 +652,9 @@
       "~/go/pkg/**": "allow"
     }
   },
-  "plugin": ["@franlol/opencode-md-table-formatter@0.0.3"],
+  "plugin": [
+    "@franlol/opencode-md-table-formatter@0.0.3"
+  ],
   "model": "aperture-openai/gpt-5.6-terra",
   "small_model": "aperture-openai/gpt-5.6-luna",
   "mcp": {
