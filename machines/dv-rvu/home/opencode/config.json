@@ -649,6 +649,7 @@
   },
   "permission": {
     "external_directory": {
+      "~/.cargo/**": "allow",
       "~/go/pkg/**": "allow"
     }
   },
