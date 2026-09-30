@@ -661,6 +661,7 @@
   "tools": {
     "notion_*": false,
     "linear_*": false,
+    "vanta_*": false,
     "whimsical_*": false
   },
   "mcp": {
@@ -668,17 +669,21 @@
       "type": "remote",
       "url": "http://ai.tail3b05ae.ts.net/v1/mcp"
     },
-    "notion": {
-      "type": "remote",
-      "url": "https://mcp.notion.com/sse"
-    },
     "linear": {
       "type": "remote",
       "url": "https://mcp.linear.app/mcp"
     },
+    "notion": {
+      "type": "remote",
+      "url": "https://mcp.notion.com/sse"
+    },
     "rvu-sourcegraph": {
       "type": "remote",
       "url": "https://rvu.sourcegraph.com/.api/mcp"
+    },
+    "vanta": {
+      "type": "remote",
+      "url": "https://mcp.eu.vanta.com/mcp",
     },
     "whimsical": {
       "type": "remote",
