@@ -656,14 +656,8 @@
   "plugin": [
     "@franlol/opencode-md-table-formatter@0.0.3"
   ],
-  "model": "aperture-openai/gpt-6-sol",
+  "model": "aperture-openai/gpt-6.1-sol",
   "small_model": "aperture-openai/gpt-6-luna",
-  "tools": {
-    "notion_*": false,
-    "linear_*": false,
-    "vanta_*": false,
-    "whimsical_*": false
-  },
   "mcp": {
     "aperture": {
       "type": "remote",
