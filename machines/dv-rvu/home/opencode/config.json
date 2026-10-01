@@ -438,7 +438,7 @@
       "npm": "@ai-sdk/openai",
       "name": "Aperture (Responses API)",
       "options": {
-        "baseURL": "http://ai.tail3b05ae.ts.net/v1",
+        "baseURL": "https://ai.tail3b05ae.ts.net/v1",
         "apiKey": "not-required"
       },
       "models": {
@@ -505,6 +505,11 @@
             "cache_write": 3.125
           }
         },
+        "gpt-6-astra": {
+          "name": "gpt-6-astra",
+          "tool_call": true,
+          "reasoning": true
+        },
         "gpt-6-luna": {
           "name": "gpt-6-luna",
           "tool_call": true,
@@ -526,6 +531,11 @@
             "cache_read": 0.2,
             "cache_write": 2.5
           }
+        },
+        "gpt-6.1-sol": {
+          "name": "gpt-6.1-sol",
+          "tool_call": true,
+          "reasoning": true
         },
         "o3": {
           "name": "o3",
@@ -544,7 +554,7 @@
       "npm": "@ai-sdk/openai-compatible",
       "name": "Aperture (Completions API)",
       "options": {
-        "baseURL": "http://ai.tail3b05ae.ts.net/v1",
+        "baseURL": "https://ai.tail3b05ae.ts.net/v1",
         "apiKey": "not-required"
       },
       "models": {
@@ -611,6 +621,11 @@
             "cache_write": 3.125
           }
         },
+        "gpt-6-astra": {
+          "name": "gpt-6-astra",
+          "tool_call": true,
+          "reasoning": true
+        },
         "gpt-6-luna": {
           "name": "gpt-6-luna",
           "tool_call": true,
@@ -632,6 +647,11 @@
             "cache_read": 0.2,
             "cache_write": 2.5
           }
+        },
+        "gpt-6.1-sol": {
+          "name": "gpt-6.1-sol",
+          "tool_call": true,
+          "reasoning": true
         },
         "o3": {
           "name": "o3",
