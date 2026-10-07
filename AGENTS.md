@@ -12,6 +12,9 @@
 - **Format Nix files**: `nixfmt <file.nix>` (use RFC 166 style)
 - **No test suite**: This is a declarative configuration repo with no automated tests
 
+## Git Workflow
+- **Never push `temp/*` branches**: These contain local-only changes the user does not want to share. Do not publish their commits through other branches or tags.
+
 ## Code Style
 - **Language**: Nix expressions following RFC 166 formatting style
 - **Imports**: Use relative paths (e.g., `./module.nix`, `../common`); group in `imports = [ ]` lists
