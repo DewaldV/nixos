@@ -28,8 +28,8 @@ in
         Resolve = {
           DNS = "9.9.9.9#dns.quad9.net 149.112.112.112#dns.quad9.net 2620:fe::fe#dns.quad9.net 2620:fe::9#dns.quad9.net";
           FallbackDNS = servers;
-          DNSSEC = lib.mkIf cfg.dnsOverTls "true";
-          DNSOverTLS = "yes";
+          DNSSEC = if cfg.dnsOverTls then "true" else "false";
+          DNSOverTLS = if cfg.dnsOverTls then "yes" else "no";
         };
       };
     };

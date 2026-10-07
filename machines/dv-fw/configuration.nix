@@ -26,6 +26,7 @@
 
   profiles.dns.quad9 = {
     enable = true;
-    dnsOverTls = true;
+    # Allow plain DNS for captive portals and ProtonVPN's tunnel resolver.
+    dnsOverTls = false;
   };
 }
