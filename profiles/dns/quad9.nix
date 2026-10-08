@@ -16,7 +16,16 @@ in
 {
   options.profiles.dns.quad9 = {
     enable = lib.mkEnableOption "setting Quad9 as system nameservers";
-    dnsOverTls = lib.mkEnableOption "Quad9 DNS-over-TLS for systemd-resolved";
+    dnsOverTls = lib.mkOption {
+      type = lib.types.bool;
+      default = true;
+      description = "Use Quad9 DNS-over-TLS with systemd-resolved";
+    };
+    dnssec = lib.mkOption {
+      type = lib.types.bool;
+      default = true;
+      description = "Validate DNSSEC with systemd-resolved";
+    };
   };
 
   config = {
@@ -28,7 +37,7 @@ in
         Resolve = {
           DNS = "9.9.9.9#dns.quad9.net 149.112.112.112#dns.quad9.net 2620:fe::fe#dns.quad9.net 2620:fe::9#dns.quad9.net";
           FallbackDNS = servers;
-          DNSSEC = if cfg.dnsOverTls then "true" else "false";
+          DNSSEC = if cfg.dnssec then "true" else "false";
           DNSOverTLS = if cfg.dnsOverTls then "yes" else "no";
         };
       };

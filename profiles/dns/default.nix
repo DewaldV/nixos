@@ -1,4 +1,7 @@
 { config, pkgs, ... }:
 {
-  imports = [ ./quad9.nix ];
+  imports = [
+    ./quad9.nix
+    ./roaming.nix
+  ];
 }
