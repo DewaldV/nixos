@@ -46,3 +46,8 @@ necessary on that network.
 
 The policy is also applied to connections already active when the configuration
 is activated or systemd-resolved restarts.
+
+The policy and browser workflow are Python scripts using only the standard
+library, with shared command, locking, and WiFi-session helpers in `dns_common.py`.
+Nix packages their interpreter and runtime commands (`nmcli`, `resolvectl`,
+`curl`, and Firefox); no Python packages need to be installed separately.

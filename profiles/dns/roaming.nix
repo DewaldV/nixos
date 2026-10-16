@@ -6,31 +6,29 @@
 }:
 let
   cfg = config.profiles.dns.roaming;
-  policy = pkgs.writeShellApplication {
-    name = "roaming-dns-policy";
-    runtimeInputs = with pkgs; [
-      networkmanager
-      systemd
-      coreutils
-      util-linux
-      gnugrep
-    ];
-    text = builtins.readFile ./roaming-dns.sh;
-  };
-  command = pkgs.writeShellApplication {
-    name = "captive-portal";
-    runtimeInputs = with pkgs; [
-      coreutils
-      curl
-      firefox
-      networkmanager
-      util-linux
-    ];
-    text = ''
-      dns_policy=${policy}/bin/roaming-dns-policy
-    ''
-    + builtins.readFile ./captive-portal.sh;
-  };
+  tools = pkgs.runCommand "roaming-dns" { nativeBuildInputs = [ pkgs.makeWrapper ]; } ''
+    mkdir -p "$out/bin" "$out/lib"
+    cp ${./dns_common.py} "$out/lib/dns_common.py"
+    cp ${./roaming-dns.py} "$out/lib/roaming-dns.py"
+    cp ${./captive-portal.py} "$out/lib/captive-portal.py"
+    makeWrapper ${pkgs.python3}/bin/python3 "$out/bin/roaming-dns-policy" \
+      --add-flags "$out/lib/roaming-dns.py" \
+      --prefix PATH : ${
+        lib.makeBinPath [
+          pkgs.networkmanager
+          pkgs.systemd
+        ]
+      }
+    makeWrapper ${pkgs.python3}/bin/python3 "$out/bin/captive-portal" \
+      --add-flags "$out/lib/captive-portal.py" \
+      --prefix PATH : ${
+        lib.makeBinPath [
+          pkgs.networkmanager
+          pkgs.curl
+          pkgs.firefox
+        ]
+      }
+  '';
 in
 {
   options.profiles.dns.roaming.enable =
@@ -58,7 +56,7 @@ in
       "connection.dns-over-tls" = 0;
       "connection.dnssec" = 2;
     };
-    environment.systemPackages = [ command ];
+    environment.systemPackages = [ tools ];
     # Also configure links already active at boot or configuration activation.
     systemd.services.roaming-dns-policy = {
       description = "Apply roaming DNS policy to active connections";
@@ -80,7 +78,7 @@ in
       script = ''
         while IFS= read -r iface; do
           [ -n "$iface" ] || continue
-          ${policy}/bin/roaming-dns-policy event "$iface" reapply
+          ${tools}/bin/roaming-dns-policy event "$iface" reapply
         done < <(nmcli -g DEVICE connection show --active)
       '';
     };
@@ -88,7 +86,7 @@ in
       {
         type = "basic";
         source = pkgs.writeShellScript "roaming-dns-dispatcher" ''
-          exec ${policy}/bin/roaming-dns-policy event "$1" "$2"
+          exec ${tools}/bin/roaming-dns-policy event "$1" "$2"
         '';
       }
     ];
