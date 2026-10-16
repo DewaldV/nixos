@@ -51,6 +51,13 @@ in
       }
     ];
     networking.networkmanager.dns = "systemd-resolved";
+    # NetworkManager can overwrite resolvectl overrides on later DNS updates.
+    # Proton's resolver uses plain DNS inside the encrypted VPN tunnel.
+    networking.networkmanager.settings.connection-proton = {
+      match-device = "interface-name:proton*";
+      "connection.dns-over-tls" = 0;
+      "connection.dnssec" = 2;
+    };
     environment.systemPackages = [ command ];
     # Also configure links already active at boot or configuration activation.
     systemd.services.roaming-dns-policy = {

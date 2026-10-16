@@ -3,6 +3,16 @@ fail() { printf '%s\n' "$*" >&2; exit 1; }
 action=${1:-status}
 state=/run/captive-portal
 
+# Global dispatcher events (such as dns-change) have no interface argument.
+# Ignore events we do not handle before requiring an interface or root access.
+if [[ "$action" == event ]]; then
+  event=${3:?Missing event}
+  case "$event" in
+    up|vpn-up|down|vpn-down|dhcp4-change|dhcp6-change|reapply) ;;
+    *) exit 0 ;;
+  esac
+fi
+
 if [[ "$action" == status ]]; then
   enabled=false
   if [[ -d "$state" ]]; then
@@ -32,9 +42,13 @@ secure_wifi() {
 }
 
 portal_wifi() {
-  local servers=() server
-  while IFS= read -r server; do
-    [[ -n "$server" ]] && servers+=("$server")
+  local servers=() line_servers=() line server
+  while IFS= read -r line; do
+    # nmcli can group multiple DNS addresses on one pipe-separated line.
+    IFS=$'| \t' read -r -a line_servers <<< "$line"
+    for server in "${line_servers[@]}"; do
+      [[ -n "$server" ]] && servers+=("$server")
+    done
   done < <(nmcli --escape no -g IP4.DNS,IP6.DNS device show "$iface")
   ((${#servers[@]})) || fail "No network-provided DNS servers on $iface."
   resolvectl dnsovertls "$iface" no
@@ -74,7 +88,6 @@ case "$action" in
     ;;
   event)
     iface=${2:?Missing interface}
-    event=${3:?Missing event}
     [[ "$iface" =~ ^[a-zA-Z0-9_.:-]+$ && "$iface" != . && "$iface" != .. ]] || fail 'Invalid interface.'
     case "$event" in
       down|vpn-down)
@@ -84,7 +97,6 @@ case "$action" in
         ;;
       up|vpn-up) rm -f "$state/$iface" ;;
       dhcp4-change|dhcp6-change|reapply) ;;
-      *) exit 0 ;;
     esac
     if [[ "$iface" =~ ^proton[0-9]+$ || "${CONNECTION_ID:-}" == ProtonVPN\ * ]]; then
       resolvectl dnsovertls "$iface" no
