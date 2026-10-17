@@ -114,10 +114,13 @@
   services.printing.enable = true;
 
   # Greeter
+  environment.etc."tuigreet/wayland-sessions".source =
+    "${config.services.displayManager.sessionData.desktops}/share/wayland-sessions";
+
   services.greetd = {
     enable = true;
     settings.default_session = {
-      command = "${pkgs.tuigreet}/bin/tuigreet --time --remember --remember-session --sessions ${config.services.displayManager.sessionData.desktops}/share/wayland-sessions";
+      command = "${pkgs.tuigreet}/bin/tuigreet --time --remember --remember-session --cmd sway --sessions /etc/tuigreet/wayland-sessions";
       user = "greeter";
     };
   };
