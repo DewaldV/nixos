@@ -1,6 +1,7 @@
 {
   config,
   lib,
+  pkgs,
   pkgs-unstable,
   isDarwin,
   ...
@@ -19,16 +20,35 @@ in
     PROTON_PASS_LINUX_KEYRING = "dbus";
   };
 
+  systemd.user.targets.network-online = lib.mkIf (!isDarwin) {
+    Unit = {
+      Description = "Network is online";
+      Requires = [ "network-online.service" ];
+      After = [ "network-online.service" ];
+    };
+  };
+
+  systemd.user.services.network-online = lib.mkIf (!isDarwin) {
+    Unit.Description = "Wait for NetworkManager connectivity";
+    Service = {
+      Type = "oneshot";
+      ExecStart = "${pkgs.networkmanager}/bin/nm-online --quiet";
+      RemainAfterExit = true;
+    };
+  };
+
   # Auto-load SSH keys into the agent at login. Runs after GNOME Keyring is
   # unlocked (so pass-cli can retrieve its encryption key via D-Bus) and after
-  # the SSH agent is ready.
+  # the SSH agent and network are ready.
   systemd.user.services.proton-pass-ssh-load = lib.mkIf (!isDarwin) {
     Unit = {
       Description = "Load Proton Pass SSH keys into agent";
+      Requires = [ "network-online.target" ];
       After = [
         "graphical-session.target"
         "gnome-keyring-daemon.service"
         "ssh-agent.service"
+        "network-online.target"
       ];
     };
     Service = {
