@@ -2,6 +2,7 @@
   config,
   lib,
   pkgs,
+  pkgs-unstable,
   ...
 }:
 
@@ -71,4 +72,11 @@
   home.stateVersion = "22.11";
 
   programs.home-manager.enable = true;
+
+  # Tool version manager
+  programs.mise = {
+    enable = true;
+    enableZshIntegration = true;
+    package = pkgs-unstable.mise;
+  };
 }
