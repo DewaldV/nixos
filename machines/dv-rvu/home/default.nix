@@ -1,4 +1,9 @@
-{ config, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
 {
   imports = [
@@ -22,6 +27,17 @@
   nix.settings.experimental-features = [
     "nix-command"
     "flakes"
+  ];
+
+  # Make the multi-user Nix installation available in shell sessions.
+  home.sessionPath = [
+    "/nix/var/nix/profiles/default/bin"
+  ];
+
+  # This machine's SSH agent is the GCR one rather than ssh-agent.service.
+  systemd.user.services.proton-pass-ssh-load.Service.Environment = lib.mkForce [
+    "PROTON_PASS_LINUX_KEYRING=dbus"
+    "SSH_AUTH_SOCK=/run/user/1000/gcr/ssh"
   ];
 
   home.packages = with pkgs; [
