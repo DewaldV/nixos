@@ -17,6 +17,7 @@
     microvm.nixosModules.host
     ../../profiles/server
     ../../profiles/virtualization
+    ../../profiles/docker
     ../../profiles/caddy
     ../../profiles/jellyfin
     ../../profiles/immich

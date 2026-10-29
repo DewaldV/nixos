@@ -82,6 +82,7 @@
   users.groups.media = { };
   systemd.tmpfiles.rules = [
     "d /mnt/media 0755 root media - -"
+    "d /srv/home-automation 0755 root root - -"
   ];
 
   # Static IP in the initrd via systemd-networkd
