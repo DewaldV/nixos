@@ -26,6 +26,9 @@
     interface = "br0";
   };
 
+  # timesyncd does not discover an online link with this host's unmanaged networking.
+  services.chrony.enable = true;
+
   networking.firewall = {
     enable = true;
     allowedTCPPorts = [
@@ -82,8 +85,14 @@
   users.groups.media = { };
   systemd.tmpfiles.rules = [
     "d /mnt/media 0755 root media - -"
-    "d /srv/home-automation 0755 root root - -"
+    "d /srv/home-automation 0700 dewaldv users - -"
+    "d /srv/home-automation/home-assistant 0700 dewaldv users - -"
+    "d /srv/home-automation/zigbee2mqtt 0700 dewaldv users - -"
   ];
+
+  # Containers are started manually after migrating state from dv-pi5.
+  environment.etc."home-automation/compose.yaml".source = ./home-automation/compose.yaml;
+  environment.etc."home-automation/mosquitto.conf".source = ./home-automation/mosquitto.conf;
 
   # Static IP in the initrd via systemd-networkd
   boot.initrd.systemd.network = {

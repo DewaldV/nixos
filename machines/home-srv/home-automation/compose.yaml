@@ -1,0 +1,43 @@
+name: home-automation
+
+services:
+  mosquitto:
+    image: eclipse-mosquitto:2.1.2-alpine
+    restart: unless-stopped
+    volumes:
+      - /etc/home-automation/mosquitto.conf:/mosquitto/config/mosquitto.conf:ro
+
+  zigbee2mqtt:
+    image: ghcr.io/koenkk/zigbee2mqtt:2.14.2
+    restart: unless-stopped
+    depends_on:
+      - mosquitto
+    ports:
+      - 127.0.0.1:8080:8080
+    devices:
+      - /dev/serial/by-id/usb-Nabu_Casa_ZBT-2_441BF6860A58-if00:/dev/ttyACM0
+    volumes:
+      - /srv/home-automation/zigbee2mqtt:/app/data
+      - /run/udev:/run/udev:ro
+    environment:
+      TZ: Europe/London
+
+  home-assistant:
+    image: ghcr.io/home-assistant/home-assistant:2026.3.1
+    restart: unless-stopped
+    depends_on:
+      - mosquitto
+    ports:
+      - 127.0.0.1:8123:8123
+    volumes:
+      - /srv/home-automation/home-assistant:/config
+      - /run/dbus:/run/dbus:ro
+    environment:
+      TZ: Europe/London
+
+networks:
+  default:
+    ipam:
+      config:
+        - subnet: 172.30.50.0/24
+          gateway: 172.30.50.1

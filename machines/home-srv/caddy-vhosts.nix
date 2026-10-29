@@ -13,13 +13,13 @@
       reverse_proxy http://192.168.0.2:9000
     '';
     "z2mqtt.furfaces.net".extraConfig = ''
-      reverse_proxy http://192.168.0.2:8080
+      reverse_proxy http://127.0.0.1:8080
     '';
     "dv-pi5.syncthing.furfaces.net".extraConfig = ''
       reverse_proxy http://192.168.0.2:8384
     '';
     "home-assistant.furfaces.net".extraConfig = ''
-      reverse_proxy http://192.168.0.2:8123
+      reverse_proxy http://127.0.0.1:8123
     '';
 
     ### home-srv
