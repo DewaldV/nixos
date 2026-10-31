@@ -154,7 +154,6 @@ in
       folders.financial = {
         inherit (syncthingConfig.folders.financial) id;
         path = "/srv/documents/financial";
-        type = "receiveonly";
         devices = [
           "dv-desktop"
           "dv-fw"
