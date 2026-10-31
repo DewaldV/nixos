@@ -1,6 +1,7 @@
 {
   config,
   nixos-private,
+  pkgs-unstable,
   ...
 }:
 
@@ -32,7 +33,7 @@
 
   microvm.vms.vm-sync = {
     specialArgs = {
-      inherit nixos-private;
+      inherit nixos-private pkgs-unstable;
       syncthingCertFile = config.age.secrets.vm-sync-syncthing-cert.path;
       syncthingKeyFile = config.age.secrets.vm-sync-syncthing-key.path;
       webdavHtpasswdFile = config.age.secrets.vm-sync-webdav-htpasswd.path;

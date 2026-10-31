@@ -142,14 +142,13 @@ in
         localAnnounceEnabled = true;
       };
       gui.user = "dewaldv";
-      devices = lib.getAttrs [ "dv-desktop" "dv-fw" "dv-pi5" ] syncthingConfig.devices;
+      devices = lib.getAttrs [ "dv-desktop" "dv-fw" ] syncthingConfig.devices;
       folders.notes = {
         inherit (syncthingConfig.folders.notes) id;
         path = "/srv/documents/notes";
         devices = [
           "dv-desktop"
           "dv-fw"
-          "dv-pi5"
         ];
       };
       folders.financial = {
@@ -159,7 +158,6 @@ in
         devices = [
           "dv-desktop"
           "dv-fw"
-          "dv-pi5"
         ];
       };
     };
