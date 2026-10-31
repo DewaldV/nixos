@@ -1,5 +1,6 @@
 {
   lib,
+  beszelAgentEnvironmentFile,
   nixos-private,
   pkgs,
   pkgs-unstable,
@@ -27,6 +28,7 @@ in
     mem = 1024;
     machineId = "7c08c672-74d4-44a0-ab7c-9f77308fc904";
     credentialFiles = {
+      beszel-agent-env = beszelAgentEnvironmentFile;
       syncthing-cert = syncthingCertFile;
       syncthing-key = syncthingKeyFile;
       webdav-htpasswd = webdavHtpasswdFile;
@@ -111,6 +113,15 @@ in
         prefixLength = 24;
       }
     ];
+  };
+
+  services.beszel.agent = {
+    enable = true;
+    environment = {
+      DISABLE_SSH = "true";
+      SYSTEM_NAME = "vm-sync";
+    };
+    environmentFile = "/run/credentials/@system/beszel-agent-env";
   };
 
   services.tailscale = {

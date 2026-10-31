@@ -34,6 +34,7 @@
   microvm.vms.vm-sync = {
     specialArgs = {
       inherit nixos-private pkgs-unstable;
+      beszelAgentEnvironmentFile = config.age.secrets.beszel-agent-env.path;
       syncthingCertFile = config.age.secrets.vm-sync-syncthing-cert.path;
       syncthingKeyFile = config.age.secrets.vm-sync-syncthing-key.path;
       webdavHtpasswdFile = config.age.secrets.vm-sync-webdav-htpasswd.path;
