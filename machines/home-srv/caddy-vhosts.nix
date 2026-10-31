@@ -8,19 +8,15 @@
       file_server
     '';
 
-    ### pi5
-    "portainer.furfaces.net".extraConfig = ''
-      reverse_proxy http://192.168.0.2:9000
-    '';
-    "dv-pi5.syncthing.furfaces.net".extraConfig = ''
-      reverse_proxy http://192.168.0.2:8384
-    '';
+    ### vm-sync
     "vm-sync.syncthing.furfaces.net".extraConfig = ''
       reverse_proxy http://192.168.0.12:8384
     '';
     "notes.furfaces.net".extraConfig = ''
       reverse_proxy http://192.168.0.12:8181
     '';
+
+    ### Home Assistant
     "home-assistant.furfaces.net".extraConfig = ''
       reverse_proxy http://192.168.0.8
     '';
