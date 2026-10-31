@@ -18,6 +18,12 @@
     "dv-pi5.syncthing.furfaces.net".extraConfig = ''
       reverse_proxy http://192.168.0.2:8384
     '';
+    "vm-sync.syncthing.furfaces.net".extraConfig = ''
+      reverse_proxy http://192.168.0.12:8384
+    '';
+    "notes.furfaces.net".extraConfig = ''
+      reverse_proxy http://192.168.0.12:8181
+    '';
     "home-assistant.furfaces.net".extraConfig = ''
       reverse_proxy http://127.0.0.1:8123
     '';

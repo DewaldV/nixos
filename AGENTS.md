@@ -15,6 +15,9 @@
 ## Git Workflow
 - **Never push `temp/*` branches**: These contain local-only changes the user does not want to share. Do not publish their commits through other branches or tags.
 
+## Documentation
+- This `nixos` repository is public. Store infrastructure-specific plans, migration runbooks, and other private documentation in `../nixos-private/docs/`, not here. Keep public docs free of private host details, credentials, and topology.
+
 ## Code Style
 - **Language**: Nix expressions following RFC 166 formatting style
 - **Imports**: Use relative paths (e.g., `./module.nix`, `../common`); group in `imports = [ ]` lists
