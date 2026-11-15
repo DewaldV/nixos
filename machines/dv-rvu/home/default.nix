@@ -8,17 +8,16 @@
 
 {
   imports = [
-    ../../../profiles/workstation/home.nix
-    ../../../profiles/shell/home.nix
+    ../../../profiles/desktop-apps/foot.nix
     ../../../profiles/development/home.nix
     ../../../profiles/editors/home.nix
+    ../../../profiles/shell/home.nix
     ../../../profiles/work/home.nix
-    ../../../profiles/desktop-apps/foot.nix
+    ../../../profiles/workstation/home.nix
 
     # Machine-specific overrides
     ./doom
     ./git.nix
-    ./opencode # Work-specific opencode config
     ./zsh
   ];
 

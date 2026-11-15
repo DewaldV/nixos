@@ -6,9 +6,12 @@
 }:
 
 let
-  gdk = pkgs.google-cloud-sdk.withExtraComponents( with pkgs.google-cloud-sdk.components; [
-    gke-gcloud-auth-plugin
-  ]);
+  gdk = pkgs.google-cloud-sdk.withExtraComponents (
+    with pkgs.google-cloud-sdk.components;
+    [
+      gke-gcloud-auth-plugin
+    ]
+  );
 in
 {
   # Development tool configurations
@@ -23,21 +26,6 @@ in
     # Version control & CLI tools
     gh
 
-    # AWS
-    pkgs-unstable.awscli2
-    ssm-session-manager-plugin
-
-    # Google Cloud
-    gdk
-
-    # Kubernetes
-    helmfile
-    k9s
-    kubectl
-    kubernetes-helm
-    kubernetes-helmPlugins.helm-diff
-    kustomize
-
     # Development utilities
     pkgs-unstable.devenv
 
@@ -45,18 +33,9 @@ in
     shellcheck
     shfmt
 
-    # Infrastructure as Code
-    terraform
-    tflint
-    tflint-plugins.tflint-ruleset-aws
-
     # Languages
     python314
     uv
-    # ruby
-
-    # k6
-    pkgs-unstable.k6
 
     # Go development tools
     dockfmt
@@ -74,10 +53,5 @@ in
     gotools
     go-tools
     unconvert
-
-    # Node.js
-    bun
-    nodejs_24
-    pnpm
   ];
 }

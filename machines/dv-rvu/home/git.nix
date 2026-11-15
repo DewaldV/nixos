@@ -18,17 +18,6 @@ in
     settings = {
       user.email = lib.mkForce email;
     };
-
-    includes = [
-      {
-        condition = "gitdir:~/Projects/tempcover";
-        contents = {
-          user = {
-            signingKey = sshRSAPubKey;
-          };
-        };
-      }
-    ];
   };
 
   programs.ssh = {

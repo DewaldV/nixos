@@ -18,9 +18,7 @@
 
     # Communication
     discord
-    pkgs-unstable.slack
     pkgs-unstable.signal-desktop
-    zoom-us
 
     # Productivity
     evince # PDF viewer
