@@ -4,6 +4,10 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-26.05";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
+    recon = {
+      url = "github:DewaldV/recon";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     zeroclaw = {
       url = "github:zeroclaw-labs/zeroclaw/v0.8.3";
       inputs.nixpkgs.follows = "nixpkgs-unstable";
@@ -49,6 +53,7 @@
       nixos-private,
       nixpkgs,
       nixpkgs-unstable,
+      recon,
       zeroclaw,
     }:
     let
@@ -118,6 +123,7 @@
           nixos-private
           nixpkgs
           nixpkgs-unstable
+          recon
           zeroclaw
           ;
         system = "x86_64-linux";

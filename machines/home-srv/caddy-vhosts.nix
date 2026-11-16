@@ -31,6 +31,11 @@
     "immich.furfaces.net".extraConfig = ''
       reverse_proxy http://127.0.0.1:2283
     '';
+    "recon.furfaces.net".extraConfig = ''
+      @denied not remote_ip 127.0.0.1 ::1 192.168.0.0/24 100.64.0.0/10 fd7a:115c:a1e0::/48
+      respond @denied "Forbidden" 403
+      reverse_proxy http://${config.services.recon.listenAddress}:${toString config.services.recon.port}
+    '';
 
     ### vm-dl
     "transmission.furfaces.net".extraConfig = ''

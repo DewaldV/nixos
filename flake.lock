@@ -175,11 +175,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1793909394,
-        "narHash": "sha256-cNuNGwAs2lII9DHZy2t2GiQkAAt4s+UPKIB48n7Sjy0=",
+        "lastModified": 1794768542,
+        "narHash": "sha256-Fn4QeQuhxTFMzpQ5mJtI6h49h31Ww7D9KlLsB94W4uo=",
         "ref": "refs/heads/main",
-        "rev": "fd76ccd1ed742fedde7570c7d2d1df71e5a1ff2f",
-        "revCount": 28,
+        "rev": "1d3533a769b4353a61deda081377c72a38ce0fdb",
+        "revCount": 29,
         "type": "git",
         "url": "ssh://git@github.com/dewaldv/nixos-private"
       },
@@ -220,6 +220,26 @@
         "type": "github"
       }
     },
+    "recon": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1794766939,
+        "narHash": "sha256-8ak8QzuIECwew44oeNjf6dt+fB0Kvu2G13qdbbqzw8M=",
+        "owner": "DewaldV",
+        "repo": "recon",
+        "rev": "3e1f7e1b6ef9f42caa9774ee135a0c363d699900",
+        "type": "github"
+      },
+      "original": {
+        "owner": "DewaldV",
+        "repo": "recon",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
         "disko": "disko",
@@ -230,6 +250,7 @@
         "nixos-private": "nixos-private",
         "nixpkgs": "nixpkgs",
         "nixpkgs-unstable": "nixpkgs-unstable",
+        "recon": "recon",
         "zeroclaw": "zeroclaw"
       }
     },

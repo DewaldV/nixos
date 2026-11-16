@@ -28,6 +28,7 @@
     ./configuration.nix
     ./caddy-vhosts.nix
     ./hardware.nix
+    ./recon.nix
 
     # VMs
     ./vm

@@ -7,6 +7,7 @@ name:
   nixos-private,
   nixpkgs,
   nixpkgs-unstable,
+  recon ? null,
   zeroclaw ? null,
   system,
 }:
@@ -29,6 +30,7 @@ nixpkgs.lib.nixosSystem {
       nixos-hardware
       nixos-private
       pkgs-unstable
+      recon
       zeroclaw
       ;
   };
