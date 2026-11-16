@@ -227,11 +227,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1794766939,
-        "narHash": "sha256-8ak8QzuIECwew44oeNjf6dt+fB0Kvu2G13qdbbqzw8M=",
+        "lastModified": 1794854344,
+        "narHash": "sha256-Q5slOKvmwVMxuERomypnP/eVnJ1m3MneXOzWCCr7++c=",
         "owner": "DewaldV",
         "repo": "recon",
-        "rev": "3e1f7e1b6ef9f42caa9774ee135a0c363d699900",
+        "rev": "48ec6f6345bd7d609b3c892ea0ca715879b79b6b",
         "type": "github"
       },
       "original": {
