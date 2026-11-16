@@ -49,9 +49,7 @@ diff: result
 
 # Remote server
 home-srv-boot home-srv-switch: home-srv-%:
-	nixos-rebuild build --flake '.#home-srv'
-	nix copy --to 'ssh://$(HOME_SRV_HOST)' "$$(readlink -f result)"
-	ssh -t '$(HOME_SRV_HOST)' pkexec /run/current-system/sw/bin/nixos-rebuild $* --store-path "$$(readlink -f result)"
+	nixos-rebuild $* --flake '.#home-srv' --target-host '$(HOME_SRV_HOST)' --sudo --ask-sudo-password
 
 home-srv-delete-generations:
 	ssh -t '$(HOME_SRV_HOST)' sudo nix-env -p /nix/var/nix/profiles/system --delete-generations +5
