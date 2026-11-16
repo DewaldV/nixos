@@ -10,6 +10,7 @@
   # Base home-manager configuration
   imports = [
     ../proton-pass/home.nix
+    ../tailscale/home.nix
   ]
   ++ lib.optionals (!isDarwin) [ ./linux.nix ];
 
