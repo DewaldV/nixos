@@ -28,6 +28,8 @@
   environment.systemPackages = with pkgs; [
     heroic
     lutris
+    pkgs-unstable.shadps4
+    pkgs-unstable.shadps4-qtlauncher
     protontricks
     protonup-qt
     scummvm
