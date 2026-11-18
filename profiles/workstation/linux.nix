@@ -1,6 +1,8 @@
 { pkgs, ... }:
 
 {
+  imports = [ ../tailscale/home.nix ];
+
   home.pointerCursor = {
     name = "Adwaita";
     package = pkgs.adwaita-icon-theme;

@@ -5,6 +5,14 @@
   ...
 }:
 
+let
+  google-cloud-sdk = pkgs.google-cloud-sdk.withExtraComponents (
+    with pkgs.google-cloud-sdk.components;
+    [
+      gke-gcloud-auth-plugin
+    ]
+  );
+in
 {
   home.packages = with pkgs; [
     # AWS
@@ -15,7 +23,7 @@
     azure-cli
 
     # Google Cloud
-    gdk
+    google-cloud-sdk
 
     # Kubernetes
     helmfile
