@@ -9,11 +9,6 @@
     ../../../profiles/work/home.nix
     ../../../profiles/mac/home.nix
     ../../../profiles/agents/opencode
-
-    # Shared with dv-rvu
-    ../../dv-rvu/home/doom
-    ../../dv-rvu/home/git.nix
-    ../../dv-rvu/home/zsh
   ];
 
   home.packages = with pkgs; [

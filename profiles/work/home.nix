@@ -14,6 +14,12 @@ let
   );
 in
 {
+  imports = [
+    ./doom
+    ./git.nix
+    ./zsh
+  ];
+
   home.packages = with pkgs; [
     # AWS
     pkgs-unstable.awscli2

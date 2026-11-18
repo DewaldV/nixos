@@ -14,11 +14,6 @@
     ../../../profiles/shell/home.nix
     ../../../profiles/work/home.nix
     ../../../profiles/workstation/home.nix
-
-    # Machine-specific overrides
-    ./doom
-    ./git.nix
-    ./zsh
   ];
 
   # New config
