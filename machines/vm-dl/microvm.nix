@@ -1,7 +1,5 @@
 {
   lib,
-  beszelAgentEnvironmentFile,
-  nixos-private,
   pkgs,
   vpnPrivateKeyPath,
   ...
@@ -10,8 +8,6 @@
 {
   imports = [
     ../../profiles/machines/microvm
-    ../../profiles/sshd
-    ../../profiles/user/dewaldv.nix
     ./transmission.nix
     ./vpn.nix
   ];
@@ -19,18 +15,11 @@
   boot.kernelParams = [ "net.ifnames=0" ];
 
   microvm = {
-    vcpu = 1;
     # QEMU hangs when microvm.nix assigns exactly 2 GiB.
     mem = 2047;
     machineId = "57ad0239-244f-e74c-3463-0b75be850c46";
-    credentialFiles = {
-      beszel-agent-env = beszelAgentEnvironmentFile;
-      dl-vm-private-key = vpnPrivateKeyPath;
-    };
-    vsock = {
-      cid = 4;
-      ssh.enable = true;
-    };
+    credentialFiles.dl-vm-private-key = vpnPrivateKeyPath;
+    vsock.cid = 4;
 
     interfaces = [
       {
@@ -42,13 +31,6 @@
     ];
 
     shares = [
-      {
-        source = "/nix/store";
-        mountPoint = "/nix/.ro-store";
-        tag = "ro-store";
-        proto = "virtiofs";
-        readOnly = true;
-      }
       {
         source = "/srv/vm-dl";
         mountPoint = "/srv/data";
@@ -72,15 +54,6 @@
     '';
   };
 
-  services.beszel.agent = {
-    enable = true;
-    environment = {
-      DISABLE_SSH = "true";
-      SYSTEM_NAME = "vm-dl";
-    };
-    environmentFile = "/run/credentials/@system/beszel-agent-env";
-  };
-
   networking = {
     useDHCP = false;
     defaultGateway = {
@@ -93,16 +66,6 @@
         address = "192.168.0.11";
         prefixLength = 24;
       }
-    ];
-  };
-
-  users.users = {
-    root.openssh.authorizedKeys.keys = [
-      nixos-private.private.keys.personal.ssh.pub
-    ];
-
-    dewaldv.openssh.authorizedKeys.keys = [
-      nixos-private.private.keys.personal.ssh.pub
     ];
   };
 
