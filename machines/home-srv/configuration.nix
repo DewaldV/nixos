@@ -27,6 +27,16 @@ in
     interface = "br0";
   };
 
+  # Keep host DNS available for recovery when AdGuard is down.
+  profiles.dns.quad9 = {
+    enable = true;
+    dnsOverTls = true;
+    dnssec = true;
+  };
+
+  # resolv.conf clients also use resolved's TLS transport. AdGuard binds other addresses.
+  services.resolved.settings.Resolve.DNSStubListener = "yes";
+
   # timesyncd does not discover an online link with this host's unmanaged networking.
   services.chrony.enable = true;
 
@@ -38,7 +48,11 @@ in
     ];
   };
 
-  services.tailscale.useRoutingFeatures = "both";
+  services.tailscale = {
+    useRoutingFeatures = "both";
+    # Preserve the host's independent Quad9 resolver policy.
+    extraSetFlags = [ "--accept-dns=false" ];
+  };
 
   services.beszel = {
     hub = {

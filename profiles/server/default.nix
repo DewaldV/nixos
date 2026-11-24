@@ -15,10 +15,7 @@
     ./update.nix
   ];
 
-  profiles.dns.quad9 = {
-    enable = true;
-    dnsOverTls = true;
-  };
+  profiles.dns.quad9.enable = lib.mkDefault true;
 
   # Boot
   boot = {

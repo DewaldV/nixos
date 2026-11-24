@@ -8,17 +8,6 @@ let
   inherit (nixos-private.private.infrastructure) hosts lan;
 in
 {
-  services.resolved = {
-    enable = true;
-    settings = {
-      Resolve = {
-        DNSStubListener = "no";
-      };
-    };
-  };
-
-  networking.nameservers = [ "127.0.0.1" ];
-
   networking.firewall = {
     allowedTCPPorts = [ config.services.adguardhome.settings.dns.port ];
     allowedUDPPorts = [
@@ -79,6 +68,8 @@ in
           inherit (lan) subnet_mask;
           inherit (lan.dhcp) range_start range_end;
           lease_duration = 86400;
+          # LAN clients use AdGuard; the server has its own independent resolver.
+          options = [ "6 ips ${hosts.home_srv}" ];
         };
       };
     };
