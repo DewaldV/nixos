@@ -26,6 +26,7 @@ let
           pkgs.networkmanager
           pkgs.curl
           pkgs.firefox
+          pkgs.systemd
         ]
       }
   '';

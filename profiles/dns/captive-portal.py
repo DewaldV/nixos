@@ -26,10 +26,10 @@ PREFERENCES = {
 }
 
 
-def change_mode(action, expected_uuid=None):
+def change_mode(action, expected_session=None):
     args = ["/run/wrappers/bin/pkexec", POLICY, action]
-    if expected_uuid is not None:
-        args.append(expected_uuid)
+    if expected_session is not None:
+        args.append(expected_session)
     run(*args)
 
 
@@ -50,16 +50,17 @@ def online(iface):
 
 
 def open_portal():
-    iface, uuid = wifi_session()
-    portal_enabled = False
+    iface, session = wifi_session()
+    restore_needed = False
     browser = None
     # Use the system resolver and allow HTTP portal redirects.
     with TemporaryDirectory(prefix="captive-portal-firefox.") as profile:
         prefs = "".join(f"user_pref({json.dumps(key)}, {json.dumps(value)});\n" for key, value in PREFERENCES.items())
         Path(profile, "user.js").write_text(prefs)
         try:
-            change_mode("on", uuid)
-            portal_enabled = True
+            # A failed or interrupted request may already have changed DNS.
+            restore_needed = True
+            change_mode("on", session)
             print("Sign in through the portal, then close this Firefox instance.", flush=True)
             browser = subprocess.Popen([
                 "firefox", "--no-remote", "--new-instance", "--profile", profile,
@@ -69,16 +70,16 @@ def open_portal():
             if result:
                 raise PolicyError(f"Firefox exited with status {result}.")
             print("Browser closed. Waiting for Internet connectivity (Ctrl+C to cancel).", flush=True)
-            while same_session(iface, uuid):
+            while same_session(iface, session):
                 if online(iface):
-                    change_mode("off", uuid)
-                    portal_enabled = False
+                    change_mode("off", session)
+                    restore_needed = False
                     print("Internet connectivity confirmed; secure DNS restored.")
                     return 0
                 print("Not online yet; retrying in 3 seconds.", flush=True)
                 time.sleep(3)
             # The dispatcher already resets portal mode on disconnect/reconnect.
-            portal_enabled = False
+            restore_needed = False
             raise PolicyError("WiFi session changed; stopping the captive-portal workflow.")
         finally:
             if browser is not None and browser.poll() is None:
@@ -88,9 +89,9 @@ def open_portal():
                 except subprocess.TimeoutExpired:
                     browser.kill()
                     browser.wait()
-            if portal_enabled and same_session(iface, uuid):
+            if restore_needed and same_session(iface, session):
                 print("Restoring secure DNS before exiting.", flush=True)
-                change_mode("off", uuid)
+                change_mode("off", session)
 
 
 def main():
@@ -98,7 +99,7 @@ def main():
     if args.action == "status":
         return run(POLICY, "status", check=False).returncode
     if args.action in {"on", "off"}:
-        change_mode(args.action, args.uuid)
+        change_mode(args.action, args.session)
         return 0
     runtime_dir = os.environ.get("XDG_RUNTIME_DIR")
     if not runtime_dir:

@@ -35,6 +35,11 @@ Cancelling the workflow or a browser failure also restores secure DNS. If the
 WiFi session changes, the workflow stops without modifying the new connection.
 Authentication may be requested again when restoring DNS.
 
+Failed portal-policy updates trigger rollback inside the privileged policy
+command, including failures during DHCP reapplication. Rollback attempts every
+secure setting and reports any restoration failure. The browser workflow also
+requests cleanup if its initial enable request fails or is interrupted.
+
 The `on` and `off` commands request administrator authentication through
 PolicyKit. Exactly one WiFi interface must be connected.
 
@@ -44,10 +49,14 @@ saved NetworkManager profiles are not modified. Resolver caches are flushed
 after policy changes. The existing CrossCountry TCP-DNS workaround remains
 necessary on that network.
 
+Sessions use NetworkManager's active-connection D-Bus path and daemon owner.
+Reconnecting to the same saved WiFi profile or restarting NetworkManager creates
+a new session. Policy updates check the session before each resolver command.
+
 The policy is also applied to connections already active when the configuration
 is activated or systemd-resolved restarts.
 
 The policy and browser workflow are Python scripts using only the standard
 library, with shared command, locking, and WiFi-session helpers in `dns_common.py`.
 Nix packages their interpreter and runtime commands (`nmcli`, `resolvectl`,
-`curl`, and Firefox); no Python packages need to be installed separately.
+`busctl`, `curl`, and Firefox); no Python packages need to be installed separately.

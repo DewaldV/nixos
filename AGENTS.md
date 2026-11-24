@@ -10,7 +10,7 @@
 - **Apply on reboot**: `make boot` (builds and sets as default for next boot)
 - **Update flake inputs**: `make update`
 - **Format Nix files**: `nixfmt <file.nix>` (use RFC 166 style)
-- **No test suite**: This is a declarative configuration repo with no automated tests
+- **Script regression tests**: `nix shell .#nixosConfigurations.dv-desktop.pkgs.kubectl --command python3 -B -m unittest discover -s tests -v` (also requires Python, Zsh, and jq). DNS tests mock system commands; Kubernetes tests use isolated temporary kubeconfigs without cluster access.
 
 ## Git Workflow
 - **Never push `temp/*` branches**: These contain local-only changes the user does not want to share. Do not publish their commits through other branches or tags.

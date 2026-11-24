@@ -3,6 +3,7 @@
 import argparse
 from contextlib import contextmanager
 import fcntl
+import json
 import os
 import subprocess
 import sys
@@ -24,7 +25,7 @@ def parse_args(*, policy=False):
         ("off", "restore secure Quad9 DNS"),
     ):
         command = commands.add_parser(action, help=help_text)
-        command.add_argument("uuid", nargs="?", help="expected WiFi session UUID")
+        command.add_argument("session", nargs="?", help="expected NetworkManager activation token")
     if policy:
         command = commands.add_parser("event", help="handle a NetworkManager dispatcher event")
         command.add_argument("interface")
@@ -59,19 +60,32 @@ def wifi_session():
     if len(interfaces) != 1:
         raise PolicyError("Expected exactly one connected WiFi interface.")
     iface = interfaces[0]
-    return iface, connection_uuid(iface)
+    return iface, connection_session(iface)
 
 
-def connection_uuid(iface):
-    return output("nmcli", "-g", "GENERAL.CON-UUID", "device", "show", iface)
-
-
-def same_session(iface, uuid):
-    result = run(
-        "nmcli", "-g", "GENERAL.CON-UUID", "device", "show", iface,
-        capture=True, check=False, quiet=True,
+def connection_session(iface):
+    # The active-connection path changes on reconnect; the bus owner changes
+    # when NetworkManager restarts, even if it reuses an object path.
+    owner = run(
+        "busctl", "--system", "--json=short", "call",
+        "org.freedesktop.DBus", "/org/freedesktop/DBus",
+        "org.freedesktop.DBus", "GetNameOwner", "s", "org.freedesktop.NetworkManager",
+        capture=True, quiet=True,
     )
-    return result.returncode == 0 and result.stdout.strip() == uuid
+    path = run(
+        "nmcli", "-g", "GENERAL.CON-PATH", "device", "show", iface,
+        capture=True, quiet=True,
+    ).stdout.strip()
+    if not path.startswith("/org/freedesktop/NetworkManager/ActiveConnection/"):
+        raise PolicyError(f"No active connection on {iface}.")
+    return f"{json.loads(owner.stdout)['data'][0]}:{path}"
+
+
+def same_session(iface, session):
+    try:
+        return connection_session(iface) == session
+    except (PolicyError, OSError, subprocess.CalledProcessError):
+        return False
 
 
 @contextmanager
