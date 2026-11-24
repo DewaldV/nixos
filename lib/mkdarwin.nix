@@ -6,14 +6,16 @@ name:
   nixpkgs,
   nixpkgs-unstable,
   system,
+  username,
+  homeDirectory ? "/Users/${username}",
 }:
 
 let
-  pkgs-unstable = import nixpkgs-unstable {
-    inherit system;
-    config.allowUnfree = true;
+  inherit (import ./mk-package-sets.nix { inherit nixpkgs nixpkgs-unstable system; }) pkgs-unstable;
+  homeConfig = import ./mk-home-config.nix name {
+    lib = nixpkgs.lib;
+    inherit nixos-private pkgs-unstable system;
   };
-  isDarwin = nixpkgs.lib.hasSuffix "-darwin" system;
 in
 nix-darwin.lib.darwinSystem {
   inherit system;
@@ -27,26 +29,8 @@ nix-darwin.lib.darwinSystem {
 
     home-manager.darwinModules.home-manager
     {
-
-      users.users."dewald.viljoen".home = "/Users/dewald.viljoen";
-      home-manager.useGlobalPkgs = true;
-      home-manager.useUserPackages = true;
-      home-manager.backupFileExtension = "bak";
-      home-manager.users."dewald.viljoen" =
-        {
-          ...
-        }:
-        {
-          imports = [
-            ../profiles/activation-report/home.nix
-            nixos-private.homeManagerModule
-            ../machines/${name}/home
-          ];
-
-        };
-      home-manager.extraSpecialArgs = {
-        inherit nixos-private pkgs-unstable isDarwin;
-      };
+      users.users.${username}.home = homeDirectory;
+      home-manager = homeConfig.forUser username;
     }
     (
       { config, pkgs, ... }:

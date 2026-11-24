@@ -8,26 +8,16 @@ name:
 }:
 
 let
-  pkgs = import nixpkgs {
-    inherit system;
-    config.allowUnfree = true;
+  inherit (import ./mk-package-sets.nix { inherit nixpkgs nixpkgs-unstable system; })
+    pkgs
+    pkgs-unstable
+    ;
+  homeConfig = import ./mk-home-config.nix name {
+    lib = nixpkgs.lib;
+    inherit nixos-private pkgs-unstable system;
   };
-  pkgs-unstable = import nixpkgs-unstable {
-    inherit system;
-    config.allowUnfree = true;
-  };
-  isDarwin = nixpkgs.lib.hasSuffix "-darwin" system;
 in
 home-manager.lib.homeManagerConfiguration {
   inherit pkgs;
-
-  extraSpecialArgs = {
-    inherit nixos-private pkgs-unstable isDarwin;
-  };
-
-  modules = [
-    ../profiles/activation-report/home.nix
-    nixos-private.homeManagerModule
-    ../machines/${name}/home
-  ];
+  inherit (homeConfig) modules extraSpecialArgs;
 }

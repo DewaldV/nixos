@@ -60,6 +60,19 @@
       mkHome = import ./lib/mkhome.nix;
       mkHost = import ./lib/mkhost.nix;
       mkDarwin = import ./lib/mkdarwin.nix;
+      commonArgs = {
+        inherit
+          home-manager
+          nixos-private
+          nixpkgs
+          nixpkgs-unstable
+          ;
+      };
+      nixosArgs = commonArgs // {
+        inherit disko nixos-hardware;
+        system = "x86_64-linux";
+        username = "dewaldv";
+      };
     in
     {
       packages.x86_64-linux.installer =
@@ -69,65 +82,31 @@
           modules = [ ./installer ];
         }).config.system.build.isoImage;
 
-      homeConfigurations.dewaldv = mkHome "dv-rvu" rec {
-        inherit
-          home-manager
-          nixos-private
-          nixpkgs
-          nixpkgs-unstable
-          ;
-        system = "x86_64-linux";
-      };
+      homeConfigurations.dewaldv = mkHome "dv-rvu" (
+        commonArgs
+        // {
+          system = "x86_64-linux";
+        }
+      );
 
-      nixosConfigurations.dv-desktop = mkHost "dv-desktop" {
-        inherit
-          disko
-          home-manager
-          nixos-hardware
-          nixos-private
-          nixpkgs
-          nixpkgs-unstable
-          ;
-        system = "x86_64-linux";
-      };
+      darwinConfigurations.USW-TQWC4MH4Y7 = mkDarwin "dv-rvu-mac" (
+        commonArgs
+        // {
+          inherit nix-darwin;
+          system = "aarch64-darwin";
+          username = "dewald.viljoen";
+        }
+      );
 
-      darwinConfigurations.USW-TQWC4MH4Y7 = mkDarwin "dv-rvu-mac" {
-        inherit
-          nix-darwin
-          home-manager
-          nixos-private
-          nixpkgs
-          nixpkgs-unstable
-          ;
-        system = "aarch64-darwin";
+      nixosConfigurations = {
+        dv-desktop = mkHost "dv-desktop" nixosArgs;
+        dv-fw = mkHost "dv-fw" nixosArgs;
+        home-srv = mkHost "home-srv" (
+          nixosArgs
+          // {
+            inherit microvm recon zeroclaw;
+          }
+        );
       };
-
-      nixosConfigurations.dv-fw = mkHost "dv-fw" {
-        inherit
-          disko
-          home-manager
-          nixos-hardware
-          nixos-private
-          nixpkgs
-          nixpkgs-unstable
-          ;
-        system = "x86_64-linux";
-      };
-
-      nixosConfigurations.home-srv = mkHost "home-srv" {
-        inherit
-          disko
-          home-manager
-          microvm
-          nixos-hardware
-          nixos-private
-          nixpkgs
-          nixpkgs-unstable
-          recon
-          zeroclaw
-          ;
-        system = "x86_64-linux";
-      };
-
     };
 }
