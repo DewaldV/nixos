@@ -1,10 +1,14 @@
 {
   lib,
+  nixos-private,
   pkgs,
   webdavHtpasswdFile,
   ...
 }:
 
+let
+  inherit (nixos-private.private.infrastructure) hosts ports;
+in
 {
   microvm.credentialFiles.webdav-htpasswd = webdavHtpasswdFile;
 
@@ -18,7 +22,7 @@
       User = "dewaldv";
       Group = "users";
       LoadCredential = "htpasswd:webdav-htpasswd";
-      ExecStart = "${lib.getExe pkgs.rclone} serve webdav /srv/documents/notes --addr 192.168.0.12:8181 --htpasswd %d/htpasswd";
+      ExecStart = "${lib.getExe pkgs.rclone} serve webdav /srv/documents/notes --addr ${hosts.vm_sync}:${toString ports.webdav} --htpasswd %d/htpasswd";
       Restart = "on-failure";
       RestartSec = 10;
     };

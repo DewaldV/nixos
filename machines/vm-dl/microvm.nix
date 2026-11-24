@@ -1,10 +1,14 @@
 {
   lib,
+  nixos-private,
   pkgs,
   vpnPrivateKeyPath,
   ...
 }:
 
+let
+  inherit (nixos-private.private.infrastructure) hosts lan;
+in
 {
   imports = [
     ../../profiles/machines/microvm
@@ -57,14 +61,14 @@
   networking = {
     useDHCP = false;
     defaultGateway = {
-      address = "192.168.0.1";
+      address = hosts.router;
       interface = "eth0";
     };
     firewall.enable = true;
     interfaces.eth0.ipv4.addresses = [
       {
-        address = "192.168.0.11";
-        prefixLength = 24;
+        address = hosts.vm_dl;
+        prefixLength = lan.prefix_length;
       }
     ];
   };

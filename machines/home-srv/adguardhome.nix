@@ -1,8 +1,12 @@
 {
-  lib,
+  config,
+  nixos-private,
   ...
 }:
 
+let
+  inherit (nixos-private.private.infrastructure) hosts lan;
+in
 {
   services.resolved = {
     enable = true;
@@ -16,9 +20,9 @@
   networking.nameservers = [ "127.0.0.1" ];
 
   networking.firewall = {
-    allowedTCPPorts = [ 53 ];
+    allowedTCPPorts = [ config.services.adguardhome.settings.dns.port ];
     allowedUDPPorts = [
-      53
+      config.services.adguardhome.settings.dns.port
       67
     ];
   };
@@ -33,7 +37,7 @@
       dns = {
         bind_hosts = [
           "127.0.0.1"
-          "192.168.0.10"
+          hosts.home_srv
         ];
         port = 53;
         upstream_dns = [
@@ -71,10 +75,9 @@
         interface_name = "br0";
 
         dhcpv4 = {
-          gateway_ip = "192.168.0.1";
-          subnet_mask = "255.255.255.0";
-          range_start = "192.168.0.100";
-          range_end = "192.168.0.200";
+          gateway_ip = hosts.router;
+          inherit (lan) subnet_mask;
+          inherit (lan.dhcp) range_start range_end;
           lease_duration = 86400;
         };
       };

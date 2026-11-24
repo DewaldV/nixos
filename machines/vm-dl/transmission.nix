@@ -1,6 +1,11 @@
-{ ... }:
+{
+  lib,
+  nixos-private,
+  ...
+}:
 
 let
+  inherit (nixos-private.private.infrastructure) ports transmission_rpc_clients;
   baseDir = "/srv/data";
   downloadDir = "${baseDir}/complete";
   incompleteDir = "${baseDir}/incomplete";
@@ -31,11 +36,12 @@ in
       download-dir = downloadDir;
       incomplete-dir-enabled = true;
       incomplete-dir = incompleteDir;
-      peer-port = 51413;
+      peer-port = ports.transmission_peer;
+      rpc-port = ports.transmission_rpc;
       rpc-bind-address = "0.0.0.0";
       rpc-host-whitelist = "transmission.furfaces.net";
       rpc-host-whitelist-enabled = true;
-      rpc-whitelist = "127.0.0.1,192.168.0.*";
+      rpc-whitelist = lib.concatStringsSep "," transmission_rpc_clients;
       rpc-whitelist-enabled = true;
       watch-dir-enabled = true;
       watch-dir = watchDir;

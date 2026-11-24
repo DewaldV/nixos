@@ -8,6 +8,7 @@
 }:
 
 let
+  inherit (nixos-private.private.infrastructure) hosts ports;
   syncthingConfig = nixos-private.private.syncthing;
 in
 {
@@ -22,7 +23,7 @@ in
     user = "dewaldv";
     group = "users";
     dataDir = "/srv/documents/syncthing";
-    guiAddress = "192.168.0.12:8384";
+    guiAddress = "${hosts.vm_sync}:${toString ports.syncthing_gui}";
     guiPasswordFile = "/run/credentials/syncthing-init.service/gui-password";
     # Unit credentials are accessible to the service, unlike @system credentials
     # inside Syncthing's sandboxed ExecStartPre.

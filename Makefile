@@ -1,6 +1,6 @@
 .DEFAULT_GOAL := help
 
-HOME_SRV_HOST ?= dewaldv@192.168.0.10
+HOME_SRV_HOST ?= dewaldv@$(shell nix eval --no-write-lock-file --raw '.#nixosConfigurations.home-srv.config.networking.interfaces.br0.ipv4.addresses' --apply 'addresses: (builtins.head addresses).address')
 
 .PHONY: help result boot switch diff \
 	home-srv-boot home-srv-switch home-srv-delete-generations home-srv-gc home-srv-gc-gen \

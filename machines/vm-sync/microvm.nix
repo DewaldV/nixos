@@ -1,10 +1,14 @@
 {
   lib,
+  nixos-private,
   pkgs,
   pkgs-unstable,
   ...
 }:
 
+let
+  inherit (nixos-private.private.infrastructure) hosts lan ports;
+in
 {
   imports = [
     ../../profiles/machines/microvm
@@ -55,15 +59,15 @@
   networking = {
     useDHCP = false;
     defaultGateway = {
-      address = "192.168.0.1";
+      address = hosts.router;
       interface = "eth0";
     };
-    nameservers = [ "192.168.0.10" ];
+    nameservers = [ hosts.home_srv ];
     firewall = {
       enable = true;
       allowedTCPPorts = [
-        8181 # WebDAV
-        8384 # Syncthing GUI
+        ports.webdav
+        ports.syncthing_gui
       ];
     };
     nftables = {
@@ -75,15 +79,15 @@
             type filter hook input priority -10; policy accept;
             # Syncthing's configuration updater contacts the GUI via the VM's
             # own LAN address, which the kernel routes over loopback.
-            iifname != "lo" tcp dport { 8181, 8384 } ip saddr != 192.168.0.10 reject
+            iifname != "lo" tcp dport { ${toString ports.webdav}, ${toString ports.syncthing_gui} } ip saddr != ${hosts.home_srv} reject
           }
         '';
       };
     };
     interfaces.eth0.ipv4.addresses = [
       {
-        address = "192.168.0.12";
-        prefixLength = 24;
+        address = hosts.vm_sync;
+        prefixLength = lan.prefix_length;
       }
     ];
   };

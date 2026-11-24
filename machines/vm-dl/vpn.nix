@@ -6,11 +6,12 @@
 }:
 
 let
+  inherit (nixos-private.private.infrastructure) lan;
   vpn = nixos-private.private.vpn.dl-vm;
   interface = "protonvpn";
   credentialName = "dl-vm-private-key";
   credentialPath = "/run/credentials/wg-quick-${interface}.service/${credentialName}";
-  lanCidr = "192.168.0.0/24";
+  lanCidr = "${lan.address}/${toString lan.prefix_length}";
   endpointParts = lib.splitString ":" vpn.peer.endpoint;
   endpointAddress = builtins.elemAt endpointParts 0;
   endpointPort = builtins.elemAt endpointParts 1;

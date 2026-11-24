@@ -6,6 +6,9 @@
   ...
 }:
 
+let
+  inherit (nixos-private.private.infrastructure) ports;
+in
 {
   environment.systemPackages = with pkgs; [
     git
@@ -28,7 +31,7 @@
     settings = {
       gateway = {
         host = "0.0.0.0";
-        port = 42617;
+        port = ports.zeroclaw_gateway;
         allow_public_bind = true;
         allow_remote_admin = true;
       };
@@ -53,6 +56,6 @@
   };
 
   networking.firewall.allowedTCPPorts = [
-    42617 # ZeroClaw gateway
+    ports.zeroclaw_gateway
   ];
 }

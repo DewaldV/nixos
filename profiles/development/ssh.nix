@@ -1,5 +1,8 @@
-{ ... }:
+{ nixos-private, ... }:
 
+let
+  inherit (nixos-private.private.infrastructure) hosts;
+in
 {
   programs.ssh = {
     enableDefaultConfig = false;
@@ -20,7 +23,7 @@
         ControlPersist = "no";
       };
 
-      "192.168.0.10" = {
+      "${hosts.home_srv}" = {
         ForwardAgent = true;
       };
 

@@ -6,6 +6,9 @@
   ...
 }:
 
+let
+  inherit (nixos-private.private.infrastructure) hosts lan ports;
+in
 {
   networking.interfaces.eno1.useDHCP = false;
 
@@ -13,8 +16,8 @@
     useDHCP = false;
     ipv4.addresses = [
       {
-        address = "192.168.0.10";
-        prefixLength = 24;
+        address = hosts.home_srv;
+        prefixLength = lan.prefix_length;
       }
     ];
   };
@@ -22,7 +25,7 @@
   networking.bridges.br0.interfaces = [ "eno1" ];
 
   networking.defaultGateway = {
-    address = "192.168.0.1";
+    address = hosts.router;
     interface = "br0";
   };
 
@@ -34,7 +37,7 @@
     allowedTCPPorts = [
       80 # Caddy HTTP
       443 # Caddy HTTPS
-      2222 # SSH initrd unlock
+      config.boot.initrd.network.ssh.port
     ];
   };
 
@@ -72,7 +75,7 @@
     enable = true;
     ssh = {
       enable = true;
-      port = 2222;
+      port = ports.initrd_ssh;
       authorizedKeys = [ nixos-private.private.keys.personal.ssh.pub ];
       hostKeys = [
         (pkgs.writeText "initrd-ssh-host-key" nixos-private.private.keys.machines.home-srv.initrd.private)
@@ -99,8 +102,8 @@
     enable = true;
     networks."10-eno1" = {
       matchConfig.Name = "eno1";
-      addresses = [ { Address = "192.168.0.10/24"; } ];
-      routes = [ { Gateway = "192.168.0.1"; } ];
+      addresses = [ { Address = "${hosts.home_srv}/${toString lan.prefix_length}"; } ];
+      routes = [ { Gateway = hosts.router; } ];
       linkConfig.RequiredForOnline = "routable";
     };
   };

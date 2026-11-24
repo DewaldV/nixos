@@ -9,6 +9,7 @@
 
 let
   cfg = config.profiles.machines.vm;
+  inherit (nixos-private.private.infrastructure) hosts lan;
 in
 {
   imports = [
@@ -22,13 +23,13 @@ in
 
     address = lib.mkOption {
       type = lib.types.str;
-      example = "192.168.0.10";
+      example = "192.0.2.10";
       description = "Static IPv4 address for eth0.";
     };
 
     gateway = lib.mkOption {
       type = lib.types.str;
-      default = "192.168.0.1";
+      default = hosts.router;
       description = "IPv4 Gateway address for eth0";
     };
 
@@ -61,7 +62,7 @@ in
         ipv4.addresses = [
           {
             address = cfg.address;
-            prefixLength = 24;
+            prefixLength = lan.prefix_length;
           }
         ];
       };
