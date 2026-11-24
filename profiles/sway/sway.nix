@@ -85,7 +85,7 @@
 
       input = {
         "*" = {
-          xkb_layout = "gb";
+          xkb_layout = lib.mkDefault "gb";
         };
       };
 

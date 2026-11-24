@@ -1,13 +1,8 @@
-{
-  config,
-  pkgs,
-  lib,
-  ...
-}:
+{ ... }:
 
 {
   wayland.windowManager.sway.config = {
-    input = lib.mkForce {
+    input = {
       "*" = {
         xkb_layout = "us";
         xkb_variant = "altgr-intl";
@@ -15,16 +10,16 @@
       };
     };
 
-    output."eDP-1".scale = lib.mkForce "1.5";
+    output."eDP-1".scale = "1.5";
   };
 
   programs.waybar.settings = {
     mainBar = {
       battery = {
-        bat = lib.mkForce "BAT1";
+        bat = "BAT1";
       };
       temperature = {
-        hwmon-path = lib.mkForce "/sys/class/hwmon/hwmon4/temp1_input";
+        hwmon-path = "/sys/class/hwmon/hwmon4/temp1_input";
       };
     };
   };

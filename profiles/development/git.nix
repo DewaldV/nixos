@@ -1,7 +1,6 @@
 {
   config,
   pkgs,
-  nixos-private,
   ...
 }:
 {
@@ -9,10 +8,7 @@
   programs.git = {
     enable = true;
 
-    signing = {
-      key = nixos-private.private.keys.personal.ssh.pub;
-      signByDefault = true;
-    };
+    signing.signByDefault = true;
 
     settings = {
       alias = {
@@ -23,11 +19,6 @@
         lg2 = "log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all";
         pr = "pull --rebase --prune";
         at = "for-each-ref --sort=taggerdate --format '%(align:20,left)%(taggerdate:format:%Y-%m-%d  %H:%M)%(end)%(align:18,left)%(tag)%(end)%(align:25,left)%(taggername)%(end)%(subject)' refs/tags";
-      };
-
-      user = {
-        name = "DewaldV";
-        email = nixos-private.private.keys.personal.email;
       };
 
       color.ui = "auto";

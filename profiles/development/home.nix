@@ -10,6 +10,7 @@
   imports = [
     ./direnv.nix
     ./git.nix
+    ./personal-identity.nix
     ./rust
     ./ssh.nix
   ];

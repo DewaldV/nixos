@@ -1,13 +1,8 @@
-{
-  config,
-  pkgs,
-  lib,
-  ...
-}:
+{ ... }:
 
 {
   wayland.windowManager.sway.config = {
-    input = lib.mkForce {
+    input = {
       "*" = {
         xkb_layout = "us";
         xkb_variant = "altgr-intl";
@@ -26,10 +21,10 @@
   programs.waybar.settings = {
     mainBar = {
       temperature = {
-        hwmon-path = lib.mkForce "/sys/class/hwmon/hwmon3/temp1_input";
+        hwmon-path = "/sys/class/hwmon/hwmon3/temp1_input";
       };
     };
   };
 
-  services.swayidle.enable = lib.mkForce false;
+  services.swayidle.enable = false;
 }

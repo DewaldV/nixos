@@ -7,7 +7,7 @@
 
 {
   services.swayidle = {
-    enable = true;
+    enable = lib.mkDefault true;
     events = {
       "before-sleep" = "${pkgs.swaylock-effects}/bin/swaylock -f";
       "lock" = "${pkgs.swaylock-effects}/bin/swaylock -f";

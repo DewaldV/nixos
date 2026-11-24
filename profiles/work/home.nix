@@ -16,7 +16,7 @@ in
 {
   imports = [
     ./doom
-    ./git.nix
+    ./identity.nix
     ./zsh
   ];
 

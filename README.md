@@ -70,6 +70,17 @@ the host. Use per-user home imports when a feature should only apply to a
 particular user. Avoid importing a home module again when a system profile
 already includes it.
 
+### Defaults and overrides
+
+Use `lib.mkDefault` on individual shared preferences that machines or roles
+customize, such as keyboard layouts and hardware selectors. Set those leaves
+normally in machine modules so other shared settings can still merge. Reserve
+`lib.mkForce` for deliberate policy overrides or whole-list replacement.
+
+The development profile keeps common Git and SSH behavior separate from
+`personal-identity.nix`, which supplies the default identity. The work profile
+selects its identity through `identity.nix` using ordinary option definitions.
+
 ## Setup
 
 The goal of my setup is to be fairly minimal and to mostly get out of the way so I can focus on my work. I prefer driving with the keyboard as much as possible, using VIM keybinds for editing and the CLI for most tasks and the software below reflects that.

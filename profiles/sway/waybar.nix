@@ -56,7 +56,7 @@
         };
         temperature = {
           format = " {temperatureC}°C";
-          hwmon-path = "/sys/class/hwmon/hwmon5/temp1_input";
+          hwmon-path = lib.mkDefault "/sys/class/hwmon/hwmon5/temp1_input";
         };
         cpu = {
           format = "{icon} {load}";
@@ -75,7 +75,7 @@
           format = "󰍛 {}%";
         };
         battery = {
-          bat = "BAT0";
+          bat = lib.mkDefault "BAT0";
           states = {
             good = 95;
             warning = 25;

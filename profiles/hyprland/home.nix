@@ -1,4 +1,4 @@
-{ ... }:
+{ lib, ... }:
 
 {
   wayland.windowManager.hyprland = {
@@ -15,7 +15,7 @@
       ];
 
       input = {
-        kb_layout = "gb";
+        kb_layout = lib.mkDefault "gb";
         follow_mouse = 1;
       };
 
@@ -35,7 +35,7 @@
         disable_splash_rendering = true;
       };
 
-      monitor = [ ",preferred,auto,1" ];
+      monitor = lib.mkDefault [ ",preferred,auto,1" ];
 
       bind = [
         "$modifier, Return, exec, $terminal"
