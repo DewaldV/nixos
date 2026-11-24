@@ -5,4 +5,6 @@
     ./user.nix
     ../tailscale
   ];
+
+  home-manager.sharedModules = [ ./home.nix ];
 }

@@ -16,7 +16,6 @@
     ../../profiles/gaming
     ../../profiles/laptop
     ../../profiles/uk/crosscountry.nix
-    # Note: development and desktop-apps profiles are home-manager only (no system config)
 
     # Machine-specific config
     ./configuration.nix

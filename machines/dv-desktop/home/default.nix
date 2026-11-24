@@ -7,7 +7,6 @@
 
 {
   imports = [
-    ../../../profiles/workstation/home.nix
     ../../../profiles/shell/home.nix
     ../../../profiles/development/home.nix
     ../../../profiles/agents/home.nix

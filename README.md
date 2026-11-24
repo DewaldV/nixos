@@ -43,6 +43,33 @@ Clean out all but the last 5 generations.
 make gc-gen
 ```
 
+## Profile composition
+
+Profiles under `profiles/` use the following conventions:
+
+- **Paired system/home profiles** include their `home.nix` through
+  `home-manager.sharedModules` in `default.nix`. Import the system profile once;
+  machine home configurations only need additional selections and overrides.
+  Workstation, Sway, gaming, and desktop-app profiles follow this pattern.
+- **Home-only profiles**, such as shell, development, editors, and work, are
+  imported directly from machine home configurations.
+- **Optional client features** are selected by the role that needs them rather
+  than automatically enabled alongside a system service. The Tailscale system
+  profile configures the daemon; `profiles/workstation/linux.nix` imports its
+  home module for the tray. Server roles can use the daemon without the tray,
+  and the Linux-specific import keeps it out of Darwin configurations.
+- **Standalone Home Manager and cross-platform configurations** can import
+  `home.nix` directly when the corresponding system profile is not applicable.
+  This also supports client-only use, such as importing `immich/home.nix` for
+  the CLI without enabling the Immich server. The full Immich profile includes
+  the CLI, and the virtualization profile pairs virt-manager with its home
+  connection settings.
+
+`home-manager.sharedModules` applies to every configured Home Manager user on
+the host. Use per-user home imports when a feature should only apply to a
+particular user. Avoid importing a home module again when a system profile
+already includes it.
+
 ## Setup
 
 The goal of my setup is to be fairly minimal and to mostly get out of the way so I can focus on my work. I prefer driving with the keyboard as much as possible, using VIM keybinds for editing and the CLI for most tasks and the software below reflects that.

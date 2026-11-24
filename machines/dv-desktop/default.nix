@@ -21,7 +21,6 @@
     ../../profiles/sshd
     ../../profiles/virtualization
     ../../profiles/llm
-    # Note: development and desktop-apps profiles are home-manager only (no system config)
 
     # Machine-specific config
     ./configuration.nix
