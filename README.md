@@ -22,6 +22,18 @@ sudo nixos-rebuild switch --flake '.#<machine_name>'
 
 Once a machine has been bootstrapped and rebooted any future changes are done with the following make targets.
 
+Evaluate all configurations:
+``` shellsession
+make check
+```
+
+This evaluates derivation paths for every NixOS and Darwin system, their Home
+Manager generations, standalone Home Manager configurations, nested MicroVM
+systems and runners, and the installer. It stops on the first evaluation error.
+The check uses the pinned flake inputs and requires access to the private input.
+Evaluation may fetch inputs or build evaluation-time dependencies; full system
+builds use the targets below.
+
 Build the config but don't activate or reboot, just link it into the local dir as `result`.
 ``` shellsession
 make result

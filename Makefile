@@ -2,13 +2,15 @@
 
 HOME_SRV_HOST ?= dewaldv@$(shell nix eval --no-write-lock-file --raw '.#nixosConfigurations.home-srv.config.networking.interfaces.br0.ipv4.addresses' --apply 'addresses: (builtins.head addresses).address')
 
-.PHONY: help result boot switch diff \
+.PHONY: help check result boot switch diff \
 	home-srv-boot home-srv-switch home-srv-delete-generations home-srv-gc home-srv-gc-gen \
 	home-manager-switch home-manager-delete-generations home-manager-gc \
 	darwin-build darwin-switch delete-generations gc gc-gen clean update
 
 help:
 	@printf '%s\n' \
+		'Validation:' \
+		'  check                            Evaluate all systems, homes, MicroVMs, and installer' \
 		'NixOS:' \
 		'  result                           Build without activating (creates ./result)' \
 		'  boot                             Build and activate on next boot' \
@@ -33,6 +35,29 @@ help:
 		'  gc-gen                           Prune system generations, then collect garbage' \
 		'  clean                            Remove ./result' \
 		'  update                           Update flake inputs'
+
+# Validation
+check:
+	@printf '%s\n' 'Checking NixOS systems, Home Manager generations, and MicroVM systems/runners...'
+	@nix eval --no-write-lock-file --json '.#nixosConfigurations' --apply "hosts: builtins.mapAttrs (_: host: { \
+		system = host.config.system.build.toplevel.drvPath; \
+		homes = builtins.mapAttrs (_: home: home.home.activationPackage.drvPath) host.config.home-manager.users; \
+		guests = builtins.mapAttrs (_: vm: { \
+			system = vm.config.config.system.build.toplevel.drvPath; \
+			runner = vm.config.config.microvm.declaredRunner.drvPath; \
+		}) (host.config.microvm.vms or {}); \
+	}) hosts" > /dev/null
+	@printf '%s\n' 'Checking standalone Home Manager generations...'
+	@nix eval --no-write-lock-file --json '.#homeConfigurations' --apply \
+		'homes: builtins.mapAttrs (_: home: home.activationPackage.drvPath) homes' > /dev/null
+	@printf '%s\n' 'Checking Darwin systems and Home Manager generations...'
+	@nix eval --no-write-lock-file --json '.#darwinConfigurations' --apply "hosts: builtins.mapAttrs (_: host: { \
+		system = host.system.drvPath; \
+		homes = builtins.mapAttrs (_: home: home.home.activationPackage.drvPath) host.config.home-manager.users; \
+	}) hosts" > /dev/null
+	@printf '%s\n' 'Checking installer...'
+	@nix eval --no-write-lock-file --json '.#packages.x86_64-linux.installer.drvPath' > /dev/null
+	@printf '%s\n' 'All configuration evaluations passed.'
 
 # NixOS
 result:
